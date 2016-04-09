@@ -1,0 +1,25 @@
+How do I make the vi editor display or hide line numbers?
+
+To make vi display line numbers, you need to set the number flag. To do so:
+
+    Press the Esc key if you are currently in insert or append mode.
+    Press : (the colon). The cursor should reappear at the lower left corner of the screen next to a : prompt.
+    Enter the following command:
+
+      set number
+
+    A column of sequential line numbers will then appear at the left side of the screen. Each line number references the text located directly to the right. 
+
+To turn off line numbering, again follow the preceding instructions, except this time enter the following line at the : prompt:
+
+  set nonumber
+
+Normally, vi will forget the setting you've chosen once you've left the editor. You can, however, make either setting take effect automatically whenever you use vi on a particular account. To do this, place the appropriate set statement as a line in a file in your home directory named .exrc .
+
+For a list of all current settings, at the : prompt, enter:
+
+  set all
+
+For a list of everything that you have set, at the : prompt, enter:
+
+  set

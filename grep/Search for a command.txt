@@ -1,0 +1,7 @@
+
+    compgen -c will list all the commands you could run.
+    compgen -a will list all the aliases you could run.
+   
+   
+   compgen -c | grep user
+   => search for a command whose name contains 'user'
