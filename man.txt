@@ -1,0 +1,1 @@
+In case 'man' command does not work, use --help option

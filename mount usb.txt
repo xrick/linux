@@ -1,0 +1,14 @@
+To view which device is usb disk:
+fdisk -l
+
+mkdir /var/usb
+mount /dev/sdb1 /var/usb
+umount /var/usb
+
+In case resource is busy error: 
+mount -o remount,rw '/var/usb'
+
+After that insert usb to another STB (which has ip) to get the log
+
+In case of can not umount because of busy resource:
+change directory to another directory than current usb directory, for example cd /

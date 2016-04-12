@@ -1,0 +1,7 @@
+The authencity of host can't be establish
+
+To fix: 
+add the following lines to the beginning of /etc/ssh/ssh_config
+Host 192.168.*.*
+   StrictHostKeyChecking=no
+   UserKnownHostsFile=/dev/null
