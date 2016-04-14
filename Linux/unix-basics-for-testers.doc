@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fcharset0 Times New Roman;}{\f1\fmodern\fcharset0 Courier New;}}
+{\colortbl ;\red127\green0\blue0;\red0\green128\blue0;\red0\green0\blue255;\red0\green255\blue255;}
+{\stylesheet{ Normal;}{\s1 heading 1;}{\s2 heading 2;}{\s3 heading 3;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\f0\fs24                                                 \par
+\par
+        \cf1\b\fs32 UNIX BASICS - Beginners guide for Unix commands\par
+                                                   - by \i Meenakshi\i0\par
+\par
+\pard\cbpat4\sb100\sa100\cf0\fs24 For more software testing articles visit:\b0  \cf2\b http://www.softwaretestinghelp.com\cf1\lang9\b0\par
+\pard\lang1033\b\fs32\par
+\fs28 Main features of unix :\cf0\par
+\b0\fs24\par
+\pard\tx2839\b Multi user -\b0   More than one user can use the machine\par
+\par
+\b Multitasking\b0 - More than one program can be run at a time.\par
+ \par
+\b Portability \endash  \b0 This means  the operating system can be easily converted to run on different browsers.\par
+\par
+\par
+\cf1\b\fs28 Commands\par
+\pard\cbpat4\fi-720\li720\sb100\sa100\lang9\f1\fs24 ls\f0  \tab\par
+\pard\cbpat4\sb100\sa100\cf0\b0 when invoked without any arguments, lists the files in the current working directory. A directory that is not the current working directory can be specified and \f1\fs20 ls\f0\fs24  will list the files there. The user also may specify any list of files and directories. In this case, all files and all contents of specified directories will be listed.\par
+Files whose names start with "\cf1 .\cf0 " are not listed, unless the \cf1 -a\cf0  flag is specified or the files are specified explicitly.\par
+Without options, \f1\fs20 ls\f0\fs24  displays files in a bare format. This bare format however makes it difficult to establish the type, permissions, and size of the files. The most common options to reveal this information or change the list of files are:\par
+\cf1\f1\fs20 -l\cf0\f0\fs24     long format, displaying Unix file type, permissions, number of hard links, owner,     group, size, date, and filename \par
+\cf1\f1\fs20 -F\cf0\f0\fs24     appends a character revealing the nature of a file, for example, \cf1\f1\fs20 *\cf0\f0\fs24  for an executable, or \cf1\f1\fs20 /\cf0\f0\fs24  for a directory. Regular files have no suffix. \par
+\cf1\lang1033\f1\fs20 -a \cf0\f0\fs24  lists all files in the given directory, including those whose names start with "." By default, these files are excluded from the list. \par
+\cf1\f1\fs20 -R\cf0\f0\fs24   recursively lists subdirectories. The command \cf1\f1\fs20 ls -R\cf0  /\f0\fs24  would therefore list all files. \par
+\pard\tx2839\par
+\par
+\pard\cbpat4\sb100\sa100\cf1\lang9\b\f1 cd\f0\par
+\cf0\b0 Is a command line command used to change the current working directory in the Unix and DOS operating systems. It is also available for use in Unix shell scripts or DOS batch files. \f1\fs20 cd\f0\fs24  is frequently included built into certain shells such as the Bourne shell, tcsh, bash (where it calls the \b\f1\fs20 chdir()\b0\f0\fs24  POSIX C function) and in DOS's COMMAND.COM.\par
+A directory is a logical section of a filesystem used to hold files. Directories may also contain other directories. The \f1\fs20 cd\f0\fs24  command can be used to change into a subdirectory, move back into the parent directory, move all the way back to the root (/ in UNIX, \\ in DOS) or move to any given directory.\par
+\par
+\cf1\b pwd\b0  \par
+\cf0 command (\b p\b0 rint \b w\b0 orking \b d\b0 irectory) is used to print the name of current working directory from a computer's command-line interface. If the shell prompt does not already show this, the user can use this command to find their place in the directory tree. This command is found in the Unix family of operating systems and other flavors as well. The DOS equivalent is "\f1\fs20 CD\f0\fs24 " with no arguments.\par
+It is a command which is sometimes included built into certain shells such as sh, and bash. It can be implemented easily with the POSIX C functions \f1\fs20 getcwd()\f0\fs24  and/or \f1\fs20 getwd()\f0\fs24 .\par
+\cf1 Example:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0 $ pwd\par
+/home/foobar\par
+\pard\lang1033\b\par
+\pard\cbpat4\sb100\sa100\cf1\lang9\f1 mkdir\par
+\cf0\b0\f0 command in the Unix operating system is used to make a new Directory. Normal usage is as straightforward as follows:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1 mkdir name_of_directory\par
+\pard\cbpat4\sb100\sa100\cf0 Where \f1\fs20 name_of_directory\f0\fs24  is the name of the directory one wants to create. When typed as above (ie. normal usage), the new directory would be created within the current directory.\par
+\cf1\b rm\b0  \cf0 (short for \b r\b0 e\b m\b0 ove) \par
+is a Unix command used to delete files from a filesystem. Common options that \cf1 rm \cf0 accepts include:\par
+\cf1\lang1033 -r\cf0 , which processes subdirectories recursively \par
+\cf1 -i\cf0 , which asks for every deletion to be confirmed \par
+\cf1 -f\cf0 , which ignores non-existent files and overrides any confirmation prompts ("force") \par
+\lang9 rm is often aliased to "\cf1 rm -i\cf0 " so as to avoid accidental deletion of files. If a user still wishes to delete a large number of files without confirmation, they can manually cancel out the -i argument by adding the -f option.\par
+"\cf1\b rm -rf\cf0\b0 " (variously, "rm -rf /", "rm -rf *", and others) is frequently used in jokes and anecdotes about Unix disasters. The "rm -rf /" variant of the command, if run by an administrator, would cause the contents of every mounted disk on the computer to be deleted.\par
+\cf1\b\par
+\f1\fs20 rmdir\f0\fs24  \par
+\cf0\b0 is a command which will remove an empty directory on a Unix-system. It cannot be capitalized. Normal usage is straightforward where one types:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1 rmdir name_of_directory\par
+\pard\cbpat4\sb100\sa100\cf0 Where name_of_directory corresponds with the name of the directory one wishes to delete. There are options to this command such as \b -p\b0  which removes parent directories if they are also empty.\par
+\cf1 For example:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0 rmdir \endash p foo/bar/baz\par
+\pard\cbpat4\sb100\sa100 Will first remove baz/, then bar/ and finally foo/ thus removing the entire directory tree specified in the command argument.\par
+Often rmdir will not remove a directory if there is still files present in the directory. To force the removal of the directory even if files are present usually the -rf flag can be used. For example:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 rmdir -Rf for/bar/baz\par
+\par
+\par
+\pard\cbpat4\sb100\sa100\cf1 cp \par
+\cf0 is the command entered in a Unix shell to copy a file from one place to another, possibly on a different filesystem. The original file remains unchanged, and the new file may have the same or a different name.\par
+To Copy a File to another File\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 cp [ -f ] [ -h ] [ -i ] [ -p ][ -- ] SourceFile TargetFile\par
+\pard\cbpat4\sb100\sa100 To Copy a File to a Directory\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 cp [ -f ] [ -h ] [ -i ] [ -p ] [ -r | -R ] [ -- ] SourceFile ... TargetDirectory\par
+\pard\cbpat4\sb100\sa100 To Copy a Directory to a Directory\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 cp [ -f ] [ -h ] [ -i ] [ -p ] [ -- ] \{ -r | -R \} SourceDirectory ... TargetDirectory\par
+\pard\cbpat4\sb100\sa100\cf1\b -f\cf0\b0  (force) \endash  specifies removal of the target file if it cannot be opened for write operations. The removal precedes any copying performed by the cp command.\par
+\cf1\b -h\cf0\b0  \endash  makes the cp command copy symbolic links. The default is to follow symbolic links, that is, to copy files to which symbolic links point.\par
+\cf1\b -i\cf0\b0  (interactive) \endash  prompts you with the name of a file to be overwritten. This occurs if the TargetDirectory or TargetFile parameter contains a file with the same name as a file specified in the SourceFile or SourceDirectory parameter. If you enter y or the locale's equivalent of y, the cp command continues. Any other answer prevents the cp command from overwriting the file.\par
+\cf1\b -p\cf0\b0  (preserve) \endash  duplicates the following characteristics of each SourceFile/SourceDirectory in the corresponding TargetFile and/or TargetDirectory:\par
+\pard\cbpat4\s2\sb100\sa100\cf1\b Examples\par
+\pard\cbpat4\sb100\sa100\cf0\b0 To make a copy of a file in the current directory, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp prog.c prog.bak\par
+\pard\cbpat4\sb100\sa100 This copies prog.c to prog.bak. If the prog.bak file does not already exist, the cp command creates it. If it does exist, the cp command replaces it with a copy of the prog.c file.\par
+To copy a file in your current directory into another directory, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp jones /home/nick/clients\par
+\pard\cbpat4\sb100\sa100 This copies the jones file to /home/nick/clients/jones.\par
+To copy a file to a new file and preserve the modification date, time, and access control list associated with the source file, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp -p smith smith.jr\par
+\pard\cbpat4\sb100\sa100 This copies the smith file to the smith.jr file. Instead of creating the file with the current date and time stamp, the system gives the smith.jr file the same date and time as the smith file. The smith.jr file also inherits the smith file's access control protection.\par
+To copy all the files in a directory to a new directory, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp /home/janet/clients/* /home/nick/customers\par
+\pard\cbpat4\sb100\sa100 This copies only the files in the clients directory to the customers directory.\par
+To copy a directory, including all its files and subdirectories, to another directory, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp -R /home/nick/clients /home/nick/customers\par
+\pard\cbpat4\sb100\sa100 This copies the clients directory, including all its files, subdirectories, and the files in those subdirectories, to the customers/clients directory.\par
+To copy a specific set of files to another directory, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp jones lewis smith /home/nick/clients\par
+\pard\cbpat4\sb100\sa100 This copies the jones, lewis, and smith files in your current working directory to the /home/nick/clients directory.\par
+To use pattern-matching characters to copy files, enter:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656     cp programs/*.c .\par
+\pard\cbpat4\sb100\sa100 This copies the files in the programs directory that end with .c to the current directory, signified by the single . (dot). You must type a space between the c and the final dot.\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\par
+\pard\cbpat4\sb100\sa100\par
+\par
+\pard\cf1\lang1033\b\f1 find\f0  \par
+\cf0\b0\par
+program is a search utility, mostly found on Unix-like platforms. It searches through a directory tree of a filesystem, locating files based on some user-specified criteria. By default, \f1\fs20 find\f0\fs24  returns all files below the current working directory. Further, \f1\fs20 find\f0\fs24  allows the user to specify an action to be taken on each matched file. Thus, it is an extremely powerful program for applying actions to many files. It also supports regexp matching.\par
+\par
+\pard\cbpat4\s2\sb100\sa100\cf1\lang9\b Examples\par
+\pard\cbpat4\keepn\s3\sb240\sa60 From current directory\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0\b0 find . -name my\\*\par
+\pard\cbpat4\sb100\sa100 This searches in the current directory (represented by a period) and below it, for files and directories with names starting with \i my\i0 . The backslash before the star is needed to avoid the shell expansion. Without the backslash, the shell would replace \i my*\i0  with the list of files whose names begin with \i my\i0  in the current directory. An alternative is to enclose the the arguments in quotes: \f1\fs20 find . -name "my*"\f0\fs24\par
+\pard\cbpat4\keepn\s3\sb240\sa60\cf1\b Files only\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0\b0 find . -name "my*" -type f\par
+\pard\cbpat4\sb100\sa100 This limits the results of the above search to only regular files, therefore excluding directories, special files, pipes, symbolic links, etc. \i my*\i0  is enclosed in quotes as otherwise the shell would replace it with the list of files in the current directory starting with \i my\i0\par
+\pard\cbpat4\keepn\s3\sb240\sa60\cf1\b Commands\par
+\pard\cbpat4\sb100\sa100\cf0\b0 The previous examples created listings of results because, by default, \f1\fs20 find\f0\fs24  executes the '-print' action. (Note that early versions of the \f1\fs20 find\f0\fs24  command had no default action at all; therefore the resulting list of files would be discarded, to the bewilderment of na\'efve users.)\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 find . -name "my*" -type f -ls\par
+\pard\cbpat4\sb100\sa100 This prints an extended file information.\par
+\pard\cbpat4\keepn\s3\sb240\sa60\cf1\b Search all directories\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0\b0 find / -name "myfile" -type f -print\par
+\pard\cbpat4\sb100\sa100 This searches every file on the computer for a file with the name \i myfile\i0 . It is generally not a good idea to look for data files this way. This can take a considerable amount of time, so it is best to specify the directory more precisely.\par
+\pard\cbpat4\keepn\s3\sb240\sa60\cf1\b Specify a directory\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0\b0 find /home/brian -name "myfile" -type f -print\par
+\pard\cbpat4\sb100\sa100 This searches for files named \i myfile\i0  in the \i /home/brian\i0  directory, which is the home directory for the user \i brian\i0 . You should always specify the directory to the deepest level you can remember.\par
+\pard\cbpat4\keepn\s3\sb240\sa60\cf1\b Find any one of differently named files\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf0\b0 find . ( -name "*jsp" -or -name "*java" ) -type f -ls\par
+\pard\cbpat4\sb100\sa100 This prints extended information on any file whose name ends with either 'jsp' or 'java'. Note that the parentheses are required. Also note that the operator "or" can be abbreviated as "o". The "and" operator is assumed where no operator is given. In many shells the parentheses must be escaped with a backslash, "\\(" and "\\)", to prevent them from being interpreted as special shell characters.\par
+\par
+\cf1\b touch\b0  \par
+\cf0 is a program on Unix and Unix-like systems used to change a file's date- and time-stamp. It can also be used to create an empty file. The command-syntax is:\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 touch [options] <file_name>\par
+\pard\cbpat4\sb100\sa100 If the file exists, its access and modification time-stamps are set to the system's current date and time, as if the file had been changed. To \f1\fs20 touch\f0\fs24  a file simulates a change to the file. If the file does not exist, an empty file of that name is created with its access and modification time-stamps set to the system's current date and time. If no file path is specified, the current directory is assumed.\par
+\f1\fs20 touch\f0\fs24  can be invoked with options to change its behaviour, which may vary from one Unix to another. One option makes it possible to set the file's time-stamp to something other than the current system date and time, but this action is normally restricted to the owner of the file or the system's superuser.\par
+\par
+\cf1\b echo\b0  \par
+\cf0 is a command in Unix (and by extension, its descendants, such as Linux) and MS-DOS that places a string on the terminal. It is typically used in shell scripts and batch programs to output status text to the screen or a file.\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 $ echo This is a test.\par
+This is a test.\par
+$ echo "This is a test." > ./test.txt\par
+$ cat ./test.txt\par
+This is a test.\par
+\pard\lang1033\b\par
+\pard\cbpat4\sb100\sa100\cf1\lang9\f1 cat\par
+\cf0\b0\f0 program concatenates the contents of files, reading from a list of files and/or standard input in sequence and writing their contents in order to standard output. \f1\fs20 cat\f0\fs24  takes the list of files as arguments but also interprets the argument "-" as standard input.\par
+ \cf1 Example:\cf0           cat  filename\par
+\par
+\cf1\b who                          \par
+\cf0\b0 The Unix command \cf1\b\f1\fs20 who\cf0\b0\f0\fs24  displays a list of users who are currently logged into a computer. The command accepts various options that vary by system to further specify the information that is returned, such as the length of time a particular user has been connected or what pseudo-teletype a user is connected to. The \f1\fs20 who\f0\fs24  command is related to the command \f1\fs20 w\f0\fs24 , which provides the same information but also displays additional data and statistics.\par
+\pard\cbpat4\s2\sb100\sa100\tx6928\b Example output\tab\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\b0 user19    pts/35       Apr 18 08:40    (localhost)\par
+user28    pts/27       Apr 18 09:50    (localhost)\par
+\par
+\par
+\pard\cbpat4\sb100\sa100\cf1\b\f1\fs28 du\cf0\b0\f0\fs24  (abbreviated from \b d\b0 isk \b u\b0 sage) \par
+is a Unix computer program to display the amount of disk space used under a particular directory or files on a file system.\par
+\f1\fs20 du\f0\fs24  counts the disk space by walking the directory tree. As such, the amount of space on a file system shown by \f1\fs20 du\f0\fs24  may vary from that shown by \f1\fs20 df\f0\fs24  if files have been deleted but their blocks not yet freed.\par
+In Linux, it is a part of the GNU Coreutils package.\par
+The \f1\fs20 du\f0\fs24  utility first appeared in version 1 of AT&T UNIX.\par
+\pard\cbpat4\s2\sb100\sa100\cf1\b Example\par
+\pard\cbpat4\sb100\sa100\cf0\b0 The \b -k\b0  flag will show the sizes in 1K blocks, rather than the default of 512 byte blocks.\par
+\pard\cbpat4\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 $du -k /seclog\par
+4       /seclog/lost+found\par
+132     /seclog/backup/aix7\par
+136     /seclog/backup\par
+44044   /seclog/temp\par
+439264  /seclog\par
+\par
+\pard\cbpat4\sb100\sa100\cf1  \b We  will discuss more advanced commands in the next article.\b0\par
+\par
+\b\fs28 For more software testing resources visit following pages:\par
+\fs24 Software Testing articles:\b0   \cf3 http://www.softwaretestinghelp.com/sitemap/\par
+\cf1\b QA/Testing Job openings\b0 : \cf3 http://www.softwaretestinghelp.com/jobs/\par
+\cf1\b Software Testing Help:\b0   \cf3 http://www.softwaretestinghelp.com/\par
+\cf1\par
+\cf0\lang1033\b\i Copyright 2008:\b0\i0  http://www.softwaretestinghelp.com \cf1\lang9\par
+\cf0\par
+\pard\lang1033\b\par
+\pard\cbpat4\sb100\sa100\lang9\b0\par
+\par
+\b\par
+\b0\par
+\pard\tx2839\lang1033\par
+\pard\b\par
+}
+ 
