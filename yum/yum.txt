@@ -1,0 +1,8 @@
+Find package when you know only a part of the package's name:
+yum search 'gcc-gfor'
+
+List info about a package
+yum list firefox
+
+List all installed packages
+yum list installed
