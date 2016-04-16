@@ -1,5 +1,6 @@
 #!/usr/bin/expect -f
 
+#set là cách gán giá trị local, tương tự abc=123 bên bash và shell, tcl viết bằng ngôn ngữ C nên hơi khác so với bash và shell
 set ip [lindex $argv 0]
 
 puts "Please enter your STB password:" 
