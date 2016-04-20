@@ -1,0 +1,1 @@
+wget -N "ftp://10.23.144.140/pub/redembedded/cnf-523/"
