@@ -1,0 +1,3 @@
+
+While sed can replace strings tr can only replace characters,
+so with complete string replacement sed is the way to go.
