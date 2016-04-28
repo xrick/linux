@@ -1,0 +1,4 @@
+echo "Hello World" | tr -d aieou
+Hll Wrld
+
+-d: delete
