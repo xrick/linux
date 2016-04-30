@@ -1,0 +1,12 @@
+Recently I installed ubuntu in my laptop for using c programming. but when I open the terminal and typed vi test.c, It open it but it will not work properly. when i pressed backspace it will not work and when i press arrow key it will print some alphabets. What will i do to work properly. please anybody help for this related problem. thank you
+
+
+
+
+Type sudo apt-get install vim in your terminal, this will solve your problem
+
+
+
+
+By default, Ubuntu will install vim-tiny, a bare-bones version of vim. When you type vi in the terminal, it will start this minimal vim in vi compatible mode by default. From a normal vim user's standpoint, this is horrible, since vi compatible means backspace and all the normal vim behavior will behave in the original vi manner.
+

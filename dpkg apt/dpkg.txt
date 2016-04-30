@@ -1,0 +1,34 @@
+
+
+dpkg-reconfigure: this tool asks the configuration questions for a specific
+
+
+
+
+dpkg: debian package manager
+ -r, --remove package...|-a|--pending
+              Remove an installed package. This removes everything except conffiles, which may avoid having to reconfigure the package if it is reinstalled later
+              (conffiles  are  configuration files that are listed in the DEBIAN/conffiles control file).  If -a or --pending is given instead of a package name,
+              then all packages unpacked, but marked to be removed in file /var/lib/dpkg/status, are removed.
+
+              Removing of a package consists of the following steps:
+
+              1. Run prerm script
+
+              2. Remove the installed files
+
+              3. Run postrm script
+
+       -P, --purge package...|-a|--pending
+              Purge an installed or already removed package. This removes everything, including conffiles.  If -a or --pending is  given  instead  of  a  package
+              name, then all packages unpacked or removed, but marked to be purged in file /var/lib/dpkg/status, are purged.
+
+              Note:  some configuration files might be unknown to dpkg because they are created and handled separately through the configuration scripts. In that
+              case, dpkg won't remove them by itself, but the package's postrm script (which is called by dpkg), has to take care of their removal during  purge.
+              Of course, this only applies to files in system directories, not configuration files written to individual users' home directories.
+
+              Purging of a package consists of the following steps:
+
+              1. Remove the package, if not already removed. See --remove for detailed information about how this is done.
+
+              2. Run postrm script.

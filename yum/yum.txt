@@ -6,3 +6,9 @@ yum list firefox
 
 List all installed packages
 yum list installed
+
+In which directory must definition files be placed to add additional repositories to yum:
+/etc/yum.repos.d/
+
+yum update
+ update If run without any packages, update will update every currently installed package
