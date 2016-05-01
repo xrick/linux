@@ -1,0 +1,13 @@
+check kernel's version:
+minhql@ubuntu:~$ uname -a
+Linux ubuntu 4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
+
+check distribution release (lsb = linux standard base) 
+minhql@ubuntu:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.04 LTS
+Release:        16.04
+Codename:       xenial
+

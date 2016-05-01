@@ -1,0 +1,14 @@
+In the following sections of this article we will describe two alternatives to System V init, upstart and systemd.
+
+If you are not sure what system initialization you have, remember that the first process started on your system has Process Id (PID) 1. Find out which program is running as PID1. If it's called "init" then figure out which package provides it
+
+ls -l /sbin/init
+or
+ps -p 1 -o comm=
+
+
+
+[root@localhost grub.d]# ls -la /sbin/init
+lrwxrwxrwx. 1 root root 22 Mar 29 22:48 /sbin/init -> ../lib/systemd/systemd
+[root@localhost grub.d]# ps -p 1 -o comm=
+systemd

@@ -1,0 +1,7 @@
+The systemctl command allows you to interrogate and control the systemd daemon, including starting and stopping units or listing their status. 
+
+systemctl -a | grep ssh
+
+systemctl status ssh
+systemctl start ssh
+systemctl stop ssh

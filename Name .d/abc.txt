@@ -1,0 +1,6 @@
+﻿/etc/yum.repos.d
+
+Chữ d ở đây nghĩa là directory
+
+
+/etc/sources.list
