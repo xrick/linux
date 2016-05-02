@@ -1,0 +1,23 @@
+If you want to remove a package, you can use the remove option of apt-get. A simulated run is shown in Listing 5.
+Listing 5. Simulated removal of gfortran
+
+ian@attic-u14:~$ sudo apt-get remove gfortran
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  gfortran-4.8 libgfortran-4.8-dev libgfortran3
+Use 'apt-get autoremove' to remove them.
+The following packages will be REMOVED:
+  gfortran
+0 upgraded, 0 newly installed, 1 to remove and 23 not upgraded.
+Remv gfortran [4:4.8.2-1ubuntu6]
+
+Notice that the gfortran-4.8, libgfortran-4.8-dev, and libgfortran3 packages that we installed as a prerequisites for gfortran are not actually removed automatically, although the output tells you they are no longer needed. The autoremove function of apt-get (or the equivalent remove function and the --auto-remove option) removes the requested packages, along with any packages that were installed as dependencies but are no longer required by any installed packages. This can include dependencies installed by packages other than the one or ones you are trying to remove. Listing 6 shows a simulated removal of gfortran and its dependencies. I show how to remove just gfortran, and then use apt-get autoremove to clean up the newly orphaned dependencies.
+Listing 6. Removing gfortran and dependencies
+
+ian@attic-u14:~$ # Simulate removal of gfortran and dependencies
+ian@attic-u14:~$ sudo apt-get autoremove gfortran
+
+
+As you see, you use the autoremove function of apt-get without any package name, to remove all unused packages that were installed but are no longer required on your system. You can also use the apt-get purge option to remove configuration information. See the man page for more information.

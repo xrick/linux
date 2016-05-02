@@ -1,0 +1,8 @@
+tar xvzf file.tar.gz
+
+v: verbose
+f: file
+z: gzip
+x: extract
+
+tar zxf file.tar.gz

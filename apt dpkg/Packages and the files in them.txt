@@ -1,0 +1,32 @@
+Packages and the files in them
+
+You might want to know what is in a package or what package a particular file came from. These are both tasks for dpkg. Listing 10 illustrates the use of dpkg -L to list the files (including directories) installed by the libparted package. For most packages, you can just give the package name and not worry about specifying a particular version. However, some packages might be available in multiple versions, so you might need to specify a more detailed package name when using dpkg to interrogate the package information.
+Listing 10. What is in the libparted package?
+
+ian@attic-u14:~$ dpkg -L libparted
+dpkg-query: package 'libparted' is not installed
+Use dpkg --info (= dpkg-deb --info) to examine archive files,
+and dpkg --contents (= dpkg-deb --contents) to list their contents.
+ian@attic-u14:~$ dpkg -L libparted0debian1 
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libparted0debian1
+/usr/share/doc/libparted0debian1/changelog.Debian.gz
+/usr/share/doc/libparted0debian1/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libparted0debian1
+/lib
+/lib/i386-linux-gnu
+/lib/i386-linux-gnu/libparted.so.0.0.1
+/lib/i386-linux-gnu/libparted.so.0
+
+To find which package contains a specific file, use the -S option of dpkg, as shown in Listing 11. The name of the package is listed on the left.
+Listing 11. What package contains a file?
+
+ian@attic-u14:~$ dpkg -S /lib/i386-linux-gnu/libparted.so.0
+libparted0debian1:i386: /lib/i386-linux-gnu/libparted.so.0
+
+Sometimes, a file appears like it doesn't belong to any package. When this occurs, you need to do some extra sleuthing to find where a package comes from. For example, the installation setup step can perform tasks such as creating symbolic links that are not listed as part of the package contents. A relatively recent addition to Linux systems is the alternatives system, which is managed using the update-alternatives command. Alternatives are frequently created for commands such as java, which might be the openJDK, Oracle or IBM version, among other possibilities.

@@ -1,0 +1,6 @@
+rpm -ql gcc-gfortran
+
+-l: list
+-q: query
+
+query package then list the package

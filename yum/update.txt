@@ -1,0 +1,7 @@
+For yum
+yum update to update package
+
+For apt
+yum install packagename to update package
+or
+yum upgrade to update all packages
