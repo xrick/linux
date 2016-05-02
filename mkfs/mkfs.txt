@@ -1,0 +1,19 @@
+Mkfs
+Build a Linux file system.
+
+mkfs -t ext3 /dev/sdb1
+
+
+
+Check current filesystem
+parted /dev/sda 'print'
+
+Model: Unknown (unknown)
+Disk /dev/sdb1: 1073MB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags:
+
+Number  Start  End     Size    File system  Flags
+ 1      0.00B  1073MB  1073MB  ext3
+

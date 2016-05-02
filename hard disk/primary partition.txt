@@ -1,0 +1,16 @@
+What are partitions and logical drives?
+
+
+
+
+IDE drives formatted for MBR use have three types of partition: primary, logical, and extended. The partition table is located in the master boot record (MBR) of a disk. The MBR is the first sector on the disk, so the partition table is not a very large part of it. This limits the number of primary partitions on a disk to four. When more than four partitions are required, as is often the case, one of the primary partitions must instead become an extended partition. An extended partition is a container for one or more logical partitions. In this way, you can have more than four partitions on a drive using the MBR layout.
+
+A partition, sometimes also called a volume, is an area on a hard disk that can be formatted with a file system and identified with a letter of the alphabet. For example, drive C on most Windows computers is a partition.
+
+In this version of Windows, when you use Disk Management, a Microsoft Management Console (MMC) snap-in, to create partitions on a basic disk, the first three partitions you create are primary partitions. These can be used to start an operating system. If you want to create more than three partitions, the fourth partition is created as an extended partition.
+
+An extended partition is a way to get around a limit on the number of primary partitions a basic disk can have. An extended partition is a container that can hold one or more logical drives. Logical drives function like primary partitions except that they cannot be used to start an operating system.
+
+A hard disk needs to be partitioned and formatted before you can store data on it. Many computers are partitioned as a single partition that equals the size of the hard disk. Partitioning a hard disk into several smaller partitions is not required, but it can be useful for organizing data on your hard disk. Some users prefer to have separate partitions for the Windows operating system files, programs, and personal data.
+
+

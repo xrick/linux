@@ -1,0 +1,70 @@
+Use fdisk for drives that are < 2TB and either parted or gdisk for disk > 2TB. The actual difference has to do with the partitioning formats that these tools are manipulating.
+
+For disks < 2TB you're often using MBR (Master Boot Record). For disks > 2TB you're using GPT (GUID Partitioning Table). Here's a good article that covers the differences as well, titled: The Differences Between MBR and GPT.
+What to use?
+
+In a nutshell you can continue to use fdisk as long as the new HDDs are < 2TB. If they're larger then you can use parted or gdisk. If you need to convert from MBR to GPT you can do so (use caution with this) using gdisk.
+
+You can read more about gdisk here on the primary website, titled: GPT fdisk Tutorial.
+Example
+
+$ gdisk -l /dev/sdb
+GPT fdisk (gdisk) version 0.8.4
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+Disk /dev/sdb: 5860533168 sectors, 2.7 TiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): B40CXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 5860533134
+Partitions will be aligned on 8-sector boundaries
+Total free space is 0 sectors (0 bytes)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1              34      5860533134   2.7 TiB     FD00  primary
+
+You can also opt to use parted exclusively. It can contend with both MBR and GPT.
+Example
+
+$ parted -l
+
+Model: ATA ST3250820AS (scsi)
+Disk /dev/sda: 250GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+
+Number  Start   End     Size    Type      File system  Flags
+ 1      32.3kB  49.4MB  49.3MB  primary   fat16             
+ 2      49.4MB  2204MB  2155MB  primary   fat32             
+ 3      2204MB  2410MB  206MB   primary   ext3         boot 
+ 4      2410MB  250GB   248GB   extended                    
+ 5      2410MB  2517MB  107MB   logical   ext3              
+ 6      2517MB  250GB   247GB   logical                lvm  
+
+
+
+Model: ATA ST3000DM001-1CH1 (scsi)
+Disk /dev/sdb: 3001GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      17.4kB  3001GB  3001GB               primary  raid 
+
+
+
+Model: ATA ST3000DM001-1CH1 (scsi)
+Disk /dev/sdc: 3001GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      17.4kB  3001GB  3001GB               primary  raid 
+
+NOTE: Here you can see I have a 250GB MBR drive (/dev/sda) along with 2 3TB GPT drives (/dev/sdb & /dev/sdc).

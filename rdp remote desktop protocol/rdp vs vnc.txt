@@ -1,0 +1,7 @@
+
+
+RDP is semantic. The RDP is aware of controls, fonts, and other similar graphical primitives. This means that when rendering a screen across a network, this information is used to compress the data stream significantly. For instance, if you know that this region of the screen if occupied by a button, with the color grey, then you don't need to send an image of the button across the network, but merely information such as location of this button, size and color.
+
+VNC is "dumb" in this respect, and largely functions by sending the actual images across the network.
+
+RDP is tightly coupled to the Windows platform, where as VNC is availble for most platforms. RDP is also seen as far more performant then VNC, due to the semantic advantadge.
