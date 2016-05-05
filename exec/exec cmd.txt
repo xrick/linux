@@ -1,0 +1,13 @@
+[root@localhost ~]# echo $$
+11896
+[root@localhost ~]# bash
+[root@localhost ~]# echo $$
+19138
+[root@localhost ~]# exec ls
+123     anaconda-ks.cfg  Desktop  Documents  file                  kernel-3.10.0-327.13.1.el7.x86_64.rpm  Music     Public       sort_abc.txt  Videos
+123456  ^C               \\dir    Downloads  initial-setup-ks.cfg  math                                   Pictures  smallscript  Templates     what
+[root@localhost ~]# echo $$
+11896
+
+
+exec command executes a command then exit current shell

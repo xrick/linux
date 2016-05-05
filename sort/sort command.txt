@@ -1,0 +1,22 @@
+﻿sort -k2: sort dựa vào cột 2
+sort -k1: sort dựa vào cột 1
+
+
+minhql@ubuntu:~$ sort -k2 abc
+monkey  ax
+banana  ba
+apple   con
+china   meo
+apple   x
+minhql@ubuntu:~$ sort -k1 abc
+apple   con
+apple   x
+banana  ba
+china   meo
+monkey  ax
+minhql@ubuntu:~$ cat abc
+apple   con
+china   meo
+banana  ba
+apple   x
+monkey  ax

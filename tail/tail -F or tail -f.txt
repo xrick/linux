@@ -1,0 +1,3 @@
+Another important consideration would be the slightly different `tail -F` which will survive log rotations.
+
+Log rotation: Typically, a new logfile is created periodically, and the old logfile is renamed by appending a "1" to the name. Each time a new log file is started, the numbers in the file names of old logfiles are increased by one, so the files "rotate" through the numbers (thus the name "log rotation"). Old logfiles whose number exceeds a threshold can then be deleted or archived off-line to save space.

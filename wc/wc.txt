@@ -1,0 +1,2 @@
+wc abc
+The wc command displays the number of lines, words and bytes in a file.

@@ -1,1 +1,25 @@
+bash -c
+-c option executes the commands from a string
+bash -c 'echo $SHELL; env'
+
+
+
+[root@localhost ~]# echo $$
+3242
+[root@localhost ~]# env -i bash -c 'echo $$'
+4383
+[root@localhost ~]# env -i bash -c 'echo $$'
+4384
+[root@localhost ~]# env -i bash -c 'echo $$'
+4385
+[root@localhost ~]# env -i bash -c 'echo $$'
+4386
+[root@localhost ~]# echo $$
+3242
+
+
+
+bash
+create subshell from parent shell
+
 The ~/.bash_profile would be used once, at login. The ~/.bashrc script is read every time a shell is started

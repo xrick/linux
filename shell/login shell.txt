@@ -1,0 +1,22 @@
+﻿Login shell là shell đầu tiên ta kết nối đến. 
+
+Ta ssh vào CentOS rồi gõ 
+shopt -q login_shell && echo 'Login shell' || echo 'Not login shell'
+Thì sẽ Login shell
+
+Khi ta đang ở login shell mà ta gõ exit thì sẽ tắt kết nối ssh luôn
+
+Khi ta đang ở login shell, gõ lệnh bash để tạo ra shell con của login shell. Rồi gõ lệnh dưới:
+shopt -q login_shell && echo 'Login shell' || echo 'Not login shell'
+Kết quả là Not login shell
+
+
+
+shopt (shell option)
+
+
+
+shopt -q optionname
+which returns 0 if set and 1 if not set
+
+-q:query

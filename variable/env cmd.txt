@@ -1,0 +1,21 @@
+env
+
+Executing env with no options displays the current environment variables and their values. Output will look similar to the following:
+
+HOME=/computerhope/public_html
+PATH=/usr/local/bin:
+LOGNAME=admin
+HZ=100
+TERM=vt100
+TZ=MST7MDT
+SHELL=/bin/csh
+MAIL=/var/mail/computerhope
+_INIT_UTS_PLATFORM=SUNW,SPARCstation-10
+_INIT_UTS_RELEASE=5.7
+_INIT_UTS_SYSNAME=SunOS
+_INIT_UTS_VERSION=Generic_106541-08
+EDITOR=pico -t
+OPENWINHOME=/usr/openwin
+MANPATH=/usr/man:/usr/local/man:/usr/openwin/man
+LD_LIBRARY_PATH=/usr/local/lib:/usr/openwin/lib
+PAGER=more

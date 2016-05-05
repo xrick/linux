@@ -1,0 +1,4 @@
+The man page for bash is very long and it can take some time to search through it, even using the less pager. Fortunately, if you just want some quick help on a bash builtin you can use the help builtin as shown in Listing 22. Use help with no arguments to get a list of available help and use help help to find out how to use help.
+
+
+help cd

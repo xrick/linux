@@ -1,0 +1,30 @@
+minhql@ubuntu:~$ fmt -w 1 abc
+acb
+2344
+45k
+fdldl
+4j5
+ll
+minhql@ubuntu:~$ fmt -w 8 abc
+acb
+2344
+45k
+fdldl
+4j5 ll
+minhql@ubuntu:~$ od -t c abc
+0000000   a   c   b       2   3   4   4       4   5   k  \n   f   d   l
+0000020   d   l       4   j   5       l   l  \n
+0000032
+minhql@ubuntu:~$ fmt -w 9 abc
+acb 2344
+45k
+fdldl
+4j5 ll
+minhql@ubuntu:~$ fmt -w 13 abc
+acb 2344 45k
+fdldl 4j5 ll
+minhql@ubuntu:~$ fmt -w 13 abc
+
+
+promising fixed line width without any word breaking (if word is too large to fit in a line, it is still left as it is, so finally some lines may be larger in size than you need):
+fmt -w 80 <text.txt
