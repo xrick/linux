@@ -1,3 +1,7 @@
+
+tr ' ' '\n' < FILE
+
+
 echo "Hello World" | tr -d aieou
 Hll Wrld
 
