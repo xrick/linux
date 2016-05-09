@@ -1,0 +1,3 @@
+Also grep -e allows to use several strings for searching: grep -e 'abc' -e 'def' -e '123' will look for all three of this strings: abc or well or def or 123.
+
+This works quite similar to grep 'abc\|def\|123' where \| stands for or but could be a bit clearer to read.

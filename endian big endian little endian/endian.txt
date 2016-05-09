@@ -1,0 +1,11 @@
+The htonl() function converts the unsigned integer hostlong from host byte order to network byte order. 
+
+
+I am still concerned about the endian-ness. HS17 is little-endian so I want to make sure this CNF will not be a problem for HS17 or any little-endian platforms. I can’t approve code until I know the code change is endian safe.
+
+
+Testing on HR24-500 shows this code is indeed not safe on little endian platform. The fix is to use htonl to convert the words read from EEPROM to big endian (htonl is a no-op on big endian platforms).
+
+Fix added - call htonl/ntohl as appropriate. Tested on HR24-500 and HR44 and works OK.
+
+Fix will be in cnf523-spt4a build.
