@@ -1,0 +1,7 @@
+The following are steps for capturing minicom output into a file (in order to review it after booting up).
+
+    Open a minicom port to the STB
+    Press "CTRL+A" and then "Z" to bring up minicom options.
+    Press "L" to start logging. It will ask you to name your file.
+    Name the file whatever you want (ex. logsFromMinicom) and press enter. File will be created in your home directory (the ~ directory) on your Linux computer. 
+    Anything that appears in minicom is now being copied to the file. To stop logging, repeat steps 1-3 and press enter on "Close"
