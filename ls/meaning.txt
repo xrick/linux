@@ -1,0 +1,10 @@
+From info ls:
+
+`-F'
+`--classify'
+`--indicator-style=classify'
+     Append a character to each file name indicating the file type.
+     Also, for regular files that are executable, append `*'.  The file
+     type indicators are `/' for directories, `@' for symbolic links,
+     `|' for FIFOs, `=' for sockets, `>' for doors, and nothing for
+     regular files.

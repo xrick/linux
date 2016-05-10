@@ -1,0 +1,2 @@
+Press and hold Ctrl + A then release, then press Z to open Minicom Command Summary
+Press and hold Ctrl + A then release, then press X to exit minicom
