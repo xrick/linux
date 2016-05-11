@@ -1,0 +1,5 @@
+cp -p 
+-p: preserve
+Before this discussion concludes, you should note that the cp command defaults to creating a new time stamp for the new file or files. The owner and group are also set to the owner and group of the user doing the copying. You can use the -p option to preserve selected attributes. Note that the root user can be the only user who can preserve ownership. See the man page for details. 
+
+-p is preserve not parent (like in mkdir, rmdir commands)
