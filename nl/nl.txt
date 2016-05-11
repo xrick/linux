@@ -1,0 +1,19 @@
+Use nl command to output the line with its number 
+
+
+[minhql@hoangqp ~]$ nl abc
+     1  abc
+     2  sds
+
+     3  sds
+     4  ss
+     5  sd
+[minhql@hoangqp ~]$ ls abc
+abc
+[minhql@hoangqp ~]$ cat abc
+abc
+sds
+
+sds
+ss
+sd

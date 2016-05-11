@@ -1,0 +1,14 @@
+Listing 20 shows three simple sed scripts. In the first one, we use the s (substitute) command to substitute an uppercase for a lowercase 'a' on each line. This example replaces only the first 'a', so in the second example, we add the 'g' (for global) flag to cause sed to change all occurrences. In the third script, we introduce the d (delete) command to delete a line. In our example, we use an address of 2 to indicate that only line 2 should be deleted. We separate commands using a semi-colon (;) and use the same global substitution that we used in the second script to replace 'a' with 'A'.
+Listing 20. Beginning sed scripts
+
+ian@Z61t-u14:~/lpi103-2$ sed 's/a/A/' text1
+1 Apple
+2 peAr
+3 bAnana
+ian@Z61t-u14:~/lpi103-2$ sed 's/a/A/g' text1
+1 Apple
+2 peAr
+3 bAnAnA
+ian@Z61t-u14:~/lpi103-2$ sed '2d;$s/a/A/g' text1
+1 apple
+3 bAnAnA
