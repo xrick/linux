@@ -1,0 +1,1 @@
+you could use echo $? to confirm that the exit code is really 0. 0 means success, 1 means fail
