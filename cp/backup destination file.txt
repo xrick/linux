@@ -1,0 +1,16 @@
+﻿You can backup destination file using backup -b option
+
+
+[minhql@hoangqp test]$ touch abc
+[minhql@hoangqp test]$ cd backup
+[minhql@hoangqp backup]$ ls
+[minhql@hoangqp backup]$ touch def
+[minhql@hoangqp backup]$ pwd
+/home/minhql/test/backup
+[minhql@hoangqp backup]$ cp -b /home/minhql/test/abc /home//minhql/test/backup/def
+[minhql@hoangqp backup]$ ls
+def  def~
+
+cp -b /home/minhql/test/abc /home//minhql/test/backup/def
+Dùng lệnh trên thì nội dung của file abc sẽ chép đè lên nội dung của file def, còn file def~ vẫn chứa nội dung của file def cũ
+def~: file backup is created using -b option
