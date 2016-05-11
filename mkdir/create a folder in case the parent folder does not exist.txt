@@ -1,0 +1,9 @@
+You wanted to create a nested subdirectory, such as d1/d2/d3, but the d1 and d2 directories do not exist. In this case, mkdir has a -p option that allows it to create any required parent directories, as shown in Listing 7.
+Listing 7. Creating parent directories
+
+ian@Z61t-u14:~/lpi103-2$ mkdir d1/d2/d3
+mkdir: cannot create directory ‘d1/d2/d3’: No such file or directory
+Error is displayed because d1 and d2 do not exist. You can use -p option to create folder d3 and its parent folders d1, d2
+
+
+ian@Z61t-u14:~/lpi103-2$ mkdir -p d1/d2/d3
