@@ -1,0 +1,1 @@
+Not quite sure what might be running on your network? Try using nmap -sP, which will run a ping scan on the specified network. For instance, nmap -sP 10.0.0.0/24 will scan the 256 hosts from 10.0.0.0 through 10.0.0.255 to see if they're available, and report back. You can also use a range, such as nmap -sP 10.0.0.1-15.

@@ -1,0 +1,2 @@
+Move to the start of line. Ctrl + a
+Move to the end of line. Ctrl + e
