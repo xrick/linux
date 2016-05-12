@@ -1,0 +1,63 @@
+Often, you might need to perform a single operation on many filesystem objects, without operating on the entire tree as you just did with recursive operations. For example, you might want to find the modification times of all the text files you created in lpi103-2, without listing the split files. Although this is easy with our small directory, it is much harder in a large filesystem.
+
+To solve this problem, use the wildcard support that is built in to the bash shell. This support, also called "globbing" (because it was originally implemented as a program called /etc/glob), lets you specify multiple files using a wildcard pattern. 
+
+A string containing any of the characters '?', '*' or '[', is a wildcard pattern. Globbing is the process by which the shell (or possibly another program) expands these patterns into a list of pathnames matching the pattern. The matching is done as follows:
+
+?
+    matches any single character.
+*
+    matches any string, including an empty string.
+[
+    introduces a character class. A character class is a non-empty string, terminated by a ']'. A match means matching any single character enclosed by the brackets. There are a few special considerations:
+
+        The '*' and '?' characters match themselves. If you use these in filenames, you need to be careful about appropriate quoting or escaping.
+        Because the string must be non-empty and terminated by ']', you must put ']' first in the string if you want to match it.
+        The '-' character between two others represents a range that includes the two other characters and all characters between them in the collating sequence. For example, [0-9a-fA-F] represents any upper or lower case hexadecimal digit. You can match a '-' by putting it either first or last within a range.
+        The '!' character specified as the first character of a range complements the range so that it matches any character except the remaining characters. For example, [!0-9] means any character except the digits 0 through 9. A '!' in any position other than the first matches itself. Remember that '!' is also used with the shell history function, so you need to be careful to properly escape it. 
+
+Note: Wildcard patterns and regular expression patterns share some characteristics, but they are not the same. Pay careful attention.
+
+Globbing is applied separately to each component of a path name. You cannot match a '/', nor include one in a range. You can use it anywhere that you might specify multiple file or directory names, for example in the ls, cp, mv, or rm commands. In Listing 12, you first create a couple of oddly named files and then use the ls and rm commands with wildcard patterns. 
+
+
+ian@Z61t-u14:~/lpi103-2$ echo odd1>'text[*?!1]'
+Create file 'text[*?!1]' , the contents of this file are odd1
+
+ian@Z61t-u14:~/lpi103-2$ echo odd2>'text[2*?!]'
+ian@Z61t-u14:~/lpi103-2$ ls
+backup  text1       text2       text3  text5  xaa  yaa
+sedtab  text[*?!1]  text[2*?!]  text4  text6  xab  yab
+ian@Z61t-u14:~/lpi103-2$ ls text[2-4]
+text2  text3  text4
+
+ian@Z61t-u14:~/lpi103-2$ ls text[!2-4]
+text1  text5  text6
+This case only displays text1 text5 text6 not text[*?!1] , text[2*?!] because [ ] only represents one character
+If we use ls text[!2-4]* then the results will include text1 text5 text6 text[*?!1] , text[2*?!]
+
+ian@Z61t-u14:~/lpi103-2$ ls text*[2-4]*
+text2  text[2*?!]  text3  text4
+ian@Z61t-u14:~/lpi103-2$ ls text*[!2-4]* # Surprise!
+text1  text[*?!1]  text[2*?!]  text5  text6
+ian@Z61t-u14:~/lpi103-2$ ls text*[!2-4] # Another surprise!
+text1  text[*?!1]  text[2*?!]  text5  text6
+ian@Z61t-u14:~/lpi103-2$ echo text*>text10
+ian@Z61t-u14:~/lpi103-2$ ls *\!*
+text[*?!1]  text[2*?!]
+ian@Z61t-u14:~/lpi103-2$ ls *[x\!]*
+text1       text10  text[2*?!]  text4  text6  xab
+text[*?!1]  text2   text3       text5  xaa
+ian@Z61t-u14:~/lpi103-2$ ls *[y\!]*
+text[*?!1]  text[2*?!]  yaa  yab
+ian@Z61t-u14:~/lpi103-2$ ls tex?[[]*
+text[*?!1]  text[2*?!]
+ian@Z61t-u14:~/lpi103-2$ rm tex?[[]*
+ian@Z61t-u14:~/lpi103-2$ ls *b*
+sedtab  xab  yab
+
+backup:
+text1.bkp.1  text1.bkp.2
+ian@Z61t-u14:~/lpi103-2$ ls backup/*2
+backup/text1.bkp.2
+ian@Z61t-u14:~/lpi103-2$ ls -d .*

@@ -1,0 +1,26 @@
+Handling multiple files and directories
+Up to now, the commands you have used have operated on a single file or perhaps a few individually named files. For the rest of this tutorial, you look at various operations for handling multiple files, recursively manipulating part of a directory tree, and saving or restoring multiple files or directories. 
+
+
+Recursive manipulation
+Recursive listing
+The ls command has a -R (note uppercase "R") option for listing a directory and all its subdirectories. The recursive option applies only to directory names; it does not find all the files called 'text1', for example, in a directory tree. You can use other options that you have seen already along with -R
+
+
+[minhql@hoangqp ~]$ ls test
+abc  backup
+[minhql@hoangqp ~]$ ls -R test
+test:
+abc  backup
+
+test/backup:
+def  def~
+
+
+Recursive copy
+cp -R folder1 folder2
+
+Recursive deletion
+I mentioned earlier that rmdir only removes empty directories. You can use the -r (or -R or --recursive) option to cause the rm command to remove both files and directories as shown in Listing 11, where you remove the copy1 directory that you just created, along with its contents, including the backup subdirectory and its contents. 
+ rm -R folder1
+rmdir is used to remove empty directory only. It can not used for recursive deletion.

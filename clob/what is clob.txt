@@ -1,2 +1,4 @@
 ﻿Clob là một loại data type.
 Data type có nhiều loại ví dụ như varchar2, blob, int, char....
+
+In case of Directv, clob file refers to nv_reserved_log_old.json or nv_reserved_log.json files
