@@ -1,0 +1,9 @@
+You can use the -exec option for as many purposes as your imagination can dream up. For example:
+
+find . -empty -exec rm '{}' \;
+
+removes all the empty files in a directory tree, while
+
+find . -name "*.htm" -exec mv '{}' '{}l' \;
+
+renames all .htm files to .html files. 

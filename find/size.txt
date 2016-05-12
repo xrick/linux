@@ -1,0 +1,3 @@
+find . -size -26c -size +23c -print
+Among other choices, specify 'c' for bytes, or 'k' for kilobytes. Find all with size of either 24 or 25 bytes
+Find either for a specific size (n) or for files that are either larger (+n) or smaller than a given value (-n)

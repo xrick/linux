@@ -1,0 +1,1 @@
+Now that we've covered the file and directory topic with the big recursive hammer that hits everything, and the globbing hammer that hits more selectively, let's look at the find command, which can be more like a surgeon's knife.
