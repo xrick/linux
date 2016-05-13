@@ -1,0 +1,10 @@
+When running terminal commands that take a long time to complete, PuTTY sometimes loses its connection to the server. This happens because the server PuTTY is connected to disconnects clients after a specified period of inactivity. To sneak around this security feature, PuTTY allows you to keep your connection alive by sending tiny NULL packets to the server at a specified interval.
+
+Please note: keeping your connection alive using the method described below makes your server more vulnerable. If you walk away from your computer, and never return, someone with bad intentions could do terrible things on the command line… unspeakable things!
+
+To enable KeepAlive in PuTTY, follow the steps below:
+
+Open PuTTY.
+Type your hostname or IP address in the field provided.
+On the left side of the screen, select Connection from the list of configuration options.
+Set the number of seconds between keepalives to 10.
