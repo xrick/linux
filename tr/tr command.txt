@@ -1,5 +1,7 @@
 
 tr ' ' '\n' < FILE
+To fix a Linux file which can't not be run on Linux, we use above command.
+Ther eason, Linux file does not work in Linux anymore is we download it to Widnwos then edit or sth like that
 
 
 echo "Hello World" | tr -d aieou
