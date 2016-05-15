@@ -1,0 +1,4 @@
+The reason why we use return 0 or exit 0 at the end of a script file is:
+	- When we use echo "$?", it will output the result of the running script file.
+	For example: echo "$?" => 0 
+	It means the script file works correctly
