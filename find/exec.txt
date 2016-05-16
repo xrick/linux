@@ -1,3 +1,5 @@
+The -exec has to be terminated by a semicolon, which must be escaped (using \; to escape)to avoid the shell interpreting it first. Also specify {} wherever you want the returned file used in the command
+
 You can use the -exec option for as many purposes as your imagination can dream up. For example:
 
 find . -empty -exec rm '{}' \;

@@ -1,0 +1,5 @@
+cpio and tar are used to archive multi files into one files, not used to compress files.
+
+These days cpio and tar generally used to archive multi files into one files first then feed into a compression utility like gzip... This is because compressing a single large file is both more time and space efficient than compressing lots of small files. You should note that many image formats (png, jpg etc) are already highly compressed, and may actually get a bit bigger if put through a compression utility.
+
+Tar has an option (-z) to compress files too.

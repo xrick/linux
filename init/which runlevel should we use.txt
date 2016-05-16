@@ -1,0 +1,1 @@
+In case we don't need graphics, we should use runlevel 3 instead of runlevel 1. Because runlevel allows multiuser

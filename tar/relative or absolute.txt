@@ -1,0 +1,1 @@
+It is also a good idea to avoid mixing absolute path names with relative path names when creating an archive, because all will be relative when restoring from the archive.
