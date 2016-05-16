@@ -3,8 +3,9 @@ The xargs command (by default) expects the input from stdin, and executes /bin/e
 When you type xargs without any argument, it will prompt you to enter the input through stdin
 
 
-Combine Xargs with Find Command
 
+
+Combine Xargs with Find Command
 It is one of the most important usage of xargs command. When you need to find certain type of files and perform certain actions on them (most popular being the delete action).
 
 The xargs command is very effective when we combine with other commands.
