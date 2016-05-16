@@ -1,0 +1,6 @@
+$0 is the name of the command
+$1 first parameter
+$2 second parameter
+$3 third parameter etc. etc
+$# total number of parameters. A number (For example: 5).
+$@ all the parameters will be listed (For example: login.sh , user, password).

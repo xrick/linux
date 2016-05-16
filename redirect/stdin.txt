@@ -1,0 +1,62 @@
+http://unix.stackexchange.com/questions/46372/whats-the-difference-between-stdin-and-arguments-passed-to-commandI could use the either form to execute the cat method:
+
+cat file_name
+cat < file_name
+The result is the same
+
+Then I want to execute man in the format of stdin
+
+man < file_name
+While file_name contains:
+
+# file_name
+cat
+But it pops up  What manual page do you want? instead of execute man cat.
+
+I want to know why cat could accept stdin as arguments but man cannot. And what's the difference between command line arguments and stdin?
+
+
+
+
+
+
+
+
+
+
+
+Your question is closely related to how the shell you are using parses user input on the command line.
+
+If the first word on the command line is a program, located in a special folder (mostly defined by PATH) and no more special characters are given (depends of the shell you are using), all subsequent words separated by spaces or tabs are passed to the program in a special form i.e. an array. With each word as one element in the array.
+
+How the program, you are going to invoke interprets the arguments (located in the array) depends on how it is programmed. There are some quasi standards of how the syntax of the arguments should look like but in general the programmer is entire free. So the first argument can be interpreted as a name of a file or whatever the programmer thoughts of at the time he wrote the program.
+
+In the case you add the special character < or > to your command line, the shell dosn't append < and > nor subsequent words to the array that will be passed to the program. With < or > given the shell starts to make fancy things, supported by the underlying kernel (keyword piping). To grasp what's going on you must understand what STDIN and STDOUT (since it's not immediately related i omit STDERR) are.
+
+Everything visible you see on your terminal (in most cases a part of your display) is either written by the shell or any other program you have invoked previously to a special file (in unix everything is a file). This file has a special id and is called STDOUT. If a program wants to read data from the keyboard it dosn't poll the keyboard directly (at least in most cases) but reads from a special file called STDIN. Internally this file is connected to your standard input device, your keyboard in most cases.
+
+If the shell reads < or > in a parsed command line it manipulates STDIN or STDOUT in a particular kind for the time the corresponding program is running. STDIN and STDOUT dosn't point to the terminal or the standard input device any longer but rather to the subsequent filename on the command line.
+
+In the case of the two lines
+
+cat file_name
+cat < file_name
+the observed behavior is identical because the corresponding developer makes cat to either read data from STDIN or read the data from the file, whose name is given as the first command line argument (which is the first element in the array the shell passes to cat). Subsequently cat writes the whole content of file_name or STDIN to the terminal since we don't instruct the shell to manipulate STDOUT. Remember that in the second line your shell manipulates STDIN in this way, that it doesn't point to your standard input device anylonger but points to a file called file_name in your current working directory.
+
+In the other case of the line
+
+man < file_name
+man is not meant to read anything from STDIN if it's called with no argument i.e. an empty array. So the line
+
+man < file_name
+equals
+
+man
+For example man will read something from STDIN, too if you pass -l - to man. With this option given on the command line you can display the content of anything man reads from STDIN on your terminal. So
+
+man -l - < file_name
+would work also (but be careful man is not just a pager but also parses the input of the file and so the file content and the displayed content could differ).
+
+So how STDIN, STDOUT and the command line arguments are interpreted is all up to the corresponding developer.
+
+I hope my answer could clear things up.

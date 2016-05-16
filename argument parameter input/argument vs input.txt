@@ -1,0 +1,52 @@
+﻿ $ ls -l junk
+-rw-r--r-- 1 you     19 Sep 26 16:25 junk
+"The strings that follow the program name on the command line, such as -l and junk in the example above, are called the program's arguments. Arguments are usually options or names of files to be used by the command."
+
+
+xargs is a command on Unix and most Unix-like operating systems used to build and execute command lines from standard input. Commands such as grep and awk can accept the standard input as a parameter, or argument by using a pipe. However, others such as cp and echo disregard the standard input stream and rely solely on the arguments found after the command. 
+Additionally, under the Linux kernel before version 2.6.23, and under many other Unix-like systems, arbitrarily long lists of parameters cannot be passed to a command,[1] so xargs breaks the list of arguments into sublists small enough to be acceptable.
+
+rm -rf *
+* ở đây là argument.
+
+Three common methods are:
+
+    The xargs command
+    The find command with the -exec option
+    Command substitution
+	
+	
+	
+	
+	For example: 
+	find text[12] -exec cat text3 {} \;
+	
+	
+	
+	
+	
+[minhql@hoangqp abc]$ touch c1 c2 c3 c4 c5
+[minhql@hoangqp abc]$ ls
+c1  c2  c3  c4  c5
+[minhql@hoangqp abc]$ ls c*
+c1  c2  c3  c4  c5
+[minhql@hoangqp abc]$ ls c* | rm -rf
+[minhql@hoangqp abc]$ ls
+c1  c2  c3  c4  c5
+[minhql@hoangqp abc]$ ls c* | xargs rm -rf
+[minhql@hoangqp abc]$ ls
+[minhql@hoangqp abc]$ 
+
+
+	
+	
+	
+	
+	[ian@echidna lpi103-4]$ find . -name "*1" -print0 |xargs -0 grep "1"
+./text 1:1 apple
+./text1:1 apple
+[ian@echidna lpi103-4]$ find . -name "*1" -exec grep "1" {} +
+./text 1:1 apple
+./text1:1 apple
+
+Generally, either method will work, and the choice is often a matter of personal style

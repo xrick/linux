@@ -1,0 +1,22 @@
+The xargs command (by default) expects the input from stdin, and executes /bin/echo command over the input. The following is what happens when you execute xargs without any argument, or when you execute it without combining with any other commands.
+
+When you type xargs without any argument, it will prompt you to enter the input through stdin
+
+
+Combine Xargs with Find Command
+
+It is one of the most important usage of xargs command. When you need to find certain type of files and perform certain actions on them (most popular being the delete action).
+
+The xargs command is very effective when we combine with other commands.
+
+In the following example, we took the output of the find command, and passed it as input to the xargs command. But, instead of executing the default /bin/echo command, we are instructing xargs command to execute the rm -rm command on the input.
+
+So, in this example, the output of the find command is all the files with *.c extension, which is given as input to the xargs command, which in-turn execute “rm -rf” command on all the *.c files.
+
+$ ls
+one.c  one.h  two.c  two.h
+
+$ find . -name "*.c" | xargs rm -rf
+
+$ ls
+one.h  two.h
