@@ -1,0 +1,12 @@
+By default, ps command without arguments only displays the processes of current controlling terminal
+[root@localhost ~]# ps
+  PID TTY          TIME CMD
+ 6025 pts/0    00:00:00 bash
+ 6111 pts/0    00:00:00 ps
+ 
+ 
+ ps -aux is the same with ps aux
+ 
+  To see all the processes with controlling terminals, use the -a option. 
+  The -x option displays processes without a controlling terminal
+  -u: list users

@@ -1,0 +1,29 @@
+tty - Tele TYpewriter.
+
+    A tty is a native terminal device, the backend is either hardware or kernel emulated.
+    broad term: can include physical terminals, virtual terminals (e.g. the text-mode terminals in various unices)
+
+    also regularly refers to 'the terminal that this process is wrapped in' (which is what the tty command reports - see its man page)
+
+
+pty - pseudoterminal (also : ptmx)
+
+    A pty (pseudo terminal device) is a terminal device which is emulated by an other program (example: xterm, screen, or ssh are such programs). 
+
+    which is a pair of a ptmx (pseudoterminal master) and pts (pseudoterminal slave)
+    most recognizably used in cases like remote logins (e.g. sshd) and graphical terminals
+    In practice, pseudo-terminals are used for implementing terminal emulators such as xterm
+           Pseudo-terminals  can  also be used to send input to programs that normally refuse to read input from pipes (such as su and passwd)
+		   
+		   
+For example: Login to CentOS in cmd line mode, then use tty command
+/dev/tty1
+
+Login to CentOS using graphics mode, then use tty command
+[root@localhost ~]# tty
+/dev/pts/1
+
+
+ssh to CentOS from a client, then use tty command
+[root@localhost ~]# tty
+/dev/pts/0

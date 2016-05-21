@@ -1,0 +1,18 @@
+Signal handlers and process termination
+
+You have seen that Ctrl-c terminates a process. In fact, it sends a SIGINT (or interrupt) signal to the process. If you use kill without any signal name, it sends a SIGTERM signal. For most purposes, these two signals are equivalent.
+
+You have seen that the nohup command makes a process immune to the SIGHUP signal. In general, a process can implement a signal handler to catch signals. So a process could implement a signal handler to catch either SIGINT or SIGTERM. Since the signal handler knows what signal was sent, it may choose to ignore SIGINT and only terminate when it receives SIGTERM, for example. Listing 23 shows how to send the SIGTERM signal to job %2. Notice that the process status shows as "Terminated" right after we send the signal. This would show as "Interrupt" if we used SIGINT instead. After a few moments, the process cleanup has occurred and the job no longer shows in the job list.
+Listing 23. Terminating a process with SIGTERM
+
+ian@attic4:~$ kill -s SIGTERM %2
+ian@attic4:~$ 
+[2]-  Terminated              nohup sh pmc.sh
+ian@attic4:~$ jobs -l
+[1]-  3878 Running                 xclock -d -update 1 &
+[3]+  5487 Running                 nohup bash pmc.sh &
+
+Signal handlers give a process great flexibility. A process can do its normal work and be interrupted by a signal for some special purpose. Besides allowing a process to catch termination requests and take possible action such as closing files or checkpointing transactions in progress, signals are often used to tell a daemon process to reread its configuration file and possibly restart operation. You might do this for the inetd process when you change network parameters, or the line printer daemon (lpd) when you add a new printer.
+Terminating processes unconditionally
+
+Some signals cannot be caught, such as some hardware exceptions. SIGKILL, the most likely one you will use, cannot be caught by a signal handler and unconditionally terminates a process. In general, you should need this only if all other means of terminating the process have failed. 

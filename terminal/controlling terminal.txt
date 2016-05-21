@@ -1,0 +1,1 @@
+ A session leader that has control of a terminal is called the controlling process of that terminal. 

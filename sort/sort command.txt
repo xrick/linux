@@ -1,6 +1,7 @@
 ﻿sort -k2: sort dựa vào cột 2
 sort -k1: sort dựa vào cột 1
 
+-k: key
 
 minhql@ubuntu:~$ sort -k2 abc
 monkey  ax

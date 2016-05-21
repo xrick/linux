@@ -1,0 +1,17 @@
+Sending signals using kill
+
+The kill command sends a signal to a specified job or process. Listing 22 shows the use of the SIGTSTP and SIGCONT signals to stop and resume a background job. Using the SIGTSTP signal is equivalent to using the fg command to bring the job to the foreground and then Ctrl-z to suspend it. Using SIGCONT is like using the bg command.
+Listing 22. Stopping and restarting background jobs
+
+ian@attic4:~$ kill -s SIGTSTP %1
+
+[1]+  Stopped                 xclock -d -update 1
+ian@attic4:~$ jobs -l
+[1]+  3878 Stopped                 xclock -d -update 1
+[2]   5485 Running                 nohup sh pmc.sh &
+[3]-  5487 Running                 nohup bash pmc.sh &
+ian@attic4:~$ kill -s SIGCONT 3878
+ian@attic4:~$ jobs -l
+[1]   3878 Running                 xclock -d -update 1 &
+[2]-  5485 Running                 nohup sh pmc.sh &
+[3]+  5487 Running                 nohup bash pmc.sh &
