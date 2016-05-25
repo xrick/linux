@@ -1,0 +1,5 @@
+There are 3 commands which use regular expression the most. These commands are:
+grep, awk, sed
+
+find -regex: using regular expression
+find -name: using globbing/wildcard

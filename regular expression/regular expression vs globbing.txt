@@ -1,0 +1,45 @@
+As you learn about regular expressions, you will see similarities between regular expression syntax and the wildcard (or globbing) syntax discussed in the tutorial "Learn Linux 101: File and directory management." The similarity is only superficial. 
+
+^ (caret) matches the beginning of a lines
+$ (dollar sign) matches the end of a line
+^..b: matches any two characters at the beginning of a line followed by a b character.
+. matches any single character
+.* matches any characters, including empty one.
+
+
+
+
+
+In globbing, * means "zero or more characters"
+In regex, * is a repetition operator, it will match zero or more occurences of the preceding regular expression
+For example: grep "p*" file10, (preceding regular expression in this case is p) it will list all lines which contain zero or more p characters
+apple                   (This line satifies zero or more p characters)
+pear                    (This line satifies zero or more p characters)
+banana                  (This line satifies zero or more p characters)
+grep "pp*" file10, (preceding regular expression in this case is p) the line has to contain at least one p character and it has to contain zero or more p characters. 
+apple                   (This line satifies containing at least one p character and it has to contain zero or more p characters )	
+pear                   (This line satifies containing at least one p character and it has to contain zero or more p characters)
+Line banana does not satisfy containing at least one p character. That's why it does not display
+
+In regex, + is a repetition operator, it will match one or one occurence of the preceding regular expression
+In regex, ? is a repetition operator, it will match zero or one occurence of the preceding regular expression
+
+Single dot in regex is equal to ? in globbing
+.* in regex is equal to * used in globbing
+
+
+
+
+------------------------------------------------GLOBBING--------------------------------------------------------------------------------------------------------------------------
+Globbing only supports below patterns
+?
+    matches any single character.
+*
+    matches any string, including an empty string.
+[
+    introduces a character class. A character class is a non-empty string, terminated by a ']'. A match means matching any single character enclosed by the brackets. There are a few special considerations:
+
+        The '*' and '?' characters match themselves. If you use these in filenames, you need to be careful about appropriate quoting or escaping.
+        Because the string must be non-empty and terminated by ']', you must put ']' first in the string if you want to match it.
+        The '-' character between two others represents a range that includes the two other characters and all characters between them in the collating sequence. For example, [0-9a-fA-F] represents any upper or lower case hexadecimal digit. You can match a '-' by putting it either first or last within a range.
+        The '!' character specified as the first character of a range complements the range so that it matches any character except the remaining characters. For example, [!0-9] means any character except the digits 0 through 9. A '!' in any position other than the first matches itself. Remember that '!' is also used with the shell history function, so you need to be careful to properly escape it. 
