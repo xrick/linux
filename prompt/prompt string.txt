@@ -1,0 +1,4 @@
+If you have not become another user, your ID is still the one you used to log in. If you have become another user, your prompt may include your user ID, as most of the examples in this tutorial do. If your prompt does not include your user ID, then you can use the whoami command to check your current effective id. Listing 1 shows some examples where the prompt strings (from the PS1 environment variable) are different from the other examples in this tutorial. Having your ID in the prompt string can be a useful feature.
+
+[ian@attic4-cent ~]
+Above is a prompt

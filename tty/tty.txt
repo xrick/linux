@@ -4,7 +4,7 @@ tty - Tele TYpewriter.
     broad term: can include physical terminals, virtual terminals (e.g. the text-mode terminals in various unices)
 
     also regularly refers to 'the terminal that this process is wrapped in' (which is what the tty command reports - see its man page)
-
+    Used in case like minicom 
 
 pty - pseudoterminal (also : ptmx)
 
