@@ -2,3 +2,5 @@ A partition is a logical part of the disk (think of a cake as the entire disk, a
 
 A filesystem is a method of storing / finding files on a hard disk (its on top of the cake so would be icing)
 File systems are a way of storing data inside the partitions in a fashion that is easy to manage and read and write data to it. Some do it better than others.
+
+First create partition then create filesystem

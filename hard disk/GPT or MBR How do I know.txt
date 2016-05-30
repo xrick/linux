@@ -1,6 +1,7 @@
- 34
-down vote
-	
+fdisk -l command for MBR formatted disks, the gdisk with the -l option is used to list partitions for GPT formatted disks
+Yes msdos is the same as MBR so use it.
+
+The parted command is a partition editor that will work with both MBR and GPT formatted disks
 
 You can use parted -l to determine the type of partition table. Eg:
 

@@ -1,3 +1,10 @@
+
+
+The fdisk command does not commit any changes to your disk until you tell it to. Other tools, including parted, may commit changes as you go. 
+
+parted supports both MBR and GPT
+fdisk supports MBR only
+gdisk supports GPT only
 Use fdisk for drives that are < 2TB and either parted or gdisk for disk > 2TB. The actual difference has to do with the partitioning formats that these tools are manipulating.
 
 For disks < 2TB you're often using MBR (Master Boot Record). For disks > 2TB you're using GPT (GUID Partitioning Table). Here's a good article that covers the differences as well, titled: The Differences Between MBR and GPT.
@@ -29,6 +36,18 @@ Total free space is 0 sectors (0 bytes)
 Number  Start (sector)    End (sector)  Size       Code  Name
    1              34      5860533134   2.7 TiB     FD00  primary
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 You can also opt to use parted exclusively. It can contend with both MBR and GPT.
 Example
 
@@ -67,4 +86,4 @@ Partition Table: gpt
 Number  Start   End     Size    File system  Name     Flags
  1      17.4kB  3001GB  3001GB               primary  raid 
 
-NOTE: Here you can see I have a 250GB MBR drive (/dev/sda) along with 2 3TB GPT drives (/dev/sdb & /dev/sdc).
+NOTE: Here you can see I have a 250GB MBR drive (/dev/sda, msdos) along with 2 3TB GPT drives (/dev/sdb & /dev/sdc).

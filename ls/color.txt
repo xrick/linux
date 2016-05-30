@@ -1,4 +1,4 @@
-dircolors --print-database
+dircolors -p
     Blue: Directory
     Green: Executable or recognized data file
     Sky Blue: Linked file
