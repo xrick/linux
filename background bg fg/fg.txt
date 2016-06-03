@@ -1,0 +1,10 @@
+ type fg to bring the last process back to foreground.
+
+If you have more than one process running in the background, do this:
+
+$ jobs
+[1]   Stopped                 vim
+[2]-  Stopped                 bash
+[3]+  Stopped                 vim 23
+
+fg %3 to send the vim 23 process back to foreground.

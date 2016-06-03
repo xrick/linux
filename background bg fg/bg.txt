@@ -1,0 +1,11 @@
+bg: move suspended/stopped jobs to the background
+
+bg command is used to continue background execution of a suspended command
+
+
+
+&: create a background process
+
+
+bg convert existing suspended jobs into background process
+&: create new background process

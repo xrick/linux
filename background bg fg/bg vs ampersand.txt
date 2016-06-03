@@ -1,0 +1,65 @@
+1. Using ampersand
+sleep 60 &
+
+2. Using bg
+sleep 60
+[CTRL-Z]
+bg
+
+
+
+1 and 2 are equal
+
+
+
+
+
+
+
+[root@localhost ~]# sleep 60
+^Z
+[1]+  Stopped                 sleep 60
+[root@localhost ~]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3959  3955  0  80   0 - 30104 wait   pts/0    00:00:00 bash
+0 T     0  4308  3959  0  80   0 - 26973 signal pts/0    00:00:00 sleep
+0 R     0  4309  3959  0  80   0 - 34343 -      pts/0    00:00:00 ps
+[root@localhost ~]# bg
+[1]+ sleep 60 &
+[root@localhost ~]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3959  3955  0  80   0 - 30104 wait   pts/0    00:00:00 bash
+0 S     0  4308  3959  0  80   0 - 26973 restar pts/0    00:00:00 sleep
+0 R     0  4310  3959  0  80   0 - 34343 -      pts/0    00:00:00 ps
+
+after using bg command, sleep command changes state from T to S
+
+
+
+
+
+
+
+1. Executing a background job
+
+Appending an ampersand ( & ) to the command runs the job in the background.
+
+For example, when you execute a find command that might take a lot time to execute, you can put it in the background as shown below. Following example finds all the files under root file system that changed within the last 24 hours.
+
+# find / -ctime -1 > /tmp/changed-file-list.txt &
+
+2. Sending the current foreground job to the background using CTRL-Z and bg command
+
+You can send an already running foreground job to background as explained below:
+
+    Press eCTRL+Zf which will suspend the current foreground job.
+    Execute bg to make that command to execute in background.
+
+For example, if youfve forgot to execute a job in a background, you donft need to kill the current job and start a new background job. Instead, suspend the current job and put it in the background as shown below.
+
+# find / -ctime -1 > /tmp/changed-file-list.txt
+
+# [CTRL-Z]
+[2]+  Stopped                 find / -ctime -1 > /tmp/changed-file-list.txt
+
+# bg

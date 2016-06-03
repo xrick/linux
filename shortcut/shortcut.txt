@@ -1,2 +1,20 @@
 Move to the start of line. Ctrl + a
 Move to the end of line. Ctrl + e
+
+Ctrl+c 	Kills current task
+Ctrl+d 	Inserts an EOF
+Ctrl+z 	Pauses current Task 
+
+When using Ctrl+z, the process's status will be changed to T in ps -l
+[root@localhost ~]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3959  3955  0  80   0 - 29043 wait   pts/0    00:00:00 bash
+0 S     0  3993  3959  0  80   0 - 26973 restar pts/0    00:00:00 sleep
+0 T     0  4029  3959  0  80   0 - 26973 signal pts/0    00:00:00 sleep
+0 R     0  4040  3959  0  80   0 - 34343 -      pts/0    00:00:00 ps
+
+
+
+When using Ctrl+c, the process will be killed. It will not be displayed in ps -l
+
+

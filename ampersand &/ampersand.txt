@@ -1,0 +1,1 @@
+Using & will cause the program to run in the background and wait if it needs input. Which makes it only useful for programs that do not need input. 

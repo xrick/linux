@@ -1,0 +1,43 @@
+-20 <= nice <= 19
+-20: highest priority, 19: lowest priority
+processes started by regular users usually have priority 0
+Use nice command without options will display our default priority
+
+nice -5 /usr/bin/prog 
+/usr/bin/prog is executed with a nice level of 5
+
+renice -8 /usr/bin/prog 
+/usr/bin/prog is executed with a nice level of -8
+
+renice 8 /usr/bin/prog 
+/usr/bin/prog is executed with a nice level of 8
+
+top command outputs the nice values of listed programs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[root@localhost ~]# sleep 60 &
+[1] 3747
+[root@localhost ~]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  2761  2757  0  80   0 - 29076 wait   pts/0    00:00:00 bash
+0 S     0  3747  2761  0  80   0 - 26973 hrtime pts/0    00:00:00 sleep
+0 R     0  3748  2761  0  80   0 - 34343 -      pts/0    00:00:00 ps
+[root@localhost ~]# renice 1 3747
+3747 (process ID) old priority 0, new priority 1
+[root@localhost ~]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  2761  2757  0  80   0 - 29076 wait   pts/0    00:00:00 bash
+0 S     0  3747  2761  0  81   1 - 26973 hrtime pts/0    00:00:00 sleep
+0 R     0  3764  2761  0  80   0 - 34343 -      pts/0    00:00:00 ps

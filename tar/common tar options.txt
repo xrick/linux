@@ -1,0 +1,15 @@
+tar xvzf file.tar.gz
+
+v: verbose
+f: file
+z: gzip
+x: extract
+t: list the contents of the archive
+
+tar zxf file.tar.gz
+
+
+
+
+Create archive.tar from files for and bar
+tar -cf archive.tar foo bar
