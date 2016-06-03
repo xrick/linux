@@ -1,0 +1,19 @@
+
+/etc/hosts has higher priority than /etc/resolv.conf 
+Above behavior is the same with Windows operating system.
+
+
+
+1) Normally your system would use the DNS server on your 'resolv.conf'. If you visit www.yahoo.com your system will contact the DNS, the DNS returns the IP address of that address and your systems then knows what IP address corresponds the address www.yahoo.com.
+
+2) It uses hosts before trying to resolve an address because hosts file is used to override any address you are trying to resolve. ie: you already have probably an entry there, 127.0.0.1 localhost tells the system that if you are trying to contact the host with the name "localhost" it will do so by using the address 127.0.0.1, in this case its your lopback interface on your eth0.
+
+3) After the system knows an address of a host either looking directly on your hosts or by contacting the DNS servers in 'resolv.conf' it will look at the routing table to see which of the rules explains what to do with the traffic with destination to the IP address obtained.
+
+Ie: Imagine you have 2 computers on your network with hostnames of "Ubuntu-One" and "Ubuntu-Two", each computer will probably have this assigned at the hosts file:
+
+127.0.0.1 localhost Ubuntu-One for computer Ubuntu-One 127.0.0.1 localhost Ubuntu-Two for computer Ubuntu-Two
+
+This is done automatic and its the reason you can resolve 'localhost' and 'Ubuntu-One" and "Ubuntu-Two" on each respective terminals.
+
+Try to ping Ubuntu-Two from Ubuntu-One and Ubuntu-One will contact the DNS servers at your resolv.conf file, the servers will say "I dont know any IP related to that address" and you PC will reply "Unknown hostname". Add the line <IPADDRESSFROMUBUNTU-TWO Ubuntu-Two to the hosts file of Ubuntu-One and one you try to ping again the system will see that on the hosts file the IP address from Ubuntu-Two is x.x.x.x, will then check your routing table to see which rule applies to that IP or IP range and will contact the host using the specified gateway (or none). Thats is why hosts is ever before resolv.conf.
