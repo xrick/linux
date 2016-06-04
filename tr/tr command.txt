@@ -8,3 +8,7 @@ echo "Hello World" | tr -d aieou
 Hll Wrld
 
 -d: delete
+-s: squeeze. Replace repeated characters with a single occurence of that character
+
+For example: tr -s ' ' < a.txt > b.txt
+Above command will reduce all consecutive spaces down to a single space

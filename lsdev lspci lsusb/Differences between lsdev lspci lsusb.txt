@@ -1,0 +1,16 @@
+lsdev aggregates many different files under /proc to give you a description of all your hardware
+lspci gives an overview of just the PCI hardware
+lsusb enumerates the USB bus only
+
+lsdev is the command gives an overview of ALL the hardware and drives in the system including the ports they use to talk to the CPU
+
+
+lsdev gathers information about your computer's installed hardware from the interrupts, ioports and dma files in the /proc directory, thus giving you a quick overview of which hardware uses what I/O addresses and what IRQ and DMA channels.
+
+Files
+/proc/interrupts
+    IRQ channels. 
+/proc/ioports
+    I/O memory addresses. 
+/proc/dma
+    DMA channels.

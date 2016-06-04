@@ -3,6 +3,10 @@
 processes started by regular users usually have priority 0
 Use nice command without options will display our default priority
 
+Use nice command to start a program without nice value will set value to 10
+ nice sleep 20 &
+
+
 nice -5 /usr/bin/prog 
 /usr/bin/prog is executed with a nice level of 5
 

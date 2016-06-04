@@ -1,0 +1,1 @@
+DMA allows a device to access memory directly

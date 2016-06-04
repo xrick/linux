@@ -1,0 +1,4 @@
+A live CD, live DVD, or live disc is a complete bootable computer installation including operating system which runs in a computer's memory, rather than loading from a hard disk drive
+
+
+the CD itself is read-only. It allows users to run an operating system for any purpose without installing it or making any changes to the computer's configuration. Live CDs can run on a computer without secondary storage, such as a hard disk drive, or with a corrupted hard disk drive or file system, allowing data recovery. A live ISO is an ISO image of a Live CD which can be used in virtual machine environments, mounted as if it were a CD/DVD and used as the virtual machine's boot CD. Live CDs, ISOs, and images usually include an operating system available without charge or restrictive license such as Linux, rather than a commercial one such as Microsoft Windows, for legal rather than technical reasons.

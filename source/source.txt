@@ -1,0 +1,8 @@
+If you tell the shell, e.g. bash, to read a file and execute the commands in the file, it's called sourcing. The main point is, the current process (shell) does this, not a new child process. In BASH you can use the source command 
+
+
+
+
+Running the command source on a script executes the script within the context of the current process. This means that environment variables set by the script remain available after it's finished running. This is in contrast to running a script normally, in which case environment variables set within the newly-spawned process will be lost once the script exits.
+
+You can source any runnable shell script. The end effect will be the same as if you had typed the commands in the script into your terminal. For example, if the script changes directories, when it finishes running, your current working directory will have changed.

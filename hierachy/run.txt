@@ -1,0 +1,1 @@
+ Version 3.0 of the FHS moved the /var/run hierarchy to a separate /run hierarchy. The /run directory contains system information describing the system since it was booted. Files under this directory must be removed or truncated at boot time. Programs may continue to use /var/run to for the purposes of backwards compatibility but should migrate to using /run.

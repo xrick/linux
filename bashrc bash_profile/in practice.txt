@@ -1,0 +1,31 @@
+If you have used several Linux systems, you may have noticed that if you log in as root, you are able to execute some commands which you cannot execute if you are a user. And some commands can be executed by users but not root. When you run a program at the command line, the bash (or other) shell searches through a list of directories to find the program you requested. The list of directories is specified in your PATH environment variable. On older systems, it was common for root's path to include /sbin, while non-root user paths did not. Listing 1 shows user and root path examples from three different distributions.
+Listing 1. Some PATH examples
+
+[ian@attic4-cent ~]$ # CentOS 6
+[ian@attic4-cent ~]$ echo $PATH
+/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/ian/bin
+[ian@attic4-cent ~]$ su -
+Password: 
+[root@attic4-cent ~]# echo $PATH
+/usr/lib64/qt-3.3/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+
+[ian@atticf22 ~]$ # echo Fedora 22
+[ian@atticf22 ~]$ echo $PATH
+/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/ian/.local/bin:/home/ian/bin
+[ian@atticf22 ~]$ su -
+Password: 
+[root@atticf22 ~]# echo $PATH
+/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+[root@atticf22 ~]# ls -l /sbin
+lrwxrwxrwx. 1 root root 8 Aug 16  2014 /sbin -> usr/sbin
+
+ian@attic-mint17 ~ $ # Linux Mint 17.2
+ian@attic-mint17 ~ $ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+ian@attic-mint17 ~ $ sudo -s
+attic-mint17 ~ # echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+attic-mint17 ~ # fortune
+Command 'fortune' is available in '/usr/games/fortune'
+The command could not be located because '/usr/games' is not included in the PATH environment variable.
+fortune: command not found

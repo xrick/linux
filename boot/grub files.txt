@@ -1,0 +1,2 @@
+grub legacy uses menu.lst and grub.conf for configuration
+grub.cfg is for grub2

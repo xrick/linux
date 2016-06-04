@@ -1,0 +1,19 @@
+find location condition
+Location: which place to search
+condition: specify condition to search
+
+ find /tmp -user ian
+ location: /tmp
+ condition: -user ian
+ find files which belong to user ian in /tmp folder.
+
+
+
+
+
+
+
+
+
+
+find -iname abc

@@ -1,0 +1,2 @@
+Which command is used to create and initialize the files used to store quota info:
+quotacheck

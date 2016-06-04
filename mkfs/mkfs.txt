@@ -1,3 +1,6 @@
+Default filesystem is created by mkfs when it is executed with the block device name only and without any additional parameters: ext2
+
+
 Mkfs
 Build a Linux file system.
 

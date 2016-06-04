@@ -1,0 +1,64 @@
+4. Thực hiện tạo quota cho các user. Khi một user tạo ra, set giá trị quota cho user giới hạn 100MB, số inode 10. Kiểm tra lại quota bằng cách copy một file kích thước 200MB vào thư mục của user. Sử dụng "watch -n 1 du -sh /user_dir". Tạo nhiều files để kiểm tra inode quota.
+
+Xem tong so inode cua 1 folder: df -i /home/Spike
+Xem so inode cua 1 file: ls -i tenfile
+http://www.tcpdump.com/kb/os/linux/linux-quota-tutorial/all-pages.html
+
+Vi du: watch -n 1 "ps aux | awk '{sum +=\$3}END{print sum}'"  Do o day co xai dau ngoac kep, nen can phai co' dau \ truoc $3 thi no moi hieu duoc. Binh thuong chi dung lenh ps aux | awk '{sum +=$3}END{print sum} thi khong can dau \ 
+
+
+edquota -p: copy quota tu user nay sang user khac    edquota -p user1 user2
+Tinh toan tren so thuc ta dung lenh bc . vi du: a=$(echo $a+1 | bc) 
+So sanh tren so thu ta dung lenh if [ "$(echo "if (${a} > ${b}) 1" | bc)" -eq 1 ] 
+
+B1: vi /etc/fstab
+/dev/VolGroup00/LogVol00	/  ext3	 defaults 1 1
+
+Them vao option usrquota, grpquota
+/dev/VolGroup00/LogVol00	/  ext3	 defaults,usrquota,grpquota 1 1
+
+B2: Sau do' remount de 2 option nay hoat dong
+mount -o remount /
+
+B3: Phai lam buoc 1 va buoc 2 thi buoc 3 moi chay duoc
+quotacheck -cug /
+-c: create new quota files
+-u: check user files (la cai option usrquota trong file /etc/fstab)
+-q: check group files (la cai option grpquota trong file /etc/fstab)
+Neu bao loi thi them option -m de force checking
+quotacheck -cugm /
+
+Sau khi quotacheck thi trong thu muc / se co 2 file aquota.user va aquota.group
+
+
+quotacheck is used to create and initialize the files used to store quota info
+
+B4: quotaon /
+
+ quotaon -p / de check lai 
+
+B5: edquota test (test la ten user)
+O hai cot thu 3 va thu 4 (soft, hard), soft la warning, hard la khoa'. Bloack=byte, 1024 block = 1 MB. Ta sua cot thu 3 thanh 1024, cot thu 4 thanh 2048. 
+
+Cot 6 cot 7 la soft va hard cua inode.
+
+B5: logout user root, switch sang user test
+Copy thu 1 file co size lon hon 1 MB nho hon 2 MB
+cp abc.txt /home/user1 
+Disk quota exceeded
+
+Neu copy file lon hon 2 MB thi no' van bao' disk quota exceeded va ten file van xuat hien trong thu muc /home/user1 nhung dung luong cua no' bi bien thanh 0 :|
+
+
+
+To modify the grace period for a filesystem, execute the following as root:
+
+edquota -t
+
+This grace period is used for all users and groups. To set the grace period for a specific user, execute the following as root, where <username> is a username or UID:
+
+edquota -T <username>
+
+To set the grace period for a specific user group, execute the following as root, where <groupname> is a group name or GID:
+
+edquota -T -g <groupname

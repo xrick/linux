@@ -1,0 +1,2 @@
+Which of the following commands can be used to locate programs and their corresponding man pages and config files:
+whereis 

@@ -1,0 +1,34 @@
+5. Tạo một partition logic (LogVol có kích thước 100MB. Format partition này theo định dạng swap. Umount partition swap hiện tại và mount partition swap mới vào vị trí partition swap hiện tại.
+
+lgdisplay de xem file swap LogVol01
+
+B1 Nho xoa dong /dev/sdb trong /etc/fstab truoc khi umount /dev/sdb khoi /home/user
+B2 thao swap cu~ di 
+swapoff /dev/VolGroup00/LogVol01
+B3
+Tao LogVol02
+fdisk /dev/sdb
+mkfs -t ext3 /dev/sdb1
+pvcreate /dev/sdb1
+vgextend VolGroup00 /dev/sdb1 (them sdb1 vao VolGroup00)
+lvcreate --size 100M -n LogVol02 VolGroup00
+mkswap /dev/VolGroup00/LogVol02
+swapon /dev/VolGroup00/LogVol02
+
+lgdisplay
+#open=0 swap cu~
+#open=1 swap moi
+
+Dung lenh free de check swap
+
+6. Làm lại câu 5 và cấu hình hệ thống sao cho khi hệ thống được khởi động, partition này được mount như là swap của hệ thống.  
+Mo file /etc/fstab
+Xoa dong /dev/VolGroup00/LogVol01 them dong /dev/VolGroup00/LogVol02
+reboot
+
+
+https://siva2009.wordpress.com/2010/08/26/how-to-create-lvm-using-pvcreate-vgcreate-lvcreate-and-lvextend-commands/
+
+
+pvcreate is used to define a disk or partition as physical volume for using with Logical Volume Manager. It is only used when using Logical Volume Manager.
+pvcreate: initialize a disk or partition for use by LVM

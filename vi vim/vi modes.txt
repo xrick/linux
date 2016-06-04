@@ -8,3 +8,13 @@ Insert mode
     In insert mode, you type new text into the file at the insertion point. To return to command mode, press the Esc (Escape) key.
 
 These two modes determine the way the editor behaves. Anything you type in insert mode is considered text to be inserted into the file. If you are trying to type a command and nothing happens, or the character appears under the cursor, then you probably forgot to press Esc to escape from insert mode.
+
+
+
+
+
+
+
+
+
+Use the command vi without any additional parameters => vi starts in command mode and opens a new empty file

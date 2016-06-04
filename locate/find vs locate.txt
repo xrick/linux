@@ -1,0 +1,15 @@
+The find command searches all the directories you specify, every time you run it. To speed things up, you can use another command, locate, which uses a database of stored path information rather than searching the filesystem every time. 
+
+
+The locate command searches for matching files in a database that is usually updated daily by a cron job.
+
+The locate command matches against any part of a path name, not just the file name. Put the file name in single quotes and include at least one globbing character to match more precisely. Listing 12 shows how to find paths containing the string bin/ls, and shows two examples of using globbing characters to restrict the output.
+
+
+The updatedb command
+
+The default database used by locate is stored in the /var filesystem, in a location such as /var/lib/locatedb. This may be different on systems that use slocate or mlocate packages to provide additional security or speed. You can find statistics on your locate database using locate -S as shown in Listing 13.
+
+The database is created or updated using the updatedb command. This is usually run daily as a cron job. The file /etc/updatedb.conf, or sometimes /etc/sysconfig/locate, is the configuration file for updatedb. To enable daily updates, the root user needs to edit /etc/updatedb.conf and set DAILY_UPDATE=yes. To create the database immediately, run the updatedb command as root.
+
+Other considerations for using locate include security considerations and network file I/O considerations for daily builds of the updatedb database. Check the man pages and updatedb configuration files for more details.

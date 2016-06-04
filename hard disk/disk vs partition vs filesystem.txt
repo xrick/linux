@@ -1,0 +1,57 @@
+/dev/sda is disk
+/dev/sda1 , /dev/sda2 is partitions
+
+
+
+A partition is a logical part of the disk (think of a cake as the entire disk, a slice of that cake would be a partition)
+
+A filesystem is a method of storing / finding files on a hard disk (its on top of the cake so would be icing)
+File systems are a way of storing data inside the partitions in a fashion that is easy to manage and read and write data to it. Some do it better than others.
+
+First create partition then create filesystem
+
+
+
+
+
+
+You can use fdisk -l to list disks and their partitions. In below example, disk sda have two partitions sda1 and sda2
+
+[root@localhost ~]# fdisk -l
+
+Disk /dev/sdb: 1073 MB, 1073741824 bytes, 2097152 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x344526a1
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2097151     1047552   83  Linux
+
+Disk /dev/sda: 17.2 GB, 17179869184 bytes, 33554432 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000f15b1
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     1026047      512000   83  Linux
+/dev/sda2         1026048    33554431    16264192   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 14.9 GB, 14889779200 bytes, 29081600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 1719 MB, 1719664640 bytes, 3358720 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+

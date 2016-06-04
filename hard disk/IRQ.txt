@@ -1,0 +1,2 @@
+IRQs are used by a device to ask for the CPU's attention
+irq = interrupt request

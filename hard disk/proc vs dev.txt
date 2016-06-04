@@ -1,0 +1,2 @@
+/proc contains files containing info about the system
+/dev contains device files used to talk to devices

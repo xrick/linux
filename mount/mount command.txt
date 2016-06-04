@@ -1,0 +1,8 @@
+mount -a
+It ensures that all files systems listed with the option auto in /etc/fstab are mounted
+
+
+To display all currently mounted filesystems, which of the following commands could be used:
+cat /proc/self/mounts
+OR
+mount

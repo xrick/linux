@@ -1,0 +1,2 @@
+Which of the following shell redirections will write standard output and standard error output to a file named filename:
+>filename 2>&1

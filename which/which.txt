@@ -1,0 +1,11 @@
+
+You can use the which command to search your path and find out which command will be executed (if any) when you type a command. Listing 3 shows an example of finding the hello command before and after we update the path. 
+
+There are some commands that the which command will not find, such as shell builtins. The type command is a builtin that will tell you how a given command string will be evaluated for execution. Listing 6 uses which and type to show that the type command is not an executable found on your path, but is a shell builtin.
+Listing 6. Using type
+
+[ian@atticf22 ~]$ which type
+/usr/bin/which: no type in (/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:
+/home/ian/.local/bin:/home/ian/bin)
+[ian@atticf22 ~]$ type type
+type is a shell builtin

@@ -1,0 +1,38 @@
+
+    Ctrl-C (in older Unixes, DEL) sends an INT signal ("interrupt", SIGINT); by default, this causes the process to terminate.
+    Ctrl-Z sends a TSTP signal ("terminal stop", SIGTSTP); by default, this causes the process to suspend execution.
+    Ctrl-\ sends a QUIT signal (SIGQUIT); by default, this causes the process to terminate and dump core.
+    Ctrl-T (not supported on all UNIXes) sends an INFO signal (SIGINFO); by default, and if supported by the command, this causes the operating system to show information about the running command.
+
+	
+	
+SIGABRT 	6 		Terminate (core dump) 	Process abort signal
+SIGALRM 	14 		Terminate 	Alarm clock
+SIGBUS 	    n/a 	Terminate (core dump) 	Access to an undefined portion of a memory object.
+SIGCHLD 	n/a 	Ignore 	Child process terminated, stopped, or continued.
+SIGCONT 	n/a 	Continue 	Continue executing, if stopped.
+SIGFPE 		n/a 	Terminate (core dump) 	Erroneous arithmetic operation.
+SIGHUP 		1 		Terminate 	Hangup.
+SIGILL 		n/a 	Terminate (core dump) 	Illegal instruction.
+SIGINT 		2 		Terminate 	Terminal interrupt signal.
+SIGKILL 	9 		Terminate 	Kill (cannot be caught or ignored).
+SIGPIPE 	n/a 	Terminate 	Write on a pipe with no one to read it.
+SIGPOLL 	n/a 	Terminate 	Pollable event.
+SIGPROF 	n/a 	Terminate 	Profiling timer expired.
+SIGQUIT 	3 		Terminate (core dump) 	Terminal quit signal.
+SIGSEGV 	n/a 	Terminate (core dump) 	Invalid memory reference.
+SIGSTOP 	n/a 	Stop 	Stop executing (cannot be caught or ignored).
+SIGSYS 		n/a 	Terminate (core dump) 	Bad system call.
+SIGTERM 	15 		Terminate 	Termination signal.
+SIGTRAP 	n/a 	Terminate (core dump) 	Trace/breakpoint trap.
+SIGTSTP 	n/a 	Stop 	Terminal stop signal.
+SIGTTIN 	n/a 	Stop 	Background process attempting read.
+SIGTTOU 	n/a 	Stop 	Background process attempting write.
+SIGUSR1 	n/a 	Terminate 	User-defined signal 1.
+SIGUSR2 	n/a 	Terminate 	User-defined signal 2.
+SIGURG 		n/a     Ignore 	High bandwidth data is available at a socket.
+SIGVTALRM 	n/a 	Terminate 	Virtual timer expired.
+SIGXCPU 	n/a 	Terminate (core dump) 	CPU time limit exceeded.
+SIGXFSZ 	n/a 	Terminate (core dump) 	File size limit exceeded
+
+We should use SIGTERM instead of SIGKILL since SIGTERM allows the program to have time to clean up.

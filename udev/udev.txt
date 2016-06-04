@@ -1,0 +1,1 @@
+udev monitors for device changes and makes the approriate changes in /dev
