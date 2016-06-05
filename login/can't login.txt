@@ -1,0 +1,1 @@
+/etc/nologin which is used to block logins for accounts and echo a message that login is denied

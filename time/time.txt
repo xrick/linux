@@ -5,6 +5,7 @@ This depends on exactly what you mean by "opened", but in general, yes. There ar
 mtime — modify time - updated when the file contents change. This is the "default" file time in most cases.
 ctime — change time - updated when the file or its metadata (owner, permissions) change
 atime — access time - updated when the file is read
+
 So, generally, what you want to see is the atime of a file. You can get that with stat or with ls. You can use ls -lu to do this, although I prefer to use ls -l --time=atime (which should be supported in almost all modern Linux distributions) because I don't use it often, and when I do I can remember it better. And to sort by time, add the -t flag to ls. So there you go.
 
 There is a big caveat, though. Updating the atime every time a file is read causes a lot of usually-unnecessary IO, slowing everything down. So, some Linux distributions now default to the noatime filesystem mount option, which basically kills atimes, or else relatime, which only updates atimes once a limit has passed (normally once per day) or if the file was actually modified since the previous read. You can find if these options are active by running the mount command.
@@ -12,3 +13,9 @@ There is a big caveat, though. Updating the atime every time a file is read caus
 Also, note that access times are by inode, not by filename, so if you have hardlinks, reading from one will update all names that refer to the same file.
 
 And, be aware that c is not "creation"; creation isn't tracked by Unix/Linux filesystems, which seems strange but actually makes sense because the filesystem has no way of knowing if it is the original — maybe the file was created forty years ago and copied here. And, in fact, many file editors work by making copies over the original. If you need that information, it's best to use a version control system like git.
+
+
+
+
+-mtime -7: less than 7 days old
+-mtime +7: greater than 7 days old

@@ -1,0 +1,2 @@
+You need to remove all instances of the package abc, regardless of the version, with a single command. Which of the following accomplishes this task:
+rpm -e woohoo --allmatches

@@ -1,0 +1,10 @@
+Bash shell uses the built-in command set to turn on off options for the shell. You can also use shopt command to do this.
+
+set -o option (sets the option to on)
+set +o option (sets the option to off)
+
+
+
+Important bash options:
+history: On by default.
+noclobber: This option is off by default, when it's on, it disallows the overwriting of an existing file by a redirect symbol (>). A syntax error occurs if this is attempted. The use of double redirects 9to append the file) is recommended.

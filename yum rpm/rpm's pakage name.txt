@@ -1,0 +1,3 @@
+The long name contains the name of the package, version and the distribution version. For exampe: kernel-3.17.7-300.fc21 is a long name
+
+Package name does not contain the architecture (such as x86-64)

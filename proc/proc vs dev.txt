@@ -1,0 +1,4 @@
+/proc vs /dev
+
+/proc exposes files containing info about the system
+/dev contains device files used to talke to devices (peripherals)

@@ -1,0 +1,9 @@
+rpm -q foobar
+You can also used this command to look for long name.
+
+
+Above command is equal to (dpkg --list abc) on Debian system
+
+
+[root@localhost ~]# rpm -q zip
+zip-3.0-10.el7.x86_64

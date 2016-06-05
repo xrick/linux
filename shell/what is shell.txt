@@ -1,0 +1,1 @@
+A shell is a program designed to interpret the commands users type, parse for expansions and wildcards and then produce instructions to the computer to accomplish those tasks. Unless you change the defaults, the Linux shell is normally the bash shell. Of course, many other shells exist

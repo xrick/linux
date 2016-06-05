@@ -1,0 +1,5 @@
+
+By default, when a dependency error has been found, the install process using dpkg command will be stopped
+
+To ignore any dependency errors and install, using below command:
+dpkg --install abc.deb --force-depends

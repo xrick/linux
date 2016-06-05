@@ -1,0 +1,25 @@
+
+Compression ratio: xz is better than bzip2, bzip2 better than gzip
+
+
+ian@Z61t-u14:~/lpi103-2$ gzip -l services-x.gz
+         compressed        uncompressed  ratio uncompressed_name
+               7538               19558  61.6% services-x
+			   
+
+
+ian@Z61t-u14:~/lpi103-2$ bzip2 -v services
+  services:  2.713:1,  2.948 bits/byte, 63.15% saved, 19558 in, 7208 out.
+
+  
+ian@Z61t-u14:~/lpi103-2$ xz -v services
+services (1/1)
+  100 %          7,144 B / 19.1 KiB = 0.365                                    
+ian@Z61t-u14:~/lpi103-2$ mv services.xz services-x.xz
+ian@Z61t-u14:~/lpi103-2$ touch services-x.xz
+ian@Z61t-u14:~/lpi103-2$ ls -l serv*
+-rw-r--r-- 1 ian ian 7144 Jun 12 13:15 services-x.xz
+ian@Z61t-u14:~/lpi103-2$ unxz services-x.xz
+ian@Z61t-u14:~/lpi103-2$ ls -l serv*  # New date and name
+-rw-r--r-- 1 ian ian 19558 Jun 12 13:15 services-x
+ian@Z61t-u14:~/lpi103-2$ rm services-x # Don't need this any more

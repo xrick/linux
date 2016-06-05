@@ -1,0 +1,7 @@
+shutdown -k: is for simulating a system shutdown event, as well as sending a message to the attached users.
+
+shutdown -h: halts the system
+
+shutdown -r: reboots the system
+
+shutdown -c: cancels a shutdown that has already been issues, if there is sufficient time

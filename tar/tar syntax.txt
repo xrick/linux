@@ -1,0 +1,24 @@
+tar tenfileduoctaora filebitar
+
+
+ls /
+abc def 
+
+tar -cjf newfile.tar.bz2 abc def
+
+-j: bzip2
+tar đầu tiên sẽ archive 2 file abc và def thành 1 file newfile.tar sau đó nó sẽ compress file using bzip2 thành file newfile.tar.bz2
+
+
+Usually, we follow the format: command source dest
+But when we use option f, it means the next word it the name of the file to operate on (create, extract, list the contents) => command dest source
+
+
+7 common options:
+c: create
+t: list
+x: expand
+v: verbose
+z: gzip
+j: bzip2
+f: filename

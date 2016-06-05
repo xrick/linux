@@ -1,0 +1,7 @@
+rpm is also used to install using local files
+yum is used to install using remote files
+
+That's why, when we install rpm, we have to download it to local computer first. Then use rpm to install it.
+
+rpm does not support dependencies
+yum supports dependencies

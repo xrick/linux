@@ -1,0 +1,16 @@
+An application that needs to use a shared library asks a service which is called ld.so, otherwise known as the dynamic linker. The dynamic linker knows where all the shared libraries are stored and loads the library for the application
+
+Libraries are typically stored in /lib or /usr/lib for 32-bit libraries and /lib64 or /usr/lib64 for 64 bit binaries. A 64 bit system can load 32 bit applications, so you will likely see both.
+
+Distributions are free to store application-specific shared libraries anywhere, so you may find /lib is just a link /usr/lib and that particular applications may store its libraries in a separate directory.
+
+
+
+[root@localhost ~]# ldd /usr/bin/zip
+        linux-vdso.so.1 =>  (0x00007ffcb5fd5000)
+        libbz2.so.1 => /lib64/libbz2.so.1 (0x00007ff5a71dc000)
+        libc.so.6 => /lib64/libc.so.6 (0x00007ff5a6e1b000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007ff5a7400000)
+		
+		
+

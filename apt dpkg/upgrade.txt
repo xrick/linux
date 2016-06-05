@@ -3,7 +3,7 @@ Remember to run apt-get update before updating packages to make sure your local 
 Apt-get update is used to update local database, it is not used to update program/package.
 
 Use apt-get with the install option to update individual package. To update the already installed ghostscript package on my system:
-sudo apt-get install ghostscript
+sudo apt-get install ghostscript   (You can't use apt-get upgrade to update the already installed package)
 
 To update all packages
 sudo apt-get upgrade 

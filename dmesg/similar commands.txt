@@ -1,0 +1,1 @@
+dmesg = journalctl -b = cat /var/log/boot.msg

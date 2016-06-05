@@ -1,0 +1,1 @@
+The user's default shell is specified in the /etc/passwd entry for that user. If the shell specified does not exist, the user gets the bash shell by default.

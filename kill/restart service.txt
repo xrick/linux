@@ -1,0 +1,6 @@
+You have edited the config file of the service named abc and need that service to reread the config and continue serviing its attached client processes:
+kill -HUP abc
+OR
+kill 1 abc
+OR
+kill -s SIGHUP abc

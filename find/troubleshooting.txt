@@ -1,0 +1,15 @@
+find: paths must precede expression
+find *test.c
+
+
+
+
+Try putting it in quotes -- you're running into the shell's wildcard expansion, so what you're acually passing to find will look like:
+
+find . -name bobtest.c cattest.c snowtest.c
+
+...causing the syntax error. So try this instead:
+
+find . -name '*test.c'
+
+Note the single quotes around your file expression -- these will stop the shell (bash) expanding your wildcards.

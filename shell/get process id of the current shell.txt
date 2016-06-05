@@ -1,0 +1,17 @@
+[root@localhost ~]# echo $$      /* get PID of the current shell
+9467
+[root@localhost ~]# bash         /* create a subshell of 9467
+[root@localhost ~]# echo $$  
+9517
+[root@localhost ~]# ps -l		/* check PPID of 9517
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  7306  7302  0  80   0 - 30104 wait   pts/1    00:00:00 bash
+4 S     0  9266  7306  0  80   0 - 52478 wait   pts/1    00:00:00 su
+4 S     0  9402  9267  0  80   0 - 52479 wait   pts/1    00:00:00 su
+4 S     0  9407  9402  0  80   0 - 29038 wait   pts/1    00:00:00 bash
+4 S     0  9467  9407  0  80   0 - 29038 wait   pts/1    00:00:00 bash
+4 S     0  9517  9467  0  80   0 - 29039 wait   pts/1    00:00:00 bash
+0 R     0  9540  9517  0  80   0 - 34343 -      pts/1    00:00:00 ps
+
+
+9517 is a subshell of 9467

@@ -1,0 +1,13 @@
+[root@localhost ~]# cat abc
+#!/bin/bash
+echo "Hello World"
+echo $$
+qwerty -l
+
+[root@localhost ~]# grep -v qwerty abc
+#!/bin/bash
+echo "Hello World"
+echo $$
+
+Use grep -v
+-v = --invert-match

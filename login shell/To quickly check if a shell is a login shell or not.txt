@@ -1,0 +1,4 @@
+Use logout
+
+[root@localhost minhql]# logout
+bash: logout: not login shell: use `exit'

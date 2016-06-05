@@ -6,9 +6,9 @@ tty - Tele TYpewriter.
     also regularly refers to 'the terminal that this process is wrapped in' (which is what the tty command reports - see its man page)
     Used in case like minicom 
 
-pty - pseudoterminal (also : ptmx)
+pts - pseudoterminal (also : ptmx)
 
-    A pty (pseudo terminal device) is a terminal device which is emulated by an other program (example: xterm, screen, or ssh are such programs). 
+    A pts (pseudo terminal device) is a terminal device which is emulated by an other program (example: xterm, screen, or ssh are such programs). 
 
     which is a pair of a ptmx (pseudoterminal master) and pts (pseudoterminal slave)
     most recognizably used in cases like remote logins (e.g. sshd) and graphical terminals

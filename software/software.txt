@@ -1,0 +1,6 @@
+A typical piece of software is comprised of five pieces:
+	Binaries
+	Libraries
+	Configuration
+	Documentation
+	Data

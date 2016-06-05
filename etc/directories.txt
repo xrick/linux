@@ -1,0 +1,13 @@
+Directories in /
+etc		Host-specific system configuration
+proc	Contain info about the system (IRQ, IO, DMS...)\
+
+
+/etc is used to config the system
+For example: 
+ln -sf /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.target
+
+/usr/lib/systemd/system: contains units that have been installed with the distribution
+
+f: force
+s: symbolic link

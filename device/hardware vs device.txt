@@ -1,0 +1,2 @@
+Hardware refers to the entire computer your Linux operating system will run on while the peripherals (devices) are the hardware bits that are removable or otherwise talk with the world.
+Peripherals talk to the CPU over some kind of bus

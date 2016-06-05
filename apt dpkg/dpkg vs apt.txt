@@ -1,4 +1,5 @@
-
+dpkg is also used to install using local files
+apt-get is used to install using remote files
 
     They came up with a way to "store" the files of an application in a "package" so that it can be easily installed. So, the Deb package (.deb extension file) was born.
 
