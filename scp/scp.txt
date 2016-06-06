@@ -1,2 +1,6 @@
 scp src_location dest_location
 scp notice.doc 192.168.4.100:/home/jones
+
+
+Copy file from STB 192.168.48.15 to Linux pc using username root
+scp root@192.168.48.15:/var/viewer/messages.log.bk .

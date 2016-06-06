@@ -1,0 +1,22 @@
+Skeleton directories
+
+You might be wondering how files like ~/.bash_profile, ~/.bashrc, or ~/.bash_logout got created in your home directory. These are skeleton files that are copied from /etc/skel. Listing 24 shows the files in /etc/skel on my system. Note that you need the -a option of ls; otherwise, the directory will probably appear empty.
+Listing 24. Contents of /etc/skeleton
+
+[ian@atticf22 ~]$ ls -a /etc/skel/
+.  ..  .bash_logout  .bash_profile  .bashrc  .emacs  .kshrc  .mozilla
+
+When the useradd command is run with the -m option to create a home directory, these files are copied to the new home directory. Programs such as Firefox or the Korn shell might add additional directories to /etc/skel, as you see here. If you want to customize the directories that are created for a new user, add your new directories and any appropriate files to /etc/skel.
+
+The /etc/skel location is configurable through the /etc/defaults/useradd file. The file as it exists on my system is shown in Listing 25.
+Listing 25. /etc/defaults/useradd
+
+[ian@atticf22 ~]$ cat /etc/default/useradd 
+# useradd defaults file
+GROUP=100
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/bash
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=yes
