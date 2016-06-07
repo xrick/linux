@@ -1,0 +1,5 @@
+su -l minhql
+OR
+su - minhql
+
+Two commands above cause the su command to execute the login as a login shell, reading and sourcing all the approriate config files, just as if the user had logged in to the console of the system as that user.

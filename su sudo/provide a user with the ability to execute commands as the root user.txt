@@ -1,0 +1,32 @@
+root ALL=(ALL) ALL
+
+This line means: The root user can execute from ALL terminals, acting as ALL (any) users, and run ALL (any) command.
+
+The first part is the user, the second is the terminal from where the user can use sudo command, the third part is which users he may act as, and the last one, is which commands he may run when using sudo.
+
+
+Precondition: user minhql does not have access to /usr/sbin/useradd command
+Step 1: Change to root account
+Step 2: visudo (Using visudo, you can allow users to use commands by adding sudo before that command). Then add following command:
+minhql	ALL=(ALL)	/usr/sbin/useradd
+Save using Esc :wq
+Step 3: Change to minhql account
+Step 4: Use sudo useradd (The password in this case is minhql's password not root's password). Before adding minhql	ALL=(ALL)	/usr/sbin/useradd , user minhql can't use sudo useradd but after adding, user minhql can use sudo useradd command
+
+
+
+If user minhql tries to use sudo command before adding minhql	ALL=(ALL)	/usr/sbin/useradd . Below error will be displayed.
+[minhql@localhost ~]$ sudo useradd test
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for minhql:
+minhql is not in the sudoers file.  This incident will be reported.
+
+
+The incident above will be reported to /var/spool/mail/root

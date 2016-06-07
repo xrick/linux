@@ -1,0 +1,10 @@
+The sudo Command
+The problem with the su command is that to provide a user with elevated privileges, you would need to provide the user with the root password. This would allow that user full administrative access to the system.
+Often you want to allow a regular user to execute some commands as the root user, but not all commands. For example, if a network error occurs on a userÅfs workstation, you want that user to be allowed to restart the networking service. On some systems this can be accomplished by executing the following command:
+Click here to view code image
+/etc/rc.d/init.d/network restart
+
+To execute this command successfully, the user needs to have root privileges. Instead of providing the user with the root password, you can set up the sudo command to allow the user to run just the necessary command. To do this, you need to log in as the root user and then execute the following command:
+visudo
+
+This command allows you to edit the /etc/sudoers file, the file that allows you to provide root access for specific commands to specific users

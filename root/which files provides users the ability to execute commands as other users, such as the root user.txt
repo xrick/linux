@@ -1,0 +1,1 @@
+/etc/sudoers file is the config file for the sudo command.
