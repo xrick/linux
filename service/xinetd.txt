@@ -1,0 +1,26 @@
+By default: /etc/xinetd.d folder is empty
+
+
+
+
+Contents of an /etc/xinetd.d Service File
+service telnet
+{
+        disable = yes
+        flags           = REUSE
+        socket_type     = stream
+        wait            = no
+        user            = root
+        server          = /usr/sbin/in.telnetd
+        log_on_failure  += USERID
+        access_times      =  08:00-17:00
+        only_from      =  snowblower
+}
+
+These files contain a number of settings:
+ service—This keyword must be followed by the service name, such as telnet.
+ disable—Values include yes (which disables the service and no connections are accepted) and no (which doesn’t disable or enables the service for connections).
+ flags—Many and varied flags exist; the most common is REUSE, which allows the port and service to accept multiple connections.
+ socket type—This can be stream, dgram, raw, rdm, or seqpacket.
+ wait—Use the wait parameter for single-threaded servers that grab the socket and operate until timeout; use nowait for multithreaded servers that free up the socket when not active.
+ user—The user or group this service should run as, giving you the ability to restrict a risky service to an account that’s not root.

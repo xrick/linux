@@ -1,0 +1,15 @@
+Providing Services on Demand
+
+A Linux system provides many services. Therein lies one of its greatest strengths, and for a weak-willed sysadmin, one of its greatest weaknesses. If you configure your server to provide too many services that run constantly, performance suffers.
+The three strata of service configuration for a server are
+ Always on: This level is for services that should be always running because clients expect their presence.
+ On demand: This level is for periodically used services, those that should be present but not on using RAM and CPU constantly.
+ Off or disabled: This level represents those services that youÅfre not going to run regardless, such as ISDN services on an Ethernet-connected server and so on.
+
+ Although having standard services capable of being started on demand is advantageous, many services require the starting of multiple child processes or the generation of various security keys that make them less likely candidates for being run on demand. Examples of such services include httpd (which needs to start several to many child processes), sshd (which needs to generate keys and so on), and ssl (which can also require the generation of keys when starting).
+Using inetd and xinetd
+The older of two services, the inetd daemon, is intended to provide services upon client demand. The idea behind inetd is to provide a method to start and run services on demand, particularly to start the service on receipt of a client connection request. The inetd configuration file (/etc/inetd.conf) contains a line for each service inetd controls.
+The xinetd service is the newer of the two services and provides more atomic control, using a main configuration file (/etc/xinetd.conf) to point to a directory (typically /etc/xinetd.d) that contains a single text configuration file for each controlled service, such as /etc/xinetd.d/telnet.
+
+
+
