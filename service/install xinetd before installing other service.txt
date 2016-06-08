@@ -1,0 +1,1 @@
+You have to install xinetd before installing tftp-server for tftp-server to work based on xinetd
