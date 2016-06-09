@@ -1,0 +1,5 @@
+On client to check server's port
+nmap -p 80 diachiserver
+
+On server to check its own's port
+telnet localhost 139

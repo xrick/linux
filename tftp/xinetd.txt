@@ -1,0 +1,20 @@
+server_args	= -c -s /tftpboot
+
+
+Edit the file /etc/xinetd.d/tftp to look like the following:
+
+service tftp
+{
+	socket_type	= dgram
+	protocol	= udp
+	wait		= yes
+	user		= root
+	server		= /usr/sbin/in.tftpd
+	server_args	= -c -s /tftpboot
+	disable		= no
+	per_source	= 11
+	cps		= 100 2
+}
+			
+
+The changes from the default file are the parameter disable = no (to enable the service) and the server argument -c. This argument allows for the creation of files, which is necessary if you want to save boot or disk images. You may want to make TFTP read only in normal operation.

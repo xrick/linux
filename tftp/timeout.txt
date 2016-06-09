@@ -1,0 +1,1 @@
+tftp is not a secure protocol to transfer file, so most of the host will not allow receiving files over tftp. use ftp instead.

@@ -1,1 +1,4 @@
 You have to install xinetd before installing tftp-server for tftp-server to work based on xinetd
+
+
+If you cannot find the /etc/xinetd.conf file on your system, most likely the xinetd package is not installed. 
