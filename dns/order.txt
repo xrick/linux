@@ -1,0 +1,10 @@
+The Name Service Switch (NSS) configuration file, /etc/nsswitch.conf, is used by the GNU C Library to determine the sources from which to obtain name-service information in a range of categories, and in what order.  Each category of information is identified by a database name.
+
+
+For example:
+
+passwd: files
+For password, the order of the query is files first
+
+hosts: files dns
+For hosts names and numbers, the order of the query is files first (in this case, file is /etc/hosts) then dns

@@ -1,4 +1,7 @@
+Based on /etc/nsswitch.conf, hosts: files dns
+For hosts names and numbers, the order of the query is files first (in this case, file is /etc/hosts) then dns
 
+And between /etc/hosts and /etc/resolv.conf:
 /etc/hosts has higher priority than /etc/resolv.conf 
 Above behavior is the same with Windows operating system.
 

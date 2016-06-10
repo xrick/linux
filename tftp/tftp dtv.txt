@@ -1,0 +1,21 @@
+In order to accomodate the IRD flashing build, peculiarly the special test builts without passing via server 172.19.7.106, due to limitation of access/authentication, server 106 drive space, and 5th floor LAN fluctuation. Another advantage is the speed of flashing the stack from local TFTP server into IRD is fastest and most efficient by avoiding the traffic on 5th floor LAN. Configure the Linux host machine as TFTP flash/boot server as follow:
+(Require root login as power user, not "su" user)
+
+1. Open proxy port socket to install tftp-server tool from web:
+export http_proxy=192.168.111.106:8080
+2. Install it: yum install tftp-server
+3. Install the super-server xinetd: yum install xinetd
+4. Enable TFTP and Xinetd: Use chkconfig to ensure that xinetd and tftp starts on reboot.
+chkconfig tftp on
+chkconfig xinetd on
+service xinetd start
+5. Charge full TFTPBOOT control: chmod 7777 /var/tftpboot
+6. Modify a little bit the tftp configuration file: vim /etc/xinetd.d/tftp
+Just add the -c argument in server_args field: server_args = -c -s /var/tftpboot
+7. Via WinSCP create a folder to contain all test buitls in the directory /var/tftpboot, ex: /var/tftpboot/DTVSTACKS
+Then push all test builts & kernels inside DTVSTACKS.
+8. Restart the super server xinetd: service xinetd restart
+9. From IRD, set & execute the F5 flash built command, per example:
+setenv -p F5 'flash -noheader 192.168.208.2:/DTVSTACKS/hr44_sam_2644.sqfs flash0.rfs' 
+10. The same for F4 flash kernel command, per example:
+setenv -p F4 'flash -noheader 192.168.208.2:/DTVSTACKS/sk60_v1_hr44.lzma flash0.kernel'  
