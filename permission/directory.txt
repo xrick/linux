@@ -1,0 +1,9 @@
+Directories
+
+Directories use the same permissions flags as regular files, but they are interpreted differently.
+
+    Read permission for a directory allows a user with that permission to list the contents of the directory.
+    Write permission means a user with that permission can create or delete files in the directory.
+    Execute permission allows the user to enter the directory and access any subdirectories.
+
+Without execute permission on a directory, the filesystem objects inside the directory are not accessible. Without read permission on a directory, the filesystem objects inside the directory are not viewable in a directory listing, but these objects can still be accessed as long as you know the full path to the object on disk. Listing 4 is an artificial example to illustrate these points.

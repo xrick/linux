@@ -1,0 +1,17 @@
+I know what chgrp and chown do.
+My question is since chown does the same thing as chgrp (and even more), what is the point of chgrp?
+
+
+
+When you use chgrp you are using a simple tool to change one thing... group permissions. For many people this is preferred over using chown, especially when you run the risk of mistyping a character while using the chown command and completely breaking permissions to whatever files/folder you specified.
+
+So instead of doing one of the following:
+
+chown user:group [file/dir]
+chown :group [file/dir]
+
+You just do:
+
+chgrp group [file/dir]
+
+This keeps the risks of changing file permissions in a production grade environment down. Which is always good for SysAdmins.

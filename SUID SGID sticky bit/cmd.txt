@@ -1,0 +1,3 @@
+The letter "o" in o+t stands for others which is where the sticky bit permission is applied in the permission set. The g+h character adds the permission, and the gth stands for the sticky bit permission.
+
+chmod o+t /dir

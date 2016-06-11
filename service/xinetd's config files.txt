@@ -1,0 +1,17 @@
+service ftp
+{
+        disable                 = no
+        socket_type             = stream
+        wait                    = no
+        user                    = root
+        server                  = /usr/sbin/vsftpd
+        per_source              = 5
+        instances               = 200
+        no_access               = 10.1.1.10
+        banner_fail             = /etc/vsftpd.busy
+        log_on_success          += PID HOST DURATION
+        log_on_failure          += HOST
+}
+
+
+server  = /usr/sbin/vsftpd : Link to the installed server. For example: after install vsftpd server (apt-get install vsftpd). You can use command which vsftpd to find the link to the installed server.

@@ -1,0 +1,11 @@
+The two tables that affect which clients can connect to which services (provided the service uses libwrap.a or is controlled by inetd/xinetd) are /etc/hosts.allow and /etc/hosts.deny.
+
+
+
+Scenario 1: Delete /etc/hosts.allow . Add ALL: ALL to /etc/hosts.deny to deny all connections to the services (provided the service uses libwrap.a or is controlled by inetd/xinetd)
+
+In this case, we set up an ftp server and this server is under control of xinetd
+
+[root@localhost ~]# ftp 192.168.100.69
+Connected to 192.168.100.69 (192.168.100.69).
+421 Service not available, remote server has closed connection

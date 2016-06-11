@@ -1,0 +1,7 @@
+Do not mix up the Windows environment and Linux in your mind. There is no such thing as Ågeffective permissionsÅh for a Linux object; that is entirely a Windows concept. For example, a user who matches the user owner and is also a member of the group owner does not have the greater permissions of the two trios slapped together; he is restricted only to the user owner trio's permissions.
+
+For example: user fred is in group test
+
+-rw-rwxr-x    2 fred     test   0 Jan 26 13:08 22   nhac.mp3
+
+User fred only has rw permissions. Even though, user fred is in group test (which has rwx permissions). Since he is restricted only to the user owner trio's permissions.

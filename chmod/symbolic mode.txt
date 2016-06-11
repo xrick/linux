@@ -1,0 +1,7 @@
+chmod u=rw is different from chmod u+rw
+
+For example if the file has only user execute (166) permission
+
+Use chmod u=rw will reset all user permission's bits to zero firsts (066) then apply new user permission => 666
+
+Use chmod u+rw will not reset existing user permission, it only add permissions to existing user permission => 766

@@ -1,3 +1,7 @@
+
+There is an alternate way to source a file, which is to replace the word source with a period:
+. ./config
+
 If you tell the shell, e.g. bash, to read a file and execute the commands in the file, it's called sourcing. The main point is, the current process (shell) does this, not a new child process. In BASH you can use the source command 
 
 

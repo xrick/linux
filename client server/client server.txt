@@ -1,0 +1,5 @@
+apt-get install tftpd
+Above command is used to install tftp server
+
+apt-get install tftp
+Above command is used to install tftp client. The client is used to upload/download files to tftp server

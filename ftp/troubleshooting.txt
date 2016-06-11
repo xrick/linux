@@ -1,0 +1,21 @@
+
+vendion@Loki:~> ftp 192.168.1.100
+Connected to 192.168.1.100.
+500 OOPS: could not bind listening IPv6 socket
+
+With root permissions check the contents of /etc/vsftpd.conf. Look for this
+parameter "listen_ipv6" If that parameter has a value (or if it does not
+exist) then change it (or create it) to:
+Code:
+
+listen_ipv6 = NO
+
+
+
+
+
+
+
+Using ls command => Nothing is displayed.
+Using a root account to ftp to ftp server (For example: pi/raspberry)
+

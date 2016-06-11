@@ -1,1 +1,3 @@
+If you use VMWare, tftp may not work. SO you should use a raspberry or a physcial linux pc not a virtual machine.  
+Also, if you use tftp protocol on a virtual machine to download a file from a real tftp server. It does not seem to work too.
 http://unix.stackexchange.com/questions/99000/tftp-configuration-problems

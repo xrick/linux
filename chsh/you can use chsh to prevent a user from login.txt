@@ -1,0 +1,7 @@
+[root@localhost ~]# chsh -s /sbin/nologin minhql
+Changing shell for minhql.
+Shell changed.
+
+
+[root@localhost ~]# su minhql
+This account is currently not available.

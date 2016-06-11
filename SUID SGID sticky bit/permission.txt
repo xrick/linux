@@ -1,0 +1,24 @@
+Understanding Permission Problems
+When you install a distribution, a number of files are set with special bits or permissions, mostly to make it easier for normal users to accomplish mild setup tasks. You should run a find command that shows these files right after you install the system and then keep that output in a file in a different location for referral later.
+
+Note
+One of the first changes to your system that a hacker or cracker makes is to set permissions on certain programs to allow an otherwise normal user special or root privileges.
+
+As a reminder, the special bits that can be set for files include
+ SUID: Represented by the numeral 4, the Set User ID special bit allows processes to run with the permissions of the fileÅfs owner.
+ 
+ SGID: Represented by the numeral 2, the Set Group ID special bit allows processes to run with the permissions of the fileÅfs group owner. If itÅfs set on a directory, it forces group ownership inheritance for all objects created in that directory.
+ Sticky bit: When set on a directory it keeps any nonowners from deleting files in the directory.
+ 
+It's important to know how to find the files on the system that have special bits set. In particular, the SUID and SGID special bits are used to gain access to elevated levels of capability and could be disastrous if set on utilities such as passwd, shutdown, and useradd.
+Finding Files by Permissions
+
+It's important to periodically run a find command to see which special bits are set on which files. To find all the files on your entire system that are owned by the root user with any special bit set and mail that list to yourself, use the following command:
+Click here to view code image
+find / -perm -7000 -exec ls -l {} \; | mail -s "Files with any special bit set" root
+
+This command finds the files that have any sort of special bit set, produces an ls -l listing from each, and sends an email that has the entire listing of files to the root user with the subject line in quotation marks.
+When you use the -perm option with permissions, it matters whether you use a + or a - symbol or donÅft use one at all. If you are searching for a particular permission setting, such as all the files that have an exact permission setting, use the find / -perm 4777 command.
+This command finds only files whose permission trios and special bit match exactly the permissions specified. If you use the + and - symbols to search for special bits, the - symbol means to look for the exact combination of special bits that match the first numeral, such as 6, which would be 4 and 2 - or SUID and SGID. To find any or all of the bits set that match the first numeral, you use the + symbol.
+Once a week, run the same report again and then compare the first one with subsequent reports with the diff command to see what has changed. I suggest automating this with a script.
+YouÅfll probably see questions about the find command and the permissions, so be prepared to parse the commands to see which perform the specified tasks.

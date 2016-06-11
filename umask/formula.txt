@@ -1,0 +1,2 @@
+As you can see, the umask value changes the default permissions of a created object based on the following formula:
+Maximum default value - umask value = create value
