@@ -1,4 +1,4 @@
-The two tables that affect which clients can connect to which services (provided the service uses libwrap.a or is controlled by inetd/xinetd) are /etc/hosts.allow and /etc/hosts.deny.
+The two tables that affect which clients can connect to which services (provided the service uses libwrap.a or is controlled by inetd/xinetd) are /etc/hosts.allow and /etc/hosts.deny. tcpd (tcp wrapper) uses /etc/hosts.allow and /etc/hosts.deny to perform its main task of checking for access control restrictions to system services.
 
 
 
