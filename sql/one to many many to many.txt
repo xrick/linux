@@ -1,0 +1,5 @@
+many-to-many relationship
+A relationship between two entities that allows each side to have multiple relationships. A parent may have many children, and a child may have many parents.
+
+many-to-one relationship
+A relationship between two entities where one side belongs to another. A car has many tires, but a given tire only belongs to one car.

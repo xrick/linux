@@ -1,0 +1,14 @@
+For example
+
+which ls
+[minhql@localhost ~]$ which ls
+alias ls='ls --color=auto'
+        /bin/ls
+		
+		
+		
+In path, ls command is set to /bin/ls
+But in alias, ls command is set to ls --color=auto
+
+Alias has higher priority than path. That's why, when you type ls. It will run alias first, then run path
+

@@ -1,0 +1,26 @@
+$0 is the name of the command
+$1 first parameter
+$2 second parameter
+$3 third parameter etc. etc
+$# total number of parameters. A number (For example: 5).
+$@ all the parameters will be listed (For example: login.sh , user, password).
+
+sh-3.2$ cat a.sh
+echo $#  #print the number of cmd line args.
+sh-3.2$ ./a.sh
+0
+sh-3.2$ ./a.sh foo
+1
+sh-3.2$ ./a.sh foo bar
+2
+sh-3.2$ ./a.sh foo bar baz
+3
+
+
+
+foo, bar are arguments
+$1, $2: are parameters
+
+	
+Another way of saying it: argument is the value/variable/reference being passed in, parameter is the receiving variable used w/in the function/block.
+Or, a method has parameters and takes arguments. 

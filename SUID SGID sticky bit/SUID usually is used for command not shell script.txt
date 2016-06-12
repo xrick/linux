@@ -1,0 +1,2 @@
+You learned earlier that setting the setuid bit on an executable file allows it to run with the owner's permissions instead of the person who ran it. That is, a file that was owned by root and has setuid enabled would run as root even if a nonprivileged user ran it.
+The Linux kernel does not honor the setuid bit on script files. If you need to give elevated privileges within a script you must use something like sudo.

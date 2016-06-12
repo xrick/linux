@@ -1,0 +1,11 @@
+SELECT age
+FROM person
+WHERE name='Sean' AND age > 20
+LIMIT 15
+
+
+
+Note that the word Sean is single quoted, indicating it's a user-entered string. If it were not quoted, it would be referring to a column. 
+WHERE name=Sean is an example of a filter that matches rows where the values of the name and Sean columns are identical.
+
+Without single quote => Sean means column's header instead of a value

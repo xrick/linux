@@ -1,0 +1,1 @@
+Edit configuration files stored in /etc/sysconfig/network-scripts/ directory. This method works with remote server over the ssh based session.

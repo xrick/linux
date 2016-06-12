@@ -1,0 +1,6 @@
+% 	A substitute for zero or more characters  x >=0
+_ 	A substitute for a single character    x=1
+[charlist] 	Sets and ranges of characters to match  [abc]: a or b or c   (matches any single character which satisfies the condition)    x=1
+[^charlist]
+or
+[!charlist] 	Matches only a character NOT specified within the brackets

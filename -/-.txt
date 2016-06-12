@@ -1,6 +1,6 @@
 ﻿cat text1 |tr ' ' '\t'|cat - text2
 
- - to signify standard input to cat, so we can concatenate the output of tr and the text2 file. 
+ -: to signify standard input to cat, so we can concatenate the output of tr and the text2 file. 
  Ở ví dụ trên - nghĩa như sau:
  cat (tr ' ' '\t') text2
  

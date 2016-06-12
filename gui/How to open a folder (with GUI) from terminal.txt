@@ -1,1 +1,8 @@
 gnome-open /home/john/Downloads
+
+
+You can use xdg-open to open documents, like so:
+
+xdg-open mydoc.pdf
+
+This has a bonus of being desktop agnostic so it should work regardless of what desktop the user has installed. In GNOME itself gnome-open has been replaced by gvfs-open.

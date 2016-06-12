@@ -1,0 +1,8 @@
+You are currently in folder /tmp . In this /tmp , there is a program nvram_tcl . You run it by typing nvram_tcl => unsuccessfully. You have to type ./nvram_tcl 
+The reason is below:
+
+
+
+There is no implicit check for the current directory in your path. You must explic-itly run ./program, /full/path/to/program, or add . to your path to run pro-grams from your current directory. Make the shell check the current directory last with export PATH=$PATH:.
+Again, $PATH expands to the current path, and then youÅfre appending the cur-rent directory.
+Putting the current directory in the path can open up security holes. The thinking is that if someone has an evil program called ls in his home directory or maybe in /tmp and the root user is in that directory and runs ls, the evil program could run instead of /bin/ls.

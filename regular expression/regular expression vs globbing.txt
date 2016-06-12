@@ -21,8 +21,10 @@ apple                   (This line satifies containing at least one p character 
 pear                   (This line satifies containing at least one p character and it has to contain zero or more p characters)
 Line banana does not satisfy containing at least one p character. That's why it does not display
 
-In regex, + is a repetition operator, it will match one or one occurence of the preceding regular expression
-In regex, ? is a repetition operator, it will match zero or one occurence of the preceding regular expression
+In regex, + is a repetition operator, it will match one or one occurence of the preceding regular expression   x >=1
+In regex, ? is a repetition operator, it will match zero or one occurence of the preceding regular expression   1 >= x >= 0
+In regex, * is a repetition operator, it will match zero or more occurences of the preceding regular expression x >= 0
+. matches any single character x=1
 
 Single dot in regex is equal to ? in globbing
 .* in regex is equal to * used in globbing
@@ -37,7 +39,7 @@ Globbing only supports below patterns
 *
     matches any string, including an empty string.
 [
-    introduces a character class. A character class is a non-empty string, terminated by a ']'. A match means matching any single character enclosed by the brackets. There are a few special considerations:
+    introduces a character class (matches any single character which satisfies the condition). A character class is a non-empty string, terminated by a ']'. A match means matching any single character enclosed by the brackets. There are a few special considerations:
 
         The '*' and '?' characters match themselves. If you use these in filenames, you need to be careful about appropriate quoting or escaping.
         Because the string must be non-empty and terminated by ']', you must put ']' first in the string if you want to match it.

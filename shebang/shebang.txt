@@ -1,0 +1,2 @@
+#!/bin/bash
+Known as the shebang line after the hash or sharp (#) bang (!) that starts it, this tells the kernel that the script should be interpreted by /bin/bash instead of run as a binary.

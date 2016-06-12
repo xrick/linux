@@ -1,0 +1,20 @@
+The database schema is the description of all the tables in the database including the makeup of the columns and any relationships between the objects.
+If you need to make a change to the schema, such as to add a middle name to the author table or track a different tax in a sale table, you need to modify every row even if they donÅft need the tax or a middle name. In some databases, this involves downtime to lock the tables against change while the update is running.
+A schemaless database does away with the notion of database enforced relationships and moves to document storage. A document is a free-form description of the entity. If an author doesnÅft have a middle name, it doesnÅft need one. If you want to track a new piece of data, you just start using it and the new documents will have it.
+
+
+
+
+
+Below is an example of schema:
+.schema
+CREATE TABLE author (
+id integer primary key,
+first_name varchar(255),
+last_name varchar(255));
+CREATE TABLE book (
+id integer primary key,
+title varchar(255),
+year integer,
+author_id integer,
+written integer);

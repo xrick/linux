@@ -1,11 +1,11 @@
 	Ctrl-D = exit: It is used to initiates a logout.
-    Ctrl-C (in older Unixes, DEL) sends an INT signal ("interrupt", SIGINT); by default, this causes the process to terminate.
-    Ctrl-Z sends a TSTP signal ("terminal stop", SIGTSTP); by default, this causes the process to suspend execution.
+    Ctrl-C (in older Unixes, DEL) sends an INT signal ("interrupt", SIGINT, 2); by default, this causes the process to terminate.
+    Ctrl-Z sends a TSTP signal ("terminal stop", SIGTSTP,20); by default, this causes the process to suspend execution.
     Ctrl-\ sends a QUIT signal (SIGQUIT); by default, this causes the process to terminate and dump core.
     Ctrl-T (not supported on all UNIXes) sends an INFO signal (SIGINFO); by default, and if supported by the command, this causes the operating system to show information about the running command.
 Exit: exit the shell
 Logout: exit a login shell
-	
+	2 (interrupt), 9 (kill), 15 (terminate, allows the program to have time to clean up)
 	
 SIGABRT 	6 		Terminate (core dump) 	Process abort signal
 SIGALRM 	14 		Terminate 	Alarm clock
@@ -22,11 +22,11 @@ SIGPOLL 	n/a 	Terminate 	Pollable event.
 SIGPROF 	n/a 	Terminate 	Profiling timer expired.
 SIGQUIT 	3 		Terminate (core dump) 	Terminal quit signal.
 SIGSEGV 	n/a 	Terminate (core dump) 	Invalid memory reference.
-SIGSTOP 	n/a 	Stop 	Stop executing (cannot be caught or ignored).
+SIGSTOP 	19	    Stop 	Stop executing (cannot be caught or ignored).
 SIGSYS 		n/a 	Terminate (core dump) 	Bad system call.
 SIGTERM 	15 		Terminate 	Termination signal.
 SIGTRAP 	n/a 	Terminate (core dump) 	Trace/breakpoint trap.
-SIGTSTP 	n/a 	Stop 	Terminal stop signal.
+SIGTSTP 	20 	    Stop 	Terminal stop signal.
 SIGTTIN 	n/a 	Stop 	Background process attempting read.
 SIGTTOU 	n/a 	Stop 	Background process attempting write.
 SIGUSR1 	n/a 	Terminate 	User-defined signal 1.
@@ -36,4 +36,13 @@ SIGVTALRM 	n/a 	Terminate 	Virtual timer expired.
 SIGXCPU 	n/a 	Terminate (core dump) 	CPU time limit exceeded.
 SIGXFSZ 	n/a 	Terminate (core dump) 	File size limit exceeded
 
-We should use SIGTERM instead of SIGKILL since SIGTERM allows the program to have time to clean up.
+We should use SIGTERM (15) instead of SIGKILL since SIGTERM allows the program to have time to clean up.
+
+
+SIGINT can be caught and handled. It's like telling the process "Please stop what you're doing." The process is free to ignore the signal, or implement a handler that does anything it wants. The default behavior is to terminate, and this is what most processes will do. It's typical, but not required, for a process to handle SIGINT by gracefully terminating -- closing any open files, network connections, or database handles and stopping the current operation in such a way that prevents data loss or corruption.
+
+SIGKILL can't be handled by the receiving process. If a process gets sent SIGKILL, it's toast, period. If a process receives SIGKILL in the middle of a database transaction or file write (for instance), it has no chance to exit gracefully and data loss or corruption may occur.
+
+When you do Ctrl-C in the terminal, the terminal sends SIGINT to the running process. Like I said before, most processes will gracefully terminate on receiving SIGINT. Once it's terminated, it's just as surely ended as if it had been SIGKILL'ed or exited normally -- you shouldn't expect to see it in ps because it's still gone.
+
+But there are some programs that don't respond to SIGINT in that way. bash is one example; if you hit Ctrl-C at a shell prompt, it'll just cancel whatever you've typed on that line -- not terminate the whole shell. Again, this is because the behavior when a process receives SIGINT is determined by the process itself. vi is another program that doesn't handle SIGINT by terminating. 

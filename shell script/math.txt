@@ -1,0 +1,9 @@
+Do Math
+When your teachers told you that you will need math to do work, they were right. There are many cases where being able to do some easy math in a shell script helps.
+If you want to know the number of processes on a system, you can run ps -ef | wc -l.
+ ps -ef gives you the process list; wc -l returns the number of lines. That gives you one more than the number you are looking for because ps includes a header line.
+ 
+ The shell can do math by enclosing the expression inside $(()).
+ 
+ PROCS=$(ps -ef | wc -l)
+PROCS=$(($PROCS-1))

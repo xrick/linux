@@ -1,0 +1,31 @@
+
+[minhql@localhost ~]$ cat /etc/localtime
+TZif2   ??C???+
+?5??Y?p?;>??2????/?
+~?bp?bp LMTPLMTICTIDTJSTTZif2   ??????C???????+
+?????5??????Y?p?????;>??????2????????????/?
+~?bp?bp LMTPLMTICTIDTJST
+ICT-7
+The system time zone is stored in a file called /etc/localtime. It is either a copy of the appropriate zoneinfo or a symlink to the appropriate file, depending on the distribution. Symlinks are typically used so that itÅfs clear which time zone is in use. For example you could set your current time zone to Winnipeg with
+
+
+
+Users who donÅft have a time zone set get this zone as their default. They can override the setting through the TZ environment variable.
+Click here to view code image
+[minhql@localhost ~]$ date +%z
+-0500
+[minhql@localhost ~]$ export TZ=Asia/Hong_Kong 
+
+TZ: timezone
+
+[minhql@localhost ~]$ date +%z
++0800
+
+
+To change back to Ho Chi Minh
+[minhql@localhost ~]$ export TZ=Asia/Ho_Chi_Minh
+
+Instead of using export and /etc/.bash_profile permanently when logging in , you can use ln -sf /usr/share/zoneinfo/US/Hawaii /etc/localtime to set time zone permanently. 
+
+You can use tzselect to search for a timezone
+https://en.wikipedia.org/wiki/List_of_tz_database_time_zones 
