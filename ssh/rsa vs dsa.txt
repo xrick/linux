@@ -1,0 +1,22 @@
+
+
+When generating SSH authentication keys on a Unix/Linux system with ssh-keygen, you're given the choice of creating a RSA or DSA key pair (using -t type).
+
+What is the difference between RSA and DSA keys? What would lead someone to choose one over the other?
+
+
+Go with RSA.
+
+DSA is faster for signature generation but slower for validation, slower when encrypting but faster when decrypting and security can be considered equivalent compared to an RSA key of equal key length. That's the punch line, now some justification.
+
+The security of the RSA algorithm is based on the fact that factorization of large integers is known to be "difficult", whereas DSA security is based on the discrete logarithm problem. Today the fastest known algorithm for factoring large integers is the General Number Field Sieve, also the fastest algorithm to solve the discrete logarithm problem in finite fields modulo a large prime p as specified for DSA.
+
+Now, if the security can be deemed as equal, we would of course favour the algorithm that is faster. But again, there is no clear winner.
+
+You may have a look at this study or, if you have OpenSSL installed on your machine, run openssl speed. You will see that DSA performs faster in generating a signature but much slower when verifying a signature of the same key length. Verification is generally what you want to be faster if you deal e.g. with a signed document. The signature is generated once - so it's fine if this takes a bit longer - but the document signature may be verified much more often by end users.
+
+Both do support some form of encryption method, RSA out of the box and DSA using an El Gamal. DSA is generally faster in decryption but slower for encryption, with RSA it's the other way round. Again you want decryption to be faster here because one encrypted document might be decrypted many times.
+
+In commercial terms, RSA is clearly the winner, commercial RSA certificates are much more widely deployed than DSA certificates.
+
+But I saved the killer argument for the end: man ssh-keygen says that a DSA key has to be exactly 1024 bits long to be compliant with NIST's FIPS 186-2. So although in theory longer DSA keys are possible (FIPS 186-3 also explicitly allows them) you are still restricted to 1024 bits. And if you take the considerations of this [article], we are no longer secure with 1024 bits for either RSA or DSA. 
