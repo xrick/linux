@@ -1,0 +1,15 @@
+If you are working on a system that has both network and local accounts, displaying user account information can be tricky. Local user account data is stored in local files, such as the /etc/passwd and /etc/shadow file. Network account information is stored in databases located on a server. One command can be used to search both local and network sources for account information: the getent command. For example:
+getent passwd bob
+
+The previous command searches both local and network sources in an order determined by the /etc/nsswitch.conf file:
+passwd:     files nis
+
+The value of files nis means "search local files first and then search the database for the specified value."
+
+
+
+
+getent - get entries from Name Service Switch libraries
+
+SYNOPSIS
+       getent database ...

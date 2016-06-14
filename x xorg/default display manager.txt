@@ -1,0 +1,4 @@
+The Xorg system includes by default the Xorg Display Manager or xdm.
+The gdm is associated with the GNOME Desktop
+The kdm is associated with the KDE Desktop 
+lightdm is the display manager that is default in Ubuntu distributions.

@@ -1,0 +1,14 @@
+================================System accounts=====================
+
+The /etc/passwd file contains a number of system accounts, all of which are assigned UIDs that range from 0 to 499. Some of the more interesting (and exam-worthy) are shown here:
+ 0: The root user on the system.
+ 1: The bin user, which is responsible for some system binaries and nonlogin accounts.
+ 48: The apache user, which the HTTPD daemon runs as.
+ 99: The nobody account, which is used for many things, particularly for anonymous access on FTP and HTTP servers. But it also maps to root accounts that attempt NFS access to shares that have been configured to deny access to the root user.
+ 
+ 
+ =============================Normal user accounts=====================
+ Typical users are assigned UIDs ranging from 500 to 65,000. This is fine for a single system, but it can cause problems in larger environments.
+If you have the need to allow for both local user accounts and network accounts (for the purpose of using NFS and NIS), it is a good idea to assign network accounts UIDs that start at the five-digit UID mark—in other words, with UIDs from 10,000 to 65,000. Local user accounts would be assigned values from 500 to 9,999. This allows for more structure in your UID numbering system.
+Note
+If you can, force the use of a standardized UID and GID structure across all your enterprise systems. If you have more than 100 users, consider using LDAP for managing how users log on to their systems. The now deprecated NIS and the newer LDAP methods are outside the scope of this discussion and not on the LPI Level 1 objectives but are great ways to centralize account and password management across all machines in your environment.

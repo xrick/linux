@@ -1,0 +1,22 @@
+
+
+
+===============Desktop environemt=================
+Windows XP: Luna
+From Windows Vista onward: Aero
+Unix-like operating systems: KDE, GNOME
+
+
+
+
+From the bottom up:  
+
+    Xorg, XFree86 and X11 are display servers. This creates the graphical environment.
+	
+    [gkx]dm (and others) are display managers (login managers). It is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell. This is the first X program run by the system if the system (not the user) is starting X and allows you to log on to the local system, or network systems. (XDM, KDM, GDM, Lightdm). The X display managers are for managing logins and sessions on an X server. Their design is such that remote and local logins are handled equally well. The user enters her username and password; then the session is started, transferring control from the display manager to the user’s session manager.
+    
+	A window manager (WM) is system software that controls the placement and appearance of windows within a windowing system in a graphical user interface (GUI). It can be part of a desktop environment (DE) or be used standalone. A window manager controls the placement and decoration of windows. That is, the window border and controls are the decoration. Some of these are stand alone (WindowMaker, sawfish, fvwm, etc). Some depend on an accompanying desktop environment. e.g: Enlightenment, Afterstep, FVWM, Fluxbox, IceWM, etc.
+    
+	A desktop environment such as XFCE, KDE or GNOME are a suite of applications designed to integrate well with each other to provide a consistent experience.
+
+In theory (and mostly so in practice) any of those components are interchangeable. You can run kmail using GNOME with WindowMaker on Xorg.

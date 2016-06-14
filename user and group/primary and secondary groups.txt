@@ -1,0 +1,28 @@
+Group Accounts
+Groups come in only one type, a grouping of users. No nesting of groups is possible in Linux or Unix. Users are associated with groups using two methods:
+
+ Primary: A GID appears in the /etc/passwd file entry in the fourth field; this group is made the group owner of all created objects (files, directories, and so on) for this user. The primary group for a user is special; if a user is assigned a primary group in the /etc/passwd, she does not have to be listed as a member in the /etc/group file because the GID in the /etc/passwd entry complements the secondary group membership defined in the /etc/group file.
+ Secondary: If a user's name appears in the /etc/group entry for a group, the user is a member of that group, and she gets access to the objects that group is the group owner of. The last field of each entry of the /etc/group file stores the secondary member list.
+Groups are assigned numbers, just as user accounts are. The group numbers are called GIDs (Group IDs). A few important GIDs:
+ 0: The root group; anyone who is a member of this group has access to resources restricted to the root account.
+ 1: The bin group is similar to the bin user account.
+ 100: The users group is where you can place regular users and then give them access to resources by assigning that group ownership of things that all users should have access to.
+ 
+ 
+ The entries in the /etc/group file are much simpler and shorter than the ones in the password file. Group files consist of the following fields:
+users:x:100:ross,snuffy
+
+The entries in a group file are
+ users : The name of the group, which should be eight or fewer characters and lowercase.
+ x : Like user passwords, the group passwords are kept in a different file. The group passwords are in /etc/gshadow. Note: while understanding this file can be useful, it is not an exam objective and is not be covered in this book.
+ GID : This is the systemÅfs number for this group and is resolved (translated) to the group name for user viewing convenience.
+ ross,snuffy : Users in the group are listed one after the other separated with a comma (,); no spaces should occur. This defines secondary group membership.
+ 
+ 
+ Group Passwords
+Users can have only a single primary group; if they need to create an object that has to be assigned to another group, the user can use the chgrp command. For a single file, this is easy, but if the user wants to create a bunch of files owned by a different group, this technique can be tedious.
+Another option is for users to temporarily change their primary group with the newgrp command. For example:
+newgrp users
+
+The newgrp command doesnÅft alter the /etc/passwd file or the /etc/group file; it opens a new shell with a different primary group. By default, a user can use the newgrp command to temporarily change her primary group to any group she is a member of. After creating the necessary files, the user can return to the shell that has the default primary group by executing the exit command. Note that users can change only to groups that they are a secondary member of.
+A password can be assigned to the group with the gpasswd command, but there is only one password and you have to give it to every user who needs to use this functionality. Once a group is assigned a password, users need to use the password to execute the newgrp command, even if the user is a member of that group.
