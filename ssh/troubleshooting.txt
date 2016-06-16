@@ -1,7 +1,16 @@
-The authencity of host can't be establish
+﻿The authencity of host can't be establish
 
 To fix: 
 add the following lines to the beginning of /etc/ssh/ssh_config
 Host 192.168.*.*
    StrictHostKeyChecking=no
    UserKnownHostsFile=/dev/null
+   
+   
+   
+   Nếu muốn connect đến STB ở Benson thì ta phải sửa lại thành:
+   add the following lines to the beginning of /etc/ssh/ssh_config
+Host *.*.*.*
+   StrictHostKeyChecking=no
+   UserKnownHostsFile=/dev/null
+   Do STB ở Benson thuộc mạng 10 không phải mạng 192 nên phải đổi như vậy

@@ -4,6 +4,11 @@
 
     ~/.ssh/known_hosts: Contains host keys of SSH servers accessed by the user. This file is very important for ensuring that the SSH client is connecting the correct SSH server.
 
+	If you use below lines:
+	Host 192.168.*.*
+   StrictHostKeyChecking=no
+   UserKnownHostsFile=/dev/null
+   No hosts will be added to ~/.ssh/known_hosts
  
  
 The known_hosts file lets the client authenticate the server, to check that it isn't connecting to an impersonator. The authorized_keys file lets the server authenticate the user.

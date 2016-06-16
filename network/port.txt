@@ -1,0 +1,29 @@
+Common Ports
+For the exam you are expected to know what a network port is and be familiar with common network ports. To understand ports, consider the following: You decide to connect to a remote system via SSH. The remote system has many network-based services (FTP, SSH, mail server, and so on) running. How does the SSH server on the remote system know that you are trying to connect via SSH rather than the other network-based services?
+The answer is that the SSH server listens to a port. A port is a numeric value assigned to a service. Remember the analogy of how an IP address is like a house address? In fact, it is more like an apartment address with the port numbers being the apartment number that you are trying to access.
+How a service determines which port to listen to is complex. Traditionally, the service was supposed to look at the entries in the /etc/services file
+
+Based on this output, the tcpmux (TCP port service multiplexer) service is to use TCP and UDP port #1.
+The reality is that few services actually look at this file. Most of them have settings in their configuration files to specify which port to listen to (although most services use a default that matches the entry in the /etc/services file).
+Port numbers 0-1023 are designated as well-known ports. These ports are supposed to be assigned to commonly used network services (sometimes referred to as legacy services). Ports 1024-49151 are called registered ports. These ports are assigned by the Internet Assigned Numbers Authority (IANA) to provide some sort of standardization of ports. The last range of port numbers, 49152-65535, are called dynamic (or private or ephemeral) ports. These cannot be “reserved” and can be used for any purpose.
+
+For the exam, you should be aware of the following port numbers and the services that commonly utilize the ports:
+ 20 & 21—FTP
+ 22—SSH
+ 23—Telnet
+ 25—SMTP
+ 53—DNS
+ 69-TFTP
+ 80—HTTP
+ 110—POP3
+ 123—NTP
+ 139—NETBIOS
+ 143—IMAP
+ 161 and 162—SNMP
+ 389—LDAP
+ 443—HTTPS
+ 465—SMTPS
+ 514—SYSLOG
+ 636—LDAPS
+ 993—IMAPS
+ 995—POP3S
