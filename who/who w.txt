@@ -1,0 +1,7 @@
+To check who is currently logging to the system, use command: 
+who
+OR
+w
+
+
+For example: a person, user A who accesses your system from his terminal using ssh. You types who or w => user A is displayed. User A closes his terminal, you types who or w => user A is not displayed
