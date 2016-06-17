@@ -1,0 +1,29 @@
+Issues About Path
+Scripts that work fine when run at the command line but donft work when run from cron are a common problem. The environment is different because cron doesnft run your .bash_profile and .bashrc scripts. Therefore, you can expect a minimal environment, including a basic PATH.
+See it for yourself by adding a cron entry such as:
+* * * * * env > /tmp/env
+
+That job runs every minute and dumps the environment to /tmp/env:
+SHELL=/bin/sh
+USER=sean
+PATH=/usr/bin:/bin
+PWD=/home/sean
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/sean
+LOGNAME=sean
+_=/usr/bin/env
+
+
+The environment for a cron job is fairly sparse: The path only has /usr/bin and /bin. It is also missing any additions that you are used to at your own shell, such as in .bash_profile.
+While the scripts run out of cron are free to set their own variables internally, cron lets you set environment variables in the usual format:
+Click here to view code image
+PATH=/usr/bin:/bin:/usr/local/bin:/home/sean/bin
+0 0 * * * /usr/local/bin/backup.sh
+
+The backup script then is run with the extended path set on the first line.
+You aren't limited to just setting the path. Any variable will work. Some variable names are special:
+
+ MAILTO : Anything that a job prints to the screen is mailed to this address.
+ SHELL : Run the job with a different shell. /bin/bash is used by default.
+ CRON_TZ : Use an alternate time zone for the crontab; otherwise, use system time.
