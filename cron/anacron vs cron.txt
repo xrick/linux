@@ -1,0 +1,2 @@
+Does your job need to run more than once a day or at a specific time? If so, you need to use crontab.
+Is the timing of the job flexible and youÅfre more interested in making sure itÅfs always run, even if itÅfs late? If so, you should use anacron. Is this job on a system that is not always on? As long as the timing constraints work for you, anacron is a good choice.

@@ -1,0 +1,24 @@
+System crontabs
+Some software packages need to bundle periodic tasks. For example, the sysstat package includes a valuable tool called the system activity reporter, or sar. A cron job fires every 10 minutes to collect some stats, and another job fires around midnight to archive the day's statistics.
+If the utility were to manipulate rootÅfs crontab, it could accidentally get removed if the root user didnÅft understand why the entry was there. Removing the entry after the package is removed also becomes a problem.
+
+Therefore there is a second set of crontabs meant to be manipulated only by the root user. There is a shared file called /etc/crontab and a directory containing individual tables in /etc/cron.d. The file is usually used by the distribution itself to list any default jobs, or for the administrator to list any manually entered jobs. The directory is most helpful for integrating with package management, where a package that needs its own cron to place a file in /etc/cron.d. When the package is removed or upgraded, the cron can be removed or changed without accidentally affecting other cron entries.
+These system crontabs have one important difference: They contain a sixth column that goes in between the schedule and the command to be run. This column indicates which user should be used to execute the job.
+An example of a system crontab such as this looks like the following:
+Click here to view code image
+# Run system wide raid-check once a week on Sunday at 1am by default
+0 1 * * Sun root /usr/sbin/raid-check
+
+The first five columns schedule a job for Sunday at 1:00 a.m. Column 6 says the root user will run it. The command is /usr/sbin/raid-check.
+
+
+Convenience crontabs
+One problem with scheduling jobs by a specific time is that they all run at the same time. Often you donÅft care about the specific time a job runs, you just want it to run hourly, daily, weekly, or monthly. Cron is installed with a configuration that has a directory for each of these time periods and will run the jobs in each directory consecutively when the scheduled time comes up.
+
+These directories are
+ /etc/cron.hourly Jobs here are run once an hour.
+ /etc/cron.daily Jobs here are run once a day.
+ /etc/cron.weekly Jobs here are run once a week.
+ /etc/cron.monthly Jobs here are run once a month.
+We look into the reasons why later this chapter, but these convenience jobs donÅft necessarily run on a predictable schedule. The system guarantees that monthly jobs are run once every month, but you can't say for sure that it'll happen exactly on the first of the month at midnight.
+The files that go in these directories are just scripts. You do not include any schedule columns or user columns. Most of these are placed there by installation scripts. For example, the logrotate package needs to run daily to maintain system logs (see Chapter 18, ÅgLogging and Time Services,Åh for more on logrotate), so it places a script in /etc/cron.daily that runs the script. The periodic updating of the database that the locate command uses is also run from cron.daily.

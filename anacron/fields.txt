@@ -1,0 +1,1 @@
+the anacrontab file has four columns: The period in days, the delay in minutes, the job identifier, and the command. There is no need to specify a username, as everything runs as root

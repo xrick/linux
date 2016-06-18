@@ -1,0 +1,24 @@
+At is for ad-hoc jobs that are manually created. At is for one-off jobs
+
+
+Running Ad-hoc Jobs
+The final class of jobs that can be scheduled are ad-hoc jobs. Cron and anacron run jobs on a periodic basis :you want to run your log rotation every night. There are times when you want to run a job once, just not now. This is the job of the at command and its friend, batch.
+
+
+[root@localhost etc]# at 2pm today
+at> echo "Hello"
+at> <EOT>
+job 2 at Sat Jun 18 14:00:00 2016
+[root@localhost etc]#
+
+
+
+You type the first line of the previous code block (at 2pm today) at the command line, causing the at> prompt to appear. Then you type the command you want to execute, press Enter, and press Ctrl+D to end the task. Ending the task shows the <EOT> notice, followed by a line that echoes the jobÅfs scheduling information.
+Alternatively, you can pass the job you want to run over the standard input:
+Click here to view code image
+[root@localhost etc]# echo '/usr/local/bin/backup.sh' | at 20:00 today
+job 10 at Sun Mar 29 20:00:00 2015
+
+atq :This shows the summary of jobs in the at queue with the job number, date and time, and executing user (this also can be seen with at -l). It does not show the contents of the job itself; for that the root user needs to look at the file in /var/spool/at.
+
+atrm :This deletes at jobs by job number, which is determined by using the previous command and the syntax atrm # (where # is the job number). at -d is a synonym for this.

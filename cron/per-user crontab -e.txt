@@ -1,0 +1,31 @@
+Per-user crontab files (accessed with the command crontab -e)
+
+[minhql@localhost ~]$ crontab -e
+@daily	/bin/ls
+
+After using crontab -e, the crontabs edited with the crontab command are stored in /var/spool/cron.
+
+[root@localhost cron]# cd /var/spool/cron
+[root@localhost cron]# ls
+minhql
+
+
+[root@localhost cron]# vi /var/spool/cron/minhql
+@daily  /bin/ls
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"/var/spool/cron/minhql" 1L, 15C

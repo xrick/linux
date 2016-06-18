@@ -1,0 +1,29 @@
+The batch Command
+Using the batch command is relatively simple; it's somewhat of an extension of the at command and shares the same man page. The batch command is used to run tasks or jobs at no specific time, but at a particular threshold of system utilization. As you can imagine, some systems are busy and you need to determine which jobs might need to be run with another scheduling utility if they are time-sensitive.
+The metric used by batch and at to know whether the system has capacity to run a job is the load average. The load average of the system is seen in the three numbers that shows up when you run the w (who) command:
+Click here to view code image
+$ w
+ 16:04:34 up 135 days, 17:40,  2 users,  load average: 0.54, 0.60,
+0.51
+
+These numbers, 0.54, 0.60, and 0.51, represent the average number of processes waiting to be run when sampled over the last minute, 5 minutes, and 15 minutes, respectively. A load average of 0.60 over 5 minutes means that over the last 5 minutes, when sampled, there was a process waiting to be run 60% of the time.
+
+You can expect that a system with two CPUs (each CPUs have one core) is busy when the load average is 2. By looking at the load average over the three different time intervals you can tell whether the load is temporary, in which case the 1 minute measurement will be high and the other two will be low, or if itÅfs sustained by having all three high. Or, if the 15 minute measurement is high and the others are low, you know you had some high load but have recovered.
+
+By default, batch runs jobs once at a future time when the system 1 minute load average is less than or equal to 0.8. This can be configured by specifying the desired utilization average with the atrun command, such as
+
+atrun -l 1.6
+
+This sets the threshold that batch will watch to 1.6, and if load average drops below that value, the batch job is run. A value of 1.8, would be good for a system with two processors. For a system with N processors you want this value to be slightly less than N, such as 80% of N.
+
+Submitting batch jobs is similar to at, and it even uses the at prompt and interface. To submit a compile job that runs when the system threshold is reached, you would use the following:
+
+$ echo bigcompile | batch
+job 11 at Sun Mar 29 14:36:00 2015
+
+You can create a job with at or batch and then cat the file by using a command such as
+
+cat /var/spool/at/a000030112ea5c
+
+at's spooled jobs use a prefix of the letter a, whereas batch jobs use the letter b as a prefix. When you view the file, notice all the environment settings stored in the job, including a line that exports the username used to submit the job. Only the root user can look at these files.
+Remember that at and batch both export a lot of information when the job is run, which goes away after that shell is closed. at and batch jobs are run in a replica of the environment that existed at the time the job was submitted, which means all variables, aliases, and functions in the shell are available to the job that was started in that shell.

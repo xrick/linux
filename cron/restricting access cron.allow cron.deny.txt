@@ -1,0 +1,20 @@
+1. If /etc/cron.allow exists, only users in this file and the root user can use crontab.
+2. If /etc/cron.allow does not exist but /etc/cron.deny does, anyone in the latter file is denied access.
+3. If neither file exists, only root can manage crons.
+Most systems ship with an empty /etc/cron.deny file so that anyone can access their crontab. It should be noted that any existing crontabs will continue to run and that the root user can still manage a denied user's crontab. The cron.allow and cron.deny files only control who can edit their own crontab.
+
+
+If both cron.allow and cron.deny exist, the behavior is to
+Only deny users in cron.deny to use crontab
+
+
+
+
+$ crontab -e
+You (sean) are not allowed to use this program (crontab)
+See crontab(1) for more information
+
+You look, and there is no file called /etc/cron.deny. What could be the problem?
+
+=> sean needs to be in /etc/cron.allow.
+with no cron.deny file, cron.allow dictates who can run crontab

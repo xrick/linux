@@ -1,0 +1,19 @@
+When errors or conflicts occur, the following commands are essential to resolving the conflicts shown in the output. Viewing that information straight from the /proc directory is accomplished with the following commands:
+
+cat /proc/interrupts
+cat /proc/ioports
+cat /proc/dma
+cat /proc/usb
+cat /proc/pci
+
+There is also a series of commands beginning with ls* that gather the same information and present it in more human readable format.
+The pertinent commands are
+
+ lsmod: Shows the kernel modules loaded, along with any dependencies for those modules. Helpful for double checking that the driver is loaded for a peripheral. If the module is not present then use the modprobe command to load it, such as with modprobe bluetooth.
+ lscpu: Provides details about your CPU, such as the number and speed of each socket and core.
+ lspci: Shows a lot of information about your PCI bus and devices. This can identify devices on the bus that the kernel doesnÅft know about and provides addressing information for configuring them.
+ lsscsi: Shows information about the SCSI devices on your system, if the system supports SCSI. This tells you if the system can see the disk.
+ lsdev: Shows the devices recognized by your system.
+ lsraid: Displays the Redundant Array of Inexpensive Disks (RAID) devices on the system.
+ lsusb: Displays the USB information and devices for your system.
+ lsblk: Displays the block devices (disks) attached to your system.

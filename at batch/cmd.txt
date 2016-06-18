@@ -1,0 +1,2 @@
+atq = at -l : lists the jobs of at command
+atrm (also known as at -d) deletes jobs by their id

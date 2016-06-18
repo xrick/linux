@@ -1,0 +1,9 @@
+Both cron and anacron are used to run periodic jobs. But only roo can use anacron.
+
+
+If a script is in /etc/anacrontab and the computer is off overnight, the script will be run after the computer has booted.
+True
+
+
+Does your job need to run more than once a day or at a specific time? If so, you need to use crontab.
+Is the timing of the job flexible and you're more interested in making sure it's always run, even if it's late? If so, you should use anacron. Is this job on a system that is not always on? As long as the timing constraints work for you, anacron is a good choice.

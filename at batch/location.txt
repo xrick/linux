@@ -1,0 +1,10 @@
+You can create a job with at or batch and then cat the file by using a command such as
+
+cat /var/spool/at/a000030112ea5c
+
+at's spooled jobs use a prefix of the letter a, whereas batch jobs use the letter b as a prefix. When you view the file, notice all the environment settings stored in the job, including a line that exports the username used to submit the job. Only the root user can look at these files.
+Remember that at and batch both export a lot of information when the job is run, which goes away after that shell is closed. at and batch jobs are run in a replica of the environment that existed at the time the job was submitted, which means all variables, aliases, and functions in the shell are available to the job that was started in that shell.
+
+
+
+For example: after creating an at 's job (at 12pm tomorrow), you can navigate to /var/spool/at to check the created job (cd /var/spool/at)

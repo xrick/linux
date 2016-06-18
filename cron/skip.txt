@@ -1,0 +1,5 @@
+You want to run a task on the hour, every other hour starting at 1:00 a.m., with no other restrictions. Which crontab accomplishes this?
+
+0 1-23/2 * * *
+
+Above answer is correct because it uses the 1-23 range of hours and skips 2 every time. A is not correct because a skip of 120 over the span of 60 minutes does not work

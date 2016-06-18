@@ -1,0 +1,57 @@
+Convenience crontabs
+One problem with scheduling jobs by a specific time is that they all run at the same time. Often you donÅft care about the specific time a job runs, you just want it to run hourly, daily, weekly, or monthly. Cron is installed with a configuration that has a directory for each of these time periods and will run the jobs in each directory consecutively when the scheduled time comes up.
+
+These directories are
+ /etc/cron.hourly :Jobs here are run once an hour.
+ /etc/cron.daily :Jobs here are run once a day.
+ /etc/cron.weekly :Jobs here are run once a week.
+ /etc/cron.monthly :Jobs here are run once a month.
+We look into the reasons why later this chapter, but these convenience jobs donÅft necessarily run on a predictable schedule. The system guarantees that monthly jobs are run once every month, but you canÅft say for sure that it'll happen exactly on the first of the month at midnight.
+The files that go in these directories are just scripts. You do not include any schedule columns or user columns. Most of these are placed there by installation scripts. For example, the logrotate package needs to run daily to maintain system logs (see Chapter 18 for more on logrotate), so it places a script in /etc/cron.daily that runs the script. The periodic updating of the database that the locate command uses is also run from cron.daily.
+
+
+
+
+
+[root@localhost cron.daily]# cd /etc/cron.daily
+[root@localhost cron.daily]# ls
+0yum-daily.cron  logrotate  man-db.cron  mlocate
+
+
+
+================================================When does `cron.daily` run?==========================================
+
+grep run-parts /etc/crontab
+
+01 * * * * root run-parts /etc/cron.hourly
+02 4 * * * root run-parts /etc/cron.daily
+22 4 * * 0 root run-parts /etc/cron.weekly
+42 4 1 * * root run-parts /etc/cron.monthly
+
+So cron.daily runs at 04:02am.
+
+
+
+Cron also searches for /etc/anacrontab . So if you can't find a config for cron.daily on /etc/crontab, you should look for cron.daily in /etc/anacrontab
+
+/etc/anacrontab in my system (Fedora 12) :
+
+1       5       cron.daily              nice run-parts /etc/cron.daily
+7       25      cron.weekly             nice run-parts /etc/cron.weekly
+@monthly 45     cron.monthly            nice run-parts /etc/cron.monthly
+
+The format of the anacrontab file is still based around columns. The columns are
+1. Period, in days, between runs of this job. Some of the @nicknames are available.
+2. Delay, in minutes, that anacron will wait before executing the job.
+3. A tag, called a job identifier, for the job that is unique across all jobs. Anacron uses this to track the last time the job was run.
+4. The command to run.
+
+
+Anacron is a simplified cron that complements the existing cron system. It is made to handle jobs that run daily or less frequently and jobs for which the precise time doesnÅft matter.
+AnacronÅfs chief advantage over cron is that it runs jobs that were scheduled to go when the computer was off. Rather than worry about specific times, anacron focuses on when the last time a particular job was run. If the computer was off when the job was supposed to run, anacron simply runs it the next time the computer is on.
+Anacron also differs from cron in a few important ways:
+ There is no command to manage the jobs. Everything is specified in /etc/anacrontab.
+ Everything is run as the root user.
+ The maximum granularity with which you can specify a schedule is 1 day, as opposed to 1 minute with cron.
+ Jobs are run consecutively.
+ While anacron can run as a daemon, itÅfs typically run from cron itself to see whether if there are any jobs outstanding, and once processing is done, anacron exits.

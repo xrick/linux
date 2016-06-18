@@ -1,0 +1,23 @@
+
+
+hd is a synonym for hexdump -C on FreeBSD and on some Linux distributions. hexdump is from the BSD days; od is from the dawn of time. Only od is standardized by POSIX. The Single UNIX rationale discusses why od was chosen in preference to hd or xd.
+
+These commands do very similar things: display a textual representation of a binary file, using octal, decimal or hexadecimal notation. There's no fundamental difference between the two.
+
+They have many options to control the output format, and some formats can only be achieved with one or the other command. In particular, to see a glance of what's in a binary file, I like hd's output format, with a column on the right showing printable characters literally; od can do that too.
+
+$ od /bin/sh | head -n 2                # od default: octal, 2-byte words
+0000000 042577 043114 000402 000001 000000 000000 000000 000000
+0000020 000002 000076 000001 000000 170020 000101 000000 000000
+
+$ od -Ax -t x1 /bin/sh | head -n 2      # od showing bytes in hexadecimal
+000000 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+000010 02 00 3e 00 01 00 00 00 10 f0 41 00 00 00 00 00
+
+$ hd /bin/sh | head -n 2                # hd default output: nice
+00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
+00000010  02 00 3e 00 01 00 00 00  10 f0 41 00 00 00 00 00  |..>.......A.....|
+
+$ od -Ax -tx1z /bin/sh | head -n2
+000000 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00  >.ELF............<
+000010 03 00 3e 00 01 00 00 00 32 4e 00 00 00 00 00 00  >..>.....2N......<
