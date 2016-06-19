@@ -1,2 +1,6 @@
 rpm -F *.rpm
 -F: freshen command only upgrades packages and won't install new packages
+
+
+rpm -U *.rpm
+-U: upgrade packages that are already installed and install packages that aren't

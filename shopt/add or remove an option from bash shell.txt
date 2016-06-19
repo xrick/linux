@@ -1,0 +1,5 @@
+Add an option 
+When setting options, you use the set -o option command
+
+Remove an option
+when unsetting the option, you either use unset option or set +o option.

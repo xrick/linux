@@ -1,0 +1,17 @@
+Package on disk: exist simply as file on the disk or other resource. It is not installed on the system
+
+[root@localhost yum.repos.d]# yumdownloader zip
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: centos-hcm.viettelidc.com.vn
+ * extras: centos-hcm.viettelidc.com.vn
+ * updates: centos-hcm.viettelidc.com.vn
+zip-3.0-10.el7.x86_64.rpm                                                                                                                    | 260 kB  00:00:00
+
+[root@localhost yum.repos.d]# rpm -qp zip-3.0-10.el7.x86_64.rpm
+zip-3.0-10.el7.x86_64
+[root@localhost yum.repos.d]# rpm -q zip-3.0-10.el7.x86_64.rpm
+package zip-3.0-10.el7.x86_64.rpm is not installed
+
+
+

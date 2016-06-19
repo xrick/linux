@@ -13,4 +13,8 @@ Distributions are free to store application-specific shared libraries anywhere, 
         /lib64/ld-linux-x86-64.so.2 (0x00007ff5a7400000)
 		
 		
+/lib64/ld-linux-x86-64.so.2 is dynamic linker		
+The dynamic linker is called ld.so and is configured in /etc/ld.so.conf
+		
+		
 

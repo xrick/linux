@@ -1,0 +1,26 @@
+[root@localhost yum.repos.d]# rpm -qi zip
+Name        : zip
+Version     : 3.0
+Release     : 10.el7
+Architecture: x86_64
+Install Date: Tue 29 Mar 2016 10:47:43 PM ICT
+Group       : Applications/Archiving
+Size        : 815037
+License     : BSD
+Signature   : RSA/SHA256, Fri 04 Jul 2014 12:53:58 PM ICT, Key ID 24c6a8a7f4a80eb5
+Source RPM  : zip-3.0-10.el7.src.rpm
+Build Date  : Tue 10 Jun 2014 09:37:07 AM ICT
+Build Host  : worker1.bsys.centos.org
+Relocations : (not relocatable)
+Packager    : CentOS BuildSystem <http://bugs.centos.org>
+Vendor      : CentOS
+URL         : http://www.info-zip.org/Zip.html
+Summary     : A file compression and packaging utility compatible with PKZIP
+Description :
+The zip program is a compression and file packaging utility.  Zip is
+analogous to a combination of the UNIX tar and compress commands and
+is compatible with PKZIP (a compression and file packaging utility for
+MS-DOS systems).
+
+Install the zip package if you need to compress files using the zip
+program.

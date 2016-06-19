@@ -1,0 +1,6 @@
+You can search remote repositories in different ways. If you know the name of the package you can use yum list:
+Click here to view code image
+# yum list tomcat
+
+Finally, if you knew you needed a web server but werenÅft sure what to pick, a general search is available, as shown in Example 3-9.
+yum search "web server"

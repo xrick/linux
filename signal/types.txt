@@ -5,8 +5,8 @@
     Ctrl-T (not supported on all UNIXes) sends an INFO signal (SIGINFO); by default, and if supported by the command, this causes the operating system to show information about the running command.
 Exit: exit the shell
 Logout: exit a login shell
-	2 (interrupt), 9 (kill), 15 (terminate, allows the program to have time to clean up)
-	
+	1 (terminate hangup, restart), 2 (interrupt), 9 (kill), 15 (terminate, allows the program to have time to clean up)
+	kill -s SIGHUP daemon1 = kill -HUP daemon1 = kill -1 daemon1
 SIGABRT 	6 		Terminate (core dump) 	Process abort signal
 SIGALRM 	14 		Terminate 	Alarm clock
 SIGBUS 	    n/a 	Terminate (core dump) 	Access to an undefined portion of a memory object.

@@ -1,0 +1,4 @@
+When using the GRUB boot loader, which of the answers describes the first logical partition on the first hard disk in a GRUB configuration?
+(hd0,4)
+
+In a GRUB configuration file, the disks are referred to by (hd#,#). The first disk is referred to by (hd0) and the fifth partition, the first logical, is referred to by (hd0,4) as GRUB starts counting from 0.

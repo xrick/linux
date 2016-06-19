@@ -1,2 +1,15 @@
+Remove a single package:
+rpm -e woohoo
+
+
+
+
 You need to remove all instances of the package abc, regardless of the version, with a single command. Which of the following accomplishes this task:
 rpm -e woohoo --allmatches
+
+rpm --erase woohoo --allmatches
+
+
+
+To remove package zip and all of its dependencies
+yum remove zip

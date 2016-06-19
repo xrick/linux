@@ -1,0 +1,4 @@
+[root@localhost yum.repos.d]# rpm -qc logrotate
+/etc/cron.daily/logrotate
+/etc/logrotate.conf
+/var/lib/logrotate.status

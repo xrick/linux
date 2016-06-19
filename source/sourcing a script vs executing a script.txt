@@ -15,8 +15,14 @@ Hello World
 The script is executed in a subshell (9740) of the current shell (9517).
 
 
+In case of using ./abc:
+When you exit the subshell, (When the script is finished executing), then all the variables and settings that were acted upon are wiped out as the subshell is exited.
+
+
+
+
 ============================Sourcing a script==================================
-[root@localhost ~]# source abc   /* OR . abc
+[root@localhost ~]# source abc   # OR . abc
 Hello World
 9517
 
@@ -29,10 +35,6 @@ The script is sourced in the current shell (9517).
 
 
 
-
-
-In case of using ./abc:
-When you exit the subshell, (When the script is finished executing), then all the variables and settings that were acted upon are wiped out as the subshell is exited.
 
 
 

@@ -1,0 +1,10 @@
+Which of the following files are executed upon a userÅfs terminal login?
+a. /etc/profile
+b. ~/.profile
+c. ~/.bashrc
+d. None of the above
+
+D. None of the files listed are "executed" during the user's login. They are instead Ågsourced,Åh which loads their settings and variables into the current version of the shell. The files are relatively meaningless to the question, as it is the method of executing versus sourcing that is being tested.
+
+Because the above files are sourced not executed.
+Source is different from execute

@@ -1,0 +1,4 @@
+It is possible to just download the packages instead of installing them. There are several ways to accomplish this:
+ At the y/d/N prompt above, answer d (download) instead of y (yes).
+ Use yum install --downloadonly instead of the plain yum install.
+ Use yumdownloader instead of yum.

@@ -1,0 +1,8 @@
+Most partitions you encounter store files. There is another kind of partition, called a swap partition, that stores memory instead of files.
+
+Swap: take memory and put it on to disk so that the system can offer more memory to applications than actually exists on the computer.
+
+Access to disk data using swap is much slower than access to RAM data, so it’s vital to avoid the need to constantly swap memory to and from disk or thrashing (thrashing—When memory is swapped back and forth from disk too often, the system is slowed down.) will happen. When your disks start to thrash, the system becomes painfully slow. Consider swap to be a safety net more than anything else.
+
+
+When the kernel is under pressure to give memory to a process and there is another process that hasn't used it memory in a while, the kernel will swap the old memory (of the process that hasn't used its memory in a while) to disk (Disk /dev/mapper/centos-swap: 1719 MB, 1719664640 bytes, 3358720 sectors)

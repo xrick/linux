@@ -1,4 +1,4 @@
-shutdown -k: is for simulating a system shutdown event, as well as sending a message to the attached users.
+shutdown -k: is for simulating a system shutdown event, as well as sending a message to the attached users. -k: kidding
 
 shutdown -h: halts the system
 
