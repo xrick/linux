@@ -1,0 +1,25 @@
+yum install epel-release  
+
+
+http://tecadmin.net/top-5-yum-repositories-for-centos-rhel-systems/
+
+Remove installed repo
+rpm -e epel-release-6-8.noarch
+
+################################################################################################
+
+If there is certificate error, try below solutions:
+yum reinstall ca-certificates
+OR
+Adjust date time 
+Remember to reboot for config to work
+
+After rebooting, enter below cmd to terminal
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+If terminal does not work, enter https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm to firefox and install
+
+################################################################################################
+
+In case there is still curl error, you need to edit /etc/yum.conf and change below line:
+gpgcheck=1 to gpgcheck=0
+After changing, you need to use yum update command for the change to take effect.

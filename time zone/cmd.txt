@@ -26,6 +26,6 @@ To change back to Ho Chi Minh
 [minhql@localhost ~]$ export TZ=Asia/Ho_Chi_Minh
 
 Instead of using export and /etc/.bash_profile permanently when logging in , you can use ln -sf /usr/share/zoneinfo/US/Hawaii /etc/localtime to set time zone permanently. 
-
+ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 You can use tzselect to search for a timezone
 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones 

@@ -2,6 +2,6 @@ For yum
 yum update to update package
 
 For apt
-yum install packagename to update package
+apt-get install packagename to update package
 or
-yum upgrade to update all packages
+apt-get upgrade to update all packages

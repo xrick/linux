@@ -11,3 +11,5 @@ Description:    Ubuntu 16.04 LTS
 Release:        16.04
 Codename:       xenial
 
+cat /etc/redhat-release
+

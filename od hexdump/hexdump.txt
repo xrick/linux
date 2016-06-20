@@ -1,0 +1,23 @@
+hexdump -n1 -C -s 20137 /dev/nds/nvram0
+0c
+
+
+-s: skip. -s 20137: skip 20137 bytes, do not display these bytes
+The value of NV_OBJ_SERVICES_2_FIELDS sector 's offset is 20133.
+We use this offset and add 4 bytes (CHK 32) to it: 20133 + 4 = 20137
+
+Parameter name			Size bits
+HOSPITALITY_SERVICE			1
+DIGITAL_SIGNAGE				1
+HEADLESS					1
+DRM_INHIBIT					1
+RESERVED					4
+
+0c = 0000 1100
+0000 are 4 bits of RESERVED
+1 is DRM_INHIBIT
+1 is HEADLESS
+0 is DIGITAL_SIGNAGE
+0 is HOSPITALITY_SERVICE				
+
+
