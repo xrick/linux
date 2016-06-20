@@ -1,1 +1,5 @@
-/etc/nologin which is used to block logins for accounts and echo a message that login is denied
+/sbin/nologin which is used to block logins for accounts and echo a message that login is denied
+
+
+chsh -s /sbin/nologin minhql
+chsh -s /bin/false minhql

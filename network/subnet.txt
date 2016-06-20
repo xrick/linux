@@ -1,0 +1,7 @@
+192.168.2.128/28
+
+32-28 = 4
+2^4 = 16
+16 - 2 = 14
+
+14 IP addresses can be used for unique hosts

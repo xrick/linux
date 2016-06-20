@@ -1,0 +1,7 @@
+
+[root@localhost ~]# logrotate
+logrotate 3.8.6 - Copyright (C) 1995-2001 Red Hat, Inc.
+This may be freely redistributed under the terms of the GNU Public License
+
+Usage: logrotate [-dfv?] [-d|--debug] [-f|--force] [-m|--mail command] [-s|--state statefile] [-v|--verbose] [--version] [-?|--help] [--usage]
+        [OPTION...] <configfile>

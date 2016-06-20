@@ -15,7 +15,7 @@ From the bottom up:
 	
     [gkx]dm (and others) are display managers (login managers). It is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell. This is the first X program run by the system if the system (not the user) is starting X and allows you to log on to the local system, or network systems. (XDM, KDM, GDM, Lightdm). The X display managers are for managing logins and sessions on an X server. Their design is such that remote and local logins are handled equally well. The user enters her username and password; then the session is started, transferring control from the display manager to the user’s session manager.
 	Default display manager:
-	- The Xorg system includes by default the Xorg Display Manager or xdm.
+	- The Xorg system includes by default the Xorg Display Manager or xdm. The name of the simple graphical login manager that comes with a vanilla X11 installation is xdm.
 	- The gdm is associated with the GNOME Desktop
 	- The kdm is associated with the KDE Desktop 
 	- lightdm is the display manager that is default in Ubuntu distributions.
