@@ -9,6 +9,10 @@ rpm -e epel-release-6-8.noarch
 ################################################################################################
 
 If there is certificate error, try below solutions:
+Change /etc/yum.repos.d/epel.repo
+baseurl=http://download.fedoraproject.org/pub/epel/6/$basearch
+#mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch
+OR
 yum reinstall ca-certificates
 OR
 Adjust date time 
