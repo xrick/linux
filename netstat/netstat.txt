@@ -1,0 +1,6 @@
+netstat: print network connections, routing tables, interface statistics, masquerade connections and multicast memberships.
+
+
+netstat -ap
+-a: all
+-p: display PID/Program name 

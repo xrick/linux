@@ -10,3 +10,7 @@ By default, ps command without arguments only displays the processes of current 
   To see all the processes with controlling terminals, use the -a option. 
   The -x option displays processes without a controlling terminal
   -u: list users
+  
+  
+  ps -ax is almost the same with ps aux. But it does not display list users.
+  

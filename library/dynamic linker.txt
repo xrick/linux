@@ -14,7 +14,10 @@ Distributions are free to store application-specific shared libraries anywhere, 
 		
 		
 /lib64/ld-linux-x86-64.so.2 is dynamic linker		
-The dynamic linker is called ld.so and is configured in /etc/ld.so.conf
+The dynamic linker is called ld.so 
+
+
+ /lib/ld-linux.so.2 and its 64-bit cousin, /lib64/ld-linux-x86-64.so.2. They are the code that is responsible for dynamic loading. They read the header information from the executable, which is in the Executable and Linking Format (ELF) format. From this information, they determine what libraries are required and which ones need to be loaded. They then perform dynamic linking to fix up all the address pointers in your executable and the loaded libraries so that the program will run. 
 		
 		
 

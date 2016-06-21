@@ -1,0 +1,2 @@
+You've configured your computer to use SMTP and IMAP via a tunneled SSH connection to your ISP's email server for improved security. Why might you still want to use GPG encryption for your emails on top of the encryption provided by SSH:
+The SSH tunnel only ensures that the email is protected from your computer to email server. From email server to recipient, there is no protection. That's why you need to use GPG to encrypt your email.

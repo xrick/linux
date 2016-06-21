@@ -1,1 +1,20 @@
 xorg is an implementation of X 
+
+
+
+Usually, you don't need the xorg.conf any more.
+
+If you need to configure some devices anyway, you can do so by placing a file in the /usr/lib/X11/xorg.conf.d/ (Ubuntu 10.04) or /usr/share/X11/xorg.conf.d/ (since Ubuntu 10.10). There are some files in this directory already. 
+
+
+The xorg.conf does not exist by default any more. You CAN create one though.
+
+Boot into recovery mode and select Root Shell. Then run:
+
+X -configure
+
+Then:
+
+cp /root/xorg.conf.new /etc/X11/xorg.conf
+
+Reboot and you can edit the new Xorg.conf.

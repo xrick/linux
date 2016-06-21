@@ -1,0 +1,3 @@
+The /etc/security/limits.conf file defines various limits on user resources, including the number of simultaneous login individual users are permitted
+
+Logout then login for changes in limits.conf to take effects

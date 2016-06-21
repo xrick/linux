@@ -1,0 +1,10 @@
+=====================================================================================LD_LIBRARY_PATH has higher priority than ld.so.cache=======================================================
+
+
+Loading specific libraries
+
+If you're running an older application that needs a specific older version of a shared library, or if you're developing a new shared library or version of a shared library, you might want to override the default search paths used by the loader. This might also be needed by scripts that use product-specific shared libraries that might be installed in the /opt tree.
+
+Just as you can set the PATH variable to specify a search path for executables, you can set the LD_LIBRARY_PATH variable to a colon-separated list of directories that should be searched for shared libraries before the system ones specified in ld.so.cache. For example, you might use a command like:
+
+export LD_LIBRARY_PATH=/usr/lib/oldstuff:/opt/IBM/AgentController/lib
