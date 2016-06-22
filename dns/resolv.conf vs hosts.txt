@@ -1,5 +1,9 @@
+To add a DNS server, add below line to /etc/resolv.conf
+nameserver 8.8.8.8
+
+
 Based on /etc/nsswitch.conf, hosts: files dns
-For hosts names and numbers, the order of the query is files first (in this case, file is /etc/hosts) then dns
+For hosts names and numbers, the order of the query is files first (in this case, file is /etc/hosts) then dns (/etc/resolv.conf contains the link to dns server)
 
 And between /etc/hosts and /etc/resolv.conf:
 /etc/hosts has higher priority than /etc/resolv.conf 
