@@ -22,3 +22,7 @@ IPV6_PRIVACY="no"
 IPADDR=192.168.100.101
 NETMASK=255.255.255.0
 GATEWAY=192.168.100.1
+
+
+To config DNS for this static ip, open /etc/resolv.conf and add below line:
+nameserver 8.8.8.8
