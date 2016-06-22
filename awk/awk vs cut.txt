@@ -1,0 +1,21 @@
+cut takes a single character in -d as the field delimiter (the default being TAB), and every single occurrence of that character starts a new field. awk, however, is more flexible. The separator is in the FS variable and can be an empty string (every input character makes a separate field), a single character, or a regular expression. The special case of a single space character (the default) means to split on any sequence of whitespace. Also, awk suppresses leading whitespace by default.
+
+Please compare:
+
+$ echo "abc def" | cut -f 2 -d ' '
+def
+$ echo "abc    def" | cut -f 2 -d ' '
+
+$ echo " abc def" | cut -f 2 -d ' '
+abc
+
+
+$ echo "abc def" | awk '{ print $2 }'
+def
+$ echo "abc    def" | awk '{ print $2 }'
+def
+$ echo " abc def" | awk '{ print $2 }'
+def
+Here, awk splits on the sequence of spaces between abc and def whereas cut takes every space as a separator.
+
+What you take would depend on what you want to achieve. Otherwise, I would expect cut to be faster since it is a smaller, single purpose tool whereas awk has its own programming language.

@@ -1,0 +1,24 @@
+cat abc | tr -s ' ' | cut -d ' ' -f6,7
+
+
+
+$ cut -d':' -f1 /etc/passwd
+root
+daemon
+bin
+sys
+sync
+games
+bala
+
+
+
+2. Select Column of Characters
+
+To extract only a desired column from a file use -c option. The following example displays 2nd character from each line of a file test.txt
+
+$ cut -c2 test.txt
+a
+p
+s
+As seen above, the characters a, p, s are the second character from each line of the test.txt file.
