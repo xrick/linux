@@ -1,0 +1,3 @@
+mailq is actually a command from sendmail, but due to the compatibility layer most distributions put in place, it runs the appropriate command depending on your MTA of choice. 
+
+For example, When typing mailq, If your current MTA is Postfix then postqueue -p is executed. When typing mailq, if your current MTA is exim then exim -bp is executed. When typing mailq, if your current MTA is qmail then qmail-qread is executed.
