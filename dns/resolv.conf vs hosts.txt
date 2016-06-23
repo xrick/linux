@@ -1,5 +1,5 @@
-To add a DNS server, add below line to /etc/resolv.conf
-nameserver 8.8.8.8
+
+
 
 
 Based on /etc/nsswitch.conf, hosts: files dns

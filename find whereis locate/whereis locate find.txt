@@ -1,0 +1,11 @@
+Just to point out the differences between locate, find, and whereis:
+
+whereis: will search only particular paths to find binaries and or manpages. The manpages tells you where whereis looks.
+Based on manpages. whereis only searches in below paths:
+/{bin,sbin,etc}
+/usr/{lib,bin,old,new,local,games,include,etc,src,man,sbin, X386,TeX,g++-include}
+/usr/local/{X386,TeX,X11,include,lib,man,etc,bin,games,emacs}
+
+locate: locate uses a database created by an updatedb to efficiently locate files. Works great, assuming your database is updated often enough to be reasonable upto date. Most boxes using locate have the updatedb occuring in cron.
+
+find: find is perhaps one of the most powerful commands there is. For just locating a file/program of a particular name, it'll definitely be slower than locate or whereis becuase it will search each and every path recursively from it's start point. But for instance tell me how to use locate or where is to things like the following:

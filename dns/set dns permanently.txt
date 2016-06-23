@@ -1,0 +1,38 @@
+To add a DNS server, add below line to /etc/resolv.conf
+nameserver 8.8.8.8
+
+After adding, to make change permanently
+It depends. Please read to the end.
+
+If you do not have the package resolvconf installed, then it is easy: after changing it the way you like, issue the command
+
+ sudo chattr +i /etc/resolv.conf
+The command changes the file attributes, making it immutable (the +i option).
+
+However, if you have the package resolvconf installed, the file /etc/resolv.conf may be transformed into a symbolic link,
+
+ # file /etc/resolv.conf
+ /etc/resolv.conf: symbolic link to `../run/resolvconf/resolv.conf'
+which is a file on a virtual file system, the epitomy of a non-permanent version. The funny thing is that you may not know you have resolvconf installed, because recent versions of Debian-like OSes come with it pre-installed. You can establish whether your distro has installed it for you by issuing the command:
+
+ #whereis resolvconf
+ resolvconf: /sbin/resolvconf /etc/resolvconf /lib/resolvconf /usr/share/man/man8/resolvconf.8.gz
+Even most importantly, you can establish whether your /etc/resolv.conf has been transformed into a link by means of the command (file /etc/resolv.conf) above. If the reply is ASCII text, use chattr, otherwise...
+
+If you use a static IP, the simplest thing is to add the following line (or some such thing)
+
+ dns-nameservers 8.8.4.4 8.8.8.8
+to the stanza defining the properties of your static interface in /etc/network/interfaces.
+
+If you instead are on a laptop which connects all the time to different networks,you may follow LawrenceC's excellent suggestion. But, if you have resolvconf on your system, the correct (and simplest) way to provide for a fixed set of DNSs is to use the files in /etc/resolvconf/resolv.conf.d. In particular, the following files are used (see Stephane Graber's page):
+
+base: Used when no other data can be found
+
+head: Used for the header of resolv.conf, can be used to ensure a DNS server is always the first one in the list
+
+tail: Any entry in tail is appended at the end of the resulting resolv.conf.
+
+So place you favorite nameservers in head, as follows
+
+  nameserver 8.8.8.8
+and you are done.
