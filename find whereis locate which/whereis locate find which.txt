@@ -1,4 +1,6 @@
-Just to point out the differences between locate, find, and whereis:
+Just to point out the differences between locate, find, which and whereis:
+
+which: shows the full path of (shell) commands. It does this by searching for an executable or script in the directories listed in the environment variable PATH using the same algorithm as bash
 
 whereis: will search only particular paths to find binaries and or manpages. The manpages tells you where whereis looks.
 Based on manpages. whereis only searches in below paths:
@@ -8,4 +10,4 @@ Based on manpages. whereis only searches in below paths:
 
 locate: locate uses a database created by an updatedb to efficiently locate files. Works great, assuming your database is updated often enough to be reasonable upto date. Most boxes using locate have the updatedb occuring in cron.
 
-find: find is perhaps one of the most powerful commands there is. For just locating a file/program of a particular name, it'll definitely be slower than locate or whereis becuase it will search each and every path recursively from it's start point. But for instance tell me how to use locate or where is to things like the following:
+find: find is perhaps one of the most powerful commands there is. For just locating a file/program of a particular name, it'll definitely be slower than locate or whereis becuase it will search each and every path recursively from it's start point.

@@ -1,0 +1,3 @@
+ tail -f /var/log/syslog /var/log/auth.log
+ 
+ You also should research about screen command

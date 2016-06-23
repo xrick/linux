@@ -15,4 +15,4 @@ vi /etc/security/limits.conf.
 
 * hard maxlogins 4
 
-The asterisk means global. 4 is the number of concurrent logins.
+The asterisk means global/any user. 4 is the number of concurrent logins.

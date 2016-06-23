@@ -1,14 +1,14 @@
 
-tr ' ' '\n' < FILE
+tr -d '\r' < DOS-file > UNIX-file
 To fix a Linux file which can't not be run on Linux, we use above command.
-Ther eason, Linux file does not work in Linux anymore is we download it to Widnwos then edit or sth like that
+The reason, Linux file does not work in Linux anymore is we download it to Windows then edit or sth like that
 
 
 echo "Hello World" | tr -d aieou
 Hll Wrld
 
 -d: delete
--s: squeeze. Replace repeated characters with a single occurence of that character
+-s: squeeze. Replace repeated characters with a single occurrence of that character
 
 For example: tr -s ' ' < a.txt > b.txt
 Above command will reduce all consecutive spaces down to a single space
