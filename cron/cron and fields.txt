@@ -4,8 +4,7 @@ A crontab is a file containing jobs in the format minute hour day-of-month month
 
 
 
-Usually, each crontab entry contains this sequence of six blank-separated fields or
-:
+Usually, each crontab entry contains this sequence of six blank-separated fields:
 Minute
 Hour
 Day of the month
