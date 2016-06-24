@@ -1,3 +1,11 @@
 Your Linux machine actually has two clocks. The hardware clock is on the motherboard of your computer and is implemented as a separate chip. This chip is called the real-time clock because it is separate from other functions on the motherboard. It continues running even when your computer is off so that when you boot your computer you have a way of knowing the current date and time.
 The other clock is the system clock and it is a part of the Linux kernel. When you are asking the kernel for the time, such as to write a timestamp to a log entry, you are getting the system clock time.
 The hardware and system clocks do differ from each other and from the real time, in a process known as drift. A clock drifts because it runs slightly faster or slower, and therefore needs periodic synchronization.
+
+Hardware clock
+[root@localhost test]# hwclock
+Sat 25 Jun 2016 01:01:03 AM ICT  -0.849677 seconds
+
+System clock
+[root@localhost test]# date
+Sat Jun 25 01:01:05 ICT 2016

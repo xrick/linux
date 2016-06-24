@@ -1,0 +1,93 @@
+access time (atime) is the file access time. The atime gets updated when you open a file but also when a file is used for other operations like grep, sort, cat, head, tail and so on.
+
+Depending when/how you installed it, uses relatime or noatime mount options by default - this means that tracking of access times is basically disabled.
+You can change it by removing that option from /etc/fstab and rebooting. Or, for instance
+sudo mount -o remount,atime /home
+on the relevant filesystem.
+
+Linux kernel developer Ingo Molnar called atime "perhaps the most stupid Unix design idea of all times," adding: "[T]hink about this a bit: 'For every file that is read from the disk, lets do a ... write to the disk! And, for every file that is already cached and which we read from the cache ... do a write to the disk!'" He further emphasized the performance impact thus:
+Atime updates are by far the biggest IO performance deficiency that Linux has today. Getting rid of atime updates would give us more everyday Linux performance than all the pagecache speedups of the past 10 years, combined => That's why, tracking of access times is basically disabled.
+
+modify time
+mtime is the file modify time. The mtime gets updated when you modify a file. Whenever you update content of a file or save a file the mtime gets updated.
+Most of the times ctime and mtime will be the same, unless only the file attributes are updated. In that case only the ctime gets updated.
+
+
+change
+The last time the contents of the file were changed, or that the file's metadata (owner, permission, inode number) was changed
+ ctime is the inode or file change time. The ctime gets updated when the file attributes are changed, like changing the owner, changing the permission or moving the file to an other filesystem but will also be updated when you modify a file.
+ 
+
+
+A Linux system records both a file modification time and a file access time. These are also known respectively as the mtime and atime. Both time stamps are set to the same value when a file is created, and both are reset when it is modified. If a file is accessed at all, then the access time is updated, even if the file is not modified. For our last example with touch, you look at file access times. The -a (or --time=atime, --time=access or --time=use) option specify that the access time should be updated. Listing 18 uses the cat command to access the f1 file and display its contents. You then use ls -l and ls -lu to display the modification and access times respectively for f1 and f1a, which you created using f1 as a reference file. You then reset the access time of f1 to that of f1a using touch -a and verify that it was reset.
+
+
+
+
+
+
+
+touch
+
+The touch command with no options takes one or more filenames as parameters and updates the modification time of the files. This is the same time stamp normally displayed with a long directory listing. Listing 14 uses our old friend echo to create a small file called f1, and then uses a long directory listing to display the modification time (or mtime). In this case, it happens also to be the time the file was created. It then uses the sleep command to wait for 60 seconds and runs ls again. Note that the time stamp for the file has changed by a minute.
+Listing 14. Updating modification time with touch
+
+ian@Z61t-u14:~/lpi103-2$ echo xxx>f1; ls -l f1; sleep 60; touch f1; ls -l f1
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:03 f1
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:04 f1
+
+If you specify a filename for a file that does not exist, then touch normally creates an empty file for you, unless you specify the -c or --no-create option. Listing 15 illustrates both these commands. Note that only f2 is created.
+Listing 15. Creating empty files with touch
+
+ian@Z61t-u14:~/lpi103-2$ touch f2; touch -c f3; ls -l f*
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:04 f1
+-rw-rw-r-- 1 ian ian 0 Jun  9 17:17 f2
+
+The touch command can also set a file's modification time (also known as mtime) to a specific date and time using either the -d or -t options. The -d is very flexible in the date and time formats that it accepts, while the -t option needs at least an MMDDhhmm time with optional year and seconds values. Listing 16 shows some examples.
+Listing 16. Setting mtime with touch
+
+[ian@atticf20 lpic-1]$ touch -t 201408121510.59 f3
+[ian@atticf20 lpic-1]$ touch -d 11am f4
+[ian@atticf20 lpic-1]$ touch -d "last fortnight" f5
+[ian@atticf20 lpic-1]$ touch -d "yesterday 6am" f6
+[ian@atticf20 lpic-1]$ touch -d "380 days ago 12:00" f7
+[ian@atticf20 lpic-1]$ touch -d "tomorrow 02:00" f8
+[ian@atticf20 lpic-1]$ touch -d "5 Nov" f9
+[ian@atticf20 lpic-1]$ ls -lrt f*
+-rw-rw-r--. 1 ian ian 0 May 25  2014 f7
+-rw-rw-r--. 1 ian ian 0 Aug 12  2014 f3
+-rw-rw-r--. 1 ian ian 0 May 26 17:22 f5
+-rw-rw-r--. 1 ian ian 0 Jun  8 06:00 f6
+-rw-rw-r--. 1 ian ian 0 Jun  9 11:00 f4
+-rw-rw-r--. 1 ian ian 0 Jun 10  2015 f8
+-rw-rw-r--. 1 ian ian 0 Nov  5  2015 f9
+
+If you're not sure what date a date expression might resolve to, you can use the date command to find out. Use the -d option with a date string to resolve the same kind of date formats that touch can. Note the different date formats in the listing for dates from a prior year or dates in the future.
+
+You can use the -r (or --reference) option along with a reference filename to indicate that touch (or date) should use the time stamp of an existing file. Listing 17 shows some examples.
+Listing 17. Timestamps from reference files
+
+ian@Z61t-u14:~/lpi103-2$ date
+Tue Jun  9 17:35:02 EDT 2015
+ian@Z61t-u14:~/lpi103-2$ date -r f1
+Tue Jun  9 17:04:04 EDT 2015
+ian@Z61t-u14:~/lpi103-2$ touch -r f1 f1a
+ian@Z61t-u14:~/lpi103-2$ ls -l f1*
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:04 f1
+-rw-rw-r-- 1 ian ian 0 Jun  9 17:04 f1a
+
+A Linux system records both a file modification time and a file access time. These are also known respectively as the mtime and atime. Both time stamps are set to the same value when a file is created, and both are reset when it is modified. If a file is accessed at all, then the access time is updated, even if the file is not modified. For our last example with touch, you look at file access times. The -a (or --time=atime, --time=access or --time=use) option specify that the access time should be updated. Listing 18 uses the cat command to access the f1 file and display its contents. You then use ls -l and ls -lu to display the modification and access times respectively for f1 and f1a, which you created using f1 as a reference file. You then reset the access time of f1 to that of f1a using touch -a and verify that it was reset.
+Listing 18. Access time and modification time
+
+ian@Z61t-u14:~/lpi103-2$ cat f1
+xxx
+ian@Z61t-u14:~/lpi103-2$ ls -lu f1*
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:39 f1
+-rw-rw-r-- 1 ian ian 0 Jun  9 17:04 f1a
+ian@Z61t-u14:~/lpi103-2$ ls -l f1*
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:04 f1
+-rw-rw-r-- 1 ian ian 0 Jun  9 17:04 f1a
+ian@Z61t-u14:~/lpi103-2$ touch -a -r f1a f1
+ian@Z61t-u14:~/lpi103-2$ ls -lu f1*
+-rw-rw-r-- 1 ian ian 4 Jun  9 17:04 f1
+-rw-rw-r-- 1 ian ian 0 Jun  9 17:04 f1a

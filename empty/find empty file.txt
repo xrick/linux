@@ -1,0 +1,9 @@
+
+Find empty file in /tmp
+
+Method 1:
+find /tmp -empty
+
+Method 2:
+[root@localhost tmp]# file /tmp/* | grep -i empty
+/tmp/123:                                                                      empty

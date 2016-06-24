@@ -7,9 +7,20 @@ A string containing any of the characters '?', '*' or '[', is a wildcard pattern
 ?
     matches any single character.
 *
-    matches any string, including an empty string.
+    matches any string, including an empty string. For example: ls *
 [
+    []: match a single character in brackets
     introduces a character class. A character class is a non-empty string, terminated by a ']'. A match means matching any single character enclosed by the brackets. There are a few special considerations:
+	
+[root@localhost test]# touch test1
+[root@localhost test]# touch test12
+[root@localhost test]# ls *
+test1  test12
+[root@localhost test]# ls test
+ls: cannot access test: No such file or directory
+[root@localhost test]# ls test[1-9]
+test1
+
 
         The '*' and '?' characters match themselves. If you use these in filenames, you need to be careful about appropriate quoting or escaping.
         Because the string must be non-empty and terminated by ']', you must put ']' first in the string if you want to match it.

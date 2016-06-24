@@ -1,0 +1,53 @@
+
+Trailing slash
+
+Most commands I use in linux behave exactly the same whether I include the trailing slash / character on the end of a directory name or not.
+
+For example:
+
+ls /home/cklein
+ls /home/cklein/
+
+cp foo bar
+cp foo/ bar/
+
+When does this trailing slash matter? What is the semantic meaning of the trailing slash?
+
+
+
+
+It is completely dependent on the tool. rm won't let you remove a symlink to a directory if there's a slash at the end, and rsync does different things if the remote file specification has a slash at the end.
+
+
+
+
+
+ls /home/* 
+* is globbing
+
+
+
+Depands on the command,  /home/* AND /home/ AND /home may work differently. For example:
+
+[root@localhost tmp]# ls /tmp
+systemd-private-60eaef41f76d4954bb54af74ea5afcb0-cups.service-iIZsmK      test                tracker-extract-files.0  yum_save_tx.2016-06-21.22-15.9Z9w9p.yumtx
+systemd-private-60eaef41f76d4954bb54af74ea5afcb0-vmtoolsd.service-6TVHrn  test_db-master.zip  VMwareDnD
+[root@localhost tmp]# ls /tmp/
+systemd-private-60eaef41f76d4954bb54af74ea5afcb0-cups.service-iIZsmK      test                tracker-extract-files.0  yum_save_tx.2016-06-21.22-15.9Z9w9p.yumtx
+systemd-private-60eaef41f76d4954bb54af74ea5afcb0-vmtoolsd.service-6TVHrn  test_db-master.zip  VMwareDnD
+[root@localhost tmp]# ls /tmp/*
+/tmp/test_db-master.zip  /tmp/yum_save_tx.2016-06-21.22-15.9Z9w9p.yumtx
+
+/tmp/systemd-private-60eaef41f76d4954bb54af74ea5afcb0-cups.service-iIZsmK:
+tmp
+
+/tmp/systemd-private-60eaef41f76d4954bb54af74ea5afcb0-vmtoolsd.service-6TVHrn:
+tmp
+
+/tmp/test:
+file  file1  file2
+
+/tmp/tracker-extract-files.0:
+
+/tmp/VMwareDnD:
+870a9cd9
