@@ -1,0 +1,3 @@
+Your shell is in /usr/local. You type cd ../bin. Which directory is shown when you type pwd?
+
+/usr/bin is correct because the path given first changes to /usr, then moves into bin

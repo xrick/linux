@@ -1,0 +1,12 @@
+absolute path: 
+/root/google/
+http://www.website.com/pictures/pictures.html 
+
+
+relative path:
+home/
+linkhere.html
+
+You must use absolute paths when linking to another Website, but you can also use absolute paths within your own website. This practice is generally frowned upon, though. Relative links make it easy to do things like change your domain name without having to go through all your HTML pages, hunting down links and changing the names. As an added bonus, they force you to keep your site structure neat and organized, which is always a good idea.
+
+It is also a good idea to avoid mixing absolute path names with relative path names when creating an archive, because all will be relative when restoring from the archive.

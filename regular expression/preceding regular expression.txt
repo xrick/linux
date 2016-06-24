@@ -3,5 +3,6 @@ regular expression is usually called preceding regular expression
 There are 3 commands which use regular expression the most. These commands are:
 grep, awk, sed
 
+Find command also can be used with regular expression
 find -regex: using regular expression
 find -name: using globbing/wildcard

@@ -1,0 +1,33 @@
+
+============================================================================================PROBLEM 1=================================================================
+
+The system I am using has gnuplot installed in /usr/bin. I don't have root, but I needed a newer version of gnuplot, so I installed it to $HOME/usr/bin. How to do tell linux to use the one in my home directory and not the one in /usr/bin. I added $HOME/usr/bin to my path, but it still executes the one in /usr/bin if I just use the gnuplot command. I'd rather not have to specify $HOME/usr/bin/gnuplot everytime I have to use it. 
+
+
+
+You need to prepend ${HOME}/usr/bin to your path, like so:
+
+PATH="${HOME}/usr/bin:/usr/bin"
+
+
+
+
+
+============================================================================================PROBLEM 2=================================================================
+
+I'm in the process of upgrading PEAR (PHP) on my system. The upgrade script is encouraging me to add "..\PHP\PEAR" to my PATH so that I can use "pear.bat". However, I already am able to use pear.bat.
+
+Looking in my PATH, I see that I don't have any PEAR directories, only my PHP directory. Opening my PHP directory, I see that there's a "pear.bat" in the base. But there's also a pear.bat in the PEAR subfolder of PHP. I'm wondering if I borked a PEAR install.
+
+ So if I leave ..\PHP in my path, but also add ..\PHP\PEAR -- both of which have a "pear.bat" in them -- which one will Windows "choose"? How do Windows and Linux decide?
+
+
+
+
+
+
+First match wins. The pear.bat in the directory that comes first in the %PATH% is the one that is executed:
+
+    PATH=..\PHP\PEAR;..\PHP: ..\PHP\PEAR\pear.bat is executed
+    PATH=..\PHP;..\PHP\PEAR: ..\PHP\pear.bat is executed
+

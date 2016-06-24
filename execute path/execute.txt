@@ -1,0 +1,7 @@
+To execute a script you need to use:
+./abc 
+OR
+bash abc
+
+OR you can add the location of the script to PATH and then execute the script using only its name:
+abc
