@@ -1,0 +1,10 @@
+
+[root@localhost ~]# man grep | nl | grep "\-i"
+    33         -i, --ignore-case
+    34                Ignore case distinctions in both the PATTERN and the input files.  (-i is specified by POSIX.)
+    35         -v, --invert-match
+    43         -y     Obsolete synonym for -i.
+    46                Suppress  normal  output;  instead  print a count of matching lines for each input file.  With the -v, --invert-match option (see below), count non-
+    63                --count option is also used, grep does not output a count greater than NUM.  When the -v or --invert-match option is also  used,  grep  stops  after
+    87         -T, --initial-tab
+   138         --include=GLOB

@@ -1,0 +1,1 @@
+RossÅfs Rule: Redirection always comes from or goes to a file, whereas piping always comes from or goes to a program.

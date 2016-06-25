@@ -3,8 +3,8 @@ sleep 60 &
 
 2. Using bg
 sleep 60
-[CTRL-Z]
-bg
+[CTRL-Z]    # Stop process sleep 60
+bg          # Run process sleep 60 in background
 
 
 

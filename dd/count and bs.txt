@@ -1,0 +1,7 @@
+The count keyword sets the number of reads from the input file you want to retrieve, and the bs keyword sets the block size.
+If you don't set the count and block size on this command to back up the MBR, you'll be copying the entire device's blocks to the filesystem, a snake-eating-its-own-tail operation that is guaranteed to fill up the partition quickly and crash the system.
+
+
+Backing up the MBR is another trick that dd does well. Remember that the master boot record contains the indexes of all the partitions on that drive, and thus is very important. To create a disk file that contains only the first 512 bytes of the first hard drive in the system, use this command:
+Click here to view code image
+dd if=/dev/sda of=/root/MBR.img count=1 bs=512

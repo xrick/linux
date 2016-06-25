@@ -1,0 +1,1 @@
+TightVNC is a cross-platform free and open-source remote desktop software application that uses and extends the RFB protocol of Virtual Network Computing (VNC) to control another computer's screen remotely. It was created by Constantin Kaplinsky.

@@ -36,13 +36,18 @@ SIGVTALRM 	n/a 	Terminate 	Virtual timer expired.
 SIGXCPU 	n/a 	Terminate (core dump) 	CPU time limit exceeded.
 SIGXFSZ 	n/a 	Terminate (core dump) 	File size limit exceeded
 
-We should use SIGTERM (15) instead of SIGKILL since SIGTERM allows the program to have time to clean up.
 
+==================================================================================SIGINT==================================================================================================
 
-SIGINT can be caught and handled. It's like telling the process "Please stop what you're doing." The process is free to ignore the signal, or implement a handler that does anything it wants. The default behavior is to terminate, and this is what most processes will do. It's typical, but not required, for a process to handle SIGINT by gracefully terminating -- closing any open files, network connections, or database handles and stopping the current operation in such a way that prevents data loss or corruption.
-
-SIGKILL can't be handled by the receiving process. If a process gets sent SIGKILL, it's toast, period. If a process receives SIGKILL in the middle of a database transaction or file write (for instance), it has no chance to exit gracefully and data loss or corruption may occur.
+SIGINT can be caught and handled. It's like telling the process "Please stop what you're doing." The process is free to ignore the signal, or implement a handler that does anything it wants. The default behavior is to terminate, and this is what most processes will do. It's typical, but not required, for a process to handle SIGINT by gracefully terminating -- closing any open files, network connections, or database handles and stopping the current operation in such a way that prevents data loss or corruption. But some programs can't be interrrupted by SIGIN
 
 When you do Ctrl-C in the terminal, the terminal sends SIGINT to the running process. Like I said before, most processes will gracefully terminate on receiving SIGINT. Once it's terminated, it's just as surely ended as if it had been SIGKILL'ed or exited normally -- you shouldn't expect to see it in ps because it's still gone.
 
 But there are some programs that don't respond to SIGINT in that way. bash is one example; if you hit Ctrl-C at a shell prompt, it'll just cancel whatever you've typed on that line -- not terminate the whole shell. Again, this is because the behavior when a process receives SIGINT is determined by the process itself. vi is another program that doesn't handle SIGINT by terminating. 
+
+
+==================================================================================SIGKILL==================================================================================================
+SIGKILL can't be handled by the receiving process. If a process gets sent SIGKILL, it's toast, period . If a process receives SIGKILL in the middle of a database transaction or file write (for instance), it has no chance to exit gracefully and data loss or corruption may occur.
+
+We should use SIGTERM (15) instead of SIGKILL since SIGTERM allows the program to have time to clean up.
+

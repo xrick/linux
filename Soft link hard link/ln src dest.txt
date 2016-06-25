@@ -1,0 +1,7 @@
+hardlink:
+ln src dest
+
+softlink
+ln -s src dest
+
+-f: force

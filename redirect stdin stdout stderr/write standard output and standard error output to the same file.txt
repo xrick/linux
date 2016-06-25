@@ -1,0 +1,13 @@
+Which of the following shell redirections will write standard output and standard error output to a file named filename:
+>filename 2>&1
+
+
+
+
+
+
+Grabbing both streams and putting them into different files is as simple as adding a redirection symbol preceded with the stderr numeral:
+Click here to view code image
+find / -iname *.txt > gooddata 2> baddata
+
+This grabs both streams and puts them into their proper files, with nothing displayed to the console.

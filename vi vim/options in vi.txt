@@ -1,0 +1,17 @@
+You have three methods of specifying options with the vim editor. All have their place, but if you find yourself frequently having to set options manually, try putting them in the ~/.vimrc file. An example is shown here:
+:set number (:set nu)
+:set nonumber  (:set nonu)
+
+:set tabstop=5
+:set nohlsearch
+
+The previous code should be placed in the .vimrc file, one option per line, the file being a simple text file in the user's home directory.
+Both /etc/vimrc and ~/.vimrc are read when vim starts up. These files allow users to retain custom settings, with /etc/vimrc applying to all users and ~/.vimrc to only the user.
+Tip
+If you want all users to have the exact same vim options, edit the /etc/vimrc file to set the options.
+To set options on-the-fly, enter them at the : prompt, such as :set number, :set noerrorbell, and set tabstop=5. These last only for the current session and have to be repeatedly reset in future sessions.
+Your final option for setting an option with vim is on the command line that started vim. For example, to start vim with nonprinting line numbers onscreen, you would use
+vim +"set number" file1
+
+The reason for the double quotation marks is the space between set and number; otherwise, you would get a syntax error.
+Many options are available in the vim editor. You can view them easily by typing :set all in the editor, or to see which options are currently set for your session, type :set while in the editor. Finally, you can type :set optionname? to find out about that particular optionÅfs status.

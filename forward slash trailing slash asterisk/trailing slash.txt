@@ -1,3 +1,8 @@
+The correct way to copy the contents of dir1 into dir2, thereby mirroring dir1 exactly, is to focus on the word “contents.” By suffixing the source (dir1) with a forward slash and an asterisk (dir1/*), you tell the cp command to ignore the directory entry and focus on the filenames inside the directory.
+With the same initial setup, if you issue the command cp –r dir1/* dir2, you get the correct results
+
+
+
 
 Trailing slash
 

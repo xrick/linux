@@ -1,0 +1,41 @@
+==========================================================================egrep==========================================================================
+
+The egrep (grep -E) command has many uses, but the main one we need to focus on is the ability to use egrep or grep -E to process search terms that feature operators, such as OR. For example, you may want to find lines in a very large /etc/passwd file that start with the letter "r" and the next letter is either "p" or "t" followed by any other letters. You can try the following:
+egrep '^r(p|t)' /etc/passwd
+
+This search finds the following lines, if they exist on your learning system:
+
+rpc:x:490:65534:user for rpcbind:/var/lib/empty:/sbin/nologin
+rtkit:x:492:490:RealtimeKit:/proc:/bin/false
+
+
+
+
+
+==========================================================================fgrep==========================================================================
+
+The fgrep command is similar in execution, but it’s essentially for using a file that contains a set of terms to be searched for, instead of having to specify them all separated by pipes. First create a file named filetosearch.txt and make it match the following output:
+
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+
+Then create a file named searchterms.txt and make it match the following output:
+one
+three
+eight
+
+Then run the following commands, which should produce the same output.
+Click here to view code image
+egrep '(one|three|eight)' filetosearch.txt
+fgrep -f searchterms.txt foobartar.fu
+
+Essentially, it’s easy to use fgrep to refer to a file for the discrete search terms you want to use; it is a much more elegant method than packing an egrep command line with a dozen or so search terms.
+Don’t forget that you can use [] ranges, globs (*) of text and several other special characters to help you display what you want using the egrep and fgrep commands.

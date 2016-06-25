@@ -1,0 +1,23 @@
+; :The semicolon causes all listed commands to be executed independently of each other. The following example echoes back when a long compile is done:
+
+make modules ; echo DO MAKE MODULES_INSTALL NEXT
+The commands are independently executed and neither command fails nor succeeds based on the other's exit status.
+
+
+
+
+
+ && :The double ampersand causes the second command to be executed if the first command has an exit status of 0 (success). If an exit status of nonzero (fails) is returned, the second command is not attempted. If you're a sysadmin and want to have a second program do something if the first succeeds, use the double ampersand like this:
+
+longcompile && mail root -s "compile complete"
+
+This set of commands starts a long compile; if it succeeds, you get an email stating compile complete in the subject line.
+
+
+
+
+ || :The double pipe causes the second command to not be attempted if the first command has an exit status of 0 (success). If the first command has an exit status of nonzero (fails), the second command is attempted. What if you want to have a second command let you know whether a particular process failed without having to dig through the log files every morning? You could use the following:
+Click here to view code image
+tar -czvf /dev/st0 / || mail root -s "doh, backup failed"
+
+As you can probably guess, this command set attempts a full system backup to a SCSI tape device. Only if it fails does the root user get an email with the subject line indicating it failed.

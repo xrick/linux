@@ -1,0 +1,71 @@
+File global /etc/profile sets saru variable as 123 and file local ~/.bash_profile also sets saru variable as 789
+Logout then login
+echo $saru restulst in 789
+Local file has higher priority than global file in this case. 
+
+
+============================Important note=================================
+
+It also depends on the file to decide local or global has higher priority
+For example: 
+
+
+Below are the contents of ~/.bashrc file
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+shourai=localnumber
+export shourai
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+
+
+Below are the contents of /etc/bashrc file:
+shourai=globalnumber
+export shourai
+
+
+
+Logout then login
+echo $shourai restulst in globalnumber
+
+
+But if we change the contents of ~/.bashrc file like this: 
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+
+shourai=localnumber
+export shourai
+
+
+
+
+Logout then login
+echo $shourai restulst in localnumber. Troubleshooting: .bashrc sources /etc/bashrc => shourai=globalnumber then .bashrc set shourai=localnumber. So in the end, shourai=localnumber not globalnumber.
+
+
+
+
+
+
+

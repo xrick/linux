@@ -17,3 +17,13 @@ sds
 sds
 ss
 sd
+
+
+The nl command is useful for numbering either every line in a file or stream of input, or just the lines with data on them. This is helpful when trying to troubleshoot source code or producing a list of numbered items automatically.
+To number only the lines in a file that contain data, use this command:
+nl file1
+
+To number every line in a file, regardless of the line having data in it, use this:
+nl –ba file1
+
+Expect to see the nl command used with commands such as pr and tac chained or piped together to produce a particular output. Order matters, so be sure to notice whether the question wants to number all lines or just nonempty lines.

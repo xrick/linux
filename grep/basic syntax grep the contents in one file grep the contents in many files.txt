@@ -1,0 +1,7 @@
+grep "literal_string" filename
+
+
+
+
+-r :This option reads and processes all the files in the specified directory
+grep -r fool /usr/share/doc

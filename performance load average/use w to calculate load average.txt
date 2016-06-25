@@ -1,8 +1,7 @@
 The metric used by batch and at to know whether the system has capacity to run a job is the load average. The load average of the system is seen in the three numbers that shows up when you run the w (who) command:
 Click here to view code image
 $ w
-16:04:34 up 135 days, 17:40,  2 users,  load average: 0.54, 0.60,
-0.51
+16:04:34 up 135 days, 17:40,  2 users,  load average: 0.54, 0.60, 0.51
 
 These numbers, 0.54, 0.60, and 0.51, represent the average number of processes waiting to be run when sampled over the last minute, last 5 minutes, and last 15 minutes, respectively. A load average of 0.60 over 5 minutes means that over the last 5 minutes, when sampled, there was a process waiting to be run 60% of the time.
 You can expect that a system with two CPUs is busy when the load average is 2 (200%, both 2 CPUs are busy). By looking at the load average over the three different time intervals you can tell whether the load is temporary, in which case the 1 minute measurement will be high and the other two will be low, or if it's sustained by having all three high. Or, if the 15 minute measurement is high and the others are low, you know you had some high load but have recovered

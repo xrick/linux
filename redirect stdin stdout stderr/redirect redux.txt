@@ -1,0 +1,5 @@
+To trap all output from a command (stdout, stderr) and send it to the /dev/null or black hole of the system, you use the following:
+Click here to view code image
+find / -iname *.txt > /dev/null 2>&1     
+OR
+find / -iname *.txt > /dev/null 2> /dev/null

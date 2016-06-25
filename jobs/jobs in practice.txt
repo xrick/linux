@@ -1,0 +1,27 @@
+ type fg to bring the last process back to foreground.
+
+If you have more than one process running in the background, do this:
+
+$ jobs
+[1]   Stopped                 vim
+[2]-  Stopped                 bash
+[3]+  Stopped                 vim 23
+
+
+
+
+
+
+
+3. When you run the jobs command, you see the following output:
+Click here to view code image
+          linux-8z04:~ # jobs
+[1]-  Stopped                 top
+[2]+  Stopped                 vim
+[3]   Running                 strace top &
+
+If you were to run the fg command at this time, what would happen?
+=> The vim command would be brought to the foreground
+
+ The fg command acts on the last used or last suspended, notated by the + sign . The other jobs must be interacted with by their job id.
+ fg %1

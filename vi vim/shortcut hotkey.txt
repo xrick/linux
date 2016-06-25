@@ -1,0 +1,45 @@
+==================================================In command mode==========================================
+
+.				:repeat previous action
+u				:undo last change
+Ctrl-R			:redo changes which were undone
+i 				:Begins editing the text at the current cursor position. Insert here.
+I 				:inset at the beginning of the line. BEGINNING
+a 				:append after current position
+A				:append at the end of the line. END
+o				:Open a new line below
+O (capital o)	:Open a new line above
+D or d$			:delete from the current cursor position to the end of the line not the end of file
+:w				:save. :w means it is a ex-command
+:q!				:quit
+:wq				:save then quit
+ZZ				:save current file if modified, then quit
+G				:navigate to the end of the file
+
+x    :Deletes a single character under the cursor
+X    :Deletes a single character before the cursor
+dw   :Deletes a single word that’s currently under the cursor, from the cursor position onward
+dd   :Deletes the current line entirely, regardless of the cursor position in the line
+D    :Deletes all text from the current cursor position to the end of the line
+dL   :Deletes all text from the cursor to the end of the screen
+dG   :Deletes all text from the cursor to the EOF
+d^   :Deletes all text from the beginning of the line to the cursor
+
+
+yy    :Copies a line of text to the unnamed buffer
+3yy   :Copies three lines of text to the unnamed buffer
+yw    :Copies from the current cursor to the end of the word to the unnamed buffer. w: word
+3yw   :Copies three words to the unnamed buffer
+p     :Pastes the contents of the unnamed buffer to the right of the cursor
+P     :Pastes the contents of the unnamed buffer to the left of the cursor
+
+
+In vim, delete actually means cut
+ "h" to go left, "j" to go down, "k" to go up, "l" to go right.
+
+Force Multipliers
+Just about any keystroke or action can be done X number of times by prefixing it with a number.
+For example, from Command mode to move down 5 lines you would type 5j. 
+Moving 12 words to the right is accomplished with 12W.
+
+

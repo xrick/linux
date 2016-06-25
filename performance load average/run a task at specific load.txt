@@ -12,8 +12,9 @@ You can expect that a system with two CPUs (each CPUs have one core) is busy whe
 
 By default, batch runs jobs once at a future time when the system 1 minute load average is less than or equal to 0.8. This can be configured by specifying the desired utilization average with the atrun command, such as
 
-atrun -l 1.6
+atrun -l 1.8
 
+-l: load average
 This sets the threshold that batch will watch to 1.6, and if load average drops below that value, the batch job is run. A value of 1.8, would be good for a system with two processors. For a system with N processors you want this value to be slightly less than N, such as 80% of N.
 
 Submitting batch jobs is similar to at, and it even uses the at prompt and interface. To submit a compile job that runs when the system threshold is reached, you would use the following:

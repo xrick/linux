@@ -1,0 +1,2 @@
+-w
+This option selects only lines that have the string as a whole word, not part of another word.

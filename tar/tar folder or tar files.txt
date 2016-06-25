@@ -1,0 +1,16 @@
+It's considered proper and elegant to create tar archives by specifying a directory that contains the files to be archived, not just a bunch of files that are in the current directory. This means that when the files are untarred they show up in a single directory instead of in the current directory.
+For example, create an archive of the /etc directory contents with the following command:
+tar -cf etc.tar /etc
+
+When you unarchive the tar file, by default it creates an etc directory in the current directory, which contains the entirety of the /etc directory you archived.
+Contrast this with the nightmare that happens when you navigate to the /etc directory and create the archive from there with this command:
+
+
+tar -cf /root/badetc.tar *
+
+This archive file contains the same files as the previous one, except they aren't contained in a top-level etc directory?everything is in the top level of the archive.
+Imagine what will happen to your system when you unarchive this file in the root user's home directory. You will have spewed approximately 2,400 files directly into the root user's home directory!
+It really does matter where you are in the filesystem and which path options you use when you create or expand an archive file. It's best practice to use absolute pathnames.
+To solve the problem of 2,400 files polluting your root userÅfs home directory, use the following command, where badetc.tar is the offending archive file:
+tar -tf badetc.tar | xargs rm -rf
+This command produces a list of the paths and filenames of files in the archive and uses the xargs command to feed each line of output as a filename specification to the rm -rf command, removing all the files and directories expanded from the badetc.tar file.

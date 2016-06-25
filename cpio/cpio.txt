@@ -3,3 +3,16 @@ cpio and tar are used to archive multi files into one files, not used to compres
 These days cpio and tar generally used to archive multi files into one files first then feed into a compression utility like gzip... This is because compressing a single large file is both more time and space efficient than compressing lots of small files. You should note that many image formats (png, jpg etc) are already highly compressed, and may actually get a bit bigger if put through a compression utility.
 
 Tar has an option (-z) to compress files too.
+
+
+
+================================================================================================================================================================================================================================================================================================================================================================================
+The cpio command doesn’t accept a list of files to archive on the command line like the other utilities you’ve seen so far. Instead, it reads the names of the files from the standard input or console. So be aware that using either the find or ls command is necessary to feed cpio a list of filenames.
+
+The cpio command accepts a list of files in a one-file-per-line format and uses this list to send the archived files to either the standard output or an archive file you specify.
+cpio supports a variety of archive formats, including binary, ASCII, crc, and tar, to name the most relevant.
+An example of creating a cpio archive from the files in the current directory is shown here:
+Click here to view code image
+find . "*" | cpio -o >  archive.cpio
+
+This outputs the list of files found by this particular find command, with the cpio command taking the entirety of the files and sending them to the archive.cpio file by redirecting standard output to the file.

@@ -1,0 +1,14 @@
+~foo : The foo user's home directory. The use of a ~ character in front of a string parses the /etc/passwd file for a username of that string
+
+
+
+
+
+[root@localhost test]# cat /etc/passwd
+minhql:x:1001:1001:abc abc:/home/minhql:/bin/bash
+mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
+test:x:1007:1009::/home/test:/bin/bash
+[root@localhost test]# echo ~mysql
+/var/lib/mysql
+[root@localhost test]# echo ~minhql
+/home/minhql

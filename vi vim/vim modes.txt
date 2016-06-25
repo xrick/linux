@@ -1,0 +1,26 @@
+vi modes
+
+The vi editor has three modes of operation:
+
+Command mode/editor mode/normal mode
+    In command mode, you move around the file and perform editing operations such as searching for text, deleting text, changing text, and so on. You usually start in command mode.
+Insert mode
+    In insert mode, you type new text into the file at the insertion point. To return to command mode, press the Esc (Escape) key.
+LastLine, also called "ex" mode
+    The Ex mode is similar to the command line mode as it also allows you to enter Ex commands. Switch to "Ex" mode by entering Q.  This is a bit like typing ":"commands one after another, except:
+			- You don't have to keep pressing ":".
+			- The screen doesn't get updated after each command.
+			- There is no normal command-line editing.
+			- Mappings and abbreviations are not used.
+
+These modes determine the way the editor behaves. Anything you type in insert mode is considered text to be inserted into the file. If you are trying to type a command and nothing happens, or the character appears under the cursor, then you probably forgot to press Esc to escape from insert mode.
+
+
+
+
+
+
+
+
+
+Use the command vi without any additional parameters => vi starts in command mode and opens a new empty file

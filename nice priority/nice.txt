@@ -1,3 +1,7 @@
+The other option for altering a running program’s priority is a feature of the top command. The top command shows a refreshing screen of processes with the highest CPU usage, configurable to show only active processes or a specific number of processes
+While top command is working, press r (Prompts for the PID to affect) and then provides the new priority.
+
+
 -20 <= nice <= 19
 -20: highest priority, 19: lowest priority
 processes started by regular users usually have priority 0

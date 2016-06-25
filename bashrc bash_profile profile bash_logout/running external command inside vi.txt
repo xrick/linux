@@ -1,0 +1,5 @@
+Running External Commands in vi
+A frequent question on the exams is how to run an external command inside vi, such as seeing an ls ?l listing of the current directory so you can remember a filename:
+:! ls -l
+
+In this, the command ls ?l executes, with the command's output displaying onscreen, and you need only press Enter or enter a command to return to the vim session. If the output scrolls more than one screen, it's piped to the more command and all the normal movement keystrokes will apply.

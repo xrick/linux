@@ -1,0 +1,31 @@
+
+[root@localhost ~]# cat 123
+1
+5
+10
+2
+8
+[root@localhost ~]# cat 123 | sort
+1
+10
+2
+5
+8
+[root@localhost ~]# cat 123 | sort -g
+1
+2
+5
+8
+10
+[root@localhost ~]# cat 123 | sort -n
+1
+2
+5
+8
+10
+[root@localhost ~]# cat 123 | sort -h
+1
+2
+5
+8
+10

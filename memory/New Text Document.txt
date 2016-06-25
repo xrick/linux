@@ -1,0 +1,27 @@
+To sum this all up, blocks are a data location on disk, buffers are what blocks are read into when a file or set of files is requested from disk, and then when those buffers are read into a page in memory, that page is a part of a slab or set of slabs that make up a cache.
+
+
+To illustrate the relationship between a cache and a slab, we can say the cache is a city, the slab is a neighborhood, and the page is a house in that neighborhood.
+
+
+shared: memoery used (mostly) by tmpfs
+buffers: memory used by kernel buffers 
+cached: memory used by the page cache
+
+
+
+
+
+Blocks and Buffers
+Key to the running of processes and the speed of processing on the system are blocks and buffers. Block devices such as disks have an addressable unit called a block. This is typically (not always, but often) 512 bytes in size. System software also uses a construct called a block, but it's typically much larger than the physical size of a block on a hard disk or other block device.
+When a disk block is read into system memory, it's stored in what is called a buffer. Buffers are associated with one and only one block, and that buffer is how the data contained in that block is addressed while in memory.
+
+
+
+
+Pages, Slabs, and Caches
+Pages are how the kernel manages memory on your system. The processor can address very small units of memory, aka a word or a byte. But the memory management unit uses pages and only addresses memory in page-sized chunks. The kernel addresses every single page of the memory in the struct_page table and includes information critical to managing that page in each page's entry there.
+Pages are frequently populated with the same data, read from buffers and written back to caches for later reading. The system manages its own structure and marks pages as being used, free, or a number of other flags or parameters entirely secondary to our purpose here.
+Caches are made up of slabs, which are one or more contiguous pages, although most of the time a slab is only one page. To illustrate the relationship between a cache and a slab, we can say the cache is a city, the slab is a neighborhood, and the page is a block in that neighborhood.
+To sum this all up, blocks are a data location on disk, buffers are what blocks are read into when a file or set of files is requested from disk, and then when those buffers are read into a page in memory, that page is a part of a slab or set of slabs that make up a cache.
+To continue the bus and passenger analogy, remember that a lightly loaded system shows a large utilization of RAM but also a correspondingly hefty use of cache and buffers, while a heavily loaded system, one with many processes running, shows a lot of RAM in use but relatively low cache and buffers. Effectively, as you load up the system with more processes, all the passengers/processes have to tighten up their working sets, put their magazines, snacks, extra luggage, and drinks in the overhead rack or under the seat and be respectful of their fellow passengers/processes.

@@ -1,0 +1,57 @@
+
+
+Disclaimer: I know this question was answered long ago, but maybe this will be helpful to some visitor of the question.
+
+If you are sorting strings that are mixed text & numbers, for example filenames of rolling logs then sorting with sort -n doesn't work as expected:
+
+$ ls |sort -n
+output.log.1
+output.log.10
+output.log.11
+output.log.12
+output.log.13
+output.log.14
+output.log.15
+output.log.16
+output.log.17
+output.log.18
+output.log.19
+output.log.2
+output.log.20
+output.log.3
+output.log.4
+output.log.5
+output.log.6
+output.log.7
+output.log.8
+output.log.9
+
+In that case option -V does the trick:
+
+$ ls |sort -V
+output.log.1
+output.log.2
+output.log.3
+output.log.4
+output.log.5
+output.log.6
+output.log.7
+output.log.8
+output.log.9
+output.log.10
+output.log.11
+output.log.12
+output.log.13
+output.log.14
+output.log.15
+output.log.16
+output.log.17
+output.log.18
+output.log.19
+output.log.20
+
+from man page:
+
+       -V, --version-sort
+              natural sort of (version) numbers within text
+

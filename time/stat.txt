@@ -1,0 +1,12 @@
+You can use stat command to check for access time, modify time and change time of a specific file
+
+[root@localhost test]# stat file1
+  File: Åefile1Åf
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: fd00h/64768d    Inode: 17772014    Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: unconfined_u:object_r:user_tmp_t:s0
+Access: 2016-06-25 00:37:49.804073124 +0700
+Modify: 2016-06-25 00:37:49.804073124 +0700
+Change: 2016-06-25 00:37:49.804073124 +0700
+ Birth: -

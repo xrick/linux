@@ -1,0 +1,61 @@
+======================Search=======================
+
+Searching for text in Linux utilities typically follows a common convention. In the less, more, and vim commands, a forward slash followed by a search term searches forward in the file from the current cursor position or the top of the file, highlighting found strings. Initiating a backward search from the cursor position is done with a question mark followed by the string to search for, such as ?sometext.
+
+Note
+Searches are performed only in Command mode, so remember to press the Esc key to get back there.
+
+Finding the next occurrence (whether a forward or backward search) is usually accomplished by pressing the N key to search in the same direction as the original search. You press Shift+N for a search in the opposite direction of the original search.
+
+
+======================Regular Expression Searches======================
+
+Finding matches using regular expression searches in vim is a good thing to know about. A regular expression search is a fuzzy search: You find something you only know a part of.
+For example, if you wanted to find all the instances of the word “The” at the beginning of a line, you could use this search:
+/^The
+
+To find all the instances of the word “kernel” at the end of a line, you could use this search:
+/kernel$
+
+In some instances, you need to find a literal instance of a character that otherwise has special meaning, otherwise known as a metacharacter. For example the asterisk (*) means “zero or more of the preceding character,” but you need to search for an asterisk within a string. In this case, escape the metacharacter by prefixing it with a backslash (\). You could use something like this:
+/The \* character
+
+Another example might be finding the text “kernel.”, with the period being treated only as a period rather than the metacharacter meaning of “any single character.” Otherwise, you would find kernels, kernel?, kernel!, and so on. To find just kernel., you would use the following:
+/kernel\.    => kernel.
+\. means treat the period only as a period
+. means any single character
+
+/kernel. => kernel?   kernel!    kernel1
+
+Finally, matching a range of characters is helpful, such as trying to find all instances of the version number string v2.1 through v2.9. You either have to perform several searches or use something like this:
+/v2.[1-9]
+
+The square brackets tell vim to match a single instance of the given range, stretching from the first character to the one after the dash. If you wanted instead to find all versions of the word “the,” including “THE,” “THe,” and “tHE,” you would use the following:
+/[tT][hH][eE]
+
+However the \c modifier exists to make the search case-insensitive:
+/\cthe
+
+
+======================Search and replace=======================
+
+Searching a document for a given string or character to replace it is commonly performed either in vim while editing a given file or by the sed command on a large set of data. Both vim and the sed command share a common search-and-replace syntax, with small differences that won't confuse you if you use both. Indeed, learning to search and replace in one will teach you how to use it in the other.
+
+The search-and-replace syntax is as follows:
+action/tofind/replacewith/modifier
+
+For example, the following string in vim replaces just the first instance of the string bob in the current line with the string BOB:
+:s/bob/BOB/
+
+To replace all instances of the string bob with BOB in the current line, you would use this line:
+:s/bob/BOB/g
+
+The g stands for global or doing the action on every found instance of the string. All lines not just a line
+
+To replace all instances of bob with BOB in the entire file, no matter how many exist or how many changes are made to each line, you would use this:
+:%s/bob/BOB/g
+
+
+The difference between sed and vim
+In vim, :s/bob/BOB/g only searches and replaces all occurrences in the current line not all lines. To search and replace all occurrences in all lines, use :%s/bob/BOB/g
+In sed, sed /s/bob/BOB/g searches and replaces all occurrences in all lines.

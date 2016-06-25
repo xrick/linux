@@ -1,0 +1,2 @@
+grep searches for the contents within the file(s)
+find searches for the file(s)

@@ -1,0 +1,14 @@
+The commands that "don't require" a colon are called "normal (mode) commands".
+
+The commands that "require" a colon are called "Ex commands".
+
+
+
+
+You have to look into the history of vi, the predecessor of Vim, for an explanation. A long time ago, when text editing had to be done with a keyboard and attached printer (called a terminal), there was no mouse, no display other than the paper, and therefore, little interactivity. Editing consisted of short, mnemonic commands via an editor called ex. You issued a command addressing one or several lines (e.g. :substitute/foo/bar), and the editor obeyed. In case you were not sure about the command's effects, you could :print some lines.
+
+Time passed, video terminals appeared, and the vi editor incorporated the ex commands (because they were useful and the programmers were used to them), but introduced more interactive commands like delete (x), insert (i), and so on. The ex commands are still available in command-line mode, which is started with :, and concluded with Enter.
+
+Vi and Vim are special in this regard, because they have these different modes where the same keys mean different things depending on which mode one is in. To become proficient in Vim, you have to learn about the different modes, and how to best use them to achieve your editing goals.
+
+:help vim-modes gives you a starting point into the excellent and comprehensive help facilities.
