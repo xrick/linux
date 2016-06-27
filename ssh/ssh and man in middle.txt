@@ -1,0 +1,19 @@
+Problem:  The very first time I connect to the mercurial server to clone a repository on a particular machine, I am asked "The authenticity of host ... can't be established..."
+
+Solution:  The first time you connect to a machine it sends you its public key. Say yes and go about your merry way.
+
+Background:  The fingerprint of this public key is stored with the host as a pair.  The first time you access a machine you do not have the key so it must store it.  SSH asks you if you want to do this as a security precaution.  Since you are on a trusted LAN we assume the key you receive is the correct key.  Over the internet this is not a safe assumption.  An attacker could play "Man in the Middle" and forge a key back to you.  In the future when you connected the forged key could be used to pretend to be the final server you want to talk to. 
+
+Note: If you are on a VPN that tunnels through the internet you are effectively on our LAN and can assume it is trusted. IPSec handles this security for you.
+
+Random Trivia:  Man in the middle attacks are difficult to achieve on internet due to asymmetric routing.  Typically a route to a host differs from the route back.  An attacker playing man in the middle must control a node or cluster of nodes that route traffic both to and from.  This is easiest on the borders of an autonomous system but very hard once inside the internet propper due to traffic shaping policies.
+
+
+
+You need to add your mercurial private key to your ssh agent session. This can be done as follows:
+ssh-add ~/.ssh/<priv-key-name>
+
+Background:  We are using ssh keys to manage authentication and authorization.\
+
+Note: If you do not have an SSH key, generate an SSH RSA key as follows:
+ssh-keygen -t rsa -b 1024

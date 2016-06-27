@@ -1,0 +1,4 @@
+yum install wireshark
+yum install wireshark-gnome 
+
+wireshark-gnome: GUI

@@ -1,0 +1,11 @@
+﻿The *-devel packages (usually called *-dev in Debian-based distributions) are usually all the files necessary to compile code against a given library.
+
+For running an application using the library libfoo only the actualy shared library file (*.so.*, for example libfoo.so.1.0) are needed (plus possibly some data files and some version-specific symlinks).
+
+When you actually want to compile a C application that uses that library you'll need the header files (*.h, for example foo.h) that describe the interface of that application as well as a version-less symlink to the shared library (*.so, for example libfoo.so -> libfoo.so.1.0). Those are usually bundled in the *-devel packages.
+
+Sometimes the *-devel packages also include statically compiled versions of the libraries (*.a, for example libfoo.a) in case you want to build a complete stand-alone application that doesn't depend on dynamic libraries at all.
+
+Other languages (such as Java, Python, ...) use a different way of noting the API of a library (effectively including all the necessary information in the actual library) and thus usually need no separate *-devel packages (except maybe for documentation and additional tools).
+
+They usually contain necessary headers and libraries. For example, python-devel will provide the Python headers and libraries that you need if you want to embed the Python interpreter in your own application. Some additional tools and documentation are included, too (e.g. a developer manual or code examples).

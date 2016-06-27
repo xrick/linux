@@ -1,0 +1,36 @@
+I always find that I get this message when I ssh into a new machine:
+
+12:f8:7e:78:61:b4:bf:e2:de:24:15:96:4e:d4:72:53
+What does it stand for? Will every machine have the same fingerprint every time?
+
+How are these fingerprints generated? What parameters do they depend on?
+
+
+
+
+
+
+The fingerprint is based on the Host's Public key, usually based on "/etc/ssh/ssh_host_rsa_key.pub" Generally its for easy identification/verification of the host you are connecting to.
+
+If the fingerprint changes, the machine you are connecting to has changed their public key. This may not be a bad thing(happens from re-installing ssh), but it could also indicate that you are connecting to a different machine at the same domain/IP(happens when you are connecting through something like load balancer) or that you are being targeted with a man-in-the-middle attack, where the attacker is somehow intercepting/rerouting your ssh connection to connect to a different host which could be snooping your user/pw.
+
+Bottom line: if you get warned of a changed fingerprint, be cautious and double check that you're actually connecting to the correct host over a secure connection. Though most of the time this is harmless, it can be an indication of a potential issue
+
+See: http://www.lysium.de/blog/index.php?/archives/186-How-to-get-ssh-server-fingerprint-information.html
+and: http://en.wikipedia.org/wiki/Public_key_fingerprint
+
+
+
+lava:~$ ls /etc/ssh/*key*
+/etc/ssh/ssh_host_dsa_key      /etc/ssh/ssh_host_key.pub
+/etc/ssh/ssh_host_dsa_key.pub  /etc/ssh/ssh_host_rsa_key
+/etc/ssh/ssh_host_key          /etc/ssh/ssh_host_rsa_key.pub
+
+This server has three keys, each of which comes as a pair of a private key (no extension) and a public key (extension .pub). Only root can read the private keys (after all, they are private), but everybody can read the public keys. In the message above, ssh shows you the RSA key ("RSA key fingerprint is ..."), so you will check the fingerprint of the server's public RSA key:
+
+lava:~$ ssh-keygen -lf /etc/ssh/ssh_host_rsa_key.pub 
+2048 9e:1a:5e:27:16:4d:2a:13:90:2c:64:41:bd:25:fd:35 /etc/ssh/ssh_host_rsa_key.pub
+
+The answer are three words: the first (2048) is the bit length of the key, the second (9e:1a:...:fd:35) is the fingerprint of the key and the last (/etc/....pub) is the file name of the key file.
+
+Thus, an unsecure and easy method to check the fingerprint of the server is to connect to the server and then check the fingerprint of its keyfile using ssh-keygen. This method is unsecure because an eavesdropper who can sent you a malicious server key (so he can eavesdrop your communication with the server) can also easily replace the fingerprint response of ssh-keygen with the fingerprint of the malicious key, for example by doing simple string replacement in the communication stream ("replace fingerprint of actual encryption key with fingerprint of malicious encryption key"). The secure method is to get the fingerprint from your administrator who wrote it down when she generated the key or to get the fingerprint when you logged in to the server directly (as opposed to via a network).

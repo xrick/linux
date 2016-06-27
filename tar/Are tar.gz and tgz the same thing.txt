@@ -1,0 +1,3 @@
+I think in the old package repo days, .tgz was used because files on Dos floppies could only have three letter extensions. When this limitation was removed .tar.gz was used to be more verbose by showing both the archive type (tar) and zipper (gzip).
+
+They are identical.
