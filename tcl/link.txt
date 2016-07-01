@@ -1,0 +1,1 @@
+https://wuhrr.wordpress.com/2009/09/13/parse-command-line-in-a-tcl-script/

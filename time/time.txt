@@ -1,3 +1,11 @@
+GTC = UTC
+date -u => GTC/UTC
+
+
+PDT
+date => PDT
+
+
 access time in most linux distributions now defaults to only updates atimes once a limit has passed (normally once per day) or if the file was actually modified since the previous read to prevent slowing everything down. That's why when we use ls -lu to list atime of a time or use stat command, atime and mtime are usually the same.
 
 This depends on exactly what you mean by "opened", but in general, yes. There are three timestamps normally recorded:

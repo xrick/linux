@@ -1,0 +1,17 @@
+[root@DIRECTV-HR34-DE44801B mw_data]# cat nv_reserved_log.json
+{
+"t":"1447399339",
+"errors":[{"a":"00003B08","v":"05000001"}]
+}
+[root@DIRECTV-HR34-DE44801B mw_data]# date -u
+Fri Nov 13 07:24:44 UTC 2015
+
+
+
+http://www.epochconverter.com/
+Convert epoch to human readable date and vice versa
+
+
+1447399339
+ Timestamp to Human date  [batch convert timestamps to human dates]
+GMT: Fri, 13 Nov 2015 07:22:19 GMT
