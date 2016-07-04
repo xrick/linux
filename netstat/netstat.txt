@@ -1,3 +1,7 @@
+netstat stands for network statistics. This command displays incoming and outgoing network connections as well as other network information. It’s available on Windows, Mac, and Linux — each version has its own command-line options you can tweak to see different types of information.
+
+The netstat utility can show you the open connections on your computer, which programs are making which connections, how much data is being transmitted, and other information.
+
 netstat: print network connections, routing tables, interface statistics, masquerade connections and multicast memberships.
 
 

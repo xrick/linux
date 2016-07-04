@@ -1,0 +1,12 @@
+The traceroute, tracert, or tracepath command is similar to ping, but provides information about the path a packet takes. traceroute sends packets to a destination, asking each Internet router along the way to reply when it passes on the packet. This will show you the path packets take when you send them between your location and a destination.
+
+This tool can help troubleshoot connection problems. For example, if you can’t communicate with a server, running traceroute may show you where the problem is occurring between your computer and the remote host.
+
+
+
+When using traceroute, if the output of traceroute is asterisk (*), there are two possible explanations in this case:
++ In the modern network environment the traditional traceroute methods can not be always applicable, because of widespread use of firewalls. Such firewalls filter the "unlikely" UDP ports, or even ICMP echoes. To solve this, some additional tracerouting methods are implemented (including tcp), see LIST OF AVAILABLE METHODS below. Such methods try to use particular protocol and source/destination port, in order to bypass firewalls (to be seen by firewalls just as a start of allowed type of a network session).
++ The asterisks you're seeing are servers that your packets are being routed through whom are timing out (5.0+ seconds) and so traceroute defaults to printing the *. 
+
+The firewall may block the ports which traceroute uses to probe info about route. But if you can still ping the remote host (traceroute google.com results in all asterisks, but you can still ping google.com) That means firewall allows ICMP port. You can use ICMP port to traceroute
+traceroute -I google.com 
