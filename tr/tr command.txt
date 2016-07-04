@@ -1,3 +1,9 @@
+tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+thegeekstuff
+THEGEEKSTUFF
+
+tr without option is used to replace a character with another character
+
 
 tr -d '\r' < DOS-file > UNIX-file
 To fix a Linux file which can't not be run on Linux, we use above command.
@@ -6,6 +12,7 @@ The reason, Linux file does not work in Linux anymore is we download it to Windo
 
 echo "Hello World" | tr -d aieou
 Hll Wrld
+
 
 -d: delete
 -s: squeeze. Replace repeated characters with a single occurrence of that character

@@ -1,0 +1,28 @@
+Hard disk devices
+
+By default, Linux defines IDE device files as follows:
+
+/dev/hda
+Primary master IDE (often the hard disk)
+
+/dev/hdb
+Primary slave IDE
+
+/dev/hdc
+Secondary master IDE (often a CD-ROM)
+
+/dev/hdd
+Secondary slave IDE
+
+
+SCSI device files (or any devices using the SCSI emulation layer) are similar, except
+that there is no four-device limitation:
+
+/dev/sda
+First SCSI drive
+
+/dev/sdb
+Second SCSI drive
+
+/dev/sdc
+Third SCSI drive (and so on)

@@ -1,0 +1,17 @@
+Step 1: Before connecting USB device, using lsmod | grep -i usb => There is no output
+
+Step 2: Connecting a USB device, run lsmod to verify that the appropriate driver loaded. Using lsmod | grep -i usb  . 1 means in use.
+[root@localhost ~]# lsmod | grep -i usb
+usb_storage            66523  1
+
+Step 3: Using modprobe -r usb_storage to try to remove this module. Verify that you can't remove in use module
+[root@localhost ~]# modprobe -r usb_storage
+modprobe: FATAL: Module usb_storage is in use.
+
+Step 4: Disconnecting the USB device in step 2, run lsmod. 0 means unused.
+[root@localhost ~]# lsmod | grep -i usb
+usb_storage            66523  0
+
+Step 5: Using modprobe -r usb_storage to try to remove this module. Verify that there is no error displayed, you can't remove unused module.
+[root@localhost ~]# modprobe -r usb_storage
+
