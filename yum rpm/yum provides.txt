@@ -1,0 +1,28 @@
+In general, when you get an error like this (/lib/ld-linux.so.2: bad ELF interpreter: No such file or directory), just do
+
+yum provides ld-linux.so.2
+
+then you'll see something like:
+
+glibc-2.20-5.fc21.i686 : The GNU libc libraries
+Repo        : fedora
+Matched from:
+Provides    : ld-linux.so.2
+
+and then you just run the following like BRPocock wrote (in case you were wondering what the logic was...):
+
+yum install glibc.i686
+
+
+
+
+
+
+
+
+
+ provides or whatprovides
+              Is  used  to  find out which package provides some feature or file. Just use a specific name or a file-glob-syntax wildcards to list the packages
+              stall operates on groups, files, provides and filelists just like the "install" command.
+              work  for  "installonly"  packages,  like Kernels. downgrade operates on groups, files, provides, filelists and rpm files just like the "install"
+              cates", "obsoletes" or "provides", to limit the checking that is performed (the default is "all" which does all).

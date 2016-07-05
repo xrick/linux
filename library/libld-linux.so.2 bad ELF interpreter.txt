@@ -1,0 +1,43 @@
+libld-linux.so.2 bad ELF interpreter
+
+You're on a 64-bit system, and don't have 32-bit library support installed.
+To install (baseline) support for 32-bit executables
+
+
+
+RHEL, CentOS:
+
+   sudo yum install glibc.i686
+
+
+
+Debian or Ubuntu:
+
+   sudo apt-get install ia32-libs
+
+should grab you the (first, main) library you need.
+
+
+
+
+
+
+
+
+
+
+In general, when you get an error like this, just do
+
+yum provides ld-linux.so.2
+
+then you'll see something like:
+
+glibc-2.20-5.fc21.i686 : The GNU libc libraries
+Repo        : fedora
+Matched from:
+Provides    : ld-linux.so.2
+
+and then you just run the following like BRPocock wrote (in case you were wondering what the logic was...):
+
+yum install glibc.i686
+
