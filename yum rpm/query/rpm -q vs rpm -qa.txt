@@ -1,0 +1,9 @@
+rpm -q is used with a complete name
+rpm -q samba => Works
+rpm -q sam => Does not work
+rpm -qa samba => Works
+rpm -q sam => Does not work
+rpm -qa | grep sam => Works
+
+That's why, it is the best if you use rpm -qa to list all installed package. Then use grep command to search for a package instead of using a complete name
+

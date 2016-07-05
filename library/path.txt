@@ -23,3 +23,8 @@ Finally, run ldconfig to update the cache.
 
 sudo ldconfig
 
+After adding lib(s), using ldconfig -p to check if the lib is added correctly to cache
+
+
+The error is displayed when running eclipse is not asking for a specific library, that's why you above methods won't work.
+But these two methods above won't work for java. You need to use alternatives command
