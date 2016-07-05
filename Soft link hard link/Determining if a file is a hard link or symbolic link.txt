@@ -1,0 +1,34 @@
+[root@localhost ~]# stat /usr/bin/java
+  File: e/usr/bin/javaf -> e/etc/alternatives/javaf
+  Size: 22              Blocks: 0          IO Block: 4096   symbolic link
+Device: fd00h/64768d    Inode: 18787094    Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: system_u:object_r:bin_t:s0
+Access: 2016-07-06 00:30:29.815057208 +0700
+Modify: 2016-03-29 22:53:22.450271844 +0700
+Change: 2016-03-29 22:53:22.450271844 +0700
+ Birth: -
+
+ 
+ A hard linked file has more than one link (Above file has only one link, Links: 1 => This file is not hard linked)
+ 
+ 
+ 
+ 
+ [root@localhost ~]# stat math
+  File: emathf -> e/home/minhql/abc.txtf
+  Size: 20              Blocks: 0          IO Block: 4096   symbolic link
+Device: fd00h/64768d    Inode: 35169163    Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: unconfined_u:object_r:admin_home_t:s0
+Access: 2016-07-06 00:35:26.766632420 +0700
+Modify: 2016-04-07 22:30:03.296775061 +0700
+Change: 2016-04-07 22:30:03.296775061 +0700
+ Birth: -
+If a file is a symbolic linked file, there is a line (symbolic link) which is next to IO Block
+
+
+You can also use ls -la to check for symbolic link
+[root@localhost ~]# ls -la math
+lrwxrwxrwx. 1 root root 20 Apr  7 22:30 math -> /home/minhql/abc.txt
+
