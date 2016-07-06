@@ -8,3 +8,21 @@ If you're running an older application that needs a specific older version of a 
 Just as you can set the PATH variable to specify a search path for executables, you can set the LD_LIBRARY_PATH variable to a colon-separated list of directories that should be searched for shared libraries before the system ones specified in ld.so.cache. For example, you might use a command like:
 
 export LD_LIBRARY_PATH=/usr/lib/oldstuff:/opt/IBM/AgentController/lib
+
+
+Instead of using LD_LIBRARY_PATH like above, you can use alternatives command
+
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 2
+alternatives --config java
+
+
+There are 3 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*  1           /opt/jdk1.7.0_71/bin/java
+ + 2           /opt/jdk1.8.0_45/bin/java
+   3           /opt/jdk1.8.0_77/bin/java
+   4           /opt/jdk1.8.0_91/bin/java
+
+Enter to keep the current selection[+], or type selection number: 4

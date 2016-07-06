@@ -1,0 +1,5 @@
+﻿À cái settings ở dưới mà dùng với cách của a Thắng thì sẽ có conflict. Nên trường hợp một số máy có issue có thể là do trong /etc/ssh/ssh_config có
+Host *.*.*.*
+   StrictHostKeyChecking=no
+   UserKnownHostsFile=/dev/null
+Nên cách để fix là phải remove dòng này ra khỏi file /etc/ssh_config 
