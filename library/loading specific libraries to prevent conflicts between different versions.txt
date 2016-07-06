@@ -10,7 +10,40 @@ Just as you can set the PATH variable to specify a search path for executables, 
 export LD_LIBRARY_PATH=/usr/lib/oldstuff:/opt/IBM/AgentController/lib
 
 
-Instead of using LD_LIBRARY_PATH like above, you can use alternatives command
+
+
+
+
+Method 1:
+
+To define this variable, simply use (on the shell prompt):
+
+export LD_LIBRARY_PATH="/path/to/sdk/lib"
+
+To make it permanent, you can add above line to /root/.bash_profile or sth like that
+
+
+
+
+Method 2:
+
+Another way to make it permanent is that you can edit the ldconfig files. First, create a new file such as:
+
+sudo vi /etc/ld.so.conf.d/your_lib.conf
+
+Second, add the path in the created file
+
+/path/to/sdk/lib
+
+Finally, run ldconfig to update the cache.
+
+sudo ldconfig
+
+After adding lib(s), using ldconfig -p to check if the lib is added correctly to cache
+
+
+The error is displayed when running eclipse is not asking for a specific library, that's why you above methods won't work.
+But these two methods above won't work for java. You need to use alternatives command
 
 alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 2
 alternatives --config java
@@ -26,3 +59,5 @@ There are 3 programs which provide 'java'.
    4           /opt/jdk1.8.0_91/bin/java
 
 Enter to keep the current selection[+], or type selection number: 4
+
+
