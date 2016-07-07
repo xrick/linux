@@ -1,3 +1,15 @@
+fmt is designed to reformat text files, such as when a program's README documentation file uses line that are too long for your display.
+
+Sometimes text files arrive with outrageously long line lengths, irregular line lengths, or
+other problems. Depending on the difficulty, you may be able to cope simply by using
+an appropriate text editor or viewer to read the file. If you want to clean up the file a bit,
+though, you can do so with fmt
+
+-w: max column width
+
+minhql@ubuntu:~$ cat abc
+abc 1244 45k
+fdldl 4j5 ll
 minhql@ubuntu:~$ fmt -w 1 abc
 acb
 2344
@@ -26,5 +38,7 @@ fdldl 4j5 ll
 minhql@ubuntu:~$ fmt -w 13 abc
 
 
-promising fixed line width without any word breaking (if word is too large to fit in a line, it is still left as it is, so finally some lines may be larger in size than you need):
+fmt promises fixed line width without any word (a word contains several characters) breaking (if word is too large to fit in a line, it is still left as it is, so finally some lines may be larger in size than you need):
 fmt -w 80 <text.txt
+
+
