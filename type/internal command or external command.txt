@@ -28,3 +28,7 @@ does have an external pwd command installed.
 Keep in mind that even when external commands are installed, the internal command
 takes precedence. To access the external command, you must provide the complete external
 command path, as in typing /usr/bin/time rather than time.
+
+
+When you type a command that’s not recognized by the shell as one of its internal commands, the shell checks its path to find a program by that name to execute it. The path is a
+list of directories in which commands can be found. It’s defined by the $PATH environment variable

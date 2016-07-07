@@ -1,0 +1,19 @@
+Occasionally, the problem arises where you can’t remember the exact name of a
+command to look up. The man utility has an option to help you here. You can use the
+-k option along with a keyword or two to search through the man pages:
+$ man -k "system information"
+dumpe2fs (8) - dump ext2/ext3/ext4 filesystem information
+[…]
+uname (1) - print system information
+$
+The returned information (shown as a partial listing above) can give you some clues as
+to your desired command name. Be aware that poor keyword choices may not produce the
+results you seek.
+
+
+On some older Linux distributions, you may get no results from a man
+utility keyword search. This is most likely due to a missing whatis
+database. The whatis database contains a short description of each man
+page, and it is necessary for keyword searches. To create it or update it,
+type makewhatis at the prompt. You will need to do this as superuser, and
+it may take several minutes to run.

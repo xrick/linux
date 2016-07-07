@@ -1,0 +1,9 @@
+Because your bash history is stored in a file, it can be examined by
+anybody who can read that file. Some commands enable you to type
+passwords or other sensitive data on the same line as the commands
+themselves, which can therefore be risky. The ~/.bash_history file does
+not record what you type in response to other programs’ prompts, just
+what you type at the bash prompt itself. Thus, if you have a choice, you
+should let commands that require passwords (or other sensitive data)
+prompt you to enter this data rather than enter such information as
+options to the command at the bash prompt.

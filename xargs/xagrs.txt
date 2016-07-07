@@ -17,6 +17,12 @@ So, in this example, the output of the find command is all the files with *.c ex
 $ ls
 one.c  one.h  two.c  two.h
 
+$ find . -name "*.c" | rm -rf           # This command won't work because rm -rf needs arguments as inputs. What find . -name "*.c" return are not arguments. 
+                                          You need to use xargs to exchange/convert the output of find . -name "*.c" to arguments 
+
+$ ls
+one.c  one.h  two.c  two.h
+
 $ find . -name "*.c" | xargs rm -rf
 
 $ ls
