@@ -1,0 +1,9 @@
+$ uname -a
+Linux server01.class.com 2.6.32-431.5.1.el6.x86_64 #1 SMP Wed Feb 12
+00:41:43 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+$
+The uname -a command provides a lot more information, including the current Linux
+kernel being used (2.6.32) as well as the system's hostname (server01.class.com). The
+uname command is an external command. The shell also provides internal commands. It's
+important to know the difference between the two command types, as explained in the
+next section.

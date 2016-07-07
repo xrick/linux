@@ -1,0 +1,30 @@
+ Type command: Display information about command type.
+ 
+ 
+ You can quickly determine if a command is a built-in command by using the type command. Just enter the command type before the name of the command you wish to check:
+$ type pwd
+pwd is a shell builtin
+$
+$ type cd
+cd is a shell builtin
+$
+$ type bash
+bash is /bin/bash
+$
+
+Some of these internal commands are duplicated by external commands that do the
+same thing. But those external commands aren’t always installed on all systems. You can
+see if there are internal commands with installed duplicate external commands by using the
+-a option on the type command:
+$ type -a cd
+cd is a shell builtin
+$
+$ type -a pwd
+pwd is a shell builtin
+pwd is /bin/pwd
+$
+You can see that on this system, there is no external cd command installed. However, it
+does have an external pwd command installed.
+Keep in mind that even when external commands are installed, the internal command
+takes precedence. To access the external command, you must provide the complete external
+command path, as in typing /usr/bin/time rather than time.
