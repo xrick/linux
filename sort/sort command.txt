@@ -1,15 +1,15 @@
-﻿sort -k2: sort dựa vào cột 2
-sort -k1: sort dựa vào cột 1
+﻿sort -k 2: sort dựa vào cột 2
+sort -k 1: sort dựa vào cột 1
 
 -k: key
 
-minhql@ubuntu:~$ sort -k2 abc
+minhql@ubuntu:~$ sort -k 2 abc
 monkey  ax
 banana  ba
 apple   con
 china   meo
 apple   x
-minhql@ubuntu:~$ sort -k1 abc
+minhql@ubuntu:~$ sort -k 1 abc
 apple   con
 apple   x
 banana  ba
