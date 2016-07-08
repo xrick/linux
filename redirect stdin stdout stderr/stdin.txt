@@ -5,6 +5,10 @@ cat < file_name
 The result is the same
 
 
+Definition
+testprog < somefile.txt
+This is an input redirection operator; it causes the contents of somefile.txt to be sent to testprog as if the contents of somefile.txt were typed at the console.
+
 Redirecting Standard Input
 Redirecting stdin consists of sending a file's contents to a program's stdin stream. An example of this is sort < file1.
 Although it might seem odd to have a couple of ways to do the same thing, the previous command is essentially the same as the cat file1 | sort command.

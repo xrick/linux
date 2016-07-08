@@ -1,0 +1,1 @@
+ssh to Linux, then from Linux, ssh to STB

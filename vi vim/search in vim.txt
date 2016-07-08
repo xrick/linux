@@ -5,7 +5,7 @@ Searching for text in Linux utilities typically follows a common convention. In 
 Note
 Searches are performed only in Command mode, so remember to press the Esc key to get back there.
 
-Finding the next occurrence (whether a forward or backward search) is usually accomplished by pressing the N key to search in the same direction as the original search. You press Shift+N for a search in the opposite direction of the original search.
+Finding the next occurrence (whether a forward or backward search) is usually accomplished by pressing the n key to search in the same direction as the original search. You press Shift+n for a search in the opposite direction of the original search.
 
 
 ======================Regular Expression Searches======================

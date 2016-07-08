@@ -1,0 +1,1 @@
+The logout command works with login shells only, whereas exit is intended for use with non-login shells (such as xterm windows) but in practice works with both login and non-login shells
