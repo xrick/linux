@@ -1,0 +1,7 @@
+The unexpand command is the logical opposite of expand; it converts multiple spaces to
+tabs. This can help compress the size of files that contain many spaces and can be helpful if
+a file is to be processed by a utility that expects tabs in certain locations.
+
+Like expand, unexpand accepts the -t num or --tabs=num option, which sets the tab
+spacing to once every num characters. If you omit this option, unexpand assumes a tab stop
+every eight characters.

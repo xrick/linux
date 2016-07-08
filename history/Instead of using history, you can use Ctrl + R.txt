@@ -1,0 +1,24 @@
+Retrieve a Command The simplest way to do this is to press the Up arrow key on your
+keyboard; this brings up the previous command. Pressing the Up arrow key repeatedly
+moves through multiple commands so you can find the one you want. If you overshoot,
+press the Down arrow key to move down the history. The Ctrl+P and Ctrl+N keystrokes
+double for the Up and Down arrow keys, respectively.
+
+Search for a Command Press Ctrl+R to begin a backward (reverse) search, and begin
+typing characters that should be unique to the command you want to find. The characters
+you type need not be the ones that begin the command; they can exist anywhere in the
+command. You can either keep typing until you find the correct command or, after you've
+typed a few characters, press Ctrl+R repeatedly until you find the one you want.
+
+The Ctrl+S keystroke is used to search forward in the command history. You can press
+the Ctrl+S keystroke while using the backward search. This reverses the history search from
+backward to forward. If you used a backward search and have passed by what you need,
+then this keystroke is useful.
+
+
+If the Ctrl+S keystroke causes your terminal to hang, press Ctrl+Q to resume
+terminal operations. To keep your terminal from hanging when Ctrl+S is
+used, type stty -ixon at the command line.
+
+In either event, if you can't find the command you want or if you change your mind and
+want to terminate the search, press Ctrl+G to do so.

@@ -1,6 +1,5 @@
 
 
-Disclaimer: I know this question was answered long ago, but maybe this will be helpful to some visitor of the question.
 
 If you are sorting strings that are mixed text & numbers, for example filenames of rolling logs then sorting with sort -n doesn't work as expected:
 

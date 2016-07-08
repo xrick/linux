@@ -1,3 +1,5 @@
+
+
 The xargs command (by default) expects the input from stdin, and executes /bin/echo command over the input. The following is what happens when you execute xargs without any argument, or when you execute it without combining with any other commands.
 
 When you type xargs without any argument, it will prompt you to enter the input through stdin
@@ -17,7 +19,46 @@ So, in this example, the output of the find command is all the files with *.c ex
 $ ls
 one.c  one.h  two.c  two.h
 
-$ find . -name "*.c" | xargs rm -rf
+$ find . -name "*.c" | rm -rf           # This command won't work because rm -rf needs arguments as inputs. What find . -name "*.c" return are not arguments. 
+                                          You need to use xargs to exchange/convert the output of find . -name "*.c" to arguments 
+
+$ ls
+one.c  one.h  two.c  two.h
+
+$ find . -name "*.c" | xargs -d "\n" rm -rf
 
 $ ls
 one.h  two.h
+
+
+================================================================Troubleshooting================================================================
+Problems can arise if filenames contain spaces because by default xargs uses both spaces
+and newlines as item delimiters. The -d "\n" option tells xargs to use only newlines as
+delimiters, thus avoiding this problem in this context. (The find command separates each
+found filename with a newline.)
+
+
+[root@localhost /]# ls
+abc  abc1  abc2  abc test  backup  bin  boot  dev  etc  home  lib  lib64  media  mnt  mummy  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@localhost /]# find / -maxdepth 1 -iname 'abc*' | xargs rm -rf
+[root@localhost /]# ls
+abc test  backup  bin  boot  dev  etc  home  lib  lib64  media  mnt  mummy  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+[root@localhost /]# ls
+abc  abc1  abc2  abc test  backup  bin  boot  dev  etc  home  lib  lib64  media  mnt  mummy  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@localhost /]# find / -maxdepth 1 -iname 'abc*' | xargs -d '\n' rm -rf
+[root@localhost /]# ls
+backup  bin  boot  dev  etc  home  lib  lib64  media  mnt  mummy  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+As you can see, file (abc test) is not removed. File abc test is a file which contains space. 
+
+For instance, consider the task of deleting several files that belong to a particular user.
+You can do this by piping the output of find to xargs, which then calls rm:
+# find / -user Christine | xargs -d "\n" rm
+The first part of this command (find / -user Christine) finds all of the files in directory tree (/) and its subdirectories that belong to user Christine. (Since you are looking
+through the entire directory tree, you need superuser privileges for this to work properly.)
+This list is then piped to xargs, which adds each input value to its own rm command.
+Problems can arise if filenames contain spaces because by default xargs uses both spaces
+and newlines as item delimiters. The -d "\n" option tells xargs to use only newlines as
+delimiters, thus avoiding this problem in this context. (The find command separates each
+found filename with a newline.)

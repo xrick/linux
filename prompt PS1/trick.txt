@@ -1,0 +1,4 @@
+To delete an environment variable, use the unset command. The command takes the
+name of an environment variable (without the leading $ symbol) as an option. For instance,
+unset PS1 removes the $PS1 environment variable. But if you do this, you will have no
+shell prompt!

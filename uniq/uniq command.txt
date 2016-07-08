@@ -1,0 +1,26 @@
+uniq
+ -f, --skip-fields=N
+              avoid comparing the first N fields
+
+
+			  
+			  
+			  
+Deleting Duplicate Lines with uniq
+The uniq command removes duplicate lines. It’s most likely to be useful if you’ve sorted
+a file and don’t want duplicate items. For instance, suppose you want to summarize
+Shakespeare’s vocabulary. You might create a file with all of the Bard’s works, one word
+per line. You can then sort this file using sort and pass it through uniq. Using a shorter
+example file containing the text to be or not to be, that is the question (one word
+per line), the result looks like this:
+$ sort shakespeare.txt | uniq
+be
+is
+not
+or
+question
+that
+the
+to
+Note that the words to and be, which appeared in the original file twice, appear only
+once in the uniq-processed version.

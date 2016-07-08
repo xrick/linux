@@ -1,0 +1,6 @@
+Time an Operation The time command times how long subsequent commands take to
+execute. For instance, typing time pwd tells you how long the system took to execute the
+pwd command. The time is displayed after the full command terminates. Three times are
+displayed: total execution time (aka real time), user CPU time, and system CPU time. The
+final two values tell you about CPU time consumed, which is likely to be much less than the
+total execution time.
