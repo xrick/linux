@@ -1,8 +1,26 @@
 Most partitions you encounter store files. There is another kind of partition, called a swap partition, that stores memory instead of files.
 
+
+Linux can use a swap partition, which is
+a partition that Linux treats as an extension of memory. (Linux can also use a swap file,
+which is a file that works in the same way. Both are examples of swap space.) Linux uses
+the MBR partition type code of 0x82 to identify swap space, but as with other partitions,
+this code is mostly a convenience to keep other OSs from trying to access Linux swap partitions; Linux uses /etc/fstab to define which partitions to use as swap space, as described in “Permanently Mounting Filesystems” later in this chapter.
+
 Swap: take memory and put it on to disk so that the system can offer more memory to applications than actually exists on the computer.
 
 Access to disk data using swap is much slower than access to RAM data, so it’s vital to avoid the need to constantly swap memory to and from disk or thrashing (thrashing—When memory is swapped back and forth from disk too often, the system is slowed down.) will happen. When your disks start to thrash, the system becomes painfully slow. Consider swap to be a safety net more than anything else.
 
 
 When the kernel is under pressure to give memory to a process and there is another process that hasn't used it memory in a while, the kernel will swap the old memory (of the process that hasn't used its memory in a while) to disk (Disk /dev/mapper/centos-swap: 1719 MB, 1719664640 bytes, 3358720 sectors)
+
+Although swap space doesn’t hold a filesystem per se, and it isn’t mounted in the way
+that filesystem partitions are mounted, swap space does require preparation similar to that
+for creation of a filesystem. This task is accomplished with the mkswap command, which
+you can generally use by passing it nothing but the device identifier:
+# mkswap /dev/sda7
+This example turns /dev/sda7 into swap space. To use the swap space, you must activate
+it with the swapon command:
+# swapon /dev/sda7
+To activate swap space permanently, you must create an entry for it in /etc/fstab, as
+described in “Permanently Mounting Filesystems,” later in this chapter.

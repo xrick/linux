@@ -1,0 +1,7 @@
+You use top to examine the CPU time being consumed by various processes on your system. You discover that one process, dfcomp, is consuming more than 90 percent of your
+system’s CPU time. What can you conclude?
+
+Very little: dfcomp could be legitimately consuming that much CPU time, or it could be
+an unauthorized or malfunctioning program.
+
+CPU intensive programs routinely consume 90 percent or more of available CPU time, but not all systems run such programs. Furthermroe, some types of program bugs can create such CPU loads. You must investigate the matter more. What is dfcomp? Is it designed as a CPU intensive program? Is it consuming this much CPU time consistently, or was this a brief burst of activity.

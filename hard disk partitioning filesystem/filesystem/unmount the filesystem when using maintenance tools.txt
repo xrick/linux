@@ -1,0 +1,5 @@
+Many of Linux’s filesystem maintenance tools should be run when the
+filesystem is not mounted. Changes made by maintenance utilities while
+the filesystem is mounted can confuse the kernel’s filesystem drivers,
+resulting in data corruption. In the following pages, we mention when
+utilities can and can’t be used with mounted filesystems.

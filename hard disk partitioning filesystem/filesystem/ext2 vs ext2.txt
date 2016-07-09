@@ -1,0 +1,6 @@
+ext3 is ext2 + journal
+
+To create ext3 filesystem, we use below command:
+mke2fs -j /dev/sdb1    # -j: create the filesystem with an ext3 journal
+OR
+mkfs -t ext3 /dev/sdb1

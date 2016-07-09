@@ -1,0 +1,23 @@
+inux treats external USB and IEEE-1394 disks just like SCSI devices, from a software
+point of view. Typically, you can plug in the device, see a /dev/sdx device node appear,
+and use it as you would a SCSI disk. This is the case for both true external hard disks and
+media such as solid-state USB flash drives.
+
+[root@localhost ~]# fdisk -l
+
+Disk /dev/sdc: 15.5 GB, 15485370368 bytes, 30244864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00948f6e
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdc1   *        2048    30244863    15121408    c  W95 FAT32 (LBA)
+
+
+
+[root@localhost ~]# mkdir /media/usb
+[root@localhost ~]# chmod -R 777 /media/usb
+
+[root@localhost ~]# mount /dev/sdc1 /media/usb

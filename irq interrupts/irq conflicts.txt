@@ -1,0 +1,3 @@
+Although IRQ conflicts are rare on modern hardware, they still do occasionally crop up.
+When this happens, you must reconfigure one or more devices to use different IRQs. This
+topic is described shortly, in the section “Configuring Expansion Cards.”

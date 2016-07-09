@@ -1,0 +1,11 @@
+cat /etc/fstab
+
+/dev/mapper/centos-root 				  /                       xfs     defaults        0 0
+UUID=b48ce062-3557-4af8-931d-ae3d7f96b1f7 /boot                   xfs     defaults        0 0
+/dev/mapper/centos-swap                   swap                    swap    defaults        0 0
+/dev/sdb1                                 /backup                 ext3    defaults        1 2
+
+
+XFS is a high-performance 64-bit journaling file system
+
+ReiserFS is a general-purpose, journaled computer file system

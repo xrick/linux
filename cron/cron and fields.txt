@@ -3,7 +3,7 @@ crond is the name of the daemon that runs in the background and reads crontab fi
 A crontab is a file containing jobs in the format minute hour day-of-month month day-of-week
 
 
-
+======================6 fields==================
 Usually, each crontab entry contains this sequence of six blank-separated fields:
 Minute
 Hour
@@ -11,12 +11,13 @@ Day of the month
 Month of the year
 Day of the week
 String to be executed by sh
+
 Minutes range from 0 to 59, hours from 0 to 23, days from 1 to 31, and months from 1 to 12. Day of week ranges from 0 to 7, with 0 or 7 being Sunday. You can also specify day of week as sun, mon, tue, and so on. The sixth field — everything after the fifth field — is interpreted as a string to pass to sh. A percent sign (%) is translated to a newline, so if you want a % or any other special character, precede it with a backslash (\). The line up to the first % is passed to the shell, whereas any lines after the % are passed as standard input. The time-related fields can specify an individual value, a range of values such as 0-10 or sun-wed, or a comma-separated list of individual values and ranges. A value of * means the entire range.
 Here is a somewhat artificial crontab entry for my example mycrontest.sh command:
 0,20,40 6-10,21-23 * 3 thu-sat /home/ian/mycrontest.sh
 In this example, mycrontest.sh is executed at the 0th, 20th, and 40th minutes (every 20 minutes), for the hours between 6 a.m. and 10 a.m. and again between 9 p.m. and midnight on Thursdays, Fridays, and Saturdays during March
 
-
+================7 fields=======================
 System crontab has seven fields (The additional column indicates which user should be used to execute the job).
 An example of a system crontab such as this looks like the following:
 Click here to view code image

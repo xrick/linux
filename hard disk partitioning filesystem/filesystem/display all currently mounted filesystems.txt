@@ -1,0 +1,3 @@
+mount
+OR
+cat /proc/self/mounts

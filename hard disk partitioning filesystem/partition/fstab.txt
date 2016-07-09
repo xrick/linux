@@ -1,0 +1,1 @@
+The configuration file /etc/fstab contains the necessary information to automate the process of mounting partitions

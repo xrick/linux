@@ -1,0 +1,16 @@
+The partition type (or partition ID) in a partition's entry in the partition table inside a Master Boot Record (MBR) is a byte value intended to specify the file system the partition contains and/or to flag special access methods used to access these partitions (f.e. special CHS mappings, LBA access, logical mapped geometries, special driver access, hidden partitions, secured or encrypted file systems, etc.).
+
+Change a Partition’s Type
+When you create a partition, fdisk assigns it a type code of
+0x83, which corresponds to a Linux filesystem. If you want to create a Linux swap partition or a partition for another OS, you can type t to change a partition type code. The program then prompts you for a partition number and a type code.
+
+List Partition Types
+Several dozen partition type codes exist, so it’s easy to forget what
+they are. Type l (that’s a lowercase L) at the main fdisk prompt to see a list of the most
+common ones. You can also get this list by typing L when you’re prompted for the partition
+type when you change a partition’s type code.
+
+Mark a Partition Bootable
+Some OSs, such as Windows, rely on their partitions having
+special bootable flags in order to boot. You can set this flag by typing a, whereupon fdisk
+asks for the partition number.

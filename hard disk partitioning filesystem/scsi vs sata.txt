@@ -1,3 +1,6 @@
+SCSI is traditionally a parallel bus, like PATA, although the latest
+variant, Serial Attached SCSI (SAS), is a serial bus like SATA
+
 The mayor reason for choosing/paying for SCSI/SAS over SATA, is not speed, but reliability. A SATA/PATA drive is not made for 24/7/365 operation, and it WILL fail on you. I have had several servers with both SCSI and SATA/PATA, and while I have only once had a SCSI drive fail, SATA/PATA drives on a average fails after 3 years if used in a server.
 
 
@@ -7,7 +10,7 @@ There are many differences in the interface technology and in the commands execu
 
 ATA drives are cheaper than SCSI or Fibre Channel drives and there's a reason. SCSI and FC drives use a processor for executing the commands and handling the interface and a separate processor controlling the head positioning through servos. ATA drives use a single processor for both which means that if the rotational positioning requires more adjustments due to factors such as rotational vibration or wear, more processor time will be dedicated for that which can affect the performance of the drive. Because of this, you will usually see a lower RPM for the ATA disk drive and also a shorter warranty period. But it is cheaper and can be a very good, economical solution for many environments and applications.
 
-    SATA configurations perform admirably well in file server and streaming media scenarios, while SCSI configurations are king of the hill in database applications
+SATA configurations perform admirably well in file server and streaming media scenarios, while SCSI configurations are king of the hill in database applications
 
 We have no intention to pass sound judgements about the reliability of the Serial ATA solutions reviewed in this article. However, based on the features of the adapters in this test we can say that SATA RAID need not be inferior compared to alternatives using a SCSI interface. The high-end SATA RAID adapters are supporting all the important availability features found on SCSI RAID-adapters. The SATA RAID-adapters made by Areca and LSI Logic have been directly ported from architectures which have been used in SCSI RAID systems for many years. So with respect to features, Serial ATA is certainly up to the job of handling enterprise storage.
 

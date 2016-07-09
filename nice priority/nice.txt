@@ -26,7 +26,15 @@ top command outputs the nice values of listed programs.
 
 
 
-
+$ nice -12 number-crunch data.txt
+$ nice -n 12 number-crunch data.txt
+$ nice --adjustment=12 number-crunch data.txt
+All three of these commands run the number-crunch program at priority 12 and pass
+it the data.txt file. If you omit the adjustment value, nice uses 10 as a default. The range
+of possible values is –20 to 19, with negative values having the highest priority. Only root
+may launch a program with increased priority (that is, give a negative priority value), but
+any user may use nice to launch a program with low priority. The default priority for a
+program run without nice is 0.
 
 
 

@@ -1,0 +1,2 @@
+After pausing the program, you can restore it to running status, but in the foreground using fg
+After pausing the program, you can restore it to running status, but in the background using bg

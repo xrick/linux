@@ -1,0 +1,13 @@
+
+zip-3.0-10.el7.x86_64 is a package filename. /usr/bin/zipnote is a filename. Package zip-3.0-10.el7.x86_64 contains file /usr/bin/zipnote in it
+
+
+A package filename is a complete filename, but a package name is a shortened version. For instance, a package filename might be samba-4.1.9-4.fc20.x86_64.rpm, whereas the matching package name is samba.). /usr/bin/zipnote is a filename of a file in package
+
+Some rpm operations require that you give a package filename, and others require a package
+name. In particular, -i, -U, -F, and the rebuild operations require package filenames; -q,
+-V, and -e normally take a package name, although the -p option can modify a query (-q)
+operation to work on a package filename.
+
+
+rpm -i samba  => Nothing happens because samba is not a package filename (samba-4.1.9-4.fc20.x86_64.rpm). It is just a package name (samba), so rpm will refuse to operate on this file.

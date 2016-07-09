@@ -1,0 +1,6 @@
+The jobs command displays minimal information about the processes associated with the
+current session. In practice, jobs is usually of limited value, but it does have a few uses.
+One of these is to provide job ID numbers. These numbers are conceptually similar to PID
+numbers, but theyÅfre not the same. Jobs are numbered starting from 1 for each session and,
+in most cases, a single shell has only a few associated jobs. The job ID numbers are used by
+a handful of utilities in place of PIDs, so you may need this information.

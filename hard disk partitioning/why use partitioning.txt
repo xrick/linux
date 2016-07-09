@@ -1,7 +1,0 @@
- Performance: Performance increases if the systemÅfs heavy usage directory trees are put on another disk. Good candidates for a move to another disk are the /home directory or the swap partition.
- 
- Integrity: Integrity improves by having critical files in their own partition. If disk resources become corrupted or damaged, such as from a sudden power outage, the computer can be down for hours to complete a filesystem check. Distancing risky partitions such as an FTP upload folder from the traditional root of the system is a good idea; otherwise, an FTP user that fills up the system partition would cause the system to crash.
- 
- Backup: Separate partitions give you more control over backups. For example, you may only want to back up files that change often in /home and conduct less frequent backups for files that do not change often within /usr. The tar command is used to back up sets of files and directory trees. It can be used to back up an entire file system, but there are more efficient tools for backup up partitions and complete disks like dump or dd.
- 
- Security: When placing partitions and directory trees on the system, be aware that itÅfs much easier to isolate or jail a risky portion of your server if itÅfs contained on a separate partition or disk. This is accomplished through options that are set at mount time, such as not allowing people to execute files with increased privilege or write to the filesystem.

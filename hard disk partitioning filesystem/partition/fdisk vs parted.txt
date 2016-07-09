@@ -1,4 +1,4 @@
-
+fdisk (fixed disk)
 
 The fdisk command does not commit any changes to your disk until you tell it to. Other tools, including parted, may commit changes as you go. 
 

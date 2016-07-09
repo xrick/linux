@@ -1,0 +1,1 @@
+When using mkfs without option, ext2 filesystem is created

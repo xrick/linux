@@ -1,0 +1,8 @@
+Advantage of a source package over a binary package:
++ A single source package can be used on multiple CPU architectures
++ By recompiling a source package, you can sometimes work around library incompatibilities
++ You can modify the code in a source package, thus altering the bahavior of a program
++ You may be able to recompile source code for a non-Linux Unix program on Linux
+
+Advantage of binary package over source package:
++ Binary package can be installed more quickly than source package. Because source package must be compiled prior to installation, source packages require more time to install than binary packages.

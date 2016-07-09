@@ -1,0 +1,7 @@
+MBR vs GPT
+What is the Difference Between GPT and MBR When Partitioning a Drive?
+
+Capacity beyond 2 TB cannot be addressed by Windows if the disk is initialized by using the MBR partitioning scheme. For example, for a 3 TB single disk that is initialized by using MBR, Windows can create partitions up to the first 2 TB. However, the remaining capacity cannot be addressed and, therefore, cannot be used. 
+
+In order for an operating system to fully support storage devices that have capacities that exceed 2 terabytes (2 TB, or 2 trillion bytes), the device must be initialized by using the GUID partition table (GPT) partitioning scheme. This scheme supports addressing of the full range of storage capacity. If the user intends to start the computer from one of these large disks, the system's base firmware interface must use the Unified Extensible Firmware Interface (UEFI) and not BIOS.
+

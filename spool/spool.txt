@@ -1,0 +1,5 @@
+
+
+        /var/spool
+
+	Spool for tasks waiting to be processed, e.g., print queues and outgoing mail queue.

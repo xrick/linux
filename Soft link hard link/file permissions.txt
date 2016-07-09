@@ -1,0 +1,2 @@
+Which of the following file permissions belong to a symbolic link?
+lrwxrwxrwx

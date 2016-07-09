@@ -1,0 +1,29 @@
+Firmware, which is the lowest-level software that runs on a computer. A computer's firmware begins the boot process and configures certain hardware devices. This chapter then moves on to expansion cards and USB devices.
+
+Many hardware devices include firmware, so any given computer can have many types
+of firmware installed?for the motherboard, for a plug-in disk controller, for network
+interfaces, and so on. The most important firmware, though, is installed on the computer’s
+motherboard. This firmware initializes the motherboard’s hardware and controls the boot
+process. In the past, the vast majority of x86- and x86-64-based computers have used a
+type of firmware known as the Basic Input/Output System (BIOS). Beginning in 2011,
+though, a new type of firmware, known as the Extensible Firmware Interface (EFI) or the
+Unified EFI (UEFI), has become all but standard on new computers. Some older computers
+also use EFI. Despite the fact that technically EFI isn’t a BIOS, most manufacturers refer
+to it by that name in their documentation. The exam objectives refer to the BIOS, but not
+to EFI. Nonetheless, in the real world, you’re likely to encounter EFI on newer computers.
+The differences between BIOS and EFI are particularly important in booting the computer,
+as described in Chapter 5. For many of the setup tasks described in this chapter, the two
+types of firmware behave very similarly; although EFI implementations sometimes provide
+flashier graphical user interfaces, most BIOSs, and some EFIs, provide only text-mode
+user interfaces.
+
+The motherboard’s firmware resides in electronically erasable programmable read-only
+memory (EEPROM), aka flash memory. When you turn on a computer, the firmware
+performs a power-on self-test (POST), initializes hardware to a known operational state,
+loads the boot loader from the boot device (typically the first hard disk), and passes control
+to the boot loader, which in turn loads the OS.
+Historically, an additional purpose of a BIOS was to provide fundamental input/
+output (I/O) services to the operating system and application programs, insulating them
+from hardware changes. Although the Linux kernel uses the BIOS to collect information about the hardware, once Linux is running, it doesn’t use BIOS services for I/O. In
+theory, the OS can use some EFI services, but as of the 3.5.0 kernel, Linux takes advantage of few of these EFI features. Linux system administrators require a basic understanding of the BIOS or EFI because of the key role it plays in configuring hardware
+and in booting.

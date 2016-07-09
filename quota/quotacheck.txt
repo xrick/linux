@@ -1,2 +1,4 @@
 Which command is used to create and initialize the files used to store quota info:
 quotacheck
+
+quotacheck - scan a filesystem for disk usage, create, check and repair quota files

@@ -1,0 +1,3 @@
+After removing partitioning /dev/sdb1 and then rebooting, if emergency mode is displayed and you can't startx:
+
+Check /etc/fstab to see if /dev/sdb1 is in this file or not. If /dev/sdb1 exists, remove it.

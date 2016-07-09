@@ -1,0 +1,8 @@
+Unlike other commands on Linux, the option with fullname in find command uses - instead of -- 
+
+find -maxdepth 
+find -iname
+
+While grep and other commands use -- for option with fullname
+
+grep --ignore-case

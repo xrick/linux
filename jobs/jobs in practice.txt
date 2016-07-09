@@ -13,7 +13,7 @@ $ jobs
 
 
 
-3. When you run the jobs command, you see the following output:
+ When you run the jobs command, you see the following output:
 Click here to view code image
           linux-8z04:~ # jobs
 [1]-  Stopped                 top

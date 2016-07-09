@@ -1,0 +1,2 @@
+You type jobs at a bash command prompt and receive a new command prompt with no intervening output. What can you conclude?
+No background processes are running that were launched from the shell that you're using

@@ -1,0 +1,10 @@
+The jobs command displays minimal information about the processes associated with the
+current session. In practice, jobs is usually of limited value, but it does have a few uses.
+One of these is to provide job ID numbers. These numbers are conceptually similar to PID
+numbers, but they’re not the same. Jobs are numbered starting from 1 for each session and,
+in most cases, a single shell has only a few associated jobs. The job ID numbers are used by
+a handful of utilities in place of PIDs, so you may need this information.
+A second use of jobs is to ensure that all of your programs have terminated prior to
+logging out. Under some circumstances, logging out of a remote login session can cause the
+client program to freeze up if you’ve left programs running. A quick check with jobs will
+inform you of any forgotten processes and enable you to shut them down.

@@ -1,3 +1,8 @@
+A symbolic link is *not* an alias. A symlink (symbolic link) is in the filesystem so all of the layers of the OS can use symlinks. This includes Carbon, Cocoa, Java, and BSD apps. Alias files are Finder-specific concept. Aliases are not used by the rest of the system. Only the Finder deals with aliases.
+
+At the Finder level, aliases and symlinks are similar, but symlinks are far more versatile and used in pretty much every flavor of *nix.
+
+
 An alias replaces part of your command with something else. If you wanted to save a few keystrokes on ls -l you could make an alias: alias ll=”ls –l”.
 Any time you type ll by itself it will be expanded to ls -l. For example ll, ll -h, or ll *.doc are all good uses, giving you a long listing, a long listing with human readable sizes, and a long listing of all the .doc files, respectively. Typing all will not trigger the alias because aliases only operate on distinct words.
 

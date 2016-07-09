@@ -1,5 +1,5 @@
 Issues About Path
-Scripts that work fine when run at the command line but donft work when run from cron are a common problem. The environment is different because cron doesnft run your .bash_profile and .bashrc scripts. Therefore, you can expect a minimal environment, including a basic PATH.
+Scripts that work fine when run at the command line but don't work when run from cron are a common problem. The environment is different because cron doesnft run your .bash_profile and .bashrc scripts. Therefore, you can expect a minimal environment, including a basic PATH.
 See it for yourself by adding a cron entry such as:
 * * * * * env > /tmp/env
 
@@ -16,8 +16,8 @@ _=/usr/bin/env
 
 
 The environment for a cron job is fairly sparse: The path only has /usr/bin and /bin. It is also missing any additions that you are used to at your own shell, such as in .bash_profile.
+
 While the scripts run out of cron are free to set their own variables internally, cron lets you set environment variables in the usual format:
-Click here to view code image
 PATH=/usr/bin:/bin:/usr/local/bin:/home/sean/bin
 0 0 * * * /usr/local/bin/backup.sh
 
