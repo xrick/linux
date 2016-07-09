@@ -1,1 +1,5 @@
 pr is a print-processing tool; it formats a document is pages suitable for printing
+
+
+pr report.txt | lpr
+The file report.txt is formatted for priting and sent to the lpr program.

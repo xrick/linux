@@ -1,0 +1,8 @@
+Typically, 1 byte is equal to 1 character. 
+
+But there are several exception. For example: Asian character set (e.g: Vietnamese, Japanese...), 1 character is more than 1 byte.
+All Unicode variants, but also Asian character sets are multibyte character set.
+
+
+For an ordinary ASCII file, the character and byte counts will be identical.
+These values may diverge for files that use multibyte character encodings.

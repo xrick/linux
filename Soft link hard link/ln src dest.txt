@@ -5,3 +5,7 @@ softlink
 ln -s src dest
 
 -f: force
+src: an original file
+dest: a shortcut to the original file
+
+In case there is an error "failed to create a symbolic link: file exists”, use ln -sf

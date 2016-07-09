@@ -1,0 +1,30 @@
+
+
+In /etc/apt/sources.list.d I have several files for custom repositories. All the names of those files end with .list.
+Is it obligatory that files in that folder should end with that extension? If yes, where is that information written?
+
+Yes, names of files in /etc/sources.list.d must end in .list for lines in the files to be taken as specifying software sources that ought to be used. Otherwise, the files may be taken to have a different meaning.
+
+sources.list
+
+From man sources.list (1):
+
+    NAME sources.list - Package resource list for APT
+
+    DESCRIPTION
+
+    The package resource list is used to locate archives of the package distribution system in use on the system. At this time, this manual page documents only the packaging system used by the Debian GNU/Linux system. This control file is /etc/apt/sources.list.
+
+    The source list is designed to support any number of active sources and a variety of source media. The file lists one source per line, with the most preferred source listed first. The format of each line is: type uri args The first item, type determines the format for args. uri is a Universal Resource Identifier (URI), which is a superset of the more specific and well-known Universal Resource Locator, or URL. The rest of the line can be marked as a comment by using a #.
+
+    SOURCES.LIST.D
+
+    The /etc/apt/sources.list.d directory provides a way to add sources.list entries in separate files. The format is the same as for the regular sources.list file. File names need to end with .list and may only contain letters (a-z and A-Z), digits (0-9), underscore (_), hyphen (-) and period (.) characters. Otherwise APT will print a notice that it has ignored a file if the file doesn't match a pattern in the Dir::Ignore-Files-Silently configuration list - in this case it will be silently ignored...
+
+	
+	
+sources.list.save
+
+The .list.save files are some kind of work/backup files
+
+First, .list.save files are not required, they are sort of backup files created by the Software Sources GUI, only the .list file is used by the apt system; Second, repositories can be added to /etc/apt/sources.list, but it's not recommended to do so (the OS handles it), so admins and packages are actually encouraged to play with /etc/apt/sources.list.d 

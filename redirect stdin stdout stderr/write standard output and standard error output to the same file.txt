@@ -11,3 +11,10 @@ Click here to view code image
 find / -iname *.txt > gooddata 2> baddata
 
 This grabs both streams and puts them into their proper files, with nothing displayed to the console.
+
+
+
+
+
+To check below code, you need to login as normal user first:
+find / -iname *.txt > /abc 2>&1     

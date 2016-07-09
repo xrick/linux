@@ -1,0 +1,8 @@
+Packages 
+The most basic information that package systems maintain is information about
+software packages—that is, collections of files that are installed on the computer. Packages
+are usually distributed as single files that are similar to tarballs (archives created with the
+tar utility and usually compressed with gzip or bzip2) or zip files. Once installed, most
+packages consist of dozens or hundreds of files, and the package system tracks them all.
+Packages include additional information that aids in the subsequent duties of package
+management systems.

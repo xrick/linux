@@ -1,0 +1,13 @@
+You can search the file’s contents by pressing the slash (/) key followed by the search
+term. For instance, typing /portable finds the first occurrence of the string portable
+after the current position. Typing a slash followed by the Enter key moves to the next
+occurrence of the search term. Typing n alone repeats the search forward, while typing
+N alone repeats the search backward.
+
+■ You can search backward in the file by using the question mark (?) key rather than the
+slash key.
+
+■ You can move to a specific line by typing g followed by the line number, as in g50 to
+go to line 50.
+
+■ When you’re done, type q to exit from the program.

@@ -1,7 +1,8 @@
 For yum
-yum update to update package
+yum update zip to update package zip
+yum update to update all packages
 
 For apt
-apt-get install packagename to update package
+apt-get install zip to update package zip
 or
 apt-get upgrade to update all packages

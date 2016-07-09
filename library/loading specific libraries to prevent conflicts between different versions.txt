@@ -41,6 +41,16 @@ sudo ldconfig
 
 After adding lib(s), using ldconfig -p to check if the lib is added correctly to cache
 
+Method 3:
+A similar problem can occur when the program expects a library to have one name but the library has another
+name on your system. For instance, the program may link to biglib.so.5, but your system
+has biglib.so.5.2 installed. Minor version-number changes like this are usually inconsequential, so creating a symbolic link will correct the problem:
+# ln -s biglib.so.5.2 biglib.so.5
+
+You must type this command as root in the directory in which the library resides. You
+must then run ldconfig, as described in the next section.
+
+=========================================Java==========================================================================
 
 The error is displayed when running eclipse is not asking for a specific library, that's why you above methods won't work.
 But these two methods above won't work for java. You need to use alternatives command

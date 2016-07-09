@@ -20,7 +20,6 @@ A synopsis of the above link
 Currently the apt binary supports the following commands:
 
     list: which is similar to dpkg list and can be used with flags like --installed or --upgradable.
-
     search: works just like apt-cache search but sorted alphabetically.
     show: works like apt-cache show but hide some details that people are less likely to care about (like the hashes). The full record is still available via apt-cache show of course.
     update: just like the regular apt-get update with color output enabled.

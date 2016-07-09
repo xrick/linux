@@ -1,0 +1,22 @@
+Yum is configured via the /etc/yum.conf file, with additional configuration files in the
+/etc/yum.repos.d/ directory. The yum.conf file holds basic options, such as the directory to which Yum downloads RPMs and where Yum logs its activities. 
+Chances are that you won't need to modify this file. The /etc/yum.repos.d/ directory, on the other hand,
+potentially holds several files, each of which describes a Yum repository?that is, a site
+that holds RPMs that may be installed via Yum. You probably shouldn't directly edit these
+files; instead, if you want to add a repository, you should manually download the RPM that
+includes the repository configuration and install it using rpm. The next time you use Yum,
+it will access your new repository along with the old ones. Several Yum repositories exist,
+mostly for Red Hat, CentOS, and Fedora, such as the following:
+
+Livna This repository (http://rpm.livna.org/) hosts multimedia tools, such as additional codecs and video drivers.
+
+KDE Red Hat Red Hat, CentOS, and Fedora favor the GNU Network Object Model
+
+Environment (GNOME) desktop environment, although they ship with the K Desktop
+
+Environment (KDE) too. The repository at http://kde-redhat.sourceforge.net provides improved KDE RPMs for those who favor KDE.
+
+Fresh RPMs This repository (http://freshrpms.net) provides additional RPMs, mostly
+focusing on multimedia applications and drivers.
+
+Many additional repositories exist. Try a Web search on terms such as yum repository, or check the web page of any site that hosts unusual software that you want to run to see whether it provides a Yum repository. If so, it should provide an RPM or other instructionson adding its site to your Yum repository list.

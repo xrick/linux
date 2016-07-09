@@ -11,3 +11,41 @@ uname command is an external command. The shell also provides internal commands.
 important to know the difference between the two command types, as explained in the
 next section.
 >>>>>>> a31794992fb9657c8356974c27ae14e5c080f003
+
+
+
+
+The Linux kernel is at the heart of every Linux system. Although you can’t manage the
+kernel process in quite the way you can manage other processes, short of rebooting the
+computer, you can learn about it. To do so, you can use the uname command, which takes
+several options to display information:
+
+Node Name The -n or --nodename option displays the system’s node name; that is, its
+network hostname.
+
+Kernel Name The -s or --kernel-name option displays the kernel name, which is Linux
+on a Linux system.
+
+Kernel Version You can find the kernel version with the -v or --kernel-version option.
+Ordinarily, this holds the kernel build date and time, not an actual version number.
+
+Kernel Release The actual kernel version number can be found via the -r or --kernelrelease option.
+
+Machine The -m or --machine option returns information about your machine. This is
+likely to be a CPU code, such as i686 or x86_64.
+
+Processor Using the -p or --processor option may return information about your CPU,
+such as the manufacturer, model, and clock speed; in practice, it returns unknown on many
+systems.
+
+Hardware Platform Hardware platform information is theoretically returned by the -i or
+--hardware-platform option, but this option often returns unknown.
+
+OS Name The -o or --operating-system option returns the OS name—normally GNU/
+Linux for a Linux system.
+
+Print All Information The -a or --all option returns all available information.
+In practice, you’re most likely to use uname -a at the command line to learn some of the
+basics about your kernel and system. The other options are most useful in multiplatform
+scripts, which can use these options to obtain critical information quickly in order to help
+them adjust their actions for the system on which they’re running.

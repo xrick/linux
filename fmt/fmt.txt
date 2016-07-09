@@ -1,4 +1,5 @@
 fmt is designed to reformat text files, such as when a program's README documentation file uses line that are too long for your display.
+By default, fmt's max column width is 75
 
 Sometimes text files arrive with outrageously long line lengths, irregular line lengths, or
 other problems. Depending on the difficulty, you may be able to cope simply by using

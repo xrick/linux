@@ -1,3 +1,0 @@
-Search by package name	apt-cache search pkg-name	yum list pkg-name
-Search by pattern	apt-cache search pattern	yum search pattern
-Search by file name	apt-file search path	yum provides file

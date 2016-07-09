@@ -1,0 +1,7 @@
+The RPMFind website, http://rpmfind.net, is an extremely useful
+resource when you want to find an RPM of a specific program. Another
+site with similar characteristics is Fresh RPMs, http://freshrpms.net.
+These sites include links to RPMs built by programs’ authors, specific
+distributions’ RPMs, and those built by third parties. Adding such sites
+as Yum repositories to your repository library can make it even easier to
+install new programs.

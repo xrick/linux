@@ -1,6 +1,7 @@
 To trap all output from a command (stdout, stderr) and send it to the /dev/null or black hole of the system, you use the following:
 
-To check below code, you need to login as normal user first:
-
-find / -iname *.txt > /abc 2>&1     
-
+To trap all output from a command (stdout, stderr) and send it to the /dev/null or black hole of the system, you use the following:
+To test below code, login as normal user
+find / -iname *.txt > /dev/null 2>&1     
+OR
+find / -iname *.txt > /dev/null 2> /dev/null

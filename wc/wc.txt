@@ -1,2 +1,10 @@
 wc abc
 The wc command displays the number of lines, words and bytes in a file.
+
+
+wc file.txt
+308 2343 15534 file.txt
+This file contains 308 lines (or more precisely, 308 newline characters), 2,343 words, and 15,534 bytes. 
+You can limit the output to the newline count, the word count, the byte
+count, or a character count with the --lines (-l), --words (-w), --bytes (-c), or --chars
+(-m) option, respectively. You can also learn the maximum line length with the --max-linelength (-L) option.

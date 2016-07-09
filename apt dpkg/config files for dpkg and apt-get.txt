@@ -1,0 +1,30 @@
+The main configuration file for dpkg is /etc/dpkg/dpkg.cfg or ~/.dpkg.cfg. This file
+contains dpkg options, as summarized in Table 2.5, but without the leading dashes. For
+instance, to have dpkg always perform a test run rather than actually install a package,
+you’d create a dpkg.cfg file that contains one line:
+no-act
+
+
+For APT, the main configuration file you’re likely to modify is /etc/apt/sources.list,
+which was described earlier in “Using apt-get.” Beyond this file is /etc/apt/apt.conf,
+which controls APT and dselect options. As with dpkg.cfg, chances are you won’t need to
+modify apt.conf. If you do need to make changes, the format is more complex and is modeled after those of the Internet Software Consortium’s (ISC’s) Dynamic Host Configuration
+Protocol (DHCP) and Berkeley Internet Name Domain (BIND) servers’ configuration files.
+Options are grouped together by open and close curly braces ({}):
+APT
+{
+Get
+{
+Download-Only "true";
+};
+};
+These lines are equivalent to setting the --download-only option permanently, as
+described in Table 2.7. You can, of course, set many more options. For details, consult
+apt.conf’s man page. You may also want to review the sample configuration file, /usr/
+share/doc/apt/examples/apt.conf. (The working /etc/apt/apt.conf file is typically
+extremely simple, or it may be missing entirely and therefore not be very helpful as an
+example.)
+You should be aware that Debian’s package tools rely on various files in the /var/lib/
+dpkg directory tree. These files maintain lists of available packages, lists of installed packages, and so on. In other words, this directory tree is effectively the Debian installed file
+database. As such, you should be sure to back up this directory when you perform system
+backups and be careful about modifying its contents.

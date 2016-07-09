@@ -1,17 +1,3 @@
-For example
-
-which ls
-[minhql@localhost ~]$ which ls
-alias ls='ls --color=auto'
-        /bin/ls
-		
-		
-		
-In path, ls command is set to /bin/ls
-But in alias, ls command is set to ls --color=auto
-
-Alias has higher priority than path. That's why, when you type ls. It will run alias first, then run path
-
 An alias replaces part of your command with something else. If you wanted to save a few keystrokes on ls -l you could make an alias: alias ll=”ls –l”.
 Any time you type ll by itself it will be expanded to ls -l. For example ll, ll -h, or ll *.doc are all good uses, giving you a long listing, a long listing with human readable sizes, and a long listing of all the .doc files, respectively. Typing all will not trigger the alias because aliases only operate on distinct words.
 

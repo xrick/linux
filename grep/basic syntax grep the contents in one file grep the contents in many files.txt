@@ -1,6 +1,6 @@
 grep "literal_string" filename
 
-
+grep option keyword location
 
 
 -r :This option reads and processes all the files in the specified directory

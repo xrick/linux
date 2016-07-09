@@ -1,0 +1,3 @@
+Repositories: Internet sites that host RPM files for a particular distribution.
+
+Distribution. e.g: Redhat, CentOS, Fedora

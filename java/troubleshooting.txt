@@ -1,0 +1,19 @@
+=========================================Java==========================================================================
+
+The error is displayed when running eclipse is not asking for a specific library, that's why you above methods won't work.
+But these two methods above won't work for java. You need to use alternatives command
+
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_91/bin/java 2
+alternatives --config java
+
+
+There are 3 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*  1           /opt/jdk1.7.0_71/bin/java
+ + 2           /opt/jdk1.8.0_45/bin/java
+   3           /opt/jdk1.8.0_77/bin/java
+   4           /opt/jdk1.8.0_91/bin/java
+
+Enter to keep the current selection[+], or type selection number: 4
