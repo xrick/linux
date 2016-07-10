@@ -21,7 +21,7 @@ apple                   (This line satifies containing at least one p character 
 pear                   (This line satifies containing at least one p character and it has to contain zero or more p characters)
 Line banana does not satisfy containing at least one p character. That's why it does not display
 
-In regex, + is a repetition operator, it will match one or one occurence of the preceding regular expression   x >=1
+In regex, + is a repetition operator, it will match one or more occurence of the preceding regular expression   x >=1
 In regex, ? is a repetition operator, it will match zero or one occurence of the preceding regular expression   1 >= x >= 0
 In regex, * is a repetition operator, it will match zero or more occurences of the preceding regular expression x >= 0
 . matches any single character x=1
