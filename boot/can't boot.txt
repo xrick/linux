@@ -1,3 +1,0 @@
-When attempting to boot your Linux system, you see an error message and the system will not complete a normal boot. Which of the following could you type at the GRUB menu to enter a system admin mod for troubleshooting:
-1 (s)(S)
-The numeral 1 puts the system into runlevel 1, a troubleshooting mode. The character s or S also are used to put the system into a troubleshooting mode.

@@ -13,5 +13,7 @@ zip-3.0-10.el7.x86_64
 [root@localhost yum.repos.d]# rpm -q zip-3.0-10.el7.x86_64.rpm
 package zip-3.0-10.el7.x86_64.rpm is not installed
 
+You can use rpm -qpl apache-xml.i386.rpm to preview where the package file, apache-xml.i386.rpm will install its files before installing it.
+
 
 

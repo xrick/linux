@@ -1,0 +1,1 @@
+ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target 

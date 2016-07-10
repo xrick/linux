@@ -1,0 +1,1 @@
+After running the command umount /mnt, the following error message is displayed:What is a common reason for this message?A user has a file open in the /mnt directory

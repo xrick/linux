@@ -1,0 +1,11 @@
+/etc/fstab contains a list of filesystems that CAN be mounted and it may include specific commands (options) that will be applied automatically when the filesystems are mounted. The "mount" command uses fstab to decide how to mount a filesystem, except if you explicitly specify all the mount parameters in the command.
+
+Examples:
+
+# mount will check fstab to find how to mount /home
+mount /home
+
+# mount will not check fstab in the example below
+mount -t ext3 /dev/sdc /mnt/usb
+
+/etc/mtab on the other hand is where the "mount" command keeps a record of the filesystems that it HAS mounted. So mtab shows the filesystems that are currently mounted.
