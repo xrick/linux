@@ -13,7 +13,7 @@ rtkit:x:492:490:RealtimeKit:/proc:/bin/false
 
 
 ==========================================================================fgrep==========================================================================
-
+fgrep is used when the text being searched for does not contain any regular expression patterns.
 The fgrep command is similar in execution, but it’s essentially for using a file that contains a set of terms to be searched for, instead of having to specify them all separated by pipes. First create a file named filetosearch.txt and make it match the following output:
 
 one

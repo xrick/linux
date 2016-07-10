@@ -1,0 +1,2 @@
+man passwd will display the manual for passwd cmd
+man 5 passwd will display the manual for passwd file (/etc/passwd)
