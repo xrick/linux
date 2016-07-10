@@ -1,0 +1,4 @@
+
+The auto parameter in the filesystem type column of /etc/fstab is useful when you don't know the filesystem type. USB flash drives, for instance, could use FAT, ext2fs, HFS, HFS+, NTFS, or even other filesystems. As option B specifies, auto tells the kernel to detect the filesystem type and use the appropriate driver. 
+
+A separate auto parameter in the options column means that the filesystem will be mounted automatically at boot time (using mount -a), but this option is distinct from the auto option in the filesystem type column. 

@@ -14,6 +14,12 @@ Use nice command to start a program without nice value will set value to 10
 nice -5 /usr/bin/prog 
 /usr/bin/prog is executed with a nice level of 5
 
+nice -n 5 /usr/bin/prog 
+/usr/bin/prog is executed with a nice level of 5
+
+nice -n -5 /usr/bin/prog 
+/usr/bin/prog is executed with a nice level of -5
+
 renice -8 /usr/bin/prog 
 /usr/bin/prog is executed with a nice level of -8
 

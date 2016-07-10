@@ -1,0 +1,6 @@
+By default, Linux doesn’t provide any sort of “trash-can” functionality for
+its rm command at the command line. Once you’ve deleted a file with rm,
+it’s gone. It cannot be recovered without retrieving the file from a backup
+or performing low-level disk maintenance (such as with debugfs). Therefore, you should be cautious when using rm, particularly when you’re
+logged on as root. This is especially true when you’re using the -R option,
+which can destroy a large part of your Linux installation!

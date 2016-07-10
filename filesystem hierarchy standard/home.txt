@@ -1,0 +1,3 @@
+The /home directory is frequently placed on its own partition in order
+to isolate it from the rest of the system and sometimes to enable use of a particular
+filesystem or filesystem mount options.

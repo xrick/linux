@@ -1,0 +1,19 @@
+Checking a filesystem "at any time" (i.e., when the system is running) is referred to as "online" checking, and in general, it isn't supported. The reason is simple: when a filesystem is mounted (so you need to unmounted a filesystem first before checking, umount /mnt/usb; If you want to adjust a key mounted filesystem, such as your root (/) filesystem, you may need to boot up an emergency disk system, such as the CD-based Parted Magic (http://partedmagic.com). Many distributions’ install discs can be used in this capacity as well.), the kernel is doing arbitrary things to the actual block device--which is fine, because it keeps track of what it's doing. But when you throw fsck into the mix, it too messes with the raw block device and doesn't inform the kernel about what it's doing. So they essentially step on each other's toes when making changes to the disk, and you end up with a corrupted filesystem. Even if you just "check" in read-only mode, the results fsck returns will be meaningless, again because fsck has no idea what the kernel is doing.
+
+To change the frequency the filesystem is checked when you mount it, you will use tune2fs, as you mentioned. Suppose you'd like to fsck every 30 reboots. Do
+
+# tune2fs -c 30 /dev/sdaX
+
+(Substitute the block device for your filesystem.)
+
+Or, if for some reason you'd like to disable mount-count-based checking entirely,
+
+# tune2fs -c 0 /dev/sdaX
+
+If you'd rather check on a calendar, you can use -i. For example, to check every week, do
+
+# tune2fs -i 1w /dev/sdaX
+
+You can use d for days, w for weeks, and m for months. Again, to disable calendar-based checking, give a value of 0 for the interval. Please, please, please don't disable all checking. You will, at some point, corrupt your filesystem.
+
+In general, you can get away with slightly longer intervals if the filesystem is journaled, although it isn't a replacement

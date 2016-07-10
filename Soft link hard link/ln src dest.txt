@@ -3,6 +3,8 @@ ln src dest
 
 softlink
 ln -s src dest
+OR
+ln --symbolic src dest
 
 -f: force
 src: an original file

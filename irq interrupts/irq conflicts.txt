@@ -1,3 +1,7 @@
 Although IRQ conflicts are rare on modern hardware, they still do occasionally crop up.
 When this happens, you must reconfigure one or more devices to use different IRQs. This
 topic is described shortly, in the section “Configuring Expansion Cards.”
+
+Solution:
+You can disable unused onboard devices (such as unused RS-232 ports)
+You can change the algorith the firmware uses to assign IRQs to PCI devices.

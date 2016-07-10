@@ -1,0 +1,8 @@
+fdisk -l /dev/sda on a Linux computer with an MBR disk produces a listing
+of four partitions: /dev/sda1, /dev/sda2, /dev/sda5, and /dev/sda6. Which of the following is true?
+
+Either /dev/sda1 or /dev/sda2 is an extended partition, and this extended partition contains /dev/sda5, /dev/sda6
+
+
+The primary partitions have numbers in the range of 1–4, whereas logical partitions are
+numbered 5 and up. Gaps can appear in the numbering of MBR primary partitions; however, such gaps cannot exist in the numbering of logical partitions. That is, you can have a disk with partitions numbered 1, 3, 5, 6, and 7 but not 1, 3, 5, and 7—if partition 7 exists, there must be a 5 and a 6.

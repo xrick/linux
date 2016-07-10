@@ -1,0 +1,4 @@
+Mount Point The second column specifies the mount point. This is where the partition
+or disk will be mounted in the unified Linux filesystem. This should usually be an empty
+directory in another filesystem. The root (/) filesystem is an exception. So is swap space,
+which is indicated by an entry of swap.

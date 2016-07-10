@@ -1,2 +1,2 @@
-items in /sbin are needed to boot the system. And therefore must be on the root partition.
-/sbin is the only one needed to boot the system and must be on the root partition. Others /home , /usr, /root , /boot are not needed to boot the system
+items in /sbin, /etc are needed to boot the system. And therefore must be on the root partition.
+/sbin is needed to boot the system and must be on the root partition. Others /home , /usr, /root , /boot are not needed to boot the system

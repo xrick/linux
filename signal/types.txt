@@ -1,3 +1,5 @@
+If you use kill command without option, SIGTERM will be sent by default
+
 	Ctrl-D = exit: It is used to initiates a logout.
     Ctrl-C (in older Unixes, DEL) sends an INT signal ("interrupt", SIGINT, 2); by default, this causes the process to terminate.
     Ctrl-Z sends a TSTP signal ("terminal stop", SIGTSTP (sig terminal stop),20); by default, this causes the process to suspend execution.
@@ -5,7 +7,7 @@
     Ctrl-T (not supported on all UNIXes) sends an INFO signal (SIGINFO); by default, and if supported by the command, this causes the operating system to show information about the running command.
 Exit: exit the shell
 Logout: exit a login shell
-	1 (terminate hangup, restart), 2 (interrupt), 9 (kill), 15 (terminate, allows the program to have time to clean up), 20 (Terminal stop signal Ctrl-Z)
+	1 (terminate hangup, restart), 2 (interrupt), 9 (kill), 15 (terminate, allows the program to have time to clean up), 20 (Terminal stop signal Ctrl-Z), SIGCONT
 	kill -s SIGHUP daemon1 = kill -HUP daemon1 = kill -1 daemon1
 SIGABRT 	6 		Terminate (core dump) 	Process abort signal
 SIGALRM 	14 		Terminate 	Alarm clock
@@ -51,3 +53,20 @@ SIGKILL can't be handled by the receiving process. If a process gets sent SIGKIL
 
 We should use SIGTERM (15) instead of SIGKILL since SIGTERM allows the program to have time to clean up.
 
+
+
+=========================================================What's the difference between SIGSTOP and SIGTSTP?=========================================================
+
+Both signals are designed to suspend a process which will be eventually resumed with SIGCONT. The main differences between them are:
+
+    SIGSTOP is a signal sent programmatically (eg: kill -STOP pid ) while SIGTSTP is sent by a user typing on a keyboard, usually Control-Z.
+
+    SIGSTOP cannot be ignored. SIGTSTP might be.
+
+
+# kill -SIGSTOP `pgrep crond`
+# ps aufx | grep crond
+root      3499  0.0  0.0 100328  1236 ?        Ts   Jun11   0:01 crond
+# kill -SIGCONT `pgrep crond`
+# ps aufx | grep crond
+root      3499  0.0  0.0 100328  1236 ?        Ss   Jun11   0:01 crond

@@ -1,0 +1,5 @@
+/etc/fstab
+fstab: filesystem table
+
+mount -a
+It ensures that all files systems listed with the option auto in /etc/fstab are mounted . If the filesystem is listed as noauto in /etc/fstab then mount -a will not mount this filesystem. Also, when specifying auto in the Linux /etc/fstab file's filesystem type column, Linux will mount the media automatically at boot time.

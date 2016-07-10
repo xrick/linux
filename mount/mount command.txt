@@ -1,6 +1,25 @@
-mount -a
-It ensures that all files systems listed with the option auto in /etc/fstab are mounted
+mount /dev/sdb7 /mnt/shared
 
+This command mounts the contents of /dev/sdb7 on /mnt/shared, auto-detecting the
+filesystem type and using the default options. Ordinarily, only root may issue a mount command; however, if /etc/fstab specifies the user, users, or owner option, an ordinary user
+may mount a filesystem using a simplified syntax in which only the device or mount point
+is specified, but not both. For instance, a user may type mount /mnt/cdrom to mount a
+CD-ROM if /etc/fstab specifies /mnt/cdrom as its mount point and uses the user, users,
+or owner option.
+
+mount -a
+It ensures that all files systems listed with the option auto in /etc/fstab are mounted . If the filesystem is listed as noauto in /etc/fstab then mount -a will not mount this filesystem. Also, when specifying auto in the Linux /etc/fstab file's filesystem type column, Linux will mount the media automatically at boot time.
+
+mount -r
+Mount the filesystem read-only
+
+mount -t
+Use the -t fstype parameter to specify the filesystem type.
+Common filesystem types are ext2 (for ext2fs), ext3 (for ext3fs), ext4 (for ext4fs), reiserfs (for ReiserFS), jfs (for JFS), xfs (for XFS), vfat (for FAT with VFAT long filenames),
+msdos (for FAT using only short DOS filenames, the old 8.3 naming standard), iso9660 (for
+CD filesystems), udf (for DVD and some CD filesystems), nfs (for NFS network mounts),
+and cifs (for SMB/CIFS network shares). Linux supports many others. If this parameter is
+omitted, Linux will attempt to auto-detect the filesystem type.
 
 To display all currently mounted filesystems, which of the following commands could be used:
 cat /proc/self/mounts

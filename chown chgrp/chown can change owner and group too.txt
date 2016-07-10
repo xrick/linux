@@ -1,0 +1,14 @@
+The chown command can change both user owner and group owner. The user owner is listed first, followed by a : character and then the group owner.
+
+
+chown bob:bin file.txt
+This changes the user owner of file.txt to bob.
+This changes the group owner of file.txt to bin.
+
+
+chown tony somefile.txt
+Change the owner of a file
+
+
+chown :friends tmpfile
+Change the group of a file

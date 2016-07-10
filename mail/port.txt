@@ -1,0 +1,5 @@
+Port 110 is assigned to the Post Office Protocl (POP)
+
+Port 143 is assigned to the Internet Message Access Control (IMAP)
+
+Both of above ports may be used to retrieve email messages from an email server system.

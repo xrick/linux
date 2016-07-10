@@ -1,1 +1,0 @@
-The df command reports the amount of available disk space being used by file systems

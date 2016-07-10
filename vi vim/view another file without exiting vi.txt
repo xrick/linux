@@ -1,0 +1,1 @@
+In vi's command mode, type: !less files.txt

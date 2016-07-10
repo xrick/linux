@@ -1,0 +1,3 @@
+When you’re deleting an entire directory tree filled with files, you should
+use rm -R or rm -r rather than rmdir. This is because the rmdir command
+can delete only an empty directory.

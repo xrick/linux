@@ -1,0 +1,5 @@
+/etc/fstab file contains the mappings of partitions to mount points, so /etc/ must be an oridinary directory on the root partition not on a separate partition
+
+The /bin and /sbin directories should never be split off from the root (/) filesystem because they contain critical
+executable files that must be accessible in order to do the most basic work, including
+mounting filesystems

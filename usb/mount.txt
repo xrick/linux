@@ -21,3 +21,6 @@ Disk identifier: 0x00948f6e
 [root@localhost ~]# chmod -R 777 /media/usb
 
 [root@localhost ~]# mount /dev/sdc1 /media/usb
+When typed without a filesystem type specification, mount attempts to auto-detect
+the filesystem type. If the media contains any of the specified filesystems (Ext2fs, FAT, HFS, ReiserFS...) it should be
+detected and the disk mounted
