@@ -1,0 +1,31 @@
+
+When a filesystem is broken or has errors, an fsck (filesystem check) is in order. The mount count and maximum mount count are how the system knows when to check the filesystem structure and data health (see the section “Tuning Filesystems” for more on mount counts and using tune2fs). On a filesystem such as ext4, this is important because a periodic check can save you hours of heartache and troubleshooting (repairing the filesystem after a crash) when the data is most needed.
+When you run fsck, it’s really delegating the work to the appropriate filesystem check tool. These commands are
+ e2fsck—Shortcut for checking the ext filesystems
+ dosfsck—Used for all varieties of the DOS/FAT filesystem
+ reiserfsck—Used for the ReiserFS filesystem
+fsck does not do anything for XFS filesystems, so you must use xfs_repair on its own.
+The fsck tool uses the /etc/fstab file to automatically check filesystems at system start. If a filesystem is marked unclean for reasons that include a power outage, unexpected system stoppage, or other event that didn’t let the system finish writing to disk properly, a lengthy check of the filesystem is probably required.
+The worst scenario is filesystem damage, usually noticed when restarting a system that crashed or was turned off abruptly. The system attempts to run a quick fsck session on the filesystems noted in /etc/fstab, beginning with those that have a 1 in the sixth column, and continuing on numerically until finished. The fsck program skips any that have a 0 (zero) in the sixth column.
+UUID=6489f3c4-13fd-449e-8648-918b58a948f5 /                       ext3
+noatime         1 1
+
+
+All filesystems that have a 1 in the column are checked first in parallel, then any that have a 2 in the column in parallel, and so on. In this example, the filesystem will be checked on the first pass because the final column is 1.
+If the filesystem was shut down cleanly, such as through the shutdown or halt commands, then fsck doesn’t need to check anything. It is rare to have a mounted filesystem with corruption. When a filesystem is properly unmounted anything cached in memory is flushed to disk and fsck doesn’t need to check anything. If the computer was shut down abruptly, it’s possible that some of this cache is lost and what is on disk may be missing something. It is the job of fsck to fix any damage caused by this missing data.
+
+If the damage is too great to fix automatically, the system presents you with a message stating “Ctrl-d to continue, otherwise enter the root password to perform a filesystem check.” Entering the root password displays the shell prompt and prints a helpful message that tells you the filesystem that needs checking. fsck options that can help the busy sysadmin include
+ –A—Moves through /etc/fstab checking all filesystems in one long pass
+ –C—Percentage or hash mark progress bars for any operations that support their display
+ –N—Performs a dry run (makes no changes), showing what would be done; doesn’t change anything (good for seeing how bad it is)
+ –V—Produces verbose output for everything, including commands that are being executed by fsck
+ –a—Doesn’t ask questions and noninteractively repairs the filesystem
+fsck makes five passes or types of changes to the filesystem, shown here:
+ Pass 1—Checking inodes, blocks, and sizes
+ Pass 2—Checking directory structure
+ Pass 3—Checking directory connectivity
+ Pass 4—Checking reference counts
+ Pass 5—Checking group summary information
+When fsck finds serious errors such as blocks claimed by multiple files (cross-linked), blocks claimed outside the filesystem, too few link counts (the number of directories linked to an inode), or unaccounted blocks or directories that correspond to unallocated inodes, it displays an error message and asks to be run manually.
+Note
+Always only run fsck on unmounted or read-only mounted filesystems. This is mandatory; otherwise, fsck might perform an operation on a file a user has open, causing corruption. If it’s the root filesystem, you should either do it in single-user mode or use the rescue CD-ROM to ensure that the root is mounted read-only.

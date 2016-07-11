@@ -7,3 +7,5 @@ Directories use the same permissions flags as regular files, but they are interp
    (1) Execute permission allows the user to enter the directory and access any subdirectories.
 
 Without execute permission on a directory, the filesystem objects inside the directory are not accessible. Without read permission on a directory, the filesystem objects inside the directory are not viewable in a directory listing, but these objects can still be accessed as long as you know the full path to the object on disk. Listing 4 is an artificial example to illustrate these points.
+
+To better understand directory permissions, think of the directory as a room. If you want to see what is in the rrom, you need a window. Think of the read permission as the window (4). If you want to get into the room, you need a door. Think of the execute permission as the door (1)

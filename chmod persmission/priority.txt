@@ -1,0 +1,4 @@
+For example, say a user named fred is the user owner of the file object /home/fred/22AcaciaAvenue.mp3 and is also a member of the group owner of that object. The file’s listing has the following permissions set:
+-rw-r-xr-x    2 fred     users   0 Jan 26 13:08 22   AcaciaAvenue.mp3
+
+The fred user’s permissions might seem to span the various trios, but because fred is the user owner, he matches the first trio and stops there. In other words, the user fred has read and write permission, but not execute, even though fred is a member of the users group and members of that group do have execute permission on this file.

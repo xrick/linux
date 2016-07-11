@@ -1,3 +1,5 @@
+repquota: report quota
+
 repquota prints a summary of the disc usage and quotas for
 the specified file systems.  For  each  user  the  current
 number  of  files  and  amount  of space (in kilobytes) is

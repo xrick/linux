@@ -1,3 +1,6 @@
+The df command is different from the du command: It operates on filesystems rather than files
+
+
 The df command reports the amount of available disk space being used by file systems (To display amount of free and used memory in the system, we can use free or top commands)
 
 The df command is helpful for finding out which partitions are in danger of becoming

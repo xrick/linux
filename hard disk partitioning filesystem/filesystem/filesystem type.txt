@@ -1,0 +1,13 @@
+Filesystem Types
+Linux supports different filesystems, which allows the administrator to choose the one that best suits the needs of the data. The more popular filesystems supported are
+ ext2—The Linux extended filesystem, which was the default for a long time.
+ ext3—Essentially ext2 with journaling (logging) to help recover faster after a crash.
+ ext4—Performance improvements made on top of ext3.
+ iso9660—The CD-ROM filesystem.
+ udf—The DVD filesystem.
+ vfat—A 32-bit filesystem readable by Windows (FAT32).
+ nfs—The Network Filesystem by Sun Microsystems, which is the default network file sharing protocol for all of Unix/Linux.
+ smb—The Samba filesystem is Microsoft’s default file sharing protocol for network shares. It’s otherwise known as CIFS (Common Internet File System).
+ xfs—The extent filesystem, adopted from Silicon Graphics (SGI) is a higher performance filesystem with many features.
+ ReiserFS—At the time of its introduction ReiserFS had many novel features that have since been added to other filesystems. In particular it was first to introduce journaling and online resizing.
+ btrfs—A filesystem still in development (but stable) that builds on ideas from ReiserFS and focuses on the administrative and performance needs of systems with huge amounts of storage

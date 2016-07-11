@@ -1,3 +1,6 @@
+
+
+
 Checking a filesystem "at any time" (i.e., when the system is running) is referred to as "online" checking, and in general, it isn't supported. The reason is simple: when a filesystem is mounted (so you need to unmounted a filesystem first before checking, umount /mnt/usb; If you want to adjust a key mounted filesystem, such as your root (/) filesystem, you may need to boot up an emergency disk system, such as the CD-based Parted Magic (http://partedmagic.com). Many distributions’ install discs can be used in this capacity as well.), the kernel is doing arbitrary things to the actual block device--which is fine, because it keeps track of what it's doing. But when you throw fsck into the mix, it too messes with the raw block device and doesn't inform the kernel about what it's doing. So they essentially step on each other's toes when making changes to the disk, and you end up with a corrupted filesystem. Even if you just "check" in read-only mode, the results fsck returns will be meaningless, again because fsck has no idea what the kernel is doing.
 
 To change the frequency the filesystem is checked when you mount it, you will use tune2fs, as you mentioned. Suppose you'd like to fsck every 30 reboots. Do
