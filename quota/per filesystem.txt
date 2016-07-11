@@ -1,0 +1,5 @@
+You are configuring your server after a system crash due to a full disk. When configuring a user quota for the /home directory of 1GB and a user quota for the /var/ftp directory of 200MB, what must be true about those directory trees for quotas to work?
+They must exist on different partitions or drives.
+Quotas are configurable only on a per-file-system basis. In this case, one or both must be off the root (/) filesystem to have a different quota assigned
+
+In this case, /var/ftp (For example: /dev/sda2) has to be on a different filesystem than /home (For example: /dev/sda1) for different quotas to work
