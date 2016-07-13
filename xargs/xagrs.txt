@@ -57,9 +57,9 @@ For instance, consider the task of deleting several files that belong to a parti
 ====Method 1===
 You can do this by piping the output of find to xargs, which then calls rm:
 # find / -user Christine | xargs -d "\n" rm
-The first part of this command (find / -user Christine) finds all of the files in directory tree (/) and its subdirectories that belong to user Christine. (Since you are looking
-through the entire directory tree, you need superuser privileges for this to work properly.)
+The first part of this command (find / -user Christine) finds all of the files in directory tree (/) and its subdirectories that belong to user Christine. (Since you are looking through the entire directory tree, you need superuser privileges for this to work properly.)
 This list is then piped to xargs, which adds each input value to its own rm command.
+
 Problems can arise if filenames contain spaces because by default xargs uses both spaces
 and newlines as item delimiters. The -d "\n" option tells xargs to use only newlines as
 delimiters, thus avoiding this problem in this context. (The find command separates each
@@ -69,7 +69,7 @@ found filename with a newline.)
 Use print0 option of find command
 
 ====Method 3===
--0 option of args
+-0 option of xargs
 -0, --null
               Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special  (every  character  is  taken
               literally).   Disables  the end of file string, which is treated like any other argument.  Useful when input items might contain white space, quote

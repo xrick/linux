@@ -4,8 +4,7 @@ With the same initial setup, if you issue the command cp –r dir1/* dir2, you g
 
 
 
-Trailing slash
-
+Question:
 Most commands I use in linux behave exactly the same whether I include the trailing slash / character on the end of a directory name or not.
 
 For example:
@@ -18,19 +17,11 @@ cp foo/ bar/
 
 When does this trailing slash matter? What is the semantic meaning of the trailing slash?
 
-
-
-
+Answer:
 It is completely dependent on the tool. rm won't let you remove a symlink to a directory if there's a slash at the end, and rsync does different things if the remote file specification has a slash at the end.
-
-
-
-
 
 ls /home/* 
 * is globbing
-
-
 
 Depands on the command,  /home/* AND /home/ AND /home may work differently. For example:
 

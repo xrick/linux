@@ -1,0 +1,10 @@
+Sometimes you will want vim to open a file with a search string and put the cursor on the first found instance of that string. To accomplish this, enter vi +/string filename.
+
+
+Other times you'll want to edit a file and have the cursor jump to a particular line when the file is opened, such as the line 18 in the
+/etc/inittab
+
+You would enter vi +18 /etc/inittab.
+Tip
+
+The + command line option tells vim to run that particular command once the file is open.

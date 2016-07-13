@@ -1,0 +1,4 @@
+Another great and useful feature of pgrep is that you can use it to find processes and then feed them to another command, such as renice. As an example, to find all running Chrome browser processes and change the priority level on them, you could use the following command:
+renice +5 'pgrep chrome'
+
+This finds all the “chrome” named processes in the process table and executes the renice +5 command on them, effectively dropping their priority from the default.
