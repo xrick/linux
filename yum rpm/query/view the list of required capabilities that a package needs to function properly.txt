@@ -1,0 +1,15 @@
+Use rpm qR with option p to view the list of required capabilities that a package (which is not yet installed) needs to function properly
+[root@localhost ~]# rpm -qpR zip-3.0-10.el7.x86_64.rpm
+libbz2.so.1()(64bit)
+libc.so.6()(64bit)
+libc.so.6(GLIBC_2.14)(64bit)
+libc.so.6(GLIBC_2.2.5)(64bit)
+libc.so.6(GLIBC_2.3)(64bit)
+libc.so.6(GLIBC_2.3.4)(64bit)
+libc.so.6(GLIBC_2.4)(64bit)
+libc.so.6(GLIBC_2.7)(64bit)
+rpmlib(CompressedFileNames) <= 3.0.4-1
+rpmlib(FileDigests) <= 4.6.0-1
+rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+rtld(GNU_HASH)
+rpmlib(PayloadIsXz) <= 5.2-1
