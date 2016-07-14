@@ -7,7 +7,7 @@ tr without option is used to replace a character with another character
 
 tr -d '\r' < DOS-file > UNIX-file
 To fix a Linux file which can't not be run on Linux, we use above command.
-The reason, Linux file does not work in Linux anymore is we download it to Windows then edit or sth like that
+The reason, Linux file does not work in Linux anymore is we download it to Windows then edit or sth like that. Or you can use dos2unix command
 
 
 echo "Hello World" | tr -d aieou

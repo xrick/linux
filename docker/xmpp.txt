@@ -1,0 +1,23 @@
+XMPP Simulator - setup
+Install Docker following instruction for your particular platform at https://docs.docker.com/engine/installation
+Get the newest tgz package from ftp://10.23.144.140/pub/redembedded/bobPhase3/xmpp_simulator
+Unpack and execute:
+make -C xmpp_simulator/ distclean-xmppserver
+make -C xmpp_simulator/ build-xmppserver
+(this will build docker image with xmppserver, be patient it can take a while)
+Once docker image is built, it can be run with following command:
+make -C xmpp_simulator/ run-xmppserver
+To test XMPP Server use the script from tgz package:
+python ./xmpp_simulator/XMPPServerPubSubControl.py
+
+Note: 
+127.0.0.1   xmpp.cht-test.redembedded.com 
+might need to be added to /etc/hosts file
+
+After running a script, following output should be shown on console, indicating the server is running correctly:
+Received iq response:
+<text>Created in 83 ms</text>
+Received iq response:
+<pubsub xmlns="http://jabber.org/protocol/pubsub"><subscription subid="2ic1t37qw5rh8233z68" node="node01" jid="stb@xmpp.cht-test.redembedded.com" subscription="subscribed" /></pubsub>
+Received iq response:
+<pubsub xmlns="http://jabber.org/protocol/pubsub"><publish node="node01"><item id="48z3z7nuklpdieu27ec" /></publish></pubsub>
