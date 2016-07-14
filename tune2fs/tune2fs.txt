@@ -1,1 +1,4 @@
 tune2fs is used to chaged how often a filesystem check is performed
+
+-c: max_mounts_count
+-i: interval [d|m|w]
