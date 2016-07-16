@@ -1,0 +1,3 @@
+What does the Filesystem Hierachy Standard enable:
+	- Software to predict the location of installed files and directories
+	- Users to predict the location of installed files and directories

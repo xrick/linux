@@ -12,3 +12,21 @@ The /etc/passwd file contains a number of system accounts, all of which are assi
 If you have the need to allow for both local user accounts and network accounts (for the purpose of using NFS and NIS), it is a good idea to assign network accounts UIDs that start at the five-digit UID mark—in other words, with UIDs from 10,000 to 65,000. Local user accounts would be assigned values from 500 to 9,999. This allows for more structure in your UID numbering system.
 Note
 If you can, force the use of a standardized UID and GID structure across all your enterprise systems. If you have more than 100 users, consider using LDAP for managing how users log on to their systems. The now deprecated NIS and the newer LDAP methods are outside the scope of this discussion and not on the LPI Level 1 objectives but are great ways to centralize account and password management across all machines in your environment.
+
+
+
+
+
+================================System groups=====================
+
+The following groups are used for system purposes and are not likely to be used by users:
+Group 			Affected files										Purpose
+dbus 														used internally by dbus
+kmem 	/dev/port, /dev/mem, /dev/kmem 	
+mail 	/usr/bin/mail 	
+nobody 														Unprivileged group.
+polkitd 													polkit group.
+proc 	/proc/pid/ 											
+root 	/* 													Complete system administration and control (root, admin).
+smmsp 													    sendmail group.
+tty 	/dev/tty, /dev/vcc, /dev/vc, /dev/ptmx 	
