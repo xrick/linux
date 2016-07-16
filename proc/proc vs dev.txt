@@ -1,4 +1,19 @@
 /proc vs /dev
 
 /proc exposes files containing info about the system
-/dev contains device files used to talke to devices (peripherals)
+/dev contains device files used to talk to devices (peripherals)
+
+
+
+The /dev tree contains device nodes, which gives user space access to the device drivers in your OS's running kernel.¹ All POSIX type OSes have a /dev tree.
+
+The /proc tree originated in System V Unix, where it only gave information about each running process, using a /proc/$PID/stuff scheme. Linux greatly extended that, adding all sorts of information about the running kernel's status. In addition to these read-only information files, Linux's /proc also has writable virtual files that can change the state of the running kernel. BSD type OSes generally do not have /proc at all, so much of what you find under here is non-portable.
+
+The intended solution for this mess in Linux's /proc is /sys. Ideally, all the non-process information that got glommed into the /proc tree should have moved to /sys by now, but historical inertia has kept a lot of stuff in /proc. Often there are two ways to effect a change in the running kernel: the old /proc way, kept for backwards compatibility, and the new /sys way that you're supposed to be using now.²
+
+Footnotes:
+
+    There are also several /dev entries that do not correspond to hardware devices, such as /dev/null, /dev/random, and /dev/tty. These are virtual devices that let user space programs talk to other parts of the kernel besides the running drivers in a device-like fashion.
+
+    As a rule, /sys tends to be more strictly organized than /proc, since /sys mirrors the internal kernel data structures that manage the system's resources, whereas /proc grew organically over many years, and old questionable design decisions can't change now because there are programs using those old interfaces. /sys started out with a clearer design, and doesn't have to drag around as much historical baggage as /proc.
+
