@@ -5,7 +5,7 @@ $ (dollar sign) matches the end of a line
 ^..b: matches any two characters at the beginning of a line followed by a b character.
 . matches any single character. For example:  a.v is a three-letter regular expression
 .* matches any characters, including empty one.
-
+\^ 	Backlash sequence to match special character ^.Similarly you can use for other characters.
 
 
 
@@ -21,14 +21,26 @@ apple                   (This line satifies containing at least one p character 
 pear                   (This line satifies containing at least one p character and it has to contain zero or more p characters)
 Line banana does not satisfy containing at least one p character. That's why it does not display
 
-In regex, + is a repetition operator, it will match one or more occurence of the preceding regular expression   x >=1
-In regex, ? is a repetition operator, it will match zero or one occurence of the preceding regular expression   1 >= x >= 0
+In regex, \+ is a repetition operator, it will match one or more occurence of the preceding regular expression   x >=1
+In regex, \? is a repetition operator, it will match zero or one occurence of the preceding regular expression   1 >= x >= 0
 In regex, * is a repetition operator, it will match zero or more occurences of the preceding regular expression x >= 0
-. matches any single character x=1
+In regex, . matches any single character x=1
+
++ and ? match themselves. 
+
+egrep vs grep. egrep supports + and ? as repetition operators. You don't need to use \ to indicate + and ? as repetition operators. When using grep, you have to use \ to indicate \+ and \? as repetition operators.
+[root@localhost ~]# egrep '^da+d$' /usr/share/dict/words
+dad
+[root@localhost ~]# grep '^da+d$' /usr/share/dict/words
+[root@localhost ~]# grep '^da\+d$' /usr/share/dict/words
+dad
+
 
 Single dot in regex is equal to ? in globbing
 .* in regex is equal to * used in globbing
 * in a regular expression is not exactly the same as * in the console. In the console, * is part of a glob construct, and just acts as a wildcard (for instance ls *.log will list all files that end in .log). However, in regular expressions, * is a modifier, meaning that it only applies to the character or group preceding it. If you want * in regular expressions to act as a wildcard, you need to use .* as previously mentioned -- the dot is a wildcard character, and the star, when modifying the dot, means find one or more dot; ie. find one or more of any character.
+
+
 
 
 
