@@ -1,0 +1,4 @@
+Using quotas requires:
+	+ Kernel support
+	+ The usrquota or grpquota (for user or group quotas) filesystem mount option
+	+ Activation via the quotaon command (which often appears in system startup scripts)

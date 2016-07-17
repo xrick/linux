@@ -1,0 +1,2 @@
+initrd /boot/initrd-3.4.2
+initrd16 /initramfs-0-rescue-46ed53521f2a4479a4e77c21c6ac4a92.img
