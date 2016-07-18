@@ -1,0 +1,42 @@
+Another handy network port auditing tool is the fuser command. You can use this tool
+to determine the processes currently using a particular network port. For example, to see
+what process is currently using network port 22, use fuser and pass the port number and
+network protocol in the following manner:
+$ sudo fuser 22/tcp
+[sudo] password for Christine:
+22/tcp: 1415 1881 1885
+$
+$ ps 1415
+PID TTY STAT TIME COMMAND
+1415 ? Ss 0:00 /usr/sbin/sshd
+$
+$ ps 1881
+PID TTY STAT TIME COMMAND
+1881 ? Ss 0:00 sshd: Christine [priv]
+$
+$ ps 1885
+PID TTY STAT TIME COMMAND
+1885 ? S 0:00 sshd: Christine@pts/0
+$
+In the preceding display, the fuser command produces three process IDs (PIDs). Each of
+these processes is using port 22 with TCP. Using the ps command, you can investigate each
+process further. However, there is an easier way. Simply add the -v option on the fuser
+command to see all of the processes’ information in one straightforward command:
+$ sudo fuser -v 22/tcp
+USER PID ACCESS COMMAND
+22/tcp: root 1415 F.... sshd
+root 1881 f.... sshd
+Christine 1885 F.... sshd
+$
+This method provides a quick analysis of who is using port 22. Notice that each time
+you use fuser, superuser privileges are required.
+The ACCESS column in the preceding display indicates whether or not the process has a
+file open (f) or a file open for writing (F). The fuser utility is similar to the lsof utility in
+that it can also view processes accessing files
+
+Notice that the fuser command uses the syntax of Port/Protocol to
+denote which port and protocol to inspect. This option matches the output
+of the syntax used by Nmap’s scan output. Therefore, in security scripts,
+you could use various filter commands (see Chapter 1, “Exploring Linux
+Command-Line Tools”) to pull information from nmap output and feed it
+into fuser commands to produce audit or security incident reports.

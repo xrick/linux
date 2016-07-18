@@ -11,6 +11,35 @@ The -m option denotes a mounted filesystem and returns a list of all processes w
 Case 1: they're sitting in a directory on the drive they're trying to eject and the system sees this and says, "I can't eject it, the drive's busy!"
 Case 2: using lsof /dev/sdc1 to check which resource is currently holding file or connection
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Another way to verify that tftpd is listening is with the lsof command:
 # lsof -i:69
 COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
