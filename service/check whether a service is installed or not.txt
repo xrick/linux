@@ -1,0 +1,24 @@
+================================================Not install=======================================
+Method 1:
+[root@localhost ~]# service vsftpd status
+Redirecting to /bin/systemctl status  vsftpd.service
+   vsftpd.service
+   Loaded: not-found (Reason: No such file or directory)
+   Active: inactive (dead)
+
+Method 2:   
+[root@localhost ~]# rpm -qa | grep -i vsftpd
+[root@localhost ~]#
+
+   
+================================================Installed=======================================
+Method 1:
+[root@localhost ~]# service vsftpd status
+Redirecting to /bin/systemctl status  vsftpd.service
+   vsftpd.service - Vsftpd ftp daemon
+   Loaded: loaded (/usr/lib/systemd/system/vsftpd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+
+Method 2:
+[root@localhost ~]# rpm -qa | grep -i vsftpd
+vsftpd-3.0.2-11.el7_2.x86_64
