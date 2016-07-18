@@ -1,0 +1,6 @@
+The netstat program is considered obsolete, though you may still
+find it on some Linux distributions. It is also listed in the certification
+exam’s objectives and therefore needs to be covered here. However,
+the current utility to use for network auditing and displaying network
+information is the ip program. See the man pages for more information
+on the ip utility.

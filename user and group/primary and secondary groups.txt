@@ -1,3 +1,7 @@
+The file assigns a user to its primary group: /etc/passwd
+The file assigns a user to its secondary group: /etc/group
+
+
 Group Accounts
 Groups come in only one type, a grouping of users. No nesting of groups is possible in Linux or Unix. Users are associated with groups using two methods:
 

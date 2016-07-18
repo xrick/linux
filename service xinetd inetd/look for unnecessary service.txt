@@ -1,15 +1,3 @@
-netstat stands for network statistics. This command displays incoming and outgoing network connections as well as other network information. It’s available on Windows, Mac, and Linux — each version has its own command-line options you can tweak to see different types of information.
-
-The netstat utility can show you the open connections on your computer, which programs are making which connections, how much data is being transmitted, and other information.
-
-netstat: print network connections, routing tables, interface statistics, masquerade connections and multicast memberships.
-
-
-netstat -ap
--a: all
--p: display PID/Program name 
-
-
 For spotting unnecessary servers, you can use netstat with its -a and -p options. The
 -a option shows all network sockets. The -p option shows the PID and program name that
 owns a shown socket.

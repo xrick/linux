@@ -1,0 +1,13 @@
+ The /etc/gshadow file is readable only by the root user and contains an encrypted password for each group, as well as group membership and administrator information. Just as in the /etc/group file, each group's information is on a separate line. Each of these lines is a colon delimited list including the following information:
+
+    Group name — The name of the group. Used by various utility programs as a human-readable identifier for the group.
+    Encrypted password — The encrypted password for the group. If set, non-members of the group can join the group by typing the password for that group using the newgrp command. If the value of this field is !, then no user is allowed to access the group using the newgrp command. A value of !! is treated the same as a value of ! — however, it also indicates that a password has never been set before. If the value is null, only group members can log into the group.
+    Group administrators — Group members listed here (in a comma delimited list) can add or remove group members using the gpasswd command.
+    Group members — Group members listed here (in a comma delimited list) are regular, non-administrative members of the group. 
+
+Here is an example line from /etc/gshadow:
+
+ general:!!:shelley:juan,bob 
+
+This line shows that the general group has no password and does not allow non-members to join using the newgrp command. In addition, shelley is a group administrator, and juan and bob are regular, non-administrative members.
+Since editing these files manually raises the potential for syntax errors, it is recommended that the applications provided with Red Hat Enterprise Linux for this purpose be used instead. The next section reviews the primary tools for performing these tasks. 
