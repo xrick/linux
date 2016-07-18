@@ -1,0 +1,26 @@
+A firewall is a filter that restricts access to and/or from computers or services.
+Broadly speaking, two types of firewalls exist: packet-filter firewalls, which work by blocking
+or permitting access based on low-level information in individual data packets (such as
+source and destination IP addresses and ports), and proxy filters, which partially process
+a transaction (such as a web page retrieval) and block or permit access based on high-level
+features in this transaction (such as the filename of an image in the web page).
+
+In Linux, the kernel includes packet-filter firewall capabilities, which can be programmed
+via the iptables program. You can set up rules by typing iptables followed by various
+options that define specific restrictions, such as limits on the IP addresses that may
+access a specific network port. Creating an effective firewall requires learning iptables
+in detail and writing a script that calls this program repeatedly to set up specific rules.
+The nftables program is slated to replace the iptables program. See netfilter.org/
+projects/nftables for the current status of this program.
+
+Many distributions make things easier by providing a generic firewall script that you
+can configure using a GUI tool or text-based command. For example, Ubuntu offers the
+Uncomplicated Firewall utility, ufx, to help set up iptables rules. These tools are generally
+designed for protecting a single computer against unwanted outside access. Check your
+distribution’s GUI system administration options and man pages for a firewall configuration
+tool. You may be able to set security based on a few levels (high, medium, and low security,
+for instance) or in a somewhat more refined manner.
+
+Linux can also function as a firewall computer that protects an entire network; however,
+such a configuration is likely to require in-depth knowledge of iptables, as well as
+topics which include configuring Linux as a router.

@@ -1,0 +1,28 @@
+service ftp
+{
+        disable                 = no
+        socket_type             = stream
+        wait                    = no
+        user                    = root
+        server                  = /usr/sbin/vsftpd
+        per_source              = 5
+        instances               = 200
+        no_access               = 10.1.1.10
+        banner_fail             = /etc/vsftpd.busy
+        log_on_success          += PID HOST DURATION
+        log_on_failure          += HOST
+}
+
+
+server  = /usr/sbin/vsftpd : Link to the installed server. For example: after install vsftpd server (apt-get install vsftpd). You can use command which vsftpd to find the link to the installed server.
+
+
+Stream: a reliable two-way connection 
+Dgram: a less reliable connection with less overhead
+Raw: a low-level connection to the network 
+
+For dgram socket type, we should specify option wait (processed all of its packets and then timed out) since dgram is a less reliable connection
+For other socket types, we should specify option nowait (the server connected to its client and freed the socket)
+
+
+User:	This was the username used to run the server. The root and nobody users were common choices, but others were possible as well. As a general rule, servers were run with a low-privilege user whenever possible as a security precaution. Some servers required root access though.
