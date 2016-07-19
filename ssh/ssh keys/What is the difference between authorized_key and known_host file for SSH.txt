@@ -1,15 +1,38 @@
  
 
-    ~/.ssh/authorized_keys: Holds a list of authorized public keys for servers. When the client connects to a server, the server authenticates the client by checking its signed public key stored within this file
+    ~/.ssh/authorized_keys: Holds a list of authorized public keys for servers. When the client connects to a server, the server authenticates the client by checking its signed public key stored within this file. This file is in the server.
 
-    ~/.ssh/known_hosts: Contains host keys of SSH servers accessed by the user. This file is very important for ensuring that the SSH client is connecting the correct SSH server.
+    ~/.ssh/known_hosts ((there's also a system-wide file /etc/ssh/known_hosts): Contains host keys of SSH servers accessed by the user. This file is very important for ensuring that the SSH client is connecting the correct SSH server. This file is in the client.
 
+	 known_hosts file is maintained on client whereas authorized_key file is maintained on the server
+	
 	If you use below lines:
 	Host 192.168.*.*
    StrictHostKeyChecking=no
    UserKnownHostsFile=/dev/null
    No hosts will be added to ~/.ssh/known_hosts
  
+ 
+ 
+ 
+ For example:
+ From client, ssh to server. Server's ip address (192.168.100.102) is added to client's /root/.ssh/known_hosts when selecting yes for the question (Are you sure you want to continue connecting (yes/no)?)
+ 
+The authenticity of host '192.168.100.102 (192.168.100.102)' can't be established.
+ECDSA key fingerprint is 4f:eb:35:02:85:a5:a9:ba:6b:d6:d2:93:13:e3:9e:2a.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.100.102' (ECDSA) to the list of known hosts.
+
+[root@client ~]# find / -iname known*
+/root/.ssh/known_hosts
+/usr/share/doc/setools-libs-3.3.7/KNOWN-BUGS
+/usr/share/doc/nfs-utils-1.3.0/KNOWNBUGS
+/usr/share/doc/dmraid-1.0.0.rc16/KNOWN_BUGS
+/usr/share/doc/cjkuni-uming-fonts-0.2.20080216.1/KNOWN_ISSUES
+/usr/share/augeas/lenses/dist/known_hosts.aug
+[root@client ~]# cat /root/.ssh/known_hosts
+192.168.100.102 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPfualDbaAgx3yRKNkYJ8+gxa2gP8kvAZwduMTLY8mzrDvKUCVwOAqiXhPvI0PkqC93/fQofgdhzmUa7YRWXj14=
+
  
 The known_hosts file lets the client authenticate the server, to check that it isn't connecting to an impersonator. The authorized_keys file lets the server authenticate the user.
 Server authentication
@@ -31,4 +54,4 @@ The server only lets a remote user log in if that user can prove that they have 
 
 	
 	
-	 known_hosts file is maintained on client whereas authorized_key file is maintained on the server
+	

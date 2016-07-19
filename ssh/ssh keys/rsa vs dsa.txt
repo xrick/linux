@@ -1,4 +1,5 @@
-
+rsa: ssh key version 2
+dsa: ssh key version 1
 
 When generating SSH authentication keys on a Unix/Linux system with ssh-keygen, you're given the choice of creating a RSA or DSA key pair (using -t type).
 

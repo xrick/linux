@@ -1,0 +1,18 @@
+Why doesn't `sudo cd /var/named` work?
+
+The reason you can't do this is simple and two fold
+
+cd is not a program but an in-built command and sudo only applies to programs.
+
+sudo foo means run the program foo as root
+
+sudo cd /path returns
+
+sudo: cd: command not found
+
+because cd is not a program.
+
+You can use sudo -s to open an interactive shell and then cd to to your desired directory:
+
+sudo -s
+cd /var/named
