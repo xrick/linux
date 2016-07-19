@@ -1,0 +1,3 @@
+How Do I Predict How the TCP Wrapper Will Handle a Specific Request For Service?
+
+Use the tcpdmatch command to predict how the TCPD would handle an SSHD request from the local system

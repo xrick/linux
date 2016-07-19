@@ -1,0 +1,6 @@
+Stream: a reliable two-way connection 
+Dgram: a less reliable connection with less overhead
+Raw: a low-level connection to the network 
+
+For dgram socket type, we should specify option wait (processed all of its packets and then timed out) since dgram is a less reliable connection
+For other socket types, we should specify option nowait (the server connected to its client and freed the socket)

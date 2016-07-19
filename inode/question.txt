@@ -1,0 +1,2 @@
+Which of the following Linux filesystems pre-allocates a fixed number of inodes at the filesystem's make/creation time, and does NOT generate them as needed:
+ext2, ext3

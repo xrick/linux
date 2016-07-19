@@ -1,0 +1,1 @@
+A data type consisting of two or four (or a different number ? you cannot tell) of bytes; on i386 architectures, a word is four bytes (32 bits) in size

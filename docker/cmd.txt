@@ -1,0 +1,41 @@
+
+[root@localhost ~]# docker images    # List images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+<none>              <none>              7d2dee5f39d9        24 hours ago        1.52 GB
+hello-world         latest              c54a2cc56cbb        13 days ago         1.848 kB
+ubuntu              trusty              38c759202e30        3 weeks ago         196.6 MB
+
+
+
+    "docker run" creates a new container so previous changes will not be saved.
+	docker run -it 0aabc93b35a6 /bin/bash
+	
+    "docker start" will start an existing container so previous changes will still be in the container, however you need to find the correct container-id among many with a same image-id. Need to "docker commit" to suppress versions if wanted.
+	
+	Copy from host to docker container
+	Rember to use docker ps to check for container before using docker cp command.
+	docker cp xmpp_simulator_0.8.tgz 8c462fe95ae5:/xmpp_simulator_0.8.tgz
+	
+    Ctrl-C will stop the container when exiting. You will want to append "&" at the end so the container can run background and gives you the prompt when hitting enter key.
+
+	
+
+	
+	
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                   CREATED             STATUS                               PORTS               NAMES
+bc83c0fd450d        0aabc93b35a6        "/bin/bash"               9 minutes ago       Exited (0) 2 minutes ago                                 evil_bose
+1b6c7f719e70        xmppserver          "/bin/bash"               39 minutes ago      Exited (0) 39 minutes ago                                high_archimedes
+8c462fe95ae5        xmppserver          "/bin/sh -c \"/xmppser"   44 minutes ago      Exited (4294967295) 11 minutes ago                       xmppserver
+4865fe357caf        7d2dee5f39d9        "/bin/sh -c '#(nop) E"    26 hours ago        Created                                                  elated_mestorf
+ae804df8d068        hello-world         "/hello"                  2 days ago          Exited (0) 2 days ago                                    pensive_bardeen
+64a7bea4ecda        hello-world         "/hello"                  2 days ago          Exited (0) 2 days ago                                    pedantic_engelbart
+
+	
+[root@localhost ~]# docker ps    #List containers
+CONTAINER ID        IMAGE               COMMAND                   CREATED             STATUS              PORTS                                                                           NAMES
+8c462fe95ae5        xmppserver          "/bin/sh -c \"/xmppser"   4 minutes ago       Up 4 minutes        0.0.0.0:443->443/tcp, 0.0.0.0:5222-5223->5222-5223/tcp, 0.0.0.0:22222->22/tcp   xmppserver
+[root@localhost ~]# docker exec -it 8c462fe95ae5 /bin/bash
+
+Delete all stopped containers (including data-only containers)
+docker rm $(docker ps -a -q)

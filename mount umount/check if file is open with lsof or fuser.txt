@@ -1,15 +1,33 @@
 The lines that appear in the output of lsof are open files. If your file is not there it means it is not open. Among the columns are PID (the process id of the program that has the file open) and the FD (the file descriptor associated with the open file). No particular value for these indicates open/closed. If it appears at all it means it's open.
 lsof | grep -i usb
 
+ fuser - identify processes using files or sockets
+
 
 # fuser -m /mnt/data/
 /mnt/data:          1929c
 Fuser – identify processes using files or sockets
 The -m option denotes a mounted filesystem and returns a list of all processes with an open file on that device. In this case /mnt/data is being used by process 1929 and the c denotes that the process is using it as its current directory. The process needs to be killed, or the user needs to get out of the directory, before the device can be unmounted.
+-m,--mount            show all processes using the named filesystems or block device
 
 
 Case 1: they're sitting in a directory on the drive they're trying to eject and the system sees this and says, "I can't eject it, the drive's busy!"
 Case 2: using lsof /dev/sdc1 to check which resource is currently holding file or connection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Another way to verify that tftpd is listening is with the lsof command:
 # lsof -i:69

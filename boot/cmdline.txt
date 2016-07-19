@@ -1,0 +1,1 @@
+/proc/cmdline lists parameters passed from the bootloader to the kernel
