@@ -1,0 +1,10 @@
+$ tclsh myscript.tcl foo bar
+The variable named argc will contain 2 and argv will be set to the list containing two strings—"foo" and "bar".
+
+
+#!/usr/bin/expect -f
+set ip [lindex $argv 0]
+
+
+[lindex $argv 0] + [lindex $argv 1]
+The lindex command returns the first and second items from the list of arguments entered at the command line. Items in a list are counted from zero. In bash shell, $0 is first argument (which is the command name). In tcl, $argv 0 is similar but without the app name itself.

@@ -2,8 +2,8 @@ XMPP Simulator - setup
 Install Docker following instruction for your particular platform at https://docs.docker.com/engine/installation
 Get the newest tgz package from ftp://10.23.144.140/pub/redembedded/bobPhase3/xmpp_simulator
 Unpack and execute:
-make -C xmpp_simulator/ distclean-xmppserver
-make -C xmpp_simulator/ build-xmppserver
+make -C xmpp_simulator/ distclean-xmppserver     # uninstall docker image (which contains xmppserver)
+make -C xmpp_simulator/ build-xmppserver         # install docker image (which contains xmppserver)
 (this will build docker image with xmppserver, be patient it can take a while)
 Once docker image is built, it can be run with following command:
 make -C xmpp_simulator/ run-xmppserver
