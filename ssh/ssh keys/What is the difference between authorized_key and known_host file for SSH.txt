@@ -1,8 +1,8 @@
  
 
-    ~/.ssh/authorized_keys: Holds a list of authorized public keys for servers. When the client connects to a server, the server authenticates the client by checking its signed public key stored within this file. This file is in the server.
+    ~/.ssh/authorized_keys: Holds a list of authorized public keys for servers. When the client connects to a server, the server authenticates the client by checking its signed public key stored within this file. This file is in the server. authorized_keys is used for public key authentication 
 
-    ~/.ssh/known_hosts ((there's also a system-wide file /etc/ssh/known_hosts): Contains host keys of SSH servers accessed by the user. This file is very important for ensuring that the SSH client is connecting the correct SSH server. This file is in the client.
+    ~/.ssh/known_hosts ((there's also a system-wide file /etc/ssh/known_hosts): Contains host keys of SSH servers accessed by the user. This file is very important for ensuring that the SSH client is connecting the correct SSH server. This file is in the client. known_hosts is used for host authentication
 
 	 known_hosts file is maintained on client whereas authorized_key file is maintained on the server
 	
