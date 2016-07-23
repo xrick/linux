@@ -18,3 +18,37 @@ Then:
 cp /root/xorg.conf.new /etc/X11/xorg.conf
 
 Reboot and you can edit the new Xorg.conf.
+
+
+
+Although X is by far the dominant GUI for Linux, several implementations of X
+are available:
+XFree86 The dominant X server in Linux until 2004 was XFree86 (www.xfree86.org).
+This open-source server supports a wide array of video cards and input devices, and most
+Linux software was originally designed with XFree86 in mind. As we write, the most
+recent version is 4.8.0. Significant changes occurred between version 3.3.6 and the 4.x
+series, and some older utilities work only with 3.3.6 and earlier versions of XFree86.
+Although a tiny number of elderly systems must run XFree86 3.3.6 or earlier for driver
+support reasons, most systems today run XFree86 4.x or X.org-X11. The latter is more
+common on distributions released since 2004.
+
+X.org-X11 In 2004, most Linux distributions shifted from XFree86 to X.org-X11 because
+of licensing changes to XFree86. X.org-X11 6.7.0 was based on XFree86 4.3.99, but it has
+been developed independently up to the current version, 7.7. Because X.org-X11 is based
+on XFree86, the two are virtually identical in most important respects. One significant
+difference is the name of the configuration file and another is the default location for fonts.
+Subsequent sections of this chapter point out these differences. You can learn more at
+www.x.org/wiki/.
+
+Accelerated-X The commercial Accelerated-X server from Xi Graphics (www.xig.
+com) is an alternative to the open-source XFree86 and X.org-X11. In practice, running
+Accelerated-X is seldom necessary, but if you have problems getting your video card
+working, you may want to look into Accelerated-X; its driver base is independent of the
+more popular open-source choices, so it’s possible that you’ll have better luck with it. The
+Accelerated-X configuration tools and files are completely different from those described
+later in this chapter in “Methods of Configuring X” and “X Configuration Options,” so
+you’ll need to consult its documentation for help. The rest of this chapter’s topics still apply
+to Accelerated-X.
+
+In practice, it’s usually easiest to stick with whatever X server your distribution provides.
+For modern distributions, this is most often X.org-X11.
