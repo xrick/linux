@@ -19,6 +19,9 @@ From the bottom up:
 	- The gdm is associated with the GNOME Desktop
 	- The kdm is associated with the KDE Desktop 
 	- lightdm is the display manager that is default in Ubuntu distributions.
+	KDM and GDM add many features when comparing to xdm, one of which is a menu that enables users to select their desktop environment or window manager when they log in rather than specifying it in a configuration file
+	
+	A display manager is started like any other system service by the init system
     
 	
 	
@@ -37,5 +40,8 @@ From the bottom up:
 	
     
 	A desktop environment such as XFCE, KDE or GNOME are a suite of applications designed to integrate well with each other to provide a consistent experience.
+	KDE is probably the more "Windows-like" desktop. Before you make any decisions, I would strongly suggest experimenting with CentOS as well as some of the distros that offer live-CDs (Ubunto (Gnome), Kubuntu (KDE), etc.). You may decide that you'd rather not run CentOS as a desktop distro and confine it to the server room. Whatever you decide, develop a rock solid roll-out and training plan and don't try to accomplish everything at once.
+
+Before you make any decisions, I would strongly suggest experimenting with CentOS as well as some of the distros that offer live-CDs (Ubunto (Gnome), Kubuntu (KDE)
 
 In theory (and mostly so in practice) any of those components are interchangeable. You can run kmail using GNOME with WindowMaker on Xorg.

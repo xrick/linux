@@ -1,0 +1,8 @@
+You’re configuring a Linux system that doesn’t boot any other OS (Linux-only system). The recommended time to which the computer’s hardware clock should be set is UTC.
+Linux, like Unix, maintains its time internally in Coordinated Universal Time
+(UTC), so setting the computer’s hardware clock to UTC is the recommended
+procedure for computers that run only Linux. 
+
+Local time is appropriate if the computer dual-boots to an OS,
+such as Windows, that requires the hardware clock to be set to local time, but this is
+the second-best option for a Linux-only system. 

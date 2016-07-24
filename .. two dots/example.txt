@@ -1,3 +1,11 @@
+
+[root@localhost tester]# ls -l /etc/localtime
+lrwxrwxrwx. 1 root root 38 Mar 29 23:14 /etc/localtime -> ../usr/share/zoneinfo/Asia/Ho_Chi_Minh
+The above line means: From /etc folder (localtime is a file in /etc folder) , cd .. results in navigating to / . Then cd to /usr/share/zoneinfo/Asia
+
+
+
+
 Your shell is in /usr/local. You type cd ../bin. Which directory is shown when you type pwd?
 
 /usr/bin is correct because the path given first changes to /usr, then moves into bin

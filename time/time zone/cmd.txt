@@ -15,6 +15,8 @@ Click here to view code image
 [minhql@localhost ~]$ date +%z
 -0500
 [minhql@localhost ~]$ export TZ=Asia/Hong_Kong 
+OR
+[minhql@localhost ~]$ export TZ=/usr/share/zoneinfo/Asia/Ho_Chi_Minh
 
 TZ: timezone
 

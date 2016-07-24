@@ -1,0 +1,4 @@
+The output variation of the commands env, set, and printenv are
+rather subtle. The set command displays both environment variables
+and user-defined variables in an alphabetically sorted list. The env and
+printenv commands do not sort their output and do not show userdefined variables. In addition, the env command has additional functionality that the printenv command does not have.

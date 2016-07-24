@@ -1,2 +1,14 @@
+If you're unsure if a printing system is currently active, use the ps utility to search for running processes:
+[root@localhost cups]# ps aux | grep -i cups
+root      1449  0.0  0.3 190992  3368 ?        Ss   Jul23   0:00 /usr/sbin/cupsd -f
+root     13570  0.0  0.0 112648   992 pts/0    R+   00:10   0:00 grep --color=auto -i cups
+
+
+
+The CUPS IPP printing system is closely related to the Hypertext Transfer Protocol (HTTP) used on the Web. The protocol is so similar, in fact, that you can access a CUPS daemon by using a web browser. You need only specify that you want to access the server on port 631 - the normal printer port. 
 localhost:631/admin/
 use root's password to login
+
+
+
+

@@ -1,3 +1,8 @@
+The alias built-in command creates a duplicate name for a (potentially much
+longer) command. ln command is more versability
+alias is usually used to create a shortcut to command
+ln is usually used to create a shortcut to  file or directory
+
 For example
 
 which ls
