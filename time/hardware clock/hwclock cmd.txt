@@ -1,0 +1,9 @@
+You’ve set your system (software) clock on a Linux computer to the correct time, and now
+you want to set the hardware clock to match. What command might you type to accomplish this goal?
+hwclock --systohc
+
+The hwclock utility is used to view or set the hardware clock. 
+The ––systohc (or -w) sets the hardware clock based on the current value of the software clock.
+The --hctosys (or -s) sets the software clock based on the current value of the hardware clock.
+
+software clock = system time

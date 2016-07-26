@@ -1,0 +1,1 @@
+From highest to lowest priorities, the codes given as option are emerg, crit, warning, info and debug

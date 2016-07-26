@@ -1,0 +1,30 @@
+===========================Question 1=================================
+What will be the effect of a computer having the following two lines in /etc/ntp.conf?
+server pool.ntp.org
+server tardis.example.org
+
+The local computer’s NTP server will poll both a server in the public NTP server pool
+and the server at tardis.example.org and use whichever site provides the cleanest
+time data. Multiple server entries in /etc/ntp.conf tell the system to poll all of the named
+servers and to use whichever one provides the best time data. 
+(The pool.ntp.org subdomain and numbered computers within that subdomain give
+round-robin access to a variety of public time servers.) 
+
+
+
+
+
+===========================Question 2=================================
+You’ve configured one computer (gateway.pangaea.edu) on your five-computer network
+as an NTP server that obtains its time signal from ntp.example.com (an external time server). What computer(s)
+should your network’s other computers use as their time source(s)?
+Only gateway.pangaea.edu
+ Once you’ve configured one computer on your network to use an outside time
+source and run NTP, the rest of your computers should use the first computer as their
+time reference. This practice reduces the load on the external time servers as well as
+your own external network traffic  
+(Very large networks might configure two or three internal time servers that refer to outside servers for
+redundancy, but this isn’t necessary for the small network.)
+
+NTP is suitable for use on small local networks, and in fact it’s
+very helpful if you use certain protocols, such as Kerberos

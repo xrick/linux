@@ -1,0 +1,2 @@
+anacron is a command
+anacrontab is a config file

@@ -10,3 +10,15 @@ Adding parameters changes the details of what’s logged as just described. You 
 a call to logger in a script as a way of documenting the script’s activities. For instance, a
 system backup script might use logger to record details such as its start and stop times and
 the number and size of the files that it has backed up.
+
+
+
+
+ The logger utility can be used to create a one-time log file entry that you specify.
+In its simplest form, it takes no special arguments, just a message to be inserted in the
+log file
+
+You want to create a log file entry noting that you’re manually shutting down the system
+to add a new network card. How might you create this log entry, just prior to using
+shutdown?
+logger shutting down to add network card

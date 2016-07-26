@@ -1,0 +1,21 @@
+Of course, to do any good, the anacron utility must be called itself. This is typically
+done in one of two ways:
+	+ Via a Startup Script You can create a startup script to run anacron. For example, a
+	simple SysV startup script (see Chapter 5) that takes no options but runs anacron should
+	do the job.
+	+ Via a cron Job You can create a cron job to run anacron. Typically, this call will replace
+	your regular system cron job entries (in /etc/crontab), and you'll probably want to call
+	anacron on a daily basis or more frequently.
+
+	The startup script approach is best employed on systems that are shut down and started
+up frequently, such as laptops or desktop systems that are regularly shut down at the end of
+the day. One drawback to this approach is that it can cause sluggish performance when the
+system is booted if anacron needs to run a time-consuming task.
+
+	Calling anacron via a cron job can shift the burden to off-hours. This ensures that anacron and the jobs it handles are run fairly frequently, if not on a completely regular basis.
+	Alternatively, you can call anacron more frequently than once a day. For instance, if it’s
+	called once every six hours, it will almost certainly be called during a typical eight-hour
+	workday.
+	If important jobs need to be run daily, be sure to call anacron several times
+	a day. This way, any unexpected system downtime will not allow daily
+	critical jobs, which must run every day, to skip an entire day.
