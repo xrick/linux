@@ -1,0 +1,9 @@
+This test condition threw an error: unary operator expected. This
+is due to the Username variable now being set to nothing (null). When the shell interprets
+this test condition, instead of seeing the "" != "Exit" condition, it sees the != "Exit" test
+condition. It appears to the shell that the variable is missing.
+There is an easy fix for this problem. Just encase the variable name in double quotation
+marks as follows:
+while [ "$Username" != "Exit" ]
+Now the shell will see "" != "Exit" if the variable Username is set to null. This fix will
+keep the test condition from generating an error.

@@ -1,0 +1,2 @@
+To remove an alias setting, use the unalias command:
+$ unalias ls

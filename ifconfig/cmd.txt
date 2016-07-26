@@ -1,0 +1,2 @@
+ifconfig interface_name down = ifdown interface_name
+ifconfig interface_name up = ifup interface_name

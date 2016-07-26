@@ -1,7 +1,9 @@
 grep "literal_string" filename
 
+find location option keyword
 grep option keyword location
 
 
 -r :This option reads and processes all the files in the specified directory
-grep -r fool /usr/share/doc
+grep -r fool /usr/share/doc    
+

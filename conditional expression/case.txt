@@ -1,0 +1,41 @@
+case word in
+pattern1)
+command(s)
+;;
+pattern2)
+command(s)
+;;
+pattern3)
+command(s)
+;;
+esac
+
+
+
+
+#!/bin/bash
+[...]
+echo -e "Please enter username for account or type Exit: \c"
+read Username
+
+case $Username in
+Exit)
+echo Leaving script...
+exit
+;;
+*)
+echo Account for $Username is being created...
+;;
+esac
+#
+# Create user account ###
+[...]
+$
+In this modification, the user can enter either a username to be created or Exit to leave
+the script. The case statement checks for Exit, and if it’s found, the commands in the Exit
+section are executed. Anything else entered is assumed to be a username, and the script
+continues.
+Upon execution, bash executes the commands associated with the first pattern to match
+the variable’s contents. Execution then jumps to the line following the esac statement; any
+intervening commands don’t execute. If no patterns match the word, no code within the
+case statement executes.

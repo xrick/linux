@@ -1,0 +1,4 @@
+Newer versions of the GNOME
+desktop have replaced GOK with Caribou, the successor to the GOK project. You can
+learn more at the main Caribou web page, http://wiki.gnome.org/action/show/
+Projects/Caribou.

@@ -1,0 +1,2 @@
+How many IP-addresses can be used for unique host inside the IPv4 subnet 192.168.2.128/28
+=> 28 bits are used for net => 32 - 28 = 4 bits are used for host => 2^4 = 16 hosts => 16 hosts - 2 = 14 hosts

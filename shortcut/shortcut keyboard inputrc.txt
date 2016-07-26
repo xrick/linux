@@ -1,0 +1,30 @@
+The GUI uses its own keyboard input routines, so the /etc/inputrc and
+~/.inputrc files don’t affect programs run in the GUI, This is true even if
+text-mode programs run inside a terminal emulator window.
+
+Another global bash configuration file is the /etc/inputrc file for keyboard
+customization and setting terminal behavior. Users can create or modify their own
+keyboard configuration file, which is the ~/.inputrc file or the value of $INPUTRC if set.
+When the system starts up or a user logs into the system, the configuration files are read,
+terminal behavior is configured, and the keyboard’s key bindings are set. A key binding
+is a connection between a set of keys being pressed and a command being launched or
+an action being taken. For example, when you press the Up arrow key at the command
+prompt, the last command entered is displayed.
+
+You can see your current key bindings by typing bind -p at a virtual
+console terminal prompt. This may not work in some distributions’ GUI
+terminal emulators.
+
+
+The files consist of lines that look like this:
+M-Control-u: universal-argument
+This line maps the Meta-Ctrl+U keystroke to the universal-argument action. The Meta
+key is usually the Esc key on x86 or x86-64 systems, and the universal-argument action is
+one of many possible actions defined by the readline software library. The readline library
+is one of the basic text-mode input libraries used by Linux.
+In most cases, there’s no need to adjust the /etc/inputrc and ~/.inputrc files because
+the default readline key mappings work well for x86 systems with standard keyboards. If
+you find that certain keystrokes don’t work the way they should in text mode, though, you
+may want to research these configuration files further. You can find out more by typing in
+info rluserman at the command prompt.
+

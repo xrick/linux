@@ -1,0 +1,13 @@
+A for loop is rather different in its operation compared to while and until loops. The for
+loop does not test any conditions, but instead executes its commands for a certain number
+of list items. The basic syntax of the for loop is as follows
+
+for variable in list
+do
+commands
+done
+
+for Number in 1 2 3
+do
+echo $Number
+done

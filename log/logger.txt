@@ -1,0 +1,12 @@
+Specify a Message If you don’t specify a file using -f file, logger will log whatever you
+type after other options as the message to be logged. If you don’t provide a message on the
+command line, logger accepts the input you type on subsequent lines as information to be
+logged. You should terminate such input by pressing Ctrl+D.
+As an example, suppose you want to log the message “shutting down for system maintenance” to the system log. You can do so by typing the following command:
+$ logger shutting down for system maintenance
+The result will be an entry like the following, probably in /var/log/messages:
+Jul 29 14:09:50 localhost root: shutting down for system maintenance
+Adding parameters changes the details of what’s logged as just described. You can place
+a call to logger in a script as a way of documenting the script’s activities. For instance, a
+system backup script might use logger to record details such as its start and stop times and
+the number and size of the files that it has backed up.

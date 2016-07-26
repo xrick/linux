@@ -1,0 +1,7 @@
+while [ condition ]
+do
+commands
+done
+
+
+while [ "$Username" != "Exit" ] && [ "$Username" != "" ]

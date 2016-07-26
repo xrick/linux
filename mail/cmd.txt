@@ -1,0 +1,19 @@
+Be aware that many Linux email servers include a program called sendmail. This program is not the sendmail program discussed earlier, but instead an interface to other
+email servers. This is done for compatibility reasons, because the original sendmail program was in many distributions. 
+
+
+
+
+mailq is actually a command from sendmail, but due to the compatibility layer most distributions put in place, it runs the appropriate command depending on your MTA of choice. 
+For example, When typing mailq, If your current MTA is Postfix then postqueue -p is executed. When typing mailq, if your current MTA is exim then exim -bp is executed. When typing mailq, if your current MTA is qmail then qmail-qread is executed.
+An MTA receives a message and stores it in a queue for later processing. A queue allows the MTA to process an email later if the destination MTA isn't listening, or sends an error indicating your MTA should retry the connection later.
+This command looks at the mail queue files in /var/spool/mqueue and displays them on the screen. You can see from Example 17-8 that there are two messages in the queue. It is normal to see mail there as typos and spam cause delivery to all sorts of incorrectly configured servers.
+If you are looking into problems with delivery to a particular destination, the mail queue is a good place to look, as you’ll see the emails waiting to go out there. The logs, usually /var/log/maillog, are also a good place to look for a historical accounting of each email.
+
+
+mail -s "Error" -c abort < /tmp/msg root
+An email with the subject of Error and the contents from /tmp/msg is sent to the local
+users root and cc to abort.
+The -s option to mail sets the message subject line, and -c sets carbon copy (cc:)
+recipients. Input redirection (via <) reads the contents of a line into mail as a message.
+A mail command line normally terminates with the primary recipient.

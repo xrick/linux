@@ -1,5 +1,6 @@
 The lines that appear in the output of lsof are open files. If your file is not there it means it is not open. Among the columns are PID (the process id of the program that has the file open) and the FD (the file descriptor associated with the open file). No particular value for these indicates open/closed. If it appears at all it means it's open.
 lsof | grep -i usb
+* A way to remember how to use lsof command: lsof and ls both list a ton of output when using with no option. Use grep to filter the contents from lsof and ls 's outputs.
 
 
 # fuser -m /mnt/data/

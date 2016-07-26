@@ -1,0 +1,13 @@
+ lpr is used to submit a print job for printing, or an application program may call lpr itself or implement its functionality directly.
+ Example: lp -d Printer_name resume.pdf  OR   lpr -P Printer_name resume.pdf . lpr resume.pdf without no option will print using the default printer.
+ 
+ lpq utility summarizes jobs in a queue
+ The job ID and job owner are both displayed by lpq
+ 
+ lprm can remove print jobs from a queue.
+ lprm -P Printer_name Job_id . Without an id, it deletes the first job.
+ 
+ lpstat -d: determine the default printerer that print jobs go to
+ 
+ cupsreject printer_name: makes things so that people trying to print to it get an immediate error, without needting to delete the printer.
+ cupsreject command does not use option -P, -d like other commands. 
