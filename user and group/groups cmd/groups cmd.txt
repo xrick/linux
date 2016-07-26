@@ -1,1 +1,4 @@
 groups - print the groups a user is in
+
+[root@localhost skel]# groups minhql
+minhql : minhql hoasen
