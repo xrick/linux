@@ -1,0 +1,12 @@
+Lock Accounts The -l parameter locks an account by prefixing the hashed password with
+an exclamation mark (!). The result is that the user can no longer log into the account but
+the files are still available. This lock is easily undone. The lock parameter is particularly
+handy if you want to suspend user access to an account temporarily, such as, for example,
+when you’ve spotted some suspicious activity involving the account.
+
+
+Unlock Accounts The -u parameter unlocks an account by removing a leading exclamation mark. Be aware that the useradd command creates accounts that are locked (disabled) and have no password, unless its -p parameter is specified. Therefore, using this
+passwd -u parameter on a fresh account, which is disabled, not only removes the lock
+but also results in an account with no password! Normally, passwd doesn’t allow this—it
+returns an error if you attempt it. Adding -f forces passwd to turn the account into one
+with no password.

@@ -1,0 +1,8 @@
+A handy tool to use with until or while loops is the shift command. Positional parameters in shell scripts were covered earlier in the chapter. One of the great ways to use these
+parameters is by incorporating the use of the shift command.
+With the shift command, you do not need to know the total number of positional
+parameters passed to the script. The shift command removes the value of the $1 parameter,
+moves the $2 parameter’s value into $1, moves the $3 parameter’s value into $2, and so on.
+When shift has passed the last parameter, the $1 variable becomes null. Using a loop to
+test for $1 being set to null and incorporating the shift command into the loop’s do/done
+construct allows for clean handling of passed parameters.

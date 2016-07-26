@@ -1,0 +1,7 @@
+The terms encrypted and hashed are often confused. A hashed password
+is created using a one-way mathematical (cryptographic) process. The
+original password’s characters cannot be re-created from the hashed
+password. If a password were encrypted, you could decrypt it and obtain
+the original password characters. Passwords on Linux are hashed.
+However, often in Linux documentation you will see the word encrypted
+used mistakenly instead.

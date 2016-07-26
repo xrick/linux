@@ -1,0 +1,17 @@
+An until loop takes a slightly different approach. An until loop’s commands execute until
+its test condition returns a true. The basic form of this loop type is as follows:
+until [ condition ]
+do
+commands
+done
+It looks almost identical to the while loop. It takes only a few modifications to a single
+script line to make the mkuser.sh script use an until loop instead of a while loop. The
+while loop test condition currently looks like this:
+while [ "$Username" != "Exit" ] && [ "$Username" != "" ]
+To change this to an until loop, the script line is modified to appear as follows:
+until [ "$Username" = "Exit" ] || [ "$Username" = "" ]
+Now the statement says to execute the commands in the do and done construct until the
+variable Username equals Exit or the variable Username equals null.
+As you can see, there are fairly subtle differences between a while loop and an until
+loop. However, those differences can significantly impact your script if test conditions are
+not written correctly.

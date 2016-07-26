@@ -1,0 +1,11 @@
+A user can access files belonging to other groups as long as the user belongs to that
+group and the group access permissions allow such access. To run programs or create files
+with a group other than the primary group, the user must run the newgrp command to
+switch current group membership. For instance, to change to the project2 group as your
+current group, you might type the following:
+$ newgrp project2
+If the user typing this command is listed as a project2 group member in the /etc/group
+file, the user’s current group membership changes. Thereafter, files created by that user will
+be associated with the project2 group. Alternatively, users can change the group associated
+with an existing file by using the chgrp or chown command, as described in Chapter 4,
+“Managing Files.”

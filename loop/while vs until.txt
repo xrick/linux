@@ -1,0 +1,13 @@
+
+
+While Loop executes the block of code (enclosed in do...done) when the condition is true and keeps executing that till the condition becomes false. Once the condition becomes false, the while loop is terminated.
+
+Until Loop executes the block of code (enclosed in do...done) when the condition is false and keep executing that till the condition becomes true. Once the condition becomes true, the until loop is terminated.
+
+COUNTER=20
+while [ $COUNTER -lt 10 ]; do
+    echo COUNTER $COUNTER
+    let COUNTER-=1
+done
+
+On the very first occasion, the condition mentioned in while, i.e. [ $COUNTER -lt 10 ], holds false, so the block of code inside the while loop will not run at all.

@@ -1,0 +1,27 @@
+if	[ condition1 ]
+then
+	commands
+else
+	commands
+fi
+
+
+if [ -z $Username ]
+then
+echo
+echo You did not provide a username
+echo Leaving script...
+exit
+fi
+
+
+
+
+
+if [ condition1 ]
+then
+commands
+elif [ condition2 ]
+then
+commands
+fi
