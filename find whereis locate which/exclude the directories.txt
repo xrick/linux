@@ -1,0 +1,1 @@
+find / -type f -mtime 0 -not -path "/data/*" -not -path "/sys/*" -not -path "/etc/*"

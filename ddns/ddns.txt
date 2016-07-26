@@ -1,0 +1,15 @@
+DDNS Help
+
+The Router offers a Dynamic Domain Name System (DDNS) feature. DDNS lets you assign a fixed host and domain name to a dynamic Internet IP address. It is useful when you are hosting your own website, FTP server, or other server behind the Router. Before using this feature, you need to sign up width DDNS service providers such as www.dyndns.org. The Dynamic DNS client service provider will give you a password or key.
+
+Follow these instructions to set up DDNS:
+
+If your selected dynamic DNS Service Provider is www.dyndns.org. 
+
+Enter the User Name for your DDNS account.
+Enter the Password for your DDNS account.
+Enter the Domain Name you received from dynamic DNS service provider.
+Click the Login button to login to the DDNS service.
+Connection Status - The status of the DDNS service connection is displayed here.
+
+Click the Logout button to logout of the DDNS service.

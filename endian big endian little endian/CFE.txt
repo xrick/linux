@@ -1,0 +1,1 @@
+Endian mode of CFE: Big Endian
