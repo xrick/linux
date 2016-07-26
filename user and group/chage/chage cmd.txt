@@ -1,0 +1,2 @@
+An administrator types chage -M 7 time. What is the effect of this command?
+The time account’s password must be changed at least once every seven days.

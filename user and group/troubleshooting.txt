@@ -1,6 +1,6 @@
 Both files consist of a set of records, one line per account record. Each record begins
 with a username and continues with a set of fields, delimited by colons (:). Many of these
-items may be modified with usermod or passwd. A typical /etc/passwd record entry resembles the following:
+items may be modified with usermod or passwd. A typical /etc/passwd record entry (which contains 7 fields) resembles the following:
 sally:x:1029:503:Sally Jones:/home/sally:/bin/bash
 Each record’s field has a specific meaning, as follows:
 Username The first field in each /etc/passwd line is the username (sally in this example).
