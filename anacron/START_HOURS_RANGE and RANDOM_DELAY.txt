@@ -1,0 +1,33 @@
+Anacron Example
+
+The following example executes the /home/sathiya/backup.sh script once in every 7 days.
+
+On the day when the backup.sh job is supposed to executed, if the system is down for some reason, anacron will execute the backup.sh script 15 minutes after the system comes back up (without having to wait for another 7 days).
+
+# cat /etc/anacrontab
+7       15      test.daily      /bin/sh /home/sathiya/backup.sh
+
+START_HOURS_RANGE and RANDOM_DELAY
+
+The above example indicates that the backup.sh script should be executed every day, with a delay of 15 mins. i.e When the laptop was started, executed it only after 15 minutes.
+
+What happens when the laptop or desktop was not shutdown? When does the job gets executed? This is specified by the START_HOURS_RANGE environment variable in the /etc/anacrontab file.
+
+
+# the maximal random delay added to the base delay of the jobs
+RANDOM_DELAY=45
+# the jobs will be started during the following hours only
+START_HOURS_RANGE=3-22
+
+
+By default this is set to 3-22 in the file. This indicates the time range from 3 a.m to 10 p.m.
+
+# grep START /etc/anacrontab
+START_HOURS_RANGE=3-22
+
+On top of the user defined delay specified in the 2nd field of the /etc/anacrontab file, anacron also randomly adds x number of minutes. The x is defined by the RANDOM_DELAY variable in the /etc/anacrontab file.
+
+By default this is set to 45 in the file. This means that anacron will add x minutes (randomly picked from 0 and 45), and add this to the user defined delay.
+
+# grep RANDOM /etc/anacrontab
+RANDOM_DELAY=45

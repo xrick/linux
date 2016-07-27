@@ -1,0 +1,18 @@
+You want to run a task on the hour, every other hour starting at 1:00 a.m., with no other restrictions. Which crontab accomplishes this?
+
+0 1-23/2 * * *
+
+Above answer is correct because it uses the 1-23 range of hours and skips 2 every time. 
+
+
+
+
+
+
+
+
+
+
+15 */2 * * * /usr/local/bin/cleanup
+The */2 specification for the hour causes the job to execute every
+other hour

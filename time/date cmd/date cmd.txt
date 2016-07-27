@@ -1,0 +1,8 @@
+The format of the date command’s date code is [MMDDhhmm[[CC]YY][.ss]]. Given
+that the question specified an eight-digit code, this means that the ordering of the 
+items, in two-digit blocks, is month-day-hour-minute.
+
+
+
+date 12110710. What will be the effect?
+The software clock will be set to 7:10 a.m. on December 11 of the current year.

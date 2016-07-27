@@ -1,10 +1,12 @@
 cron is the general name for crond, crontab... that runs scheduled actions. 
 crond is the name of the daemon that runs in the background and reads crontab files. 
 A crontab is a file containing jobs in the format minute hour day-of-month month day-of-week
+A system crontab 's location is in /etc/crontab
+A user crontab 's location is in /var/spool/cron/
 
 
 ======================6 fields==================
-Usually, each crontab entry contains this sequence of six blank-separated fields:
+Usually, each crontab entry  of a user crontab contains this sequence of six blank-separated fields:
 Minute
 Hour
 Day of the month

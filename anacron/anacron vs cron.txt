@@ -1,9 +1,18 @@
-Both cron and anacron are used to run periodic jobs. But only roo can use anacron.
+anarcon's time periods are listed in number of days. No time period can be less than one day, and therefore jobs needing to be run more than one time per day should not use anacron. Often, anacron itself is run from a system startup script or from a cron job.
+Does your job need to run more than once a day or at a specific time? If so, you need to use crontab.
+Is the timing of the job flexible and you're more interested in making sure it's always run, even if it's late? If so, you should use anacron. Is this job on a system that is not always on? As long as the timing constraints work for you, anacron is a good choice.
+
+If your system is down the exact time that a cron job is scheduled to run,
+the job will not be run when the system boots back up. In fact, the cron
+job will not run until its next scheduled time. This is due to the fact that the
+cron daemon will not check for jobs that should have run during a system
+downtime. This means a script that should run every day could be skipped
+for one whole day! 
+One solution to such problems is the anacron utility. This program is designed as a supplement to cron to ensure that regular maintenance jobs are executed at reasonable intervals.
+
+Both cron and anacron are used to run periodic jobs. But only root can use anacron.
 
 
 If a script is in /etc/anacrontab and the computer is off overnight, the script will be run after the computer has booted.
-True
 
 
-Does your job need to run more than once a day or at a specific time? If so, you need to use crontab.
-Is the timing of the job flexible and you're more interested in making sure it's always run, even if it's late? If so, you should use anacron. Is this job on a system that is not always on? As long as the timing constraints work for you, anacron is a good choice.

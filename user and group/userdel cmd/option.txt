@@ -1,0 +1,10 @@
+What would a Linux system administrator type to remove the nemo account and its home
+directory?
+userdel -r nemo
+
+
+The userdel command deletes an account, and the -r option to userdel 
+causes it to delete the user’s home directory and mail spool, thus satisfying the terms of 
+the question. 
+userdel -f does the same; the -f option forces account deletion and file removal under
+some circumstances, but it’s meaningful only when -r is also used. This option also forces the removal of the user account, even if the user is still logged in.

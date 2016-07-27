@@ -1,0 +1,16 @@
+Which of the following tasks are most likely to be handled by a cron job? (Select two.)
+A. Starting an important server when the computer boots
+B. Finding and deleting old temporary files
+C. Scripting supervised account creation
+D. Monitoring disk partition space status and emailing a report
+E. Sending files to a printer in an orderly manner
+
+B, D. The cron utility is a good tool for performing tasks that can be done in an
+unsupervised manner, such as deleting old temporary files (option B) or checking
+to see that disk space is not low (option D). Tasks that require interaction or do not
+occur on a scheduled basis, such as creating accounts (option C), aren’t good candidates
+for cron jobs, which must execute unsupervised and on a schedule. Although a
+cron job could restart a crashed server, it’s not normally used to start a server when
+the system boots (option A); that’s done through system startup scripts or a super
+server. Sending files to a printer (option E) is generally handled by a print server such
+as the cupsd daemon

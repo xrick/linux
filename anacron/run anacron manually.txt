@@ -1,0 +1,9 @@
+anacron -n
+Use above command to run anacron manually. We use anacron -n instead of anacron -f even though both commands execute anacron manually. Because anacron -n ignores the specified delays in the /etc/anacrontab file 
+
+Check log /var/log/cron
+Jul 27 02:21:48 localhost anacron[4513]: Anacron started on 2016-07-27
+Jul 27 02:21:48 localhost anacron[4513]: Will run job `cron.daily' in 39 min.
+Jul 27 02:21:48 localhost anacron[4513]: Will run job `cron.monthly' in 79 min.
+
+Also check /var/spool/anacron for files will contain a single line that indicates the last time when this job was executed.
