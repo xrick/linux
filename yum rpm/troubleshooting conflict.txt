@@ -5,3 +5,16 @@ You have rpmforge and rpmforge-extas enabled. I no longer feel comfortable recom
 
 I think you should try running yum --disablerepo=rpmforge\* update \*lsb\* and see if the lsb packages will update by themselves.
 OR vi /etc/yum.repos.d/rpmforge.repo then change enabled to 0. Finally, run yum update \*lsb\
+
+
+
+================================================Proxy error==========================================
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os error was
+14: PYCURL ERROR 5 - "Couldn't resolve proxy 'donkey.cybersoft.vn'"
+Error: Cannot find a valid baseurl for repo: base
+
+Open /etc/resolve.conf and set 
+nameserver 172.19.7.122
+
+On Windows, open Internet Explorer > Use automatic config script
+http://donkey.cybersoft.vn:8083/proxy.pac

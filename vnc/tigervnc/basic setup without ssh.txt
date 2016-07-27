@@ -1,0 +1,24 @@
+On server:
+[root@hoangqp ~]# yum install tigervnc-server
+[root@hoangqp ~]# vncserver :1 -geometry 1280x720 -depth 24
+
+You will require a password to access your desktops.
+
+Password:
+Verify:
+xauth: (stdin):1:  bad display name "hoangqp:1" in "add" command
+
+New 'hoangqp:1 (root)' desktop is hoangqp:1
+
+Creating default startup script /root/.vnc/xstartup
+Starting applications specified in /root/.vnc/xstartup
+Log file is /root/.vnc/hoangqp:1.log
+
+
+
+
+On client:
+yum install tigervnc
+ /usr/bin/vncviewer
+ Input server's ip address and its screen. For example: 192.168.48.2:1
+

@@ -1,0 +1,1 @@
+find . -name "*.log" | xargs grep -E 'fatal|error|critical|failure|warning|'
