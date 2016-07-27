@@ -1,3 +1,5 @@
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite, while some other Internet security systems in widespread use, such as Transport Layer Security (TLS) and Secure Shell (SSH), operate in the upper layers at the Transport Layer (TLS) and the Application layer (SSH). Hence, only IPsec protects all application traffic over an IP network. Applications can be automatically secured by IPsec at the IP layer.
+
 SSH is at the Application level - you can think of it as SSH/TCP/IP, or SSH-over-TCP-over-IP. TCP is the Transport layer in this mix, IP is the Internet layer. Other "Application" protocols include SMTP, Telnet, FTP, HTTP/HTTPS...
 
 IPSec is implemented using two separate Transports - ESP (Encapsulating Security Payload for encryption) and AH (Authentication Header for authentication and integrity). So, let's say a Telnet connection is being made over IPSec. You can generally envision it as Telnet/TCP/ESP/AH/IP.
