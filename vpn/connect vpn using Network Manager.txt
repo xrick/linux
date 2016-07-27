@@ -1,1 +1,4 @@
-yum install NetworkManager-glib.x86_64
+yum install NetworkManager-pptp.x86_64
+shutdown -r now
+Click to NetworkManager -> Configure VPN -> +Add -> Point-To-Point Tunneling Protocol (PPTP) in VPN section.
+

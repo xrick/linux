@@ -21,4 +21,5 @@ On client:
 yum install tigervnc
  /usr/bin/vncviewer
  Input server's ip address and its screen. For example: 192.168.48.2:1
+ OR using vnc client on Windows to login
 

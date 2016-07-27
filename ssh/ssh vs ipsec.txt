@@ -1,0 +1,21 @@
+SSH is at the Application level - you can think of it as SSH/TCP/IP, or SSH-over-TCP-over-IP. TCP is the Transport layer in this mix, IP is the Internet layer. Other "Application" protocols include SMTP, Telnet, FTP, HTTP/HTTPS...
+
+IPSec is implemented using two separate Transports - ESP (Encapsulating Security Payload for encryption) and AH (Authentication Header for authentication and integrity). So, let's say a Telnet connection is being made over IPSec. You can generally envision it as Telnet/TCP/ESP/AH/IP.
+
+(Just to make things interesting, IPSec has two modes - Transport (outlined above) and Tunnel. In tunnel mode, the IP layer is encapsulated within IPSec and then transmitted over (usually) another IP layer. So you'd end up with Telnet/TCP/IP/ESP/AH/IP!)
+
+So - you ask "explain the difference between the two" -
+
+SSH is an Application and IPSec is a Transport. So SSH carries "one" type of traffic, and IPSec can carry "any" type of TCP or UDP traffic.* This has implications described below:
+
+You ask, "how they would appear differently to the user" -
+
+Because IPSec is transport layer, it should be invisible to the user - just as the TCP/IP layer is invisible to the user of a web browser. In fact, if IPSec is being used, then it is invisible to the writer of the web browser and web server - they don't have to worry about setting up or not setting up IPSec; that's the job of the system administrator. Contrast this to HTTPS, where the server needs a private key and certificate properly enabled, SSL libraries compiled in, and code written; the client browser has SSL libraries compiled in and code written and either has the appropriate CA public key or screams loudly (intruding upon the application) if it isn't there.
+
+When IPSec is set up, because it acts at the transport layer, it can support multiple applications without any trouble. Once you've configured IPSec between two systems, it's a really minor difference between working for 1 application or 50 applications. Likewise, IPSec makes an easy wrapper for protocols that use multiple connections like FTP (control and data may be separate connections) or H.323 (not only multiple connections, but multiple Transports (TCP and UDP)!).
+
+From the administrator's point of view, though, IPSec is heavier-weight than SSH or SSL. It requires more setup as it works its magic at the system level rather than the application level. Each relationship (host-to-host, host-to-net, or net-to-net) needs to be set up individually. On the other side, SSH and SSL are generally opportunistic - using either a PKI (CA) or web of trust model, they make it reasonably easy to trust the other end of the connection without much setup ahead of time. IPSec can be opportunistic, but it isn't generally used that way, in part because configuring an IPSec connection often requires trial and error. Interoperability between different vendors (Linux, Checkpoint, Cisco, Juniper, Etc) is not seamless; the configuration used to make Cisco<->Checkpoint is likely to be different than the configuration used to make Cisco<->Juniper. Contrast that with SSH - the OpenSSH server doesn't really care if you're running Putty, OpenSSH (*nix or Cygwin) SSH, or Tectia SSH.
+
+As far as speed goes - I don't have any good numbers to give you, and part of the answer is "it depends" - if IPSec is involved, then the actual IPSec processing is likely to be offloaded to a firewall or VPN concentrator with dedicated fast hardware, making it faster than SSH which is pretty much always crypting using the same general-purpose CPU that's running the server operating system and applications as well. So it's not really apples-to-apples; I'll bet you could find use cases where either of the two options is faster.
+
+* This isn't strictly true. SSH supports a terminal application, file copy/ftp application, and TCP tunneling application. But effectively it's just a really rich application, not a transport - its tunneling is not an IP Transport replacement.
