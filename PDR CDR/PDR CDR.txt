@@ -1,0 +1,2 @@
+PDR: preliminary design review (general)
+CDR: critical design review (details)

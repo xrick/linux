@@ -23,3 +23,19 @@ RESERVED					4
 0 is HOSPITALITY_SERVICE				
 
 
+A line in the hexdump output consisting just a * means same as the line above
+
+[root@DIRECTV-HR24-95843184 ~]# dt eepromreserved reset
+APP STARTER OK
+[root@DIRECTV-HR24-95843184 ~]# hexdump -n 1004 -C -s 312 /dev/nds/nvram0
+00000138  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000518  ff ff ff ff ff ff ff ff  ff ff 00 00              |................|
+[root@DIRECTV-HR24-95843184 ~]# dt eepromreserved invert
+APP STARTER OK
+[root@DIRECTV-HR24-95843184 ~]# hexdump -n 1004 -C -s 312 /dev/nds/nvram0
+00000138  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000518
+
+

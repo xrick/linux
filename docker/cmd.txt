@@ -1,3 +1,7 @@
+An instance of an image is called container. You have an image, which is a set of layers as you describe. If you start this image, you have a running container of this image. You can have many running containers of the same image.
+You can see all your images with docker images whereas you can see your running containers with docker ps (and you can see all containers with docker ps -a).
+So a running image is a container.
+
 
 [root@localhost ~]# docker images    # List images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -7,13 +11,13 @@ ubuntu              trusty              38c759202e30        3 weeks ago         
 
 
 
-    "docker run" creates a new container so previous changes will not be saved.
+    "docker run" creates a new container (container is a running image) so previous changes will not be saved.
 	docker run -it 0aabc93b35a6 /bin/bash
 	
     "docker start" will start an existing container so previous changes will still be in the container, however you need to find the correct container-id among many with a same image-id. Need to "docker commit" to suppress versions if wanted.
 	
 	Copy from host to docker container
-	Rember to use docker ps to check for container before using docker cp command.
+	Remember to use docker ps to check for container before using docker cp command.
 	docker cp xmpp_simulator_0.8.tgz 8c462fe95ae5:/xmpp_simulator_0.8.tgz
 	
     Ctrl-C will stop the container when exiting. You will want to append "&" at the end so the container can run background and gives you the prompt when hitting enter key.
@@ -36,6 +40,9 @@ ae804df8d068        hello-world         "/hello"                  2 days ago    
 CONTAINER ID        IMAGE               COMMAND                   CREATED             STATUS              PORTS                                                                           NAMES
 8c462fe95ae5        xmppserver          "/bin/sh -c \"/xmppser"   4 minutes ago       Up 4 minutes        0.0.0.0:443->443/tcp, 0.0.0.0:5222-5223->5222-5223/tcp, 0.0.0.0:22222->22/tcp   xmppserver
 [root@localhost ~]# docker exec -it 8c462fe95ae5 /bin/bash
+-i: interactive
+-t: tty
+
 
 Delete all stopped containers (including data-only containers)
 docker rm $(docker ps -a -q)
