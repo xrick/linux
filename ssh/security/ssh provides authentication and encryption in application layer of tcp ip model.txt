@@ -1,0 +1,3 @@
+Provides authentication by using host key
+Provides encryption by using public-private keys
+Provides encryption to other protocols of application layer 
