@@ -1,3 +1,3 @@
-Provides authentication by using host key
-Provides encryption by using public-private keys
+Provides authentication by using host key or public key authentication
+Provides encryption by using Diffie-Hellman
 Provides encryption to other protocols of application layer 
