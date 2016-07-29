@@ -19,7 +19,7 @@ Step 1: Find out which libraries a program needs and the paths to these librarie
 	
 Step 2: Create a compressed archive which contains the libs.
 -P: preservers absolete paths
-tar -P -czf umslib /usr/lib64/libPocoNet.so /usr/lib64/libPocoNet.so.11 /usr/lib64/libPocoUtil.so.11 /usr/lib64/libPocoUtil.so /usr/lib64/libPocoFoundation.so /usr/lib64/libPocoFoundation.so.11 /usr/lib64/libPocoXML.so.11 /usr/lib64/libPocoXML.so /usr/lib64/libPocoXML.so.11 /lib64/libpcre.so.0 /lib64/libpcre.so.0 /lib64/libpcre.so.0.0.1
+tar -P -czf umslib /usr/lib64/libPocoNet.so /usr/lib64/libPocoNet.so.11 /usr/lib64/libPocoUtil.so.11 /usr/lib64/libPocoUtil.so /usr/lib64/libPocoFoundation.so /usr/lib64/libPocoFoundation.so.11 /usr/lib64/libPocoXML.so.11 /usr/lib64/libPocoXML.so /usr/lib64/libPocoXML.so.11 /lib64/libpcre.so.0 /lib64/libpcre.so.0.0.1
 
 
 Step 3: Copy umslib to the computer which does not have above libraries then extract it

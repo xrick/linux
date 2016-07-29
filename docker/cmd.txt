@@ -26,7 +26,7 @@ ubuntu              trusty              38c759202e30        3 weeks ago         
 
 	
 	
-[root@localhost ~]# docker ps -a
+[root@localhost ~]# docker ps -a   #List containers
 CONTAINER ID        IMAGE               COMMAND                   CREATED             STATUS                               PORTS               NAMES
 bc83c0fd450d        0aabc93b35a6        "/bin/bash"               9 minutes ago       Exited (0) 2 minutes ago                                 evil_bose
 1b6c7f719e70        xmppserver          "/bin/bash"               39 minutes ago      Exited (0) 39 minutes ago                                high_archimedes
