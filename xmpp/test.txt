@@ -1,0 +1,52 @@
+Introduction
+The XmppSimulator provides JDS, XS and Tigase runtime environment which can be run on desktop using lightweight docker container technology.
+It may be basis for further (UMS, BoB and other) simulation 
+Setup
+The xmpp simulator can be deployed on any 64 bit linux PC supporting docker it will need maximum 2.5GB of free (docker) storage
+Installation steps (steps 2,3,4 can be skipped by developers just use hmc2 checkout)
+Install Docker following instruction for your particular platform at https://docs.docker.com/engine/installation/
+Install GNU make onto your PC
+Create xmppsimulator tar ball (currently tip of HDGHMC-98772c, attached to this wiki page): hg status -nc hmc2/xmppclient/test/|tar cjf xmppsimulator.tar.bz2 -T -
+Untar xmppsimulator_v6.tar.bz2 in a test directory: mkdir xmppsimulator; cd xmppsimulator; tar xf xmppsimulator.tar.bz2
+Build the simulator docker image: make -C hmc2/xmppclient/test/ build-xmppserver
+It will take some time (only first run): 20-40 minutes as it configures linux and builds Tigase from source with patches
+On succesful build you will see at the end
+Removing intermediate container dc487d7d083a
+Successfully built 3643ba648bdd
+make: Leaving directory '/home/red/workspace/xmppsimulator/hmc2/xmppclient/test'
+Setup verification with STB
+Here is initial setup verification procedure (any recent dev build should work with it)
+make -C hmc2/xmppclient/test/xmppclient_stb/
+scp hmc2/xmppclient/test/xmppclient_stb/tests/xmppserver_simulate_deploy.sh root@stb_ip:/var/viewer/
+on PC run make -C hmc2/xmppclient/test/ AUTOSTART=controlbot.sh run-xmppserver-attached 
+On succesful run you will see
+2016-06-20 08:26:32,514 CRIT Supervisor running as root (no user in config file)
+2016-06-20 08:26:32,514 WARN Included extra file "/etc/supervisor/conf.d/supervisord.conf" during parsing
+2016-06-20 08:26:32,545 INFO RPC interface 'supervisor' initialized
+2016-06-20 08:26:32,546 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-06-20 08:26:32,546 INFO supervisord started with pid 1
+2016-06-20 08:26:33,549 INFO spawned: 'error-injector' with pid 9
+2016-06-20 08:26:33,552 INFO spawned: 'sshd' with pid 10
+2016-06-20 08:26:33,553 INFO spawned: 'xmppserver' with pid 11
+2016-06-20 08:26:35,015 INFO success: error-injector entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-06-20 08:26:35,015 INFO success: sshd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-06-20 08:26:35,015 INFO success: xmppserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-06-20 08:26:49,769 INFO exited: xmppserver (exit status 0; expected)
+
+On STB (rebooted with video ready) run /var/viewer/xmppserver_simulate_deploy.sh stb IP_OF_YOUR_PC
+On succesful run you should see something like:
+ JDS Attempts 1 (successful 1, last fail 0) 
+ XS Attempts 1 (successful 1, last fail 0) 
+....
+  Etoken : fake_etoken 
+  Last Jds request::  
+   Bare JID     : stb@xmpp.cht-test.redembedded.com 
+   GW           : apigateway@xmpp.cht-test.redembedded.com 
+   Last ResID   : 025170979733 
+   XsHost       : xmpp.cht-test.redembedded.com 
+   Last XsPort  : 5223 
+   renewedEtoken: false 
+   Last HTTP    : 200 
+   DataValid    : true
+
+To exit simulator type "exit" or press ^d
