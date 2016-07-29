@@ -1,0 +1,33 @@
+[root@localhost tmp]# yum --showduplicates search firefox
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.digipower.vn
+ * epel: free.nchc.org.tw
+ * extras: mirror.digistar.vn
+ * updates: centos-hcm.viettelidc.com.vn
+======================================================================== N/S matched: firefox =========================================================================
+firefox-38.3.0-2.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.3.0-2.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-38.4.0-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.4.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-38.5.0-3.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.5.0-3.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-38.6.0-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.6.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-38.6.1-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.6.1-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-38.7.0-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-38.7.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-45.1.0-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-45.1.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-45.1.1-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-45.1.1-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-45.2.0-1.el7.centos.i686 : Mozilla Firefox Web browser
+firefox-45.2.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+firefox-45.2.0-1.el7.centos.x86_64 : Mozilla Firefox Web browser
+mozilla-adblockplus-2.6.6-1.el6.noarch : Adblocking extension for Mozilla Firefox, Thunderbird, and SeaMonkey
+mozilla-https-everywhere-5.1.4-1.el6.noarch : HTTPS/HSTS enforcement extension for Mozilla Firefox and SeaMonkey
+mozilla-noscript-2.9.0.5-1.el6.noarch : JavaScript white list extension for Mozilla Firefox
+mozilla-requestpolicy-1.0-0.13.20160102gitc27c1f.el6.noarch : Firefox and Seamonkey extension that gives you control over cross-site requests
+python-mozrunner-0-0.3.gitb077641.el6.noarch : Reliable start/stop/configuration of Mozilla Applications (Firefox, Thunderbird)
+tracker-firefox-plugin-1.2.6-3.el7.x86_64 : A simple bookmark exporter for Tracker

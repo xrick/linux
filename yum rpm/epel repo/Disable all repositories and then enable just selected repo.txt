@@ -1,0 +1,22 @@
+List All Repositories and Check Repository ID's
+ 
+$ yum repolist
+Loaded plugins: dellsysidplugin2, refresh-packagekit
+repo id                                                      repo name                                                                        status         
+adobe-linux-i386                                             Adobe Systems Incorporated                                                       enabled:     17
+fedora                                                       Fedora 12 - i386                                                                 enabled: 15,366
+google                                                       Google - i386                                                                    enabled:      4
+livna                                                        rpm.livna.org for 12 - i386                                                      enabled:      3
+rpmfusion-free                                               RPM Fusion for Fedora 12 - Free                                                  enabled:    383
+rpmfusion-free-updates                                       RPM Fusion for Fedora 12 - Free - Updates                                        enabled:    551
+rpmfusion-nonfree                                            RPM Fusion for Fedora 12 - Nonfree                                               enabled:    124
+rpmfusion-nonfree-updates                                    RPM Fusion for Fedora 12 - Nonfree - Updates                                     enabled:    228
+updates                                                      Fedora 12 - i386 - Updates                                                       enabled:  4,587
+repolist: 21,263
+ 
+
+Query Available Packages From Selected YUM Repository
+Disable all repositories and then enable just selected repo.
+$ yum --disablerepo="*" --enablerepo="google" search pcre
+
+ 

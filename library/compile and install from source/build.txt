@@ -1,0 +1,5 @@
+On Ubuntu:
+sudo apt-get install build-essential
+
+On CentOS:
+yum groupinstall 'development tools'
