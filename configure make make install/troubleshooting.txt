@@ -1,0 +1,4 @@
+/usr/bin/ld: cannot find -ljsoncpp
+collect2: ld returned 1 exit status
+make: *** [UMSHttpd] Error 1
+[root@ums UMSHttpd]# yum install json-cpp

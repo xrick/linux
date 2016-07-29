@@ -1,0 +1,26 @@
+Step 1: Find out which libraries a program needs and the paths to these libraries.
+[root@ums UMSHttpd]# ldd UMSHttpd
+	linux-vdso.so.1 =>  (0x00007fff705ff000)
+	libPocoNet.so.11 => /usr/lib64/libPocoNet.so.11 (0x0000003781600000)
+	libPocoUtil.so.11 => /usr/lib64/libPocoUtil.so.11 (0x0000003780a00000)
+	libPocoFoundation.so.11 => /usr/lib64/libPocoFoundation.so.11 (0x0000003780e00000)
+	libPocoXML.so.11 => /usr/lib64/libPocoXML.so.11 (0x0000003781200000)
+	libstdc++.so.6 => /usr/lib64/libstdc++.so.6 (0x000000378c200000)
+	libm.so.6 => /lib64/libm.so.6 (0x000000377f600000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000000378aa00000)
+	libc.so.6 => /lib64/libc.so.6 (0x000000377f200000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x000000377fe00000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x000000377fa00000)
+	librt.so.1 => /lib64/librt.so.1 (0x0000003780200000)
+	libpcre.so.0 => /lib64/libpcre.so.0 (0x0000003790200000)
+	libz.so.1 => /lib64/libz.so.1 (0x0000003780600000)
+	libexpat.so.1 => /lib64/libexpat.so.1 (0x0000003783200000)
+	/lib64/ld-linux-x86-64.so.2 (0x000000377ee00000)
+	
+Step 2: Create a compressed archive which contains the libs.
+-P: preservers absolete paths
+tar -P -czf umslib /usr/lib64/libPocoNet.so /usr/lib64/libPocoNet.so.11 /usr/lib64/libPocoUtil.so.11 /usr/lib64/libPocoUtil.so /usr/lib64/libPocoFoundation.so /usr/lib64/libPocoFoundation.so.11 /usr/lib64/libPocoXML.so.11 /usr/lib64/libPocoXML.so /usr/lib64/libPocoXML.so.11 /lib64/libpcre.so.0 /lib64/libpcre.so.0.0.1
+
+
+Step 3: Copy umslib to the computer which does not have above libraries then extract it
+tar -P -xzf umslib 
