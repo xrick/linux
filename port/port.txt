@@ -1,0 +1,2 @@
+Port numbers are features of the UDP and TCP protocols. Some protocols,
+such as ICMP, don’t use port numbers.

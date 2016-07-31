@@ -1,0 +1,5 @@
+whois You can look up information on a domain as a whole with this command. For
+instance, typing whois sybex.com reveals who owns the sybex.com domain, who to
+contact in case of problems, and so on. You may want to use this command with -H, which
+omits the lengthy legal disclaimers that many domain registries insist on delivering along
+with whois information.

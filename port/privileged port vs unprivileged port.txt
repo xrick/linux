@@ -1,0 +1,1 @@
+privileged port: 1 -> 1023unprivileged port: >=1024 

@@ -1,0 +1,19 @@
+
+
+:: can be used once in an IPv6 address to replace a consecutive blocks of zeroes. It can be any length of zeroes as long as it is greater than a single block. All zeroes in a single block can be represented by :0: instead of writing out all four zeroes.
+
+In this case, it means all zeroes, or the IPv6 equivalent of the IPv4 0.0.0.0
+
+As an example of something that is not all zeroes:
+
+fe80:0000:0000:0000:34cb:9850:4868:9d2c
+
+Which is properly "reduced" to:
+
+fe80::34cb:9850:4868:9d2c
+
+As an example, it can also be written as:
+
+fe80:0:0:0:34cb:9850:4868:9d2c
+
+but that is far less common than just "double coloning" it.

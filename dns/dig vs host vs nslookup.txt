@@ -1,3 +1,6 @@
 All three commands are used for querying DNS nameservers for information about host addresses, mail exchanges, nameservers, and related information
 
 But dig are the most powerful among them.
+
+
+ dig consults /etc/resolv.conf; if an address is found there, That's why if there is no address here, dig may not work.

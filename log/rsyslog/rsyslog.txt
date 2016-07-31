@@ -1,0 +1,1 @@
+rsyslog is a reliable and extended syslog

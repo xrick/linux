@@ -1,2 +1,6 @@
 ifconfig interface_name down = ifdown interface_name
 ifconfig interface_name up = ifup interface_name
+
+
+To assign an IP address, Netmask address and Broadcast address all at once using “ifconfig” command with all arguments as given below.
+[root@tecmint ~]# ifconfig eth0 172.16.25.125 netmask 255.255.255.224 broadcast 172.16.25.63

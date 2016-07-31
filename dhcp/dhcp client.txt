@@ -1,0 +1,11 @@
+Three DHCP clients are in common use on Linux: pump, dhclient, and dhcpcd (not to
+be confused with the DHCP server, dhcpd). Some Linux distributions ship with just one
+of these, but others ship with two or even all three
+
+rpm -qa | grep -i -e pump -e dhclient -e dhcpcd
+
+
+If you need to run a DHCP client manually, you can usually do so by typing its
+name (as root), optionally followed by a network identifier, as in dhclient eth0, to have
+the DHCP client attempt to configure eth0 with the help of any DHCP server it finds on
+that network.

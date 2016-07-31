@@ -1,4 +1,4 @@
-
+/resolv.conf accepts one to three DNS server addresses
 
 
 

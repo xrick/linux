@@ -1,0 +1,8 @@
+When they start up, servers tie themselves to specific ports, which by convention are
+associated with specific server programs. For instance, port 25 is associated with email
+servers, and port 80 is used by web servers
+
+A client can direct its request to a specific port and expect to contact
+an appropriate server. The client’s own port number isn’t fixed; it’s assigned by the OS.
+Because the client initiates a transfer, it can include its own port number in the connection
+request, so clients don’t need fixed port numbers. Assigning client port numbers dynamically also enables one computer to run several instances of a single client easily because they won’t compete for access to a single port.

@@ -12,3 +12,6 @@ All tools use libpcap (on windows winpcap) for sniffing. Wireshark / tshark / du
 
 As tcpdump is available on most *NIX system I usually use tcpdump. Depending on the problem I sometimes use tcpdump to capture traffic and write it to a file and the later use wireshark to analyze it. If available I use tshark but if the problem gets more complicated I still like to write the data to a file and then use Wireshark for analysis.
 
+ tcpdump -i eno16777736 -A 
+ -i: interface
+ -A: display packet contents in ASCII

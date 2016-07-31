@@ -1,0 +1,8 @@
+Using route command to print routing table
+
+[root@localhost ~]# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    100    0        0 eno16777736
+192.168.100.0   0.0.0.0         255.255.255.0   U     100    0        0 eno16777736
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0

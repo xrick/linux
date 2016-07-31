@@ -11,3 +11,6 @@
  
  cupsreject printer_name: makes things so that people trying to print to it get an immediate error, without needting to delete the printer.
  cupsreject command does not use option -P, -d like other commands. 
+ 
+ lpr -# 5 io.ps   
+ Above command prints five copies of the files io.ps

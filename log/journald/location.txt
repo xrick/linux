@@ -1,0 +1,2 @@
+/var/log/journal 
+The directory where systemd stores its log files
