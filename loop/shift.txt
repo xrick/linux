@@ -6,3 +6,12 @@ moves the $2 parameter’s value into $1, moves the $3 parameter’s value into 
 When shift has passed the last parameter, the $1 variable becomes null. Using a loop to
 test for $1 being set to null and incorporating the shift command into the loop’s do/done
 construct allows for clean handling of passed parameters.
+
+
+shift command only shifts from $1. $0 variable does not contain a parameter. $1, $2... variables contain the first, second... parameters
+Consider the following program, which is run as ./script a b c d.
+shift
+echo $0 $1
+
+What will it print?
+/script b
