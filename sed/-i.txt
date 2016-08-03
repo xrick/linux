@@ -1,0 +1,15 @@
+-i: in place. By default, when sed is used, output of sed is displayed on terminal, but the file is not changed. To change the contents of the file, you need to use option i.
+
+[root@ums tmp]# cat abc
+khi
+meo
+[root@ums tmp]# sed 's/khi/123/' abc
+123
+meo
+[root@ums tmp]# cat abc
+khi
+meo
+[root@ums tmp]# sed -i 's/khi/123/' abc
+[root@ums tmp]# cat abc
+123
+meo

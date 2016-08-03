@@ -1,0 +1,2 @@
+make
+-C: Change to directory dir before reading the makefiles or doing anything else
