@@ -1,0 +1,12 @@
+﻿ +n     for greater than n (>n)
+ -n     for less than n (<n)
+ n     for exactly n (=n)
+
+  -mtime n
+          File's data was last modified n*24 hours ago.  See the comments for 
+          -atime to understand how rounding  affects  the  interpretation  of
+          file  modification times.
+		  
+-mtime +5 will find those files last modified more than 5*24h ago and -mtime -5 will find those files last modified less than 5*24h ago. To delete files that are older than 5 days you would do:
+
+find /mnt/sdb1/tmp/ -type f -mtime +5 -exec rm {} \;
