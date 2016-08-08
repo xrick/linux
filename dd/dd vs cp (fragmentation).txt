@@ -1,0 +1,55 @@
+dd or cp?
+
+Both dd and cp can copy files. What is the difference and when to use which? Thank you!
+
+	
+Both CAN copy files, but dd is intended for low-level copying. One major difference is that dd does not care if there are partitions or a file system---it just copies bytes (When the input file is set to a device)
+
+
+	
+dd is not intended to copy files (although theoretically you could copy files one by one)
+
+dd is intended to copy bytes from one device to another (a device is a file as well) is the lowest level style you can imagine.
+
+On top of bytes in a file you have files. Files are being handled by cp and friends.
+
+So if you want to copy a disk or a partition byte-by-byte you would use dd. If you want to copy all files on a partition you would use cp.
+
+
+
+
+	
+Then I have another question...
+
+Since dd is to copy bytes rather than files, does it mean that if a file is fragmented, using dd to copy it will also give a fragment file?
+
+And by the way, dd allows me to give an input file by "if", so it can copy files, but not only bytes?
+  	
+
+	
+dd "copies" bytes (like said before); so if you use it to copy a disk it will copy the WHOLE disk; including unallocated space...it will copy the fragmented file to the other disk as fragmented. It's like taking an "image" of your drive.
+
+dd works on the file you specify, making it able to copy data between devices, or from a device to a file. This is commonly used for moving data if devices specifically are involved (create an iso image from a cd-rom disc for example: dd if=/dev/cdrom of=mycdrom.iso), or backup raw devices (sometimes used in RAC databases: dd if=/dev/raw/raw1 of=device_raw1)
+
+
+When a certain file was copied (using cp command on Linux, or using copy on Windows) from one directory to another on a hard disk in a PC,
+file fragmentation occurred. Which of the following is an appropriate description concerning this situation?
+a) The fragmentation can be eliminated by performing a physical dump (it is like using dd command on Linux) of the entire
+disk and then restoring the disk.
+b) Access time will be longer even for some files other than the file in which the
+fragmentation occurred.
+c) If the file in which the fragmentation occurred is copied again, the fragmentation in
+the copy destination may get worse, but it will never be eliminated.
+d) Even if fragmentation has occurred, the size of the file is still the same as that of the
+original one.
+
+Correct Answer: d
+Fragmentation means that this file saved on the hard disk could not secure one continuous area
+and thus is saved across multiple blocks. When fragmentation occurs, various parts of the hard
+disk must be accessed, reducing the processing efficiency. However, the file size does not
+change, as the file is simply saved in a divided manner.
+a) If the disk is physically copied, the situation does not change. It must be copied logically.
+b) One file was copied on the hard disk on which files had already been saved, so no other file
+except the one that was copied was affected. Physically nothing was changed.
+c) The fragmentation will be solved if the copy destination has a continuous empty area
+whose size is larger than the file size.
