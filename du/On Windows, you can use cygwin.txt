@@ -1,0 +1,12 @@
+The size of all the directories, files in current directory in human readable format
+
+How to navigate to a directory in C:\ with cygwin?
+
+Use:
+
+cd /cygdrive/c
+
+
+Then use
+du -sh *
+
