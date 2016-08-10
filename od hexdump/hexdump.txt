@@ -39,3 +39,25 @@ APP STARTER OK
 00000518
 
 
+
+
+
+
+
+
+
+============Calculte final word of below sector======================
+Jan 1 02:20:50    syslog: [NVRAM] nv_reserved_validate_unused_block() - [Offset: 0x53E8 Len:7159]
+Jan 1 02:20:50    syslog: [NVRAM] no_of_words:1790 bytes_left:3
+Jan 1 02:20:50    syslog: [NVRAM] Final Word => O: 0x6FDC  V: 0x00000000
+
+Offset: 0x6FDC       hex to dec => 28636
+1 word = 32 bits = 4 bytes
+
+-s uses decimal to calculate
+-n uses byte to calculate
+hexdump -n 4 -C -s 28636 /dev/nds/nvram0
+
+-v          The -v option causes hexdump to display all input data.  Without the -v option, any number of groups of
+                 output lines, which would be identical to the immediately preceding group of output lines (except for the
+                 input offsets), are replaced with a line comprised of a single asterisk.
