@@ -1,0 +1,4 @@
+find / -name "file.txt"
+find / -iname "file.txt"
+
+-iname is faster than -name

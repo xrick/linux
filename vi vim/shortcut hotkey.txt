@@ -17,6 +17,10 @@ ZZ				:save current file if modified, then quit
 G				:move to a particular line, such as 12G to go to line 12. Without a number, it goes to the end of the file
 H				:navigate to the beginning of the file
 
+
+5>>				:To indent 5 lines
+5<<				:To unindent 5 lines
+
 x    :Deletes a single character under the cursor
 X    :Deletes a single character before the cursor
 dw   :Deletes a single word that’s currently under the cursor, from the cursor position onward
