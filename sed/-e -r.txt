@@ -1,0 +1,24 @@
+==================================Multiple commands with -e command============================
+
+One method of combining multiple commands is to use a -e before each command:
+
+sed -e 's/a/A/' -e 's/b/B/' <old >new
+
+A "-e" isn't needed in the earlier examples because sed knows that there must always be one command. If you give sed one argument, it must be a command, and sed will edit the data read from standard input.
+
+The long argument version is
+
+sed --expression='s/a/A/' --expression='s/b/B/' <old >new
+
+
+
+
+
+===============================Extended Regular Expressions with -r command=======================================
+
+Let me add a quick comment here because there is another way to write the above script. "[0-9]*" matches zero or more numbers. "[0-9][0-9]*" matches one or more numbers. Another way to do this is to use the "+" meta-character and use the pattern "[0-9]+" as the "+" is a special character when using "extended regular expressions." Extended regular expressions have more power, but sed scripts that treated "+" as a normal character would break. Therefore you must explicitly enable this extension with a command line option.
+
+GNU sed turns this feature on if you use the "-r" command line option. So the above could also be written using
+
+% echo "123 abc" | sed -r 's/[0-9]+/& &/'
+123 123 abc
