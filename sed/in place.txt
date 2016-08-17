@@ -1,1 +1,9 @@
 -i[SUFFIX], --in-place[=SUFFIX]: This option is used to edit file in place. If suffix is provided, it takes a backup of the original file, otherwise it overwrites the original file.
+
+[root@ums ~]# cat abc
+cat
+dog
+[root@ums ~]# sed -i 's/cat/monkey/' abc
+[root@ums ~]# cat abc
+monkey
+dog

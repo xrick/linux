@@ -8,7 +8,7 @@ This search finds the following lines, if they exist on your learning system:
 rpc:x:490:65534:user for rpcbind:/var/lib/empty:/sbin/nologin
 rtkit:x:492:490:RealtimeKit:/proc:/bin/false
 
-
+egrep vs grep. egrep (which supports extended regular expression) supports + and ? as repetition operators. You don't need to use \ to indicate + and ? as repetition operators. When using grep, you have to use \ to indicate \+ and \? as repetition operators.
 
 
 
