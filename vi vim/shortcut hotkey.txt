@@ -10,6 +10,7 @@ A				:append at the end of the line. END
 o				:Open a new line below
 O (capital o)	:Open a new line above
 D or d$			:delete from the current cursor position to the end of the line not the end of file
+d0              :0 denotes the beginning of the line. Delete from the beginning till the cursor
 :w				:save. :w means it is a ex-command
 :q!				:quit
 :wq				:save then quit
