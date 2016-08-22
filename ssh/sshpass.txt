@@ -1,0 +1,2 @@
+yum install sshpass
+sshpass -p 'how42n8' ssh root@192.168.2.102
