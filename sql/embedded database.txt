@@ -1,1 +1,1 @@
-SQL is an embedded database rather than a network-aware database. Itfs designed to give applications a way to build in a SQL database without the overhead of running a separate server. SQLite is used on everything from Android phones to most web browsers.
+SQL is an embedded database rather than a network-aware database. It's designed to give applications a way to build in a SQL database without the overhead of running a separate server. SQLite is used on everything from Android phones to most web browsers.
