@@ -5,11 +5,11 @@ The following example executes the /home/sathiya/backup.sh script once in every 
 On the day when the backup.sh job is supposed to executed, if the system is down for some reason, anacron will execute the backup.sh script 15 minutes after the system comes back up (without having to wait for another 7 days).
 
 # cat /etc/anacrontab
-7       15      test.daily      /bin/sh /home/sathiya/backup.sh
+7       15      test.weekly      /bin/sh /home/sathiya/backup.sh
 
 START_HOURS_RANGE and RANDOM_DELAY
 
-The above example indicates that the backup.sh script should be executed every day, with a delay of 15 mins. i.e When the laptop was started, executed it only after 15 minutes.
+The above example indicates that the backup.sh script should be executed every 7 days, with a delay of 15 mins. i.e When the laptop was started, executed it only after 15 minutes.
 
 What happens when the laptop or desktop was not shutdown? When does the job gets executed? This is specified by the START_HOURS_RANGE environment variable in the /etc/anacrontab file.
 
