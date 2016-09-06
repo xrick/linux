@@ -1,4 +1,4 @@
-Do not mix up the Windows environment and Linux in your mind. There is no such thing as Ågeffective permissionsÅh for a Linux object; that is entirely a Windows concept. For example, a user who matches the user owner and is also a member of the group owner does not have the greater permissions of the two trios slapped together; he is restricted only to the user owner trio's permissions.
+Do not mix up the Windows environment and Linux in your mind. There is no such thing as "effective permissions" for a Linux object; that is entirely a Windows concept. For example, a user who matches the user owner and is also a member of the group owner does not have the greater permissions of the two trios slapped together; he is restricted only to the user owner trio's permissions.
 
 For example: user fred is in group test
 
