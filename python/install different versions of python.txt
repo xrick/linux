@@ -1,0 +1,35 @@
+In Linux (CentOS/RHEL, Fedora) python 2.6 is installed by default. We don't remove this version as other applications depend on it. It is strongly suggested, however, that you should install python 2.7 or newer because it is supported with external libs. This tutorial will help you to install Python 2.7 without removing older versions.
+
+Notice that Python 2.7 is installed by default in Ubuntu.
+Step 1: Install GCC
+
+Firstly make sure that you have gcc package installed on your system. Use following command to install gcc if you don’t have it installed.
+
+# yum install gcc
+
+Step 2: Download Python 2.7
+
+Download Python using following command from python official site. You can also download latest version in place of specified below.
+
+# cd /usr/src
+# wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
+
+Step 3: Extract Archive and Compile
+
+Use below set of commands to extract Python source code and compile it on your system using altinstall.
+
+# tar xzf Python-2.7.10.tgz
+# cd Python-2.7.10
+# ./configure
+# make altinstall
+
+make altinstall is used to prevent replacing the default python binary file /usr/bin/python.
+Step 4: Check the Python Version
+
+Check the latest version installed of python using below command
+
+# python2.7 -V
+
+Python 2.7.10
+
+Note that you have to type "python2.7" to use the 2.7 version. "python" will lead to the use of python 2.6 by default.
