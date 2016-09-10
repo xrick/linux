@@ -7,6 +7,8 @@ The value of NV_OBJ_SERVICES_2_FIELDS sector 's offset is 20133.
 We use this offset and add 4 bytes (CHK 32) to it: 20133 + 4 = 20137
 -n: number of bytes. -n 1: dump only 1 bytes = 8 bit
 -C: display file contents in hex plus ASCII format
+-c     One-byte character display.  Display the input offset in hexadecimal, followed by sixteen space-separated, three-column, space-filled characters of input data per line.
+
 
 Parameter name			Size bits
 HOSPITALITY_SERVICE			1
