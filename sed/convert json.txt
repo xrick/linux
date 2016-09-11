@@ -1,0 +1,28 @@
+sed -n '/"id":"\/bag\/stb\/hddhm"/p' centOSFile | sed 's/{/&\n\t/g' | sed 's/,/&\n\t/g' | sed 's/},/&\n/g' | sed -e '/\[/,/\]/ s/^/&\t/'  > 123
+
+
+&: Sometimes you want to search for a pattern and add some characters, like parenthesis, around or near the pattern you found. It is easy to do this if you are looking for a particular string: 
+sed 's/abc/(abc)/' <old >new
+This won't work if you don't know exactly what you will find. How can you put the string you found in the replacement string if you don't know what it is? 
+The solution requires the special character "&." It corresponds to the pattern found. 
+sed 's/[a-z]*/(&)/' <old >new
+
+sed -e '/\[/,/\]/ s/^/&\t/'      => sed -e '/start/,/end/ s/test/TEST/g' replaces all test with TEST in range from start to end
+sed 's/^/&\t/'					 => Insert tab to beginning
+
+
+Print
+sed -n '/PATTERN/p' file
+
+
+
+Full version:
+sed -n '/"id":"\/bag\/stb\/hddhm"/p' centOSFile | sed 's/{/&\n\t/g' | sed 's/,/&\n\t/g' | sed 's/},/&\n/g' | sed -e '/\[/,/\]/ s/^/&\t/'  > 123
+
+
+Python version:
+command = r"""sed -n '/"id":"\/bag\/stb\/hddhm"/p' centOSFile | sed 's/{/&\n\t/g' | sed 's/,/&\n\t/g' | sed 's/},/&\n/g' | sed -e '/\[/,/\]/ s/^/&\t/' > 123"""
+subprocess.Popen(command,shell=True)
+
+
+

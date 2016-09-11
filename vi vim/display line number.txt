@@ -23,3 +23,13 @@ For a list of all current settings, at the : prompt, enter:
 For a list of everything that you have set, at the : prompt, enter:
 
   set
+  
+  
+  
+  
+  
+  
+  ==================Sample .exrc file===============
+  
+[root@localhost assess]# cat ~/.exrc
+set number
