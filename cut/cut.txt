@@ -29,7 +29,7 @@ As seen above, the characters a, p, s are the second character from each line of
 cut -d' ' -f7-15 3
 # from field 7 to field 15
 
-cut -d' ' -f7 3
+cut -d' ' -f7- 3
 # from field 7 to the end
 
 4. -s

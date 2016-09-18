@@ -1,3 +1,5 @@
+You can use tr, as in tr -d '\040\011\012\015', which will remove spaces, tabs, carriage returns and newlines.
+
 tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
 thegeekstuff
 THEGEEKSTUFF

@@ -1,3 +1,20 @@
+ 5. Print Block of lines between two Pattern matches
+This will start printing lines from 1st pattern match till 2nd pattern match.
+
+Syntax:
+
+sed -n '/PATTERN1/,/PATTERN2/p' FILE.txt
+
+Example:
+
+$ sed -n '/5/,/8/p' sedtest.txt
+This is line #5
+This is line #6
+This is line #7
+This is line #8
+
+
+
 [root@localhost assess]# cat centOSFile
 [W 160909 11:37:33 httputil:696] Unsupported Content-Encoding: gzip
 X-Bagtype:/bag/stb/hddhm
