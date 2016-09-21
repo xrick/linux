@@ -1,0 +1,3 @@
+[root@DIRECTV-HR54-6BFF18E0 viewer]# grep -i "bob" messages.log* | grep -i success
+messages.log.01:Nov 14 07:56:07  FATAL HddHealthBoBClient - [HDDHM-BOB] response code SUCCESS
+messages.log.08:Nov 14 16:44:57  FATAL HddHealthBoBClient - [HDDHM-BOB] response code SUCCESS
