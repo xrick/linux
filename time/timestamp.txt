@@ -1,3 +1,6 @@
+date -ud @1267619929
+# Convert from epoch to human readable date
+
 [root@DIRECTV-HR34-DE44801B mw_data]# cat nv_reserved_log.json
 {
 "t":"1447399339",
