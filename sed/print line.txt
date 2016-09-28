@@ -15,6 +15,8 @@ This is line #8
 
 
 
+echo $(cat payload.json) | sed -r 's/(.*)SmartData(.*)VendorData(.*)/\2/'
+
 [root@localhost assess]# cat centOSFile
 [W 160909 11:37:33 httputil:696] Unsupported Content-Encoding: gzip
 X-Bagtype:/bag/stb/hddhm

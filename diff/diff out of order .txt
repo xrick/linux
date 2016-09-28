@@ -1,0 +1,1 @@
+ diff <(sort bb) <(sort pp)

@@ -1,3 +1,6 @@
+OR you can use:
+python -u umshttpd.py 2>&1| tee -a ums_log
+ 
 strace -p 1234 -s 9999 -e write -o umslog
 -s9999 avoids having strings truncated to 32 characters, and write the system call that produces output.
 
