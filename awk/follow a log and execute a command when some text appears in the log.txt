@@ -1,0 +1,1 @@
+tail -F -n1 /var/log/messages | awk '/Scan disk/ {system("echo 'abc';echo 'def'")} /Whatever/ {system("ls")}'
