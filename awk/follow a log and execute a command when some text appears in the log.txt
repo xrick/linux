@@ -1,1 +1,3 @@
 tail -F -n1 /var/log/messages | awk '/Scan disk/ {system("echo 'abc';echo 'def'")} /Whatever/ {system("ls")}'
+
+sshpass -p 'how42n8' ssh root@192.168.48.22 'tail -F /var/log/messages.log' | awk '/DiskMaintenanceTask/ {system("sleep 600")} /start running the task/ {system("echo \"keycode 490\" > /tmp/keyc.tmp; sshpass -p \"how42n8\" scp /tmp/keyc.tmp root@192.168.48.22:/var/viewer/ | sshpass -p \"how42n8\" ssh root@192.168.48.22 \"dt keyPress -f /var/viewer/keyc.tmp\"")}'
