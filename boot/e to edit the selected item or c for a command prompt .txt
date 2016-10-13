@@ -1,5 +1,5 @@
 
 
-Or, you can select a boot option and press e to edit that menu entry’s boot options by hand. For example, this would allow you to boot into different “runlevels.” By default, your Linux distribution probably boots into runlevel 5, which generally starts the system with a graphical desktop. You could boot into runlevel 3 — the standard system without a graphical desktop — or runlevel 1 — a single-user mode designed for administrative tasks.
+Or, you can select a boot option and press e to edit that menu entry’s boot options by hand. For example, this would allow you to boot into different “runlevels.” By default, your Linux distribution probably boots into runlevel 5, which generally starts the system with a graphical desktop. You could boot into runlevel 3 — the standard system without a graphical desktop — or runlevel 1 — a single-user mode designed for administrative tasks. In this mode you can change root's password and do everything you like.
 
 GRUB2 has some more advanced options. You can press c to open a GRUB2 command-line environment, where you can run various GRUB2 commands. 
