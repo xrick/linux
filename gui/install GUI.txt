@@ -1,0 +1,24 @@
+Welcome to the CentOS fora.
+
+# yum grouplist | grep -Ei "gnome|kde"
+GNOME Desktop Environment
+GNOME Software Development
+KDE (K Desktop Environment)
+KDE Software Development
+XFCE-4.4
+
+So:
+
+# yum groupinstall "GNOME Desktop Environment"
+
+or
+
+# yum groupinstall "KDE (K Desktop Environment)"
+
+or
+
+# yum groupinstall "XFCE-4.4"
+
+Need the [extras] repo installed for XFCE. Please read about Installing Software, and Repositories, and note the warnings and advice about installing and configuring the yum priorities plugin. Non-core repos should have a higher numeric value, which is a lower priority. Lower is "better" as in golf scores.
+
+You may also want to read about VNC or NX.
