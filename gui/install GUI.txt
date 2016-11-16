@@ -22,3 +22,8 @@ or
 Need the [extras] repo installed for XFCE. Please read about Installing Software, and Repositories, and note the warnings and advice about installing and configuring the yum priorities plugin. Non-core repos should have a higher numeric value, which is a lower priority. Lower is "better" as in golf scores.
 
 You may also want to read about VNC or NX.
+
+
+
+Running startx shows error : xinit: No such file or directory (errno 2): no server “/usr/bin/X” in PATH
+yum install xorg-x11-server-Xorg
