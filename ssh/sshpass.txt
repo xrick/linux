@@ -1,2 +1,5 @@
 yum install sshpass
 sshpass -p 'how42n8' ssh -o StrictHostKeyChecking=no root@192.168.2.102
+
+
+sshpass -p 'how42n8sda' ssh -o StrictHostKeyChecking=no root@192.168.48.15
