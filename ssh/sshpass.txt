@@ -3,3 +3,5 @@ sshpass -p 'how42n8' ssh -o StrictHostKeyChecking=no root@192.168.2.102
 
 
 sshpass -p 'how42n8sda' ssh -o StrictHostKeyChecking=no root@192.168.48.15
+
+sshpass -p 'gcsvn123' ssh -o StrictHostKeyChecking=no minhql@192.168.100.102 'ls'
