@@ -16,6 +16,9 @@ Step 1: Find out which libraries a program needs and the paths to these librarie
 	libz.so.1 => /lib64/libz.so.1 (0x0000003780600000)
 	libexpat.so.1 => /lib64/libexpat.so.1 (0x0000003783200000)
 	/lib64/ld-linux-x86-64.so.2 (0x000000377ee00000)
+
+Find Out Quickly Which Package Provides a Certain Library With YUM	
+yum provides libstdc++.so.5	
 	
 Step 2: Create a compressed archive which contains the libs.
 -P: preservers absolete paths
