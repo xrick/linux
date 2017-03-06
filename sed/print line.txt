@@ -1,3 +1,7 @@
+Print
+sed -n '/PATTERN/p' file
+
+
  5. Print Block of lines between two Pattern matches
 This will start printing lines from 1st pattern match till 2nd pattern match.
 
@@ -12,6 +16,7 @@ This is line #5
 This is line #6
 This is line #7
 This is line #8
+
 
 
 
