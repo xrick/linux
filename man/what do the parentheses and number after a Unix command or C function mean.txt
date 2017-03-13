@@ -1,0 +1,23 @@
+
+
+Manpage sections.
+
+    Common UNIX command that can be used by all users. e.g. ls(1)
+    Unix and C system calls e.g. mmap(2)
+    C library routines for C programs e.g. system(3)
+    Special files e.g. sudoers(4)
+    System file formats e.g. lmhosts(5)
+    Games e.g. fortune(6)
+    Miscellaneous e.g. regex(7)
+    System administration commands that is run by root only e.g. iwconfig(8)
+    (?Linux specific) e.g.ksoftirqd(9)
+
+The reason behind sections is that there are things sharing manual pages - mkdir(1) is the command used to create a directory whereas mkdir(2) is a system call that can be used to create a directory in a C program. Thus the different sections.
+
+Annotated References [1,2] (as suggested):
+http://www.gsp.com/support/man/ - The FreeBSD manpages arranged according to sections
+http://manpages.unixforum.co.uk/man-pages/linux/suse-linux-10.1/ - SUSE manpages arranged according to sections
+http://www.december.com/unix/ref/mansec.html - Yet another table for manpage sections. Initial basis of the list (See older edits of this post for details)
+
+[1] explanations and examples are spontaneous fabrications in my head, for the matter.
+[2] not that it is academically sound, but request for reference is one of the thing that slowed the growth of wikipedia. skeptics are trying to get others reference everything and some of the contributors just get way too annoyed to further answer anything, not that those who try to add useless/baseless stuff are properly removed from the pool (they just get the reference-request tag tagged onto their additions, contents not removed...)
