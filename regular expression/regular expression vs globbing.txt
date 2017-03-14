@@ -70,3 +70,7 @@ Globbing only supports below patterns
         Because the string must be non-empty and terminated by ']', you must put ']' first in the string if you want to match it.
         The '-' character between two others represents a range that includes the two other characters and all characters between them in the collating sequence. For example, [0-9a-fA-F] represents any upper or lower case hexadecimal digit. You can match a '-' by putting it either first or last within a range.
         The '!' character specified as the first character of a range complements the range so that it matches any character except the remaining characters. For example, [!0-9] means any character except the digits 0 through 9. A '!' in any position other than the first matches itself. Remember that '!' is also used with the shell history function, so you need to be careful to properly escape it. 
+		
+		[a-z]: a-z and A-Z
+		[A-Z]: A-Z
+		[^A-Z]: a-z
