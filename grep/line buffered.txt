@@ -1,0 +1,11 @@
+tail -F /var/log/messages.log' | grep --line-buffered 'start running' | while read line; do echo $line | grep --line-buffered 'HddHealthMaintenanceTask'; if [ $? -eq 0 ]; then sleep 60; killall sshpass
+
+
+Is that possible to use grep on a continuous stream?
+
+What I mean is sort of a tail -f <file> command, but with grep on the output in order to keep only the lines that interest me.
+
+I've tried tail -f <file> | grep pattern but it seems that grep can only be executed once tail finishes, that is to say never.
+
+
+This answer is patently false! The fact that it has 535 up-votes just goes to show that people take StackOverflow advice as gospel without doing any research of their own. The output of grep is line buffered by default when it is going to a terminal (i.e., stdout is going to a tty device) as in the example presented in the answer. Therefore, the --line-buffered switch supplied to grep does absolutely nothing. For this switch to have an effect, there needs to be another pipe after the grep command sending the grep output elsewhere: e.g., ... | grep --line-buffered my_pattern | cat 

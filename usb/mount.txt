@@ -24,3 +24,13 @@ Disk identifier: 0x00948f6e
 When typed without a filesystem type specification, mount attempts to auto-detect
 the filesystem type. If the media contains any of the specified filesystems (Ext2fs, FAT, HFS, ReiserFS...) it should be
 detected and the disk mounted
+
+mount /var/usb
+
+In case resource is busy error: 
+mount -o remount,rw '/var/usb'
+
+After that insert usb to another STB (which has ip) to get the log
+
+In case of can not umount because of busy resource:
+change directory to another directory than current usb directory, for example cd /

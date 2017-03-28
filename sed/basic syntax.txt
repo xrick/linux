@@ -1,4 +1,4 @@
-sed works on line 
+vi absed works on line 
 
 Listing 20 shows three simple sed scripts. In the first one, we use the s (substitute) command to substitute an uppercase for a lowercase 'a' on each line. This example replaces only the first 'a' on the line => First a on line 1, line 2, line 3
 In the second example, we add the 'g' (for global) flag to cause sed to change all occurrences of 'a' on the line => All a on line 1, line 2, line 3
