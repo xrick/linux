@@ -1,0 +1,8 @@
+When a function is called, the values of the arguments are copied to the parameter variables
+
+def eggs(someParameter):                      # someParameter is parameter
+    someParameter.append('Hello')
+spam = [1, 2, 3]                              # [1, 2, 3] is argument
+eggs(spam)
+print(spam)
+The values of the arguments [1, 2, 3] are copied to the parameter variable someParameter
