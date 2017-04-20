@@ -7,6 +7,10 @@ $ (dollar sign) matches the end of a line
 .* matches any characters, including empty one.
 \^ 	Backlash sequence to match special character ^.Similarly you can use for other characters.
 
+By default find command using globbing find ./* -name '*.js'
+To use regex in find command, we use this command find ./* -regex '.*\.js'
+find ./* -iname '*.js' AND find ./* -regex '.*\.js' have the same outputs.
+
 
 
 
