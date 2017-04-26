@@ -1,0 +1,14 @@
+Write to read only file using vi. Try the below command. The below command only works if the user is a sudo user. The below command is the same with (:w!):
+:w !sudo tee %
+Explanation
+    :w – write
+    !sudo – call shell sudo command
+    tee – the output of write (:w) command is redirected using tee
+    % – current file name
+
+In case the user is not a sudo user:
+You can press Ctrl – Z to sleep current vi process
+
+
+
+

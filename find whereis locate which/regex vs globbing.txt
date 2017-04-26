@@ -1,0 +1,3 @@
+By default find command using globbing find ./* -name '*.js'
+To use regex in find command, we use this command find ./* -regex '.*\.js'
+find ./* -iname '*.js' AND find ./* -regex '.*\.js' have the same outputs.

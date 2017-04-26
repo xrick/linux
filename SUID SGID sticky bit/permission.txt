@@ -7,10 +7,12 @@ One of the first changes to your system that a hacker or cracker makes is to set
 As a reminder, the special bits that can be set for files include
  SUID: Represented by the numeral 4, the Set User ID special bit allows processes to run with the permissions of the file's owner.
  chmod 4000 abc.txt
+ chmod u+s abc.txt
  
  SGID: Represented by the numeral 2, the Set Group ID special bit allows processes to run with the permissions of the file's group owner. If it's set on a directory, it forces group ownership inheritance for all objects created in that directory.
  Sticky bit: When set on a directory it keeps any nonowners from deleting files in the directory.
- chmod 2000 abc.txti
+ chmod 2000 abc.txt
+ chmod g+x abc.txt
  
  Sticky Bit
 ? The sticky bit is primarily used on shared directories.
