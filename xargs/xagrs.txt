@@ -1,4 +1,5 @@
-
+Or you can use 
+# find / -type f -name *.mp3 -size +10M -exec rm {} \;
 
 The xargs command (by default) expects the input from stdin, and executes /bin/echo command over the input. The following is what happens when you execute xargs without any argument, or when you execute it without combining with any other commands.
 
