@@ -1,0 +1,7 @@
+To create softlink, you have to use absolute path not relative path
+
+e.g:
+	ln -s /tmp/testfolder/testfile /root/Desktop/testfile_softlink
+	
+If you use relative like below, it won't work:
+ln -s testfile /root/Desktop/testfile_softlink
