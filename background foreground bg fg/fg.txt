@@ -1,3 +1,7 @@
+ If you have started the process without using "screen" command then you cannot take over that process. Basically you cannot take over a process that was started in a different shell.
+
+When your session is terminated all the bg process will go the detached state. Though you might be able to see the details of such process you cannot fg them to a shell from login afterwards
+ 
  type fg to bring the last process back to foreground.
 
 If you have more than one process running in the background, do this:

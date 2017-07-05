@@ -1,0 +1,3 @@
+Getting ipv6 only on ubuntu server with vmware bridge connection
+
+Select Bridged > Tick on Replicate physical network connection state then configure adapters > Select real network adapter.
