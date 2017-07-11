@@ -11,3 +11,9 @@ yy : Last two digits of the year
 
 date 12110710              # What will be the effect?
 The software clock will be set to 7:10 a.m. on December 11 of the current year.
+
+
+[root@DIRECTV-HR44-FE9DC316 ~]# date 070707102017
+Fri Jul  7 07:10:00 PDT 2017
+[root@DIRECTV-HR44-FE9DC316 ~]# date
+Fri Jul  7 07:10:05 PDT 2017
