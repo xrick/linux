@@ -1,0 +1,19 @@
+To troubleshoot your dns, please use nslookup command
+root@ubuntu:~# nslookup
+> google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 74.125.130.113
+Name:	google.com
+Address: 74.125.130.138
+Name:	google.com
+Address: 74.125.130.139
+Name:	google.com
+Address: 74.125.130.100
+Name:	google.com
+Address: 74.125.130.101
+Name:	google.com
+Address: 74.125.130.102
