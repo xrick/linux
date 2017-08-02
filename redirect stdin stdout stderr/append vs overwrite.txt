@@ -1,0 +1,2 @@
+echo "hello" >> <filename>
+Using the >> operator will append data at the end of the file, while using the > will overwrite the contents of the file if already existing.
