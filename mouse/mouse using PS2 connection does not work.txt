@@ -1,0 +1,1 @@
+Unplug and plugin the mouse back on login screen
