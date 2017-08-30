@@ -1,0 +1,4 @@
+ apt-get autoremove 
+ autoremove is used to remove packages that were automatically
+installed to satisfy dependencies for some package and that are no
+more needed.
