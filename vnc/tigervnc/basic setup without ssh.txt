@@ -1,3 +1,4 @@
+============================================================================================CENTOS============================================================================================
 On server:
 [root@hoangqp ~]# yum install tigervnc-server
 [root@hoangqp ~]# vncserver :1 -geometry 1280x720 -depth 24
@@ -28,4 +29,24 @@ yum install tigervnc
  
  If you can't not access vncserver, you need to stop iptables first (service iptables stop)
  
+ 
+ 
+ 
+ 
+ ===========================================================================================UBUNTU============================================================================================
 
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04
+
+sudo apt install xfce4 xfce4-goodies tightvncserver
+vncserver
+vncserver -kill :1
+mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+
+vi ~/.vnc/xstartup
+~/.vnc/xstartup
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
+
+chmod +x ~/.vnc/xstartup
+vncserver
