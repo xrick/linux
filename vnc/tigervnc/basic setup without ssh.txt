@@ -28,6 +28,7 @@ yum install tigervnc
  service vncserver status
  
  If you can't not access vncserver, you need to stop iptables first (service iptables stop)
+ or you need to start vncserver on different screen, vncserver :2 -geometry 1280x720 -depth 24
  
  
  
